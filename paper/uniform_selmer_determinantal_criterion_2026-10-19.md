@@ -5,7 +5,7 @@ Date: 2026-10-19. Author: Jerry Armando Kasa.
 
 ## A. Uniform ramification at the single bad prime
 
-For E: y^2+y=x^3+x^2-2x, the minimal discriminant is -389 and the conductor is 389. The only bad prime q=389 has multiplicative reduction with v_389(Delta_min)=1. For every prime l !=389, the l-torsion Galois representation is **ramified at 389**.
+For E: y^2+y=x^3+x^2-2x, the minimal discriminant is +389 and the conductor is 389. The only bad prime q=389 has multiplicative reduction with v_389(Delta_min)=1. For every prime l !=389, the l-torsion Galois representation is **ramified at 389**.
 
 **Proof:** Over an unramified quadratic extension of Q_389 if necessary, E is a Tate curve with parameter q_E of valuation 1. For l !=389, the local l-torsion sequence 0 -> mu_l -> E[l] -> Z/l ->0 has nontrivial tame inertia unipotent part whenever l does not divide v_389(q_E). Since v_389(q_E)=1, the extension class has nonzero inertia for *every* such l. An unramified quadratic twist does not affect inertia. QED.
 
