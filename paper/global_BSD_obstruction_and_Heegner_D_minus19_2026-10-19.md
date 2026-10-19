@@ -67,3 +67,18 @@ If `L'(E^(-19),1)` is numerically nonzero, this is a **candidate** for a later e
 (C) Exact complex leading coefficient formula `L''/2 = Omega*Reg*#Sha`, **OPEN**. Even if (A) gave `Sha=0`, numerical agreement (B) is not an exact transcendental identity.
 
 Avoid calling (A) or (C) proved because of agreement to 35 digits.
+
+
+## 6. New strict analytic-rank-one test for D=-19
+
+A standalone SageMath 10.9 script was prepared and Python-syntax-checked (but NOT yet run on IONOS): `bsd389_twist_minus19_Arb_rank1.py`, SHA-256 `9f020d8629192224145212039a457e3a87a184b85afc8a65b0d476c9477bf1d8`.
+
+For the twist of expected conductor `140429`, root sign `-1`, and `c=2*pi/sqrt(140429)`, its functional equation implies
+
+`L'(E^(-19),1) = 2 sum_{n>=1} a_n*chi_-19(n)*E1(c*n)/n`.
+
+The first 512 exact modular coefficients are produced by `E.anlist(512)`. Sage Arb's `ComplexBallField.exp_integral_e(1)` encloses every special-function term, and the remaining sum is bounded above by
+
+`4*exp(-c*513)/(c*513*(1-exp(-c))) < 0.01`.
+
+Private exploratory independent computation using finite-field point counts and 1700 coefficients (mpmath, not a certificate) predicts `L'(E^(-19),1) ≈ 9.0756277098`, so a positive rigorous ball is strongly expected. No claimed PASS until IONOS proves it. The resulting exact twist analytic rank 1 would establish a condition for the 2026 ordinary-prime derived-Heegner theorem. It would **not** turn that theorem into a global all-primes result.
