@@ -26,3 +26,12 @@ All four extracted files match the previously frozen digests, **exactly**:
 | `v19_production.py` | `61eef8564236babf1b669c3fdd40db5d201ebc96bb4f1f8a40a04a6b9e5df418` |
 
 **Status of repository upload:** This manifest attests received bytes and hashes; exact files still must be imported separately into version control. No archive payload is embedded in this manifest. Full relation and scalar JSON datasets are not included in this source-only archive.
+
+## Independent canonical relation/scalar export audit — 2026-10-19
+
+Received `bsd389_donnees_certification.tar.gz`, size 8,745 bytes, archive SHA-256 `7a6eed49fbe1ea12ace7838f3aabacb9dcbb3cf6394893296b906ac10736298c`. Its historical canonical input files are authenticated:
+
+- `bsd389_tame_relation_export_p16231.json` (102,958 bytes), SHA-256 `9c385efb6cf1a0c8e9061e971c4bc1cd3c241c6979c490ac7a916554ee8eb8f8`;
+- `bsd389_tame_scalar_values_p16231.json` (605 bytes), SHA-256 `7724c8d730a370e3fdc403293b9fc23f6adad632ca39b53d8439a96f18dd0c7e`.
+
+Proof record: [390 exact identities on rational cusp divisors](../results/v11_export_exact_manin_shapiro_certificate_2026-10-19.md), all 2012 matrices in `Gamma0(389)`, untwisted Manin rank 325. The JSON payloads were verified locally but are not yet committed as full text into this private repository.
