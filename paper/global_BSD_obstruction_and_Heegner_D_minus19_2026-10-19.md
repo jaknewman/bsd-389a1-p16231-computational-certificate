@@ -91,3 +91,16 @@ The `D=-19` Arb certificate **PASSED** with `EXIT_STATUS=0`: exact splitting, tw
 Consequently classical Gross–Zagier–Kolyvagin gives rank one and **global Sha finiteness for the twist** `E^(-19)`, and `rank E(K)=3`. This does not transfer global Sha finiteness to the original `E`.
 
 **Target now:** identify from an applicable theorem the exact *derived* Heegner/Kolyvagin cohomology class and its mod-p nonvanishing criterion. Distinguish a fixed-prime p-primary consequence from any proof controlling **all primes at once**. Do not conflate the successful auxiliary twist test with the latter.
+
+
+## 8. Odd-prime descent through the quadratic extension: precise reduction
+
+For an odd prime `ell`, quadratic restriction/corestriction identifies the `±` eigenspaces under `Gal(K/Q)` of the `ell`-primary Galois cohomology, and the corresponding local conditions are compatible with quadratic twisting. Thus one obtains the familiar odd-primary comparison
+
+`Sha(E/K)[ell^infinity] ≅ Sha(E/Q)[ell^infinity] ⊕ Sha(E^(-19)/Q)[ell^infinity]`
+
+(up to the natural twisting identification). The argument works because multiplication by `2` is invertible on `ell`-primary groups, so higher Galois cohomology for the degree-two extension has no odd-primary part.
+
+By the **already proved global finiteness** of `Sha(E^(-19)/Q)` (Gross–Zagier–Kolyvagin, since its analytic rank is 1), the finiteness of `Sha(E/K)[ell^infinity]` is equivalent to finiteness of `Sha(E/Q)[ell^infinity]` **for each odd ell**.
+
+This clarifies the scope of fixed-prime derived-Heegner criteria: they can be useful, but to prove `Sha(E/Q)` globally finite one still needs a **uniform finite-support argument** or another genuinely global theorem. An arbitrary list of such fixed-prime facts is not enough.
