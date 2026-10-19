@@ -82,3 +82,12 @@ The first 512 exact modular coefficients are produced by `E.anlist(512)`. Sage A
 `4*exp(-c*513)/(c*513*(1-exp(-c))) < 0.01`.
 
 Private exploratory independent computation using finite-field point counts and 1700 coefficients (mpmath, not a certificate) predicts `L'(E^(-19),1) ≈ 9.0756277098`, so a positive rigorous ball is strongly expected. No claimed PASS until IONOS proves it. The resulting exact twist analytic rank 1 would establish a condition for the 2026 ordinary-prime derived-Heegner theorem. It would **not** turn that theorem into a global all-primes result.
+
+
+## 7. Actual 2026-10-19 IONOS result (not merely a candidate)
+
+The `D=-19` Arb certificate **PASSED** with `EXIT_STATUS=0`: exact splitting, twist conductor 140429 and odd functional sign; Arb finite derivative sum `9.07564283881115519...` and rigorous tail upper `0.005142065613741` yielded strictly positive enclosure `[9.1 +/- 0.0295]`. This proves `ord_{s=1}L(E^(-19),s)=1`. Full output and proof boundary are in [result certificate](../results/full_BSD_twist_minus19_analytic_rank1_ARB_PASS_2026-10-19.md).
+
+Consequently classical Gross–Zagier–Kolyvagin gives rank one and **global Sha finiteness for the twist** `E^(-19)`, and `rank E(K)=3`. This does not transfer global Sha finiteness to the original `E`.
+
+**Target now:** identify from an applicable theorem the exact *derived* Heegner/Kolyvagin cohomology class and its mod-p nonvanishing criterion. Distinguish a fixed-prime p-primary consequence from any proof controlling **all primes at once**. Do not conflate the successful auxiliary twist test with the latter.
