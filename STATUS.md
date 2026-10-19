@@ -18,7 +18,7 @@ Legend: **PASS (reported)** means a complete terminal log was supplied and check
 | All chunk contents computed by proven faithful code | **OPEN** formal machine/source provenance | SHA validates integrity against adjacent SHA files, not producer identity |
 | Exact global equality J_V19 = J_ref | **Algebraic source-to-J_ref equivalence established** for exact C01 input; identification of historical executable with that source semantics and its full execution remains a machine-provenance assumption | [`results/v11_export_exact_manin_shapiro_certificate_2026-10-19.md`](results/v11_export_exact_manin_shapiro_certificate_2026-10-19.md); full checkpoint-chain recomposition PASS. |
 | Level-3 native A2 computed independently | **NOT RUN** | correction based on algebraic bridge |
-| Bound `Sha(E/Q)[16231^infinity] = 0` | **CONDITIONAL**, not yet a theorem established unconditionally by this repository | requires certified bridge, arithmetic gate and relevant theorem applicability |
+| Bound `Sha(E/Q)[16231^infinity] = 0` | **ARITHMETIC IMPLICATION PROVED** (Kato/Sage p-primary bound exponent zero, including rank 2); global computer-assisted conclusion remains conditional on faithful historical analytic coefficient J=4486 | [`paper/arithmetic_conclusion_p16231.md`](paper/arithmetic_conclusion_p16231.md), [`sage/arithmetic_conclusion_p16231.py`](sage/arithmetic_conclusion_p16231.py); direct expensive `p_primary_bound(16231)` **not run** |
 | Exact equality `u_16231 = 1` | **NOT PROVED** | congruence modulo p does not imply exact p-adic equality |
 | Full Birch–Swinnerton-Dyer conjecture for 389a1 | **NOT PROVED** | p-primary consequence is strictly narrower |
 
