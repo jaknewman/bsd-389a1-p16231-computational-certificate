@@ -49,3 +49,22 @@ A realistic research route is a derived rank-two Euler/Kolyvagin-system or Selme
 **Open:** actual p-independent A/injection; any uniform support bound C_E for Sha, global Sha finiteness and exact complex BSD leading term. The new rank-one quadratic twist does not itself supply this missing uniform comparison; finite many imaginary fields cannot cover every split prime by Dirichlet.
 
 **Action:** seek a theorem constructing this **integral rank-two comparison**, or identify a valid alternative non-matrix uniform bound. For a future candidate, demand (i) exact integer matrix, (ii) full-rank-over-Q certificate, (iii) a written injection proof for all primes outside explicit S_0, (iv) nonzero maximal-minor gcd computation, (v) separate checks of the finitely many primes dividing C_E. No numerical coincidence substitutes for (iii).
+
+
+## D. Why ordinary Iwasawa theory cannot by itself make the exceptional set finite
+
+Elkies proved that every elliptic curve over Q has **infinitely many supersingular good primes**. Thus the assertion that ordinary-prime criteria apply outside a finite set is false, even after proving full residual image and all-prime inertia at 389. A globally uniform argument must incorporate supersingular primes, e.g. with a suitable signed theory, or avoid ordinary/supersingular distinctions by working integrally.
+
+Reference: Noam D. Elkies, *The existence of infinitely many supersingular primes for every elliptic curve over Q*, Invent. Math. 89 (1987), 561–568, listed on https://people.math.harvard.edu/~elkies/math_pubs.html .
+
+## E. Exact invariants check and correction
+
+For `[a1,a2,a3,a4,a6]=[0,1,1,-2,0]`:
+
+```text
+b2 = 4, b4 = -4, b6 = 1, b8 = -3
+Delta_min = -b2^2*b8 - 8*b4^3 - 27*b6^2 + 9*b2*b4*b6 = +389.
+v_389(Delta_min)=1
+```
+
+**The sign is +389** (not -389 as incorrectly written in some preliminary notes). There are two real connected components, consistent with the positive discriminant. Since the ramification argument depends on the valuation 1, not on the sign, it is unaffected.
