@@ -1,4 +1,4 @@
-# Verification ledger — 2026-10-18
+# Verification ledger — updated 2026-10-19
 
 Legend: **PASS (reported)** means a complete terminal log was supplied and checked in this project, not a formal proof of the underlying mathematics. **THEOREM / ALGEBRA** means a mathematical derivation documented in a named source. **OPEN** means not certified at repository publication time. **CONDITIONAL** means dependent on a stated hypothesis.
 
@@ -14,7 +14,7 @@ Legend: **PASS (reported)** means a complete terminal log was supplied and check
 | V66 byte-identical rebuild | **NO**; different SHA | V66 original `31fe...`, rebuilt `c6d9...` |
 | V66 functional equivalence | PASS on three disjoint 8-pair intervals | not equivalent to full equivalence |
 | Arithmetic gate | PASS (reported after `ZZ(389)` compatibility fix) | `verification/arithmetic` |
-| All archived chunk-to-checkpoint recompositions | **IN PROGRESS** at last user report; no final PASS | `verification/v19_chain` |
+| All archived chunk-to-checkpoint recompositions | **PASS (reported, full 263,429,130-pair archive)**; 514,511 chunks, 4,019 checkpoints and 9,759,143,225 sparse rows; final hash matches frozen SHA-256 | [`results/v19_full_chain_audit_2026-10-19.md`](results/v19_full_chain_audit_2026-10-19.md). No independent per-chunk mathematical re-evaluation. |
 | All chunk contents computed by proven faithful code | **OPEN** formal machine/source provenance | SHA validates integrity against adjacent SHA files, not producer identity |
 | Exact global equality J_V19 = J_ref | **OPEN final end-to-end certificate** | key conditional bridge |
 | Level-3 native A2 computed independently | **NOT RUN** | correction based on algebraic bridge |
@@ -22,4 +22,4 @@ Legend: **PASS (reported)** means a complete terminal log was supplied and check
 | Exact equality `u_16231 = 1` | **NOT PROVED** | congruence modulo p does not imply exact p-adic equality |
 | Full Birch–Swinnerton-Dyer conjecture for 389a1 | **NOT PROVED** | p-primary consequence is strictly narrower |
 
-No output of a preflight, checksum-only audit or source-level formula check should be promoted to a global mathematical proof without explicit justification. When the V19 audit completes, record the exact terminal log and SHA before updating this ledger.
+No output of a preflight, checksum-only audit or source-level formula check should be promoted to a global mathematical proof without explicit justification. V19 recomposition PASS is now recorded from the user-supplied final log. It certifies the reconstruction of historical checkpoint states from authenticated archived chunks, **not** correctness of every producer invocation or unconditional equality of the computed global sum to the mathematical reference functional.
