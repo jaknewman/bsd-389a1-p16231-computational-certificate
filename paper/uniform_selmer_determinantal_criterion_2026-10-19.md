@@ -68,3 +68,15 @@ v_389(Delta_min)=1
 ```
 
 **The sign is +389** (not -389 as incorrectly written in some preliminary notes). There are two real connected components, consistent with the positive discriminant. Since the ramification argument depends on the valuation 1, not on the sign, it is unaffected.
+
+
+## F. Established higher-rank machinery most relevant to the missing comparison
+
+Burns–Sano, *On the Theory of Higher Rank Euler, Kolyvagin and Stark Systems* (IMRN 2021), proves the existence of higher-rank Kolyvagin derivative constructions and identifies **Fitting ideals of Selmer modules** through higher-rank Stark/Kolyvagin systems under detailed coefficient-ring and local hypotheses (e.g. the higher-rank Fitting statement discussed in Theorem 3.19). Burns–Sakamoto–Sano, *... II: the general theory* (Algebra & Number Theory, accepted 2025), constructs canonical higher Kolyvagin derivative maps and proves higher-rank Euler systems control Selmer-module structures.
+
+Primary references:
+- https://academic.oup.com/imrn/article-abstract/2021/13/10118/5521019
+- https://nms.kcl.ac.uk/david.burns/web_page/sbA.pdf
+- https://kclpure.kcl.ac.uk/portal/en/publications/on-the-theory-of-higher-rank-euler-kolyvagin-and-stark-systems-ii/
+
+**Critical limit:** These theorems work with an appropriately defined p-adic representation/module and require actual rank-two arithmetic Euler/Stark/Kolyvagin classes with verified nonvanishing, local conditions and compatibility. They do **not** supply a p-independent integer matrix or a bound on Sha's global prime support just from E being rank 2, semistable, and having full residual images. The next concrete research question is whether an *integral common source* for a rank-two system can be constructed for this E whose mod-p reductions are primitive for all p outside an explicitly bounded finite set. It would be incorrect to simply take a determinant of existing modular-symbol relations or of the real-height matrix.
