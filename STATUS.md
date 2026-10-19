@@ -4,19 +4,19 @@ Legend: **PASS (reported)** means a complete terminal log was supplied and check
 
 | Assertion | Status | Supporting resource / boundary |
 |---|---|---|
-| Modular-symbol / C01 algebraic comparison | Mathematical derivation written; publication review pending | `paper/c01_comparison_proof.md` |
-| Manin/Shapiro comparison V62 | PASS (reported; partial transport oracle) | `verification/v62` |
+| Modular-symbol / C01 algebraic comparison | **ALGEBRAIC PASS at source/specification level**: all 390 exact rational-cusp divisor identities certified; moment covariance and both V11 branches match the mathematical functional | [`results/v11_export_exact_manin_shapiro_certificate_2026-10-19.md`](results/v11_export_exact_manin_shapiro_certificate_2026-10-19.md), [`paper/c01_source_to_specification_audit.md`](paper/c01_source_to_specification_audit.md). The historical native executable remains a separate trusted-computing-base obligation. |
+| Manin/Shapiro comparison | **PASS exact all 390 cusp-divisor identities and 2,012 Gamma0(389) transport matrices**, beyond earlier V62 samples; untwisted Manin rank 325, quotient dimension 65 | [`results/v11_export_exact_manin_shapiro_certificate_2026-10-19.md`](results/v11_export_exact_manin_shapiro_certificate_2026-10-19.md). All 6.3m induced cosets were not explicitly enumerated; exact divisor identity transports to any Shapiro coset by equivariance. |
 | Signs and 67 scalar generator checks V63 | PASS (reported) | `verification/v63` |
 | Checkpoint and source integrity V64 | PASS (reported) | `verification/v64` |
 | Independent terminal J0=16014, J1=4703 | PASS (reported; 67/67 per moment) | `verification/v65` |
 | Independent last-39,946-pair replay | PASS (reported); NOT a full replay | `verification/v65` |
 | Original V19 executable identified by SHA | PASS (reported) | `data/HISTORICAL_MANIFEST.md` |
 | V66 byte-identical rebuild | **NO**; different SHA | V66 original `31fe...`, rebuilt `c6d9...` |
-| V66 functional equivalence | PASS on three disjoint 8-pair intervals | not equivalent to full equivalence |
+| V66 functional equivalence | PASS on three prior 8-pair intervals **plus eight new real-export source-level C++ comparisons**, including three complete 512-pair chunks; byte-identical TSV outputs | bounded tests, **not** a complete independent 263m-pair replay |
 | Arithmetic gate | PASS (reported after `ZZ(389)` compatibility fix) | `verification/arithmetic` |
 | All archived chunk-to-checkpoint recompositions | **PASS (reported, full 263,429,130-pair archive)**; 514,511 chunks, 4,019 checkpoints and 9,759,143,225 sparse rows; final hash matches frozen SHA-256 | [`results/v19_full_chain_audit_2026-10-19.md`](results/v19_full_chain_audit_2026-10-19.md). No independent per-chunk mathematical re-evaluation. |
 | All chunk contents computed by proven faithful code | **OPEN** formal machine/source provenance | SHA validates integrity against adjacent SHA files, not producer identity |
-| Exact global equality J_V19 = J_ref | **OPEN final end-to-end certificate** | key conditional bridge |
+| Exact global equality J_V19 = J_ref | **Algebraic source-to-J_ref equivalence established** for exact C01 input; identification of historical executable with that source semantics and its full execution remains a machine-provenance assumption | [`results/v11_export_exact_manin_shapiro_certificate_2026-10-19.md`](results/v11_export_exact_manin_shapiro_certificate_2026-10-19.md); full checkpoint-chain recomposition PASS. |
 | Level-3 native A2 computed independently | **NOT RUN** | correction based on algebraic bridge |
 | Bound `Sha(E/Q)[16231^infinity] = 0` | **CONDITIONAL**, not yet a theorem established unconditionally by this repository | requires certified bridge, arithmetic gate and relevant theorem applicability |
 | Exact equality `u_16231 = 1` | **NOT PROVED** | congruence modulo p does not imply exact p-adic equality |
