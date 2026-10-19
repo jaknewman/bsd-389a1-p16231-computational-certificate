@@ -51,3 +51,12 @@ This satisfies a necessary analytic-rank condition for considering derived-Heegn
 3. Full complex BSD additionally needs an exact leading-term identity, not the numerical agreement at 35 decimal digits.
 
 See [global obstruction and K=-19 road map](../paper/global_BSD_obstruction_and_Heegner_D_minus19_2026-10-19.md). Source on IONOS: `bsd389_twist_minus19_Arb_rank1.py` (prior SHA-pinned).
+
+
+## Unconditional Gross–Zagier–Kolyvagin corollary for the auxiliary twist
+
+Since the Arb-certified analytic rank of `E^(-19)/Q` is exactly one, the classical Gross–Zagier–Kolyvagin theorem gives **algebraic rank one and finite Tate–Shafarevich group** for this *twisted* elliptic curve. Thus the algebraic rank of `E(K)` is `rank E(Q) + rank E^(-19)(Q)=3`, matching Artin's analytic rank three.
+
+**Important:** finiteness of Sha of the twist does **not** imply finiteness of Sha of the original rank-two `E/Q` or of `E/K`. This corollary does not yield the exact leading-coefficient BSD identity for the original curve.
+
+Background (theorem statement): https://archive.ymsc.tsinghua.edu.cn/pacm_download/355/9132-elc.pdf
