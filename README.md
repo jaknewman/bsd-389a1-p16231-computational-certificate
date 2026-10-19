@@ -10,7 +10,7 @@ E/\mathbb Q:\quad y^2+y=x^3+x^2-2x,\qquad p=16231.
 
 **Do not cite this repository as an unconditional proof of BSD or of** `Sha(E/Q)[16231^infinity] = 0` **until the outstanding verification obligations are discharged and reviewed.** A first-digit congruence does not prove an exact p-adic equality or full BSD.
 
-## Current numerical record (as of 2026-10-18)
+## Current numerical record (updated 2026-10-19)
 
 | Object | Result | Evidence |
 |---|---:|---|
@@ -21,7 +21,7 @@ E/\mathbb Q:\quad y^2+y=x^3+x^2-2x,\qquad p=16231.
 | Level 2 coefficient | A2^(2) = 1,199 p (mod p²) | V54/V61, 254 archived chunks |
 | Conditional level 3 coefficient | A2^(3) = 9,534 p (mod p²) | **Only after identification of global J_V19 with mathematical J_ref** |
 | Arithmetic Sage gate | PASS reported on IONOS; Bp/p = 9,534 (mod p) | Certified rank=2, MW generators, local hypotheses, regulator and precision |
-| Full V19 checkpoint replay | **Running at last report; final verdict not available** | `verification/v19_chain` |
+| Full V19 checkpoint replay | **PASS (reported)**: 263,429,130 pairs; 514,511 chunks; 4,019 checkpoints; 9,759,143,225 rows; final SHA matches historical checkpoint | [Full chain audit completion record](results/v19_full_chain_audit_2026-10-19.md); does **not** independently recalculate each chunk |
 
 For the precise logical status of every statement, see [STATUS.md](STATUS.md). The comparison formula and its conditions are in [the conditional manuscript](paper/theorem_conditional_draft.md).
 
