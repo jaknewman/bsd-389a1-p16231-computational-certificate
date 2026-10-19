@@ -21,7 +21,10 @@ E/\mathbb Q:\quad y^2+y=x^3+x^2-2x,\qquad p=16231.
 | Level 2 coefficient | A2^(2) = 1,199 p (mod p²) | V54/V61, 254 archived chunks |
 | Conditional level 3 coefficient | A2^(3) = 9,534 p (mod p²) | **Only after identification of global J_V19 with mathematical J_ref** |
 | Arithmetic Sage gate | PASS reported on IONOS; Bp/p = 9,534 (mod p) | Certified rank=2, MW generators, local hypotheses, regulator and precision |
+| Manin–Shapiro source/export identities | **PASS**, 390/390 exact rational-cusp divisor equalities, 2,012 SL₂/Gamma0(389) relation terms, Manin rank 325, 65-dimensional quotient; eight real-export C++ pair/aggregation comparison windows | [Independent exact-data certificate](results/v11_export_exact_manin_shapiro_certificate_2026-10-19.md) |
 | Full V19 checkpoint replay | **PASS (reported)**: 263,429,130 pairs; 514,511 chunks; 4,019 checkpoints; 9,759,143,225 rows; final SHA matches historical checkpoint | [Full chain audit completion record](results/v19_full_chain_audit_2026-10-19.md); does **not** independently recalculate each chunk |
+
+The original production **source files and canonical JSON input archives have now been received and authenticated by exact SHA-256**, although their full bytes still await individual Git repository import. The main source-to-specification mathematical equalities have been independently validated over rational cusp divisors; compiler/binary provenance and theorem applicability remain separate checks.
 
 For the precise logical status of every statement, see [STATUS.md](STATUS.md). The comparison formula and its conditions are in [the conditional manuscript](paper/theorem_conditional_draft.md).
 
