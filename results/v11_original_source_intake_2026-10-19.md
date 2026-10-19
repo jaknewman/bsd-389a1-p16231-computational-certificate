@@ -41,3 +41,17 @@ source-level fragment grouping and direct/relation branch formulas match the ind
 ## Next bounded gate, not a repeated 263-million-pair run
 
 Import the original `bsd389_tame_relation_export_p16231.json` and `bsd389_tame_scalar_values_p16231.json`, verify their frozen SHA-256s, audit every matrix determinant, every projective key-to-representative mapping, relation coefficient widths and generator references, and cross-check the Manin identities against Sage's canonical relations. This can be done with ~390 representatives rather than recomputing 263 million pairs.
+
+## Additional exact-code synthetic engine regression
+
+Local GCC 14.2 builds of the received **unmodified** aggregation kernel and a separate harness of its original `contrib()` direct path (Boost.JSON implemented via `-include boost/json/src.hpp` because this runtime lacks the linkable `libboost_json`) produced **byte-identical sparse TSV outputs** on five bounded intervals. The input fixture used 390 integer SL2 representatives with 67 marked generators and deliberately *synthetic, mathematically invalid* Manin relations. This confirms mechanical aggregation/direct equivalence only; do **not** cite as a test on production Manin data.
+
+```text
+V11_NATIVE_VS_AGGREGATED_SYNTHETIC_PASS L=0 R=16 rows=75 E0=16 E1=14
+V11_NATIVE_VS_AGGREGATED_SYNTHETIC_PASS L=16 R=48 rows=271 E0=32 E1=25
+V11_NATIVE_VS_AGGREGATED_SYNTHETIC_PASS L=16000 R=16032 rows=318 E0=32 E1=28
+V11_NATIVE_VS_AGGREGATED_SYNTHETIC_PASS L=16230 R=16246 rows=81 E0=16 E1=13
+V11_NATIVE_VS_AGGREGATED_SYNTHETIC_PASS L=263429114 R=263429130 rows=76 E0=16 E1=13
+```
+
+**Limit remains:** historical production JSON was not part of the uploaded archive, and synthetic relations cannot establish their mathematical validity.
