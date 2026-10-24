@@ -125,7 +125,7 @@ int main(int argc, char** argv) {
                         >>row.g.d>>row.gen>>nrel),"invalid rep record");
             demand(index==i && nrel>=0 && nrel<=NTERMS,
                    "bad rep index/relation count");
-            demand(det1(row.g) && row.g.c%N==0,"rep not in Gamma0(389)");
+            demand(det1(row.g),"Manin P1 representative not in SL2(Z)");
             demand(row.gen>=-1 && row.gen<NGEN,"bad generator index");
             for(int z=0;z<nrel;++z) {
                 read_tag("TERM");
