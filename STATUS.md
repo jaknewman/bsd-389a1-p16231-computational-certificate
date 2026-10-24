@@ -1,5 +1,7 @@
 # Verification ledger — updated 2026-10-24
 
+**Final p=16231 proof ledger (2026-10-24):** [Conditional computer-assisted theorem, every dependency, and publication boundary](paper/p16231_final_conditional_computer_assisted_certificate_2026-10-24.md). Verify original records with `python -u scripts/audit_p16231_final_certificate.py`. **This is not a claim of unconditional full BSD.**
+
 Legend: **PASS (reported)** means a complete terminal log was supplied and checked in this project, not a formal proof of the underlying mathematics. **THEOREM / ALGEBRA** means a mathematical derivation documented in a named source. **OPEN** means not certified at repository publication time. **CONDITIONAL** means dependent on a stated hypothesis.
 
 | Assertion | Status | Supporting resource / boundary |
