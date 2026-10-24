@@ -1,5 +1,7 @@
 # Verification ledger — updated 2026-10-24
 
+**Final evidence-and-arithmetic checker (2026-10-24):** **PASS twice (reported), exit 0 both times**, with eight original source/binary/log SHA pins, 514,511-chunk archive reconciliation, 57/57 producer replay transcript checks, terminal J=4486, and conditional A2/Bp unit computation. [Complete user-reported output](results/p16231_final_certificate_ionos_double_PASS_2026-10-24.md). The checker does **not** execute the full original V19 producer or `Sha.p_primary_bound(16231)`.
+
 **Final p=16231 proof ledger (2026-10-24):** [Conditional computer-assisted theorem, every dependency, and publication boundary](paper/p16231_final_conditional_computer_assisted_certificate_2026-10-24.md). Verify original records with `python -u scripts/audit_p16231_final_certificate.py`. **This is not a claim of unconditional full BSD.**
 
 Legend: **PASS (reported)** means a complete terminal log was supplied and checked in this project, not a formal proof of the underlying mathematics. **THEOREM / ALGEBRA** means a mathematical derivation documented in a named source. **OPEN** means not certified at repository publication time. **CONDITIONAL** means dependent on a stated hypothesis.
