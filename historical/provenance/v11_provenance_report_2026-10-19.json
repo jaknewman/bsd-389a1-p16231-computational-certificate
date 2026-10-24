@@ -1,0 +1,169 @@
+{
+  "artifact_digest": {
+    "binary": "31fe2b3675d723b372160683e1e8693f30a24d1a9254010a5f388d0ac4f27c63",
+    "driver": "61eef8564236babf1b669c3fdd40db5d201ebc96bb4f1f8a40a04a6b9e5df418",
+    "export": "9c385efb6cf1a0c8e9061e971c4bc1cd3c241c6979c490ac7a916554ee8eb8f8",
+    "final_state": "5ebeffa2fd67fe2eb54ce6a925bd21dfb850ed9616f9462dce330f98a5a9da1e",
+    "scalars": "7724c8d730a370e3fdc403293b9fc23f6adad632ca39b53d8439a96f18dd0c7e",
+    "source_kernel": "e578ae0fac1a112a3a0b135847149c21c546e7099d952c373d25816d3089a545",
+    "source_loader": "f398d0f90a36dd3186c5d644a6b3f00f3081ebfc0a18cefd895db60db9b575d9",
+    "source_v11": "0d8b18696587fc3a0f497c54ebbba99f4d582e69d5a98d0da0e2a4275172b187"
+  },
+  "binary_info": {
+    "build_id": "41e18988d12493955a637e8e3609984f69c5d556",
+    "compiler_comment": "String dump of section '.comment':\n  [     0]  GCC: (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "file": "/home/bsdadmin/bsd389-c01-v11-test/bsd389_c01_v11_aggregated: ELF 64-bit LSB pie executable, x86-64, version 1 (GNU/Linux), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=41e18988d12493955a637e8e3609984f69c5d556, for GNU/Linux 3.2.0, not stripped",
+    "mtime_ns": 1792270429092869766,
+    "needed_libraries": [
+      "libboost_json.so.1.83.0",
+      "libstdc++.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "size_bytes": 77144
+  },
+  "bounded_windows": [
+    {
+      "original": {
+        "interval": [
+          0,
+          512
+        ],
+        "sha256": "6890c83dcb7a0b5dcc51feb9073ae37add3048e76bdaa97a64e18148880237eb",
+        "size": 241160
+      },
+      "rebuilt": {
+        "interval": [
+          0,
+          512
+        ],
+        "sha256": "6890c83dcb7a0b5dcc51feb9073ae37add3048e76bdaa97a64e18148880237eb",
+        "size": 241160
+      }
+    },
+    {
+      "original": {
+        "interval": [
+          512,
+          1024
+        ],
+        "sha256": "14219c05438b11da1e79dfe44131a237ef4f1c9899417d6d176de625243b914a",
+        "size": 277711
+      },
+      "rebuilt": {
+        "interval": [
+          512,
+          1024
+        ],
+        "sha256": "14219c05438b11da1e79dfe44131a237ef4f1c9899417d6d176de625243b914a",
+        "size": 277711
+      }
+    },
+    {
+      "original": {
+        "interval": [
+          131714560,
+          131715072
+        ],
+        "sha256": "fb6059e9f05ceb5db0b6bc89411402ab600d708b73d57aa58774695317f40fc6",
+        "size": 285688
+      },
+      "rebuilt": {
+        "interval": [
+          131714560,
+          131715072
+        ],
+        "sha256": "fb6059e9f05ceb5db0b6bc89411402ab600d708b73d57aa58774695317f40fc6",
+        "size": 285688
+      }
+    },
+    {
+      "original": {
+        "interval": [
+          263429120,
+          263429130
+        ],
+        "sha256": "d230640c72eda33c021e73136c8ddd12c4b1be8199f44b7710680678507c361e",
+        "size": 4059
+      },
+      "rebuilt": {
+        "interval": [
+          263429120,
+          263429130
+        ],
+        "sha256": "d230640c72eda33c021e73136c8ddd12c4b1be8199f44b7710680678507c361e",
+        "size": 4059
+      }
+    }
+  ],
+  "compilation": [
+    {
+      "command": [
+        "/usr/bin/g++",
+        "-O3",
+        "-std=c++17",
+        "-DBSD389_EFFECTIVE",
+        "-DBSD389_SPARSE_TOUCHED",
+        "/home/bsdadmin/bsd389-c01-v11-test/bsd389_c01_v11_aggregated.cpp",
+        "-o",
+        "/tmp/bsd389_v11_provenance_87izf57d/bsd389_rebuild_O3",
+        "-lboost_json"
+      ],
+      "exit_code": 0,
+      "optimization": "-O3",
+      "same_bytes_as_original": false,
+      "sha256": "48bd036390ba672cf3b4dd7a18459dac0e7cad19a2c364492ba14fa96c281e81"
+    },
+    {
+      "command": [
+        "/usr/bin/g++",
+        "-O2",
+        "-std=c++17",
+        "-DBSD389_EFFECTIVE",
+        "-DBSD389_SPARSE_TOUCHED",
+        "/home/bsdadmin/bsd389-c01-v11-test/bsd389_c01_v11_aggregated.cpp",
+        "-o",
+        "/tmp/bsd389_v11_provenance_87izf57d/bsd389_rebuild_O2",
+        "-lboost_json"
+      ],
+      "exit_code": 0,
+      "optimization": "-O2",
+      "same_bytes_as_original": true,
+      "sha256": "31fe2b3675d723b372160683e1e8693f30a24d1a9254010a5f388d0ac4f27c63"
+    }
+  ],
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "export_structure": {
+    "generators": 67,
+    "relations": 2012,
+    "representatives": 390
+  },
+  "final_meta_pinned": true,
+  "limitations": [
+    "Bounded windows check four selected archived chunks with both historical and rebuilt binaries; no independent mathematical re-evaluation of all chunks.",
+    "Historical original sources and binary match hashes; this does not certify absence of all compiler/OS/hardware faults."
+  ],
+  "paths": {
+    "binary": "/home/bsdadmin/bsd389-c01-v11-test/bsd389_c01_v11_aggregated",
+    "driver": "/home/bsdadmin/bsd389-c01-v14-production/v19_production.py",
+    "export": "/home/bsdadmin/bsd389-portable-c01-v2/data/bsd389_tame_relation_export_p16231.json",
+    "final_state": "/home/bsdadmin/bsd389-c01-v14-production/v19_checkpoints/state_263429130.bin",
+    "scalars": "/home/bsdadmin/bsd389-portable-c01-v2/data/bsd389_tame_scalar_values_p16231.json",
+    "source_kernel": "/home/bsdadmin/bsd389-c01-v11-test/bsd389_transposed_J_native.cpp",
+    "source_loader": "/home/bsdadmin/bsd389-c01-v11-test/bsd389_c01_v11_loader.cpp",
+    "source_v11": "/home/bsdadmin/bsd389-c01-v11-test/bsd389_c01_v11_aggregated.cpp"
+  },
+  "protocol_version": 1,
+  "reproducible_binary": true,
+  "sha_reference": {
+    "binary": "31fe2b3675d723b372160683e1e8693f30a24d1a9254010a5f388d0ac4f27c63",
+    "driver": "61eef8564236babf1b669c3fdd40db5d201ebc96bb4f1f8a40a04a6b9e5df418",
+    "export": "9c385efb6cf1a0c8e9061e971c4bc1cd3c241c6979c490ac7a916554ee8eb8f8",
+    "final_state": "5ebeffa2fd67fe2eb54ce6a925bd21dfb850ed9616f9462dce330f98a5a9da1e",
+    "scalars": "7724c8d730a370e3fdc403293b9fc23f6adad632ca39b53d8439a96f18dd0c7e",
+    "source_kernel": "e578ae0fac1a112a3a0b135847149c21c546e7099d952c373d25816d3089a545",
+    "source_loader": "f398d0f90a36dd3186c5d644a6b3f00f3081ebfc0a18cefd895db60db9b575d9",
+    "source_v11": "0d8b18696587fc3a0f497c54ebbba99f4d582e69d5a98d0da0e2a4275172b187"
+  },
+  "verdict": "EXACT_REBUILD_AND_HISTORIC_CHUNK_SAMPLE_PASS"
+}

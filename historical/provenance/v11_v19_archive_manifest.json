@@ -1,0 +1,22 @@
+{
+  "log_excerpt_lines": 45,
+  "not_certified": [
+    "independent mathematical recomputation of all C01 chunks",
+    "unconditional theorem on Sha or full BSD"
+  ],
+  "original_log_byte_counts": {
+    "v19_chain_full.log": 19065,
+    "v19_chain_preflight.log": 522
+  },
+  "original_root": "/home/bsdadmin/bsd389-c01-v14-production",
+  "provenance_scope": "historical source/report SHA preservation plus bounded log excerpt",
+  "sha256": {
+    "bsd389_audit_chaine_v19.py": "5079d919fcce03b232772d8afa04dd74e13fc56a722dcb03abad3bc2c1957254",
+    "v11_provenance_report_2026-10-19.json": "a9b853ee30d95bb48565bc99c35799dcc40c57b2bc8b9915792b81e72e3e9371",
+    "v19_chain_full.log": "7389152cd65c641b7173d69dc3de8098f510e550943179cfaf0373c748443a7a",
+    "v19_chain_preflight.log": "89e6cda8fc3a712f7f724b6f9f55863eae1bef3c113e05bc02e7f9d90cf5bdc4",
+    "v19_independent_chain_audit_progress.json": "930e3a335285c11bde31016a70734dac98696f1cf9a5acaacfdaf2b171005589"
+  },
+  "terminal_snapshot_status": "V19_FULL_CHUNK_TO_CHECKPOINT_CHAIN_PASS",
+  "v19_final_marker": "V19_FULL_CHUNK_TO_CHECKPOINT_CHAIN_PASS pairs 263429130 expected_chunks 514511 checkpoints 4019 all_rows 9759143225 final_sha256 5ebeffa2fd67fe2eb54ce6a925bd21dfb850ed9616f9462dce330f98a5a9da1e"
+}
