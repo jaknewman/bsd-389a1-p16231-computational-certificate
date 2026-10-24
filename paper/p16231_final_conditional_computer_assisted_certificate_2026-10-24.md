@@ -1,0 +1,248 @@
+# 389a1 at p=16231 — final computer-assisted certificate and publication boundary
+
+**Date:** 2026-10-24  
+**Status:** **CONDITIONAL COMPUTATIONAL THEOREM**, with fully auditable archived
+source/evidence; **NOT** an unconditional claim of full BSD or exact
+p-adic quotient 1.  
+**Target:** E: y²+y=x³+x²−2x over Q; N=389, p=16231.
+
+This certificate gives the exact chain of sufficient propositions,
+the numerical dependencies, and the distinction between
+source-level algebra, historical computational evidence, and missing
+independent verification of every original producer invocation.
+It intentionally does not call the expensive full Sage
+`E.sha().p_primary_bound(16231)` or `lp.series(n=3)`.
+
+## Conditional theorem
+
+**Theorem (conditional on the finite certified analytic inputs).**
+Suppose the 2026-10-19 original V11/V19 archived computation,
+whose executable/source/export hashes are pinned below,
+faithfully evaluates the independently defined C01 reference
+functional `J_ref` at p=16231, and that the recorded exact
+Sage/eclib level-2 and regulator computations are faithful with the
+Sage 10.9 normalization described below. Suppose also that the
+reported Mordell–Weil rank, good ordinary reduction and surjectivity
+checks are valid. Then
+
+`Sha(E/Q)[16231^infinity]=0`.
+
+There is **no assertion** here that every hypothesis has been
+formally proved by independently rerunning its original computation,
+nor that `u_16231=1` as an element of `Q_16231`.
+
+### Proof, step by step
+
+**1. Pinned mathematical objects and local arithmetic.**
+Sage 10.9's previously executed arithmetic gate reports:
+`rank(E)=2`, `#E(Q)_tors=1`, conductor 389,
+`Tam(E)=1`, real components 2, good ordinary at 16231,
+`a_16231=128`, residual representation surjective,
+and minimal quadratic twist `D=1`. The p-adic Frobenius unit
+root `alpha` satisfies `alpha²-128alpha+p=0`,
+`alpha=128 (mod p)`; one mod-p² lift is `179060520`.
+Sage's `_prec_bounds(3,3)=[+Infinity,2,2]`, so the level-3
+T² coefficient determines the *actual* L_p coefficient
+modulo p². This depends on the proven error estimate implemented
+in Sage, not on convergence by wishful extrapolation.
+
+**2. Define `J_ref` independently of the V19 output.**
+Set `D_x=[1,x;0,p²]` for `x=a+pb`,
+`1<=a<p`, `0<=b<p`; let
+`m(r)=E.modular_symbol(sign=+1,implementation='eclib',normalize='L_ratio')(r)`.
+For positive-determinant integral matrices G define
+`F(G)=m(G.infinity)-m(G.0)`.
+Set `Pmat=diag(p,1)`, `beta_t=[1,t;0,p]` and
+`M0(G)=F(G)-alpha^-1 F(Pmat G)`,
+`M1(G)=alpha^-1 sum_(t=0)^(p-1) t F(beta_t G)`
+in F_p.
+Let
+`u=b*a^-1-((a^(p-1)-1)/p) mod p`,
+`w=(2u-1)*a^-1 mod p`,
+and `kappa=(omega(a)*(1+p)^u-x)/p² mod p`.
+Then
+
+`J_ref=-sum_(a,b)w(a,b)*(M1(D_x)-kappa(a,b)*M0(D_x)) mod p`.
+
+This is an independent mathematical definition and does not
+incorporate or assume the historical value 4486.
+
+**3. Universal Manin–Shapiro source/functional identity.**
+For `h=[A,B;C,D] in Gamma0(389p)`, the two moments satisfy
+
+`M0(hG)=M0(G)`,
+`M1(hG)=(-AB)*M0(G)+(A²)*M1(G) mod p`.
+
+The proof follows from the Hecke eigenidentity and the
+permutation `s=(B+tD)/A (mod p)`.
+The moment action composes by
+`(q,r)∘(q',r')=(q+r*q',r*r')`.
+All original 390 Manin cusp identities and 2012 relation matrices
+have been checked by exact arithmetic. The full 2012×16232
+relation/coset transport audit has **actually been run**, checking
+all 32,658,784 transitions over Z and modulo p, including
+2012 exceptional inputs and 2012 exceptional outputs,
+with exact native transport checksum `13306773584111587599`.
+The native C01 source's direct branch contributes
+`(qW-K,rW)` and its relation branch contributes
+`e*((q+r*qi)W-K,r*ri*W)`, with
+`W=-sum w` and `K=-sum w*kappa`.
+Its continued fractions telescope from infinity to x/p².
+These are exactly the pushforwards of the `J_ref` summands.
+The universal algebra does **not** rest on sample frequency.
+
+**4. Historical numeric evaluation.**
+The original V11 ELF at SHA-256
+`31fe2b3675d723b372160683e1e8693f30a24d1a9254010a5f388d0ac4f27c63`
+was exactly reproduced byte-for-byte by GCC 13.3 `-O2`
+from the pinned V11 source. Original/export source SHA is
+`9c385efb6cf1a0c8e9061e971c4bc1cd3c241c6979c490ac7a916554ee8eb8f8`.
+The user-run independent V19 archived-output recomposition covered
+514,511 full chunk intervals over 263,429,130 pair IDs,
+4019 saved checkpoints and 9,759,143,225 sparse lines.
+The final double-moment state SHA is
+`5ebeffa2fd67fe2eb54ce6a925bd21dfb850ed9616f9462dce330f98a5a9da1e`.
+A deterministic 57-chunk 28,682-pair sample was also *reproduced
+from the authentic original binary byte-for-byte*.
+The separate Sage/eclib V65 table and exact independent
+NTT/CRT contractions gave
+`J0=16014`, `J1=4703`, hence
+`J_V19=4486 mod 16231`.
+
+Under the stated faithful-historical-computation hypothesis,
+the source-level identity from step 3 identifies
+`J_ref=J_V19=4486`. The full archived recomposition
+authenticates stored outputs, not independently re-evaluated
+mathematical contributions of all 514,511 blocks.
+
+**5. Finite-level Sage p-adic L-series formula.**
+For the Sage 10.9 ordinary `eta=0`, `D=1`, `gamma=1+p`
+measure
+`mu_n(y)=alpha^-n*(m(y/p^n)-alpha^-1*m(y/p^(n-1)))`,
+the `T²` coefficient at level n is a sum of
+`binom(j,2)*mu_n`, divided by two real components.
+For each level-2 `x=a+pb`, its level-3 lifts
+`y=x+p²c` satisfy
+`j=u+p*v`, `v=(c-kappa)*a^-1 mod p`.
+Distribution of the measures, the binomial identity mod p²,
+and the Hecke relation imply, **for every x**,
+
+`(A2^(3)-A2^(2))_x =
+    p*[ -w*(M1(D_x)-kappa*M0(D_x)) ]/(4*alpha²) mod p²`.
+
+Summing gives
+
+`A2^(3)-A2^(2)=p*J_ref/(4*alpha²) mod p²`.
+
+The local direct-Sage oracle has been run on all 16231 lifts
+for `(a,b)=(1,0)` and `(2,3)`, directly comparing native C01,
+independent V65 moments, and Sage/eclib finite-level measures;
+both PASS. In the second case `kappa=11458 != 0`,
+`J(2,3)=11725` and `Delta/p=15428`.
+These tests confirm the normalization at representative residues,
+not the global 263-million-pair sum.
+
+**6. Independent level-2 value and level-3 precision.**
+The historical Sage/eclib V54/V61 level-2 computation
+covers all required half-range residues, with 254/254 block
+digest/reduction audits. The plus-modular-symbol pairing
+`m(-r)=m(r)` permits the half-range over a with its factor two
+cancelling the real-components divisor two; the code's
+`sum_u binom(u,2)=binom(p,3)` is exact.
+The recorded output is
+
+`A2^(2)=19460969=1199*p (mod p²)`.
+
+Using `alpha=128 mod p` and `J_ref=4486 mod p`:
+
+`(4*128²)^(-1) mod p=9362`,
+`4486*9362 mod p=8335`, and
+`A2^(3)/p=1199+8335=9534 (mod p)`.
+
+Thus `A2^(3)=154746354 (mod p²)`.
+By Sage's precision guarantee for n=3, the *true p-adic
+coefficient* `A2=[T²]L_p(E,T)` has the same residue
+and valuation `v_p(A2)=1`.
+
+**7. Independently normalized p-adic regulator.**
+The reported exact Sage 10.9 computation gives
+`Reg_p=1930*p³+2051*p⁴+6298*p⁵+O(p⁶)`.
+For r=2, torsion=1 and Tamagawa product=1, define
+
+`B_p=Reg_p*(1-alpha^-1)^2/(log_p(1+p)^2)`.
+
+As `log_p(1+p)/p=1 mod p`, one has
+`v_p(B_p)=1`, with
+
+`B_p/p=1930*(1-5199)^2=9534 (mod p)`.
+
+Consequently `v_p(A2/B_p)=0`, and its first digit
+is `A2/B_p=1 (mod p)`. This digit identity is
+**not** exact equality in Q_p.
+
+**8. The proved p-primary upper bound.**
+The actual Sage 10.9 `Sha.p_primary_bound(p)` source
+uses the Galois/reduction gates and returns the valuation of
+`Sha.an_padic(p,prec=0,use_twists=True)`.
+For this curve the previously checked minimal twist is `D=1`.
+The method's documentation states that, if its hypotheses pass,
+the returned integer `e` is a **proved upper exponent**
+`#Sha(E/Q)[p^infinity] <= p^e` even for rank >1.
+The user-run arithmetic audit verified the gates, installed
+Sage source fingerprint, and normalization, but **did not
+directly invoke** `p_primary_bound(16231)`.
+The prior steps substitute a mathematically derived,
+conditionally trusted analytic coefficient into precisely the
+same leading-term valuation, giving `e=0`. Under the theorem's
+hypotheses, `#Sha(E/Q)[16231^infinity]<=1`,
+so the p-primary group is zero. QED, conditional as stated.
+
+## Evidence taxonomy and limitations
+
+| Link | Status | What is actually established |
+|---|---|---|
+| Exact 390 Manin cusp identities | PASS | all rational cusp divisor identities for the 390 original reps |
+| 2,012 × 16,232 relation transports | EXHAUSTIVE PASS | exact-Z Gamma0 membership and native mod-p two-moment matrices; all exceptional classes |
+| Native V11 → archived outputs | REPRODUCIBLE BUILD + 57-SAMPLE PASS | binary SHA-identical rebuild and 57 original producer chunk reruns |
+| All V19 chunk data → saved checkpoints | EXHAUSTIVE ARCHIVE PASS | *recomposition* of all 514,511 archived chunks, not regenerated native arithmetic of each chunk |
+| V19 final checkpoint → `J` | INDEPENDENT TERMINAL PASS | 67 per-generator J0 and 67 J1 eclib/NTT contractions, authenticated table state |
+| V54/V61 level-2 `A2^(2)` | ARCHIVED RECOMPOSITION PASS | 254 level-2 checksummed blocks; exact original run not reproduced end-to-end |
+| C01/Sage analytic formula | ALGEBRAIC DERIVATION + TWO DIRECT LOCAL PASSES | universal formula and two 16,231-lift direct tests including nonzero kappa |
+| p-adic regulator and Kato/Sage hypotheses | REPORTED SAGE PASS | rank 2, surjective at p, precision n3 and `B_p/p=9534` |
+| Direct `lp.series(n=3)` and `Sha.p_primary_bound(16231)` | NOT RUN | their outcome inferred *conditionally*, not observed |
+| All original 263m pairs independently recomputed | NOT RUN | trusted historical computing base remains |
+| Exact p-adic `u_p=1` | NOT PROVED | only `u_p=1 (mod p)` |
+| All-prime `Sha=0` / full complex BSD | NOT PROVED | not implied by one p-primary result |
+
+## Reproducible final integrity self-audit
+
+From the local repository with the original historical V11 executable
+still present on IONOS:
+
+```bash
+git pull --ff-only
+python -u scripts/audit_p16231_final_certificate.py
+```
+
+The verifier checks every available small original source and
+log SHA-256, original byte-identical rebuild report, V19 chain
+and 57-chunk producer sample transcripts, archived V61/V65
+mathematical invariants, exact mod-p arithmetic, and the
+presence of Kato/Sage and full Shapiro run reports.
+It prints `FINAL_CERT_ARCHIVED_EVIDENCE_AND_ARITHMETIC_PASS`
+**only for this evidence/arithmetic audit**, followed by
+a prominent *conditional theorem* and publication-boundary warning.
+The script cannot turn historical logs into a formal
+machine-code proof; it is a convenient independent manifest check.
+
+## Source code and archived reports
+
+- [Universal algebra and precise Sage source bridge](c01_shapiro_universal_transport_and_sage10_9_2026-10-24.md)
+- [32,658,784 Shapiro transport PASS](../results/c01_all_32658784_shapiro_transports_PASS_2026-10-24.md)
+- [Original V11 build/V19 provenance review](v11_v19_original_provenance_final_review_2026-10-24.md)
+- [Full original V19 chain log](../historical/provenance/v19_chain_full.log)
+- [Sage local analytical nonzero-kappa (2,3)](../results/local_sage_level3_c01_a2_b3_nonzero_kappa_PASS_2026-10-24.md)
+- [Original level-2 254/254 audit](../results/v54_v61_all_254_chunks_ionos_PASS_2026-10-24.md)
+- [Sage 10.9 arithmetic theorem gate](../results/kato389_sage10_9_terminal_pass_2026-10-19.md)
+- [Sage 10.9 p-adic L-series implementation](https://github.com/sagemath/sage/blob/10.9/src/sage/schemes/elliptic_curves/padic_lseries.py)
+- [Sage 10.9 proved p-primary bound](https://github.com/sagemath/sage/blob/10.9/src/sage/schemes/elliptic_curves/sha_tate.py)
