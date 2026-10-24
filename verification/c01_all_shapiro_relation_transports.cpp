@@ -52,7 +52,7 @@ int main(int argc,char** argv) {
         demand(argc==3, "usage: BINARY EXPORT.json --pilot|--full");
         const std::string mode=argv[2];
         demand(mode=="--pilot"||mode=="--full","invalid mode");
-        const i64 max_j=(mode=="--pilot")?10:P+1;
+        const i64 max_j=(mode=="--pilot")?11:P+1;
 
         std::vector<Rep> reps;
         std::vector<int> keyrep;
@@ -99,7 +99,8 @@ int main(int argc,char** argv) {
         std::uint64_t chk=UINT64_C(0x16231389facaade5);
 
         // Exact relation matrices: compute in Z, not just modulo p.
-        for(int j0=0;j0<max_j;++j0) {
+        for(int idx=0;idx<max_j;++idx) {
+            const int j0=(mode=="--pilot" && idx==10)?P:idx;
             const M rj=ri(j0);
             demand(is_det_one(rj),"bad Shapiro representative");
             demand(qidx(rj)==j0,"original qidx(ri(j)) != j");
@@ -145,7 +146,8 @@ int main(int argc,char** argv) {
                 }
             }
             if(j0==9 || j0==4095 || j0==8191 || j0==12287 || j0==P)
-                std::cout<<"C01_SHAPIRO_PROGRESS classes="<<j0+1
+                std::cout<<"C01_SHAPIRO_PROGRESS processed_classes="<<idx+1
+                         <<" last_index="<<j0
                          <<" transitions="<<transitions<<std::endl;
         }
 
@@ -162,6 +164,7 @@ int main(int argc,char** argv) {
                      <<" both_exceptional="<<both_inf
                      <<" checksum="<<chk<<"\n";
         } else {
+            demand(input_inf==2012, "pilot did not cover all exceptional inputs");
             std::cout<<"C01_ALL_COSETS_PILOT_PASS"
                      <<" transitions="<<transitions
                      <<" checksum="<<chk<<"\n";
