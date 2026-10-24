@@ -1,0 +1,18 @@
+{
+  "WARNING": "Level-3 value is conditional on the global C01 bridge; not an independent level-3 computation.",
+  "a2_n2_mod_p2": 19460969,
+  "a2_n3_mod_p2_CONDITIONAL": 154746354,
+  "a2_n3_over_p_mod_p_CONDITIONAL": 9534,
+  "a_covered": 8115,
+  "algorithm": "eclib n=2 plus optional C01 bridge",
+  "alpha_mod_p2": 179060520,
+  "c01_delta_over_p_mod_p_CONDITIONAL": 8335,
+  "c01_j_mod_p": 4486,
+  "lower_term_mod_p2": 0,
+  "pair_count": 131714565,
+  "precision_modulus": 263445361,
+  "ratio_to_v56_leading_CONDITIONAL": 1,
+  "raw_f2_mod_p2": 79629286,
+  "sha256": "5e405c3ff8654a44d310949cabe6a78225f3707b868607a27a2e085a93d736db",
+  "sum_f1_mod_p2": 0
+}

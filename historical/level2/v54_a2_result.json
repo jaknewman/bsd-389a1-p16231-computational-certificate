@@ -1,0 +1,8 @@
+{
+  "a2_mod_p": 0,
+  "a_covered": 8115,
+  "normalization": "eclib eta=0, n=2, periods quotient=1, real components=2",
+  "precision_at_least": 1,
+  "raw_half_sum_mod_p": 0,
+  "terms": 131714565
+}
