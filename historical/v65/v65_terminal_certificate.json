@@ -1,0 +1,14 @@
+{
+  "J": 4486,
+  "J0": 16014,
+  "J1": 4703,
+  "checks_per_generator": 2,
+  "generators": 67,
+  "reference_eclib_table_sha256": "aca208b2c2f8ab87b3588a480929dc4d3600ec9c2889c02699225e7a9799374c",
+  "scope": "independent recomputation of terminal moments, not full C01 production",
+  "state_sha256": "5ebeffa2fd67fe2eb54ce6a925bd21dfb850ed9616f9462dce330f98a5a9da1e",
+  "status": "V65_INDEPENDENT_TERMINAL_PASS",
+  "terminal_tsv_sha256": "aea071f2cbf0a2a67018332be817a2469aebb8bc7c5ee7bb2bb91fbd8b97c8ec",
+  "v23_progress_sha256": "05c2e9510c806caf1dcd1854d3abab5da8a03573d80d6c1c18d38d3e2cc8a3f3",
+  "v26_progress_sha256": "656c3d41d90809e4f15934db5da1ad9a88a6dd7a3e9e1b85317db757f33464fc"
+}

@@ -1,0 +1,342 @@
+{
+  "J0": 16014,
+  "next_generator": 67,
+  "per_generator": [
+    {
+      "contribution": 11408,
+      "g": 0,
+      "nonzero_m0": 12744
+    },
+    {
+      "contribution": 1896,
+      "g": 1,
+      "nonzero_m0": 13114
+    },
+    {
+      "contribution": 6607,
+      "g": 2,
+      "nonzero_m0": 13138
+    },
+    {
+      "contribution": 1562,
+      "g": 3,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 12701,
+      "g": 4,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 14810,
+      "g": 5,
+      "nonzero_m0": 13114
+    },
+    {
+      "contribution": 12892,
+      "g": 6,
+      "nonzero_m0": 13124
+    },
+    {
+      "contribution": 12560,
+      "g": 7,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 15906,
+      "g": 8,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 15194,
+      "g": 9,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 6323,
+      "g": 10,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 15808,
+      "g": 11,
+      "nonzero_m0": 13161
+    },
+    {
+      "contribution": 560,
+      "g": 12,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 5969,
+      "g": 13,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 2510,
+      "g": 14,
+      "nonzero_m0": 13083
+    },
+    {
+      "contribution": 5762,
+      "g": 15,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 3459,
+      "g": 16,
+      "nonzero_m0": 13057
+    },
+    {
+      "contribution": 11707,
+      "g": 17,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 6009,
+      "g": 18,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 13354,
+      "g": 19,
+      "nonzero_m0": 13064
+    },
+    {
+      "contribution": 12485,
+      "g": 20,
+      "nonzero_m0": 13170
+    },
+    {
+      "contribution": 2161,
+      "g": 21,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 13988,
+      "g": 22,
+      "nonzero_m0": 13078
+    },
+    {
+      "contribution": 4444,
+      "g": 23,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 5741,
+      "g": 24,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 8364,
+      "g": 25,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 6795,
+      "g": 26,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 10120,
+      "g": 27,
+      "nonzero_m0": 13078
+    },
+    {
+      "contribution": 2527,
+      "g": 28,
+      "nonzero_m0": 13160
+    },
+    {
+      "contribution": 9984,
+      "g": 29,
+      "nonzero_m0": 13061
+    },
+    {
+      "contribution": 5192,
+      "g": 30,
+      "nonzero_m0": 13149
+    },
+    {
+      "contribution": 4107,
+      "g": 31,
+      "nonzero_m0": 13170
+    },
+    {
+      "contribution": 11143,
+      "g": 32,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 14661,
+      "g": 33,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 1527,
+      "g": 34,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 531,
+      "g": 35,
+      "nonzero_m0": 13004
+    },
+    {
+      "contribution": 10993,
+      "g": 36,
+      "nonzero_m0": 13004
+    },
+    {
+      "contribution": 4217,
+      "g": 37,
+      "nonzero_m0": 13080
+    },
+    {
+      "contribution": 6210,
+      "g": 38,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 4215,
+      "g": 39,
+      "nonzero_m0": 13076
+    },
+    {
+      "contribution": 15140,
+      "g": 40,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 1833,
+      "g": 41,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 2823,
+      "g": 42,
+      "nonzero_m0": 13132
+    },
+    {
+      "contribution": 14481,
+      "g": 43,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 9810,
+      "g": 44,
+      "nonzero_m0": 13149
+    },
+    {
+      "contribution": 12596,
+      "g": 45,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 5990,
+      "g": 46,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 15764,
+      "g": 47,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 10319,
+      "g": 48,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 11502,
+      "g": 49,
+      "nonzero_m0": 13132
+    },
+    {
+      "contribution": 15461,
+      "g": 50,
+      "nonzero_m0": 13080
+    },
+    {
+      "contribution": 3525,
+      "g": 51,
+      "nonzero_m0": 13177
+    },
+    {
+      "contribution": 8412,
+      "g": 52,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 2316,
+      "g": 53,
+      "nonzero_m0": 13177
+    },
+    {
+      "contribution": 4616,
+      "g": 54,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 12517,
+      "g": 55,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 9620,
+      "g": 56,
+      "nonzero_m0": 13105
+    },
+    {
+      "contribution": 745,
+      "g": 57,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 1326,
+      "g": 58,
+      "nonzero_m0": 13160
+    },
+    {
+      "contribution": 12166,
+      "g": 59,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 4952,
+      "g": 60,
+      "nonzero_m0": 13078
+    },
+    {
+      "contribution": 13915,
+      "g": 61,
+      "nonzero_m0": 16232
+    },
+    {
+      "contribution": 11571,
+      "g": 62,
+      "nonzero_m0": 13064
+    },
+    {
+      "contribution": 14640,
+      "g": 63,
+      "nonzero_m0": 13057
+    },
+    {
+      "contribution": 10223,
+      "g": 64,
+      "nonzero_m0": 13061
+    },
+    {
+      "contribution": 9063,
+      "g": 65,
+      "nonzero_m0": 13183
+    },
+    {
+      "contribution": 16140,
+      "g": 66,
+      "nonzero_m0": 13138
+    }
+  ],
+  "source_sha256": "5ebeffa2fd67fe2eb54ce6a925bd21dfb850ed9616f9462dce330f98a5a9da1e"
+}
