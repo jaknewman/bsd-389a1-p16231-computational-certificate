@@ -1,5 +1,7 @@
 # Conducteur 53 : regularite cubique exacte a p=16231, et obstacle a l'uniformite
 
+> **Correction importante — 26 octobre 2026 :** Ce document vérifie correctement la régularité d'un caractère cubique à 16231, mais le polynôme quaternionique de période de nos stages 14–23 s'annule identiquement au caractère d'ordre **3**. La non-annulation torique antérieure vaut pour le caractère d'ordre **9**, avec norme cyclotomique 729. Pour la stratégie Castella–Hsieh fondée sur cette période, utiliser `chi_9` et une forme thêta `psi=chi_9^5`, non `chi_3`. Voir [l'analyse corrigée et le twist L(-3,1) positif](389a1_twist_minus3_exact_L1_and_chi53_order9_correction_2026-10-26.md). Cette correction ne remet pas en cause la conclusion négative qu'un caractère auxiliaire fixé ne traite pas tous les premiers.
+
 Date: 2026-10-26. Type: **new elementary theoretical lemma with exact finite-field computation**, not a full Sha/BSD theorem and not a certification of the central Rankin L-values.
 
 ## Fixed data
