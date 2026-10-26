@@ -341,3 +341,13 @@ The user has now executed both new auditors successfully (`EXACT_STATUS=0 0` and
 This supplements the universal operator-duality theorem with strong adversarial **large-prime** finite-value validations targeting previously dangerous exceptional branches. The transcript and terminal provenance are in [executed source-to-J reference audit](../results/c01_shapiro_exact_and_adversarial_high_p_sage_PASS_2026-10-26.md). It does not replace a full independent Sage n3 high-p summation.
 
 The current chain of separately tested computation and remaining trust dependencies is summarized in [minimal p-primary Sha logical certificate](p16231_minimal_prime_primary_sha_certificate_2026-10-26.md). The conclusion is a documented computer-assisted and source/theorem-conditional statement about only the p=16231 primary Sha component, not exact p-adic u=1 or full BSD.
+
+---
+
+## Addendum — 2026-10-26: uniform Skinner–Urban local criterion; corrected minimal discriminant
+
+The minimal discriminant of the specific curve `y²+y=x³+x²−2x` is **`+389`**, not `-389`: direct formula from `b2=4,b4=-4,b6=1,b8=-3` yields `Delta=389`. As `v_389(Delta)=1`, the reduction at the unique bad conductor prime is type I1 and the Tate parameter has valuation `v_389(q_E)=1`.
+
+Consequently the extra local criterion of Sage 10.9 `p_primary_order(ell)` is **automatically satisfied for every good ordinary prime ell>=5, ell!=389, with residually surjective Galois representation**. The exact-order theorem thus applies uniformly in its hypotheses, not in the numerical vanishing conclusion. See [uniform criterion](389a1_uniform_skinner_urban_local_gate_2026-10-26.md).
+
+At ell=16231 the full finite-input numerical certificate already gives p-adic BSD quotient valuation zero, and the conditional computer-assisted prime-primary consequence is unchanged. The uniform local gate alone supplies no bound on the bad/supersingular/other primes and no proof of all-prime Sha triviality.
