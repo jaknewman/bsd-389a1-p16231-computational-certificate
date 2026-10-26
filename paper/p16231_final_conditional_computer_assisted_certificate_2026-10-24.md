@@ -246,3 +246,26 @@ machine-code proof; it is a convenient independent manifest check.
 - [Sage 10.9 arithmetic theorem gate](../results/kato389_sage10_9_terminal_pass_2026-10-19.md)
 - [Sage 10.9 p-adic L-series implementation](https://github.com/sagemath/sage/blob/10.9/src/sage/schemes/elliptic_curves/padic_lseries.py)
 - [Sage 10.9 proved p-primary bound](https://github.com/sagemath/sage/blob/10.9/src/sage/schemes/elliptic_curves/sha_tate.py)
+
+---
+
+## Addendum — 2026-10-26: full independent scalar outer sum PASS
+
+The initial 2026-10-24 certificate assumed the historical V19 producer had faithfully computed the mathematical reference J_ref. This is now **substantially independently corroborated** by a second, completely executed algorithm, not merely by an increased sample size.
+
+The user executed `verification/independent_c01_scalar_J.cpp` on the whole domain and supplied:
+
+```text
+INDEPENDENT_SCALAR_CHECKPOINT_PASS next=263429130 sum_mod_p=4486 of=263429130
+INDEPENDENT_SCALAR_INTERVAL_PASS start=0 end=263429130 J_mod_p=4486
+INDEPENDENT_SCALAR_GLOBAL_J_4486_PASS pairs=263429130
+FULL_STATUS=0 0 0
+```
+
+This second method uses dense **dual scalar moments** and evaluates all 263,429,130 pair contributions directly; it does not reconstruct or read the old sparse C0/C1 producer, V19 chunk files or old global state. It shares only the independently evaluated V65 Sage/eclib moment table (using the audited NTT/CRT kernel) and the original mathematically audited Manin export. Both local (1,0) and nonzero-kappa (2,3) analytic Sage/eclib oracles passed before the full run.
+
+**Updated numeric fact:** Two different full-corpus accumulation algorithms return `J=4486 mod 16231`. The previous unreplicated *historical numerical execution* is no longer a necessary **sole** source of the scalar number. The derivation of `J_ref=4486` as a computer-assisted result now rests on the demonstrated independent full run, correctness of the dual-evaluation source and shared authenticated symbolic/eclib inputs, and the universal algebraic C01/Sage identity.
+
+The other mathematical gates remain: archived V54/V61 n=2 coefficient, Sage 10.9 n=3 precision and Hecke normalization, independent p-adic regulator and rank/surjectivity, and the actual proved Kato/Sage p-primary bound theorem. Those were audited but the full `lp.series(n=3)` and direct `E.sha().p_primary_bound(16231)` were not run. The complete second-run log, checkpoint and executable SHA still merit preservation for independent researchers. This update is **not** a proof of full BSD and cannot upgrade `u_p=1 mod p` to exact p-adic equality.
+
+Evidence: [second full independent scalar run](../results/independent_scalar_J_global_263429130_pairs_PASS_2026-10-26.md), [dual-scalar source](../verification/independent_c01_scalar_J.cpp), [two local pilot tests](../results/independent_scalar_J_two_pilots_PASS_2026-10-26.md).
