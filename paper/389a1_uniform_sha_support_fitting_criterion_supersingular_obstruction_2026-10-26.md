@@ -71,3 +71,7 @@ Publication: https://doi.org/10.2969/jmsj/90699069
 The p=16231 prime-primary Sha result remains a separately claimed **conditional computer-assisted** computation based on a bona fide p-primary Kato/Iwasawa upper-bound theorem; it does not depend on the false implication that rational Kato primitivity controls finite Sha.
 
 **STATUS: UNIFORM FITTING CRITERION PROVED AS A LOGICAL LEMMA; ARITHMETIC PREMISE OPEN.**
+
+## Addendum: complete odd-prime parity despite infinite supersingular set
+
+Although the infinite supersingular set blocks an ordinary-only proof, **parity itself applies to all odd primes**. Dokchitser–Dokchitser, Annals of Mathematics 172 (2010), prove the p-parity conjecture over Q for all p. Combining the even p^infinity-Selmer corank of 389a1 (root number +1) with the finite alternating Cassels–Tate pairing yields `dim_Fp Sel_p(E/Q)∈{2,4,6,...}` for *every odd p*, including supersingular p and bad p=389. Therefore a hypothetical **reduction-independent uniform** Selmer bound `dim Sel_p≤3` for all sufficiently large odd p would settle all sufficiently large prime-primary Sha groups. The parity theorem is complete; this **upper bound remains open**. See [all odd-prime parity theorem addendum](389a1_uniform_sha_parity_core_rank_one_correct_target_2026-10-26.md).
