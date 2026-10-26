@@ -57,3 +57,18 @@ The 2021 lecture slides by Francesc Castella, *Kato classes*, explicitly use E=3
 - [Castella–Hsieh, Theorem A, Theorem B and Appendix, 2022](https://www.cambridge.org/core/journals/forum-of-mathematics-sigma/article/on-the-nonvanishing-of-generalised-kato-classes-for-elliptic-curves-of-rank-2/72ED842AB428A7ED619B1B84287A6864)
 - [Castella, slides *Kato classes* containing original 389a1, K=-2, p=11 example](https://www.cmat.edu.uy/~tornaria/LATeN/2021/LATeN-2021_04_22-Castella.pdf)
 - [Earlier project uniform Selmer support reduction](389a1_uniform_sha_support_rank2_selmer_kato_ringclass53_2026-10-26.md).
+
+
+## A shorter conditional route to generalized Kato nonvanishing at p=16231
+
+There is an additional strategic simplification for this **specific** p=16231. Under the previously produced computer-assisted p-primary Sha certificate, `Sha(E/Q)[16231^infinity]=0`, hence `dim_Qp Sel(Q,V_p E)=rank(E(Q))=2`. Since the rank is positive, the global Mordell–Weil localization is nonzero (Castella–Hsieh Remark 1.5); therefore the localization hypothesis for the **converse** direction (Theorem A, implication (1.10)) is satisfied.
+
+All auxiliary local hypotheses for the fixed conductor53 theta form can be documented: `p>3` good ordinary with a_p=128, p splits in K, E[p] irreducible/surjective, `N^-=389` squarefree of odd cardinality, E[p] ramified at 389 since v_389(Delta)=1, and the cubic p-regularity proved above. Thus the only **additional complex analytic gate** needed for this theorem is
+
+`L(E^(-3),1) * L(E/K,chi,1) != 0`.
+
+**Conditional corollary.** If this product is proved nonzero and the already-audited computer-assisted p-primary Sha certificate is mathematically faithful, then **the converse implication of Castella–Hsieh Theorem A** directly gives `kappa_(alpha,alpha^-1)(f,theta_psi,theta_psi^-1) != 0` (and its beta analogue) at p=16231. In that direction one does **not** need a new computation of `ord_T Theta_(f/K)=2`; that theta test is an independent analytic path supplied by their Theorem B, useful if the Sha calculation cannot be imported.
+
+This is a new **conditional deduction**, not an unconditional new class: the central L-product has not been certified, and the current p16231 Sha conclusion retains its documented source-precision assumptions. Moreover even this class nonvanishing controls only the Qp-Selmer rank in the forward implication, and does not imply a uniform integral mod-ell Sha primitivity theorem.
+
+Reference: Castella–Hsieh Theorem A (1.9),(1.10) and Remark 1.5, https://www.cambridge.org/core/journals/forum-of-mathematics-sigma/article/on-the-nonvanishing-of-generalised-kato-classes-for-elliptic-curves-of-rank-2/72ED842AB428A7ED619B1B84287A6864
