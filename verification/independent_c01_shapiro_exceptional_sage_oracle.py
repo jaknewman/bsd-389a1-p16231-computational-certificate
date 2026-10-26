@@ -11,7 +11,6 @@ New test: not yet run; the code must be exercised on the user server.
 """
 import hashlib
 import json
-import random
 import re
 import subprocess
 import sys
@@ -99,20 +98,18 @@ def trace_pair(id,reps,maprep,rinf):
     return counts
 
 def choose(reps,maprep,rinf):
-    fixed=[0,P+3,TOTAL//2,TOTAL-1]
-    selected=dict.fromkeys(fixed)
-    rng=random.Random(38916231)
-    random_ids=list(range(800))+[rng.randrange(TOTAL) for _ in range(40000)]
-    found={q:None for q in ("e0","e1")}
-    for id in random_ids:
-        counts=trace_pair(id,reps,maprep,rinf)
-        for q in found:
-            if counts[q] and found[q] is None:found[q]=id
-        if all(v is not None for v in found.values()):break
-    assert all(v is not None for v in found.values()),("missing exceptional",found)
-    selected.update(dict.fromkeys(found.values()))
-    print("HIGH_P_ADVERSARIAL_EXCEPTIONAL_IDS",found,flush=True)
-    return [(id,trace_pair(id,reps,maprep,rinf)) for id in selected]
+    # Found by an independent exact-integer pass over the original Manin
+    # export: id=38 hits an inner infinity transport, and id=67 hits
+    # both an outer infinity transport and 66 inner infinity transports.
+    # Additional fixed IDs probe low, middle, and terminal pair ranges.
+    fixed=(0,38,67,P+3,TOTAL//2,TOTAL-1)
+    selected=[(id,trace_pair(id,reps,maprep,rinf)) for id in fixed]
+    byid=dict(selected)
+    assert byid[38]["e1"]>0 and byid[67]["e0"]>0
+    assert byid[67]["e1"]>0
+    print("HIGH_P_ADVERSARIAL_EXCEPTIONAL_IDS",
+          {"e0":67,"e1":38},"id_67",byid[67],flush=True)
+    return selected
 
 def modp_symbol(value):
     q=QQ(value)
