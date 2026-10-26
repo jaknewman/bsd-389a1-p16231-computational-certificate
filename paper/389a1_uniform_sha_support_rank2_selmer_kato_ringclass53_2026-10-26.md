@@ -1,5 +1,7 @@
 # Beyond the bounded prime search: uniform support via integral rank-two Selmer control
 
+> **Correction stratégique — 2026-10-26:** Le rang de Mordell–Weil 2 n'est **pas** le *core Selmer rank* du module canonique `T_p(E)`, lequel vaut **1** sur `Q`. Il faut une **construction dérivée d'ordre 2** dans la théorie de Kato/Iwasawa, avec une borne du défaut de Selmer **finie**. Grâce à la parité démontrée pour tout premier impair de bonne réduction ordinaire, la condition suffisante est la majoration `dim_Fp Sel_p <= 3`, et non nécessairement un calcul exact de dimension 2. Voir [théorème de parité et correction du rang cœur](389a1_uniform_sha_parity_core_rank_one_correct_target_2026-10-26.md). Ce théorème n'établit pas la majoration uniforme lui-même.
+
 Date: 2026-10-26. **Pure theoretical reduction, not a numerical PASS, not a proof of finite Sha or full BSD.** The goal is to replace endlessly increasing ordinary-prime bounds with a proof that Sha(E/Q)[ell]=0 for all ell outside an explicitly finite exceptional set.
 
 ## 1. Exact rank-2 Selmer criterion
