@@ -293,3 +293,15 @@ The complete independent scalar C01 `J=4486` recomputation was documented above.
 `B_p/p=9534 mod p` (two different Sage height algorithms).
 
 These now distinguish verified computation-level redundancies from still-shared theorem/normalization dependencies. They reinforce the claimed computer-assisted **conditional p-primary Sha consequence**, but cannot upgrade the quotient congruence `1 mod p` to an exact p-adic identity, and do not establish the global BSD conjecture. Publication still requires careful independent mathematical and machine-environment audit; direct Sage `lp.series(n=3)` and `Sha.p_primary_bound(16231)` have not run.
+
+---
+
+## Addendum — 2026-10-26: 8,115-row full level-2 archive cross-audit PASS
+
+The independent cyclotomic-u level-2 complete recomputation described above was followed by an independent read-only audit of **all 8,115 generated row checkpoints** and a **block-for-block comparison with all 254 old V61 chunks**, each with verified checksums. The user-executed audit returned `INDEPENDENT_U_FULL_1199P_EVIDENCE_AND_V61_254_BLOCK_AGREEMENT_PASS` and process exit status `0 0`.
+
+Total independently recomputed mathematical domain: 131,714,565 indexed residues, 131,698,335 nonzero-weight eclib symbol evaluations; level-2 raw R2=79,629,286, R1=0; `A2^(2)=19,460,969=1199p (mod p²)`.
+
+The source, row-checkpoint Merkle-like ordered digest, old V61 ordered block digest and complete run log SHA-256 are captured in the [full evidence audit certificate](../results/independent_level2_u_full_checkpoint_audit_PASS_2026-10-26.md). The resulting numerical level-2 claim is fully reproduced and audited, not merely the old V61 archive recomposed.
+
+**Residual conceptual gate:** Both independent complete level-2 algorithms rely on Sage/eclib modular symbols. The central high-p analytic identification of the complete C01 scalar with Sage's level-3 T² coefficient is derived algebraically and checked at two local p=16231 oracles, but full direct n=3 series evaluation at p=16231 has not been carried out. A new **UNEXECUTED** small-prime direct finite n2/n3 oracle regression is available at [bridge_local_small_prime_n2_n3_direct.py](../verification/bridge_local_small_prime_n2_n3_direct.py) to test the orientation, Teichmüller lifts, and the 1/4 normalization independently of the high-p Shapiro accumulators.
