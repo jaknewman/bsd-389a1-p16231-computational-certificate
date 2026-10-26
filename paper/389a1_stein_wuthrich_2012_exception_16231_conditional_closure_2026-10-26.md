@@ -6,7 +6,7 @@
 
 William Stein and Christian Wuthrich, *Algorithms for the arithmetic of elliptic curves using Iwasawa theory*, **Mathematics of Computation 82 (2013), 1757–1792**, electronically published 2012-09-14, **Theorem 12.3**, page 1788:
 
-- For curve 389a1 of rank two, they proved `Sha(E/Q)[p]=0` for **p=2** and the **5,005 good ordinary primes p<48,859 other than p=16,231**.
+- For curve 389a1 of rank two, they proved `Sha(E/Q)[p]=0` for **p=2** and the **5,005 odd good ordinary primes p<48,859, with p=16,231 excluded from the conclusion**.
 - The relevant finite-level p-adic BSD conjectural order was `1 mod p` for their cases.
 - They excluded the bad reduction prime p=389, a list of supersingular odd primes, and the one ordinary exception **p=16,231**.
 - **Remark 12.4** explicitly states that `ord_16231(Reg_16231)=3`, instead of ordinary expected rank-two valuation 2; their earlier implementation would be roughly 16,231 times costlier, taking years of CPU time, and they proposed using Pollack–Stevens overconvergent modular symbols for the exception.
@@ -42,7 +42,7 @@ The only prime numbers **strictly below 48,859** not included are the bad prime 
 
 `107, 599, 1049, 2957, 6661, 8263, 9397, 9551, 14633, 15101, 28591, 30671, 30869, 31799, 34781, 36263, 45161`.
 
-**Correction while transcribing the list:** count the original published list carefully: it contains **17 supersingular odd primes**, not 16. The set above has 17 values. Together with bad p=389, there are **18 unresolved primes** below 48,859. The displayed list is the exact list in Theorem 12.3 after removing ordinary p=16,231; do not use the earlier mistaken count of 16. The theorem's prime count should be recomputed before publishing a numeric total of fully covered primes.
+There are **17 supersingular odd primes** in that displayed set, plus the bad prime 389: **18 unresolved primes** below 48,859. Elementary prime enumeration gives 5,024 primes below the threshold, including p=2. The **5,005 odd good ordinary primes** include the originally exceptional 16,231; Stein–Wuthrich proved 5,004 of those and p=2, and our conditional extra case brings the covered total to **5,006 of the 5,024 primes** in the interval.
 
 This covers a large **bounded** interval of primes, not a uniform theorem for all primes and not the complete BSD conjecture. It uses a published theorem for all old cases plus one **conditionally certified** new case, and does not require any new 5,005-prime run.
 
