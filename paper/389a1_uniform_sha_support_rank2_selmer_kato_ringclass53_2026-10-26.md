@@ -30,6 +30,12 @@ Proof: Smith normal form, or reduction modulo ell of any maximal minor nonzero m
 
 **This is not a claim that such a fixed A already exists.** Its existence with the stated Selmer comparison is the deepest missing theorem. Our existing 390x2012 Manin/Shapiro matrix controls modular-symbol transport at a single prime p=16231; it is NOT a uniform presentation of Selmer groups. Rebranding it as one would be a mathematical error. A finite determinant by itself does not bound Sha without an arithmetic comparison theorem.
 
+### Essential correction on integral primitiveness (2026-10-26)
+
+A rational rank-two generalized Kato nonvanishing theorem—and even **a primitive class in the compact integral Selmer lattice**—does **not** imply that finite Sha[p] vanishes. When Sha[p^infinity] is finite, its p-adic Tate module is zero, so the inverse-limit `Sel(Q,T_pE)` can coincide with `E(Q)⊗Z_p` even with nonzero finite Sha[p]. A global integral Euler/Kolyvagin-system **bound of the finite Sha group**, e.g. via its Fitting ideal or a genuinely uniform mod-p Selmer presentation, is an **independent necessary ingredient**. The fixed-matrix Smith-criterion above remains valid *if its very strong Selmer comparison hypothesis is established*; a Kato class alone is not such a comparison.
+
+See [Castella–Hsieh p16231 implication and precise obstruction](389a1_p16231_generalised_kato_theoremA_and_integral_shasupport_gap_2026-10-26.md).
+
 ## 3. Existing higher-rank work relevant to constructing an arithmetic comparison
 
 Castella–Hsieh, *On the nonvanishing of generalised Kato classes for elliptic curves of rank 2*, Forum of Mathematics Sigma 10 (2022), e12, Theorems A and B, constructs generalized Kato classes from a triple product involving a CM theta series g. Under explicit auxiliary central-L nonvanishing, residual irreducibility/ramification, inert level and p-regularity hypotheses, the nonvanishing of a generalized Kato class implies
