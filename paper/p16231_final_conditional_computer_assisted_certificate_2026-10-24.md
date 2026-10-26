@@ -305,3 +305,16 @@ Total independently recomputed mathematical domain: 131,714,565 indexed residues
 The source, row-checkpoint Merkle-like ordered digest, old V61 ordered block digest and complete run log SHA-256 are captured in the [full evidence audit certificate](../results/independent_level2_u_full_checkpoint_audit_PASS_2026-10-26.md). The resulting numerical level-2 claim is fully reproduced and audited, not merely the old V61 archive recomposed.
 
 **Residual conceptual gate:** Both independent complete level-2 algorithms rely on Sage/eclib modular symbols. The central high-p analytic identification of the complete C01 scalar with Sage's level-3 T² coefficient is derived algebraically and checked at two local p=16231 oracles, but full direct n=3 series evaluation at p=16231 has not been carried out. A new **UNEXECUTED** small-prime direct finite n2/n3 oracle regression is available at [bridge_local_small_prime_n2_n3_direct.py](../verification/bridge_local_small_prime_n2_n3_direct.py) to test the orientation, Teichmüller lifts, and the 1/4 normalization independently of the high-p Shapiro accumulators.
+
+---
+
+## Addendum — 2026-10-26: direct Sage n=3 bridge regressions at p=5 and p=7 PASS
+
+A standalone, newly authored small-prime independent finite-level checker computed n=2 and n=3 ordinary modular-symbol measures with Sage/eclib, the scalar C01 M0/M1 reference J directly, and Sage's actual n=3 quadratic coefficient. The user's reported execution passed all three comparisons for both test primes, with `BRIDGE_STATUS=0 0`: 
+
+- p=5: `alpha=7`, `A2(n2)=14`, `A2(n3)=24`, `J=2 mod5`, `delta=10 mod25`, predicted `p*J/(4alpha²)=10 mod25`, direct Sage n3 comparison PASS.
+- p=7: `alpha=16`, `A2(n2)=19`, `A2(n3)=33`, `J=4 mod7`, `delta=14 mod49`, predicted `p*J/(4alpha²)=14 mod49`, direct Sage n3 comparison PASS.
+
+The new explicit [universal correction lemma](c01_sage_n3_minus_n2_universal_lemma_auditable_2026-10-26.md) derives the `1/4` coefficient from the cyclotomic binomial increment and two real components, cancels the lower moment by distribution, and identifies the correction with the two C01 moments using the Hecke relation and cusp orientation. Its assumptions and independent source-to-reference computational gate are written separately. The small-prime test data and provenance are archived in [direct p5/p7 test certificate](../results/bridge_small_primes_5_7_direct_n2_n3_sage_PASS_2026-10-26.md).
+
+**Boundary:** Two exact small-prime comparisons with genuine Sage level-3 coefficients provide strong regression evidence for the algebraic identity; they do not constitute a proof by finite testing or a full Sage level-3 computation at p=16231. The resulting p-primary Sha application still requires explicit validation of all ordinary, surjectivity, source-to-reference, and Sage precision hypotheses. Exact p-adic equality u_p=1 or full all-prime BSD remains unproved.
