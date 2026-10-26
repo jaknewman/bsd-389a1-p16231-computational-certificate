@@ -53,3 +53,12 @@ The n3 coefficient is therefore `A2^(3)=p*(1199+8335)=p*9534 mod p²`. Both n3 a
 - [Formal C01/Shapiro duality](c01_shapiro_formal_duality_and_exceptional_audit_2026-10-26.md), [all 390 exact Manin plus six adversarial high-p Sage oracle PASS](../results/c01_shapiro_exact_and_adversarial_high_p_sage_PASS_2026-10-26.md)
 - [Universal Sage correction lemma](c01_sage_n3_minus_n2_universal_lemma_auditable_2026-10-26.md), [p=5 and p=7 direct full n2/n3 comparison](../results/bridge_small_primes_5_7_direct_n2_n3_sage_PASS_2026-10-26.md)
 - [Sage 10.9 pinned source: sha_tate.py](https://github.com/sagemath/sage/blob/10.9/src/sage/schemes/elliptic_curves/sha_tate.py), [Sage 10.9 pinned ordinary L-series: padic_lseries.py](https://github.com/sagemath/sage/blob/10.9/src/sage/schemes/elliptic_curves/padic_lseries.py).
+
+
+## Uniform local theorem and discriminant sign correction (2026-10-26)
+
+Direct Weierstrass arithmetic for this specific curve gives `b2=4`, `b4=-4`, `b6=1`, `b8=-3`, `c4=112`, and **`Delta_min=+389`** (not -389). Therefore its unique conductor prime 389 has type I1 multiplicative reduction and the local Tate parameter satisfies `v_389(q_E)=1`.
+
+At any odd good ordinary ell >= 5 with residually surjective Galois representation and ell != 389, the auxiliary condition in Sage 10.9 `E.sha().p_primary_order(ell)` is automatically met: conductor 389 has a unique exponent-one factor, and `1 mod ell != 0`. Thus the Skinner–Urban exact-order branch is applicable *uniformly in the eligible primes*, while the required ell-adic leading-coefficient calculation remains a separate prime-dependent task. This alone does not show triviality for all ell.
+
+See [uniform Skinner–Urban local gate](389a1_uniform_skinner_urban_local_gate_2026-10-26.md). At ell=16231, the computer-assisted quotient valuation 0 is already established subject to the source-and-input trust conditions above, so the exact-order theorem is compatible with the same conclusion `#Sha[16231^infinity]=1`. The entire original full Sage `p_primary_order` call has **not** been executed.
