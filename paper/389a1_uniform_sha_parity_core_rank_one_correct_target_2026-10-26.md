@@ -65,3 +65,23 @@ Primary citations:
 - Mazur–Rubin, *Controlling Selmer groups in the higher core rank case*, `https://jtnb.centre-mersenne.org/item/10.5802/jtnb.933.pdf`.
 - Burns–Kurihara–Sano, *On derivatives of Kato’s Euler system for elliptic curves*, JMSJ 76 (2024) 855–919, `https://doi.org/10.2969/jmsj/90699069`.
 - [Prior integral gap of generalized Kato at p16231](389a1_p16231_generalised_kato_theoremA_and_integral_shasupport_gap_2026-10-26.md).
+
+---
+
+## Major upgrade (2026-10-26): parity holds for **every odd prime**, including supersingular and 389
+
+The earlier restriction to good ordinary primes in Theorem 1 was unnecessarily narrow. Tim and Vladimir Dokchitser, *On the Birch–Swinnerton-Dyer quotients modulo squares*, Annals of Mathematics 172 (2010), 567–596, **prove the p-parity theorem for all elliptic curves E/Q and ALL primes p**, with no ordinary reduction or Sha finiteness hypothesis: `(-1)^{corank_Zp Sel_{p^infinity}(E/Q)}=w(E)`. See https://annals.math.princeton.edu/2010/172-1/p11 .
+
+For E=389a1 the root number w(E)=+1. For an odd prime p, let `A=Sha(E/Q)[p^infinity]`. As A is of cofinite Zp-type, split `A=(Qp/Zp)^t ⊕ A_fin` (noncanonically) where `A_fin` is finite. The Dokchitser parity theorem says `rank(E(Q))+t=2+t` is even, hence t is even. The nondegenerate alternating Cassels–Tate pairing on the finite quotient `A_fin=A/A_div` implies `dim_Fp A_fin[p]` is even. Since `A[p]` has dimension `t+dim_Fp A_fin[p]`, this is even.
+
+By the exact p-Kummer sequence and E(Q)_tors=0:
+
+`dim_Fp Sel_p(E/Q)=2+dim_Fp A[p] ∈ {2,4,6,8,...}`
+
+for **EVERY odd prime p**, whether E has good ordinary reduction, good supersingular reduction, or multiplicative reduction at p=389. Therefore:
+
+`[dim_Fp Sel_p(E/Q) ≤3] ⇒ Sha(E/Q)[p^infinity]=0`
+
+for **every odd p**, without assuming Sha finite beforehand. The only remaining prime for separate parity/2-descent treatment is 2.
+
+**Crucial nonclaim:** Although a uniform `dim Sel_p≤3` for sufficiently large odd p would now cover *both* ordinary and supersingular primes, no known result in our current project supplies this upper bound. Elkies proved there are infinitely many supersingular primes (https://people.math.harvard.edu/~elkies/math_pubs.html), so a theorem limited to ordinary primes is not sufficient for global BSD even up to finite exceptions. The improvement is that the **parity implication**, unlike ordinary p-adic L-series methods, is fully uniform across reduction types.
