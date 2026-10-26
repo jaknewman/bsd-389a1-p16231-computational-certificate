@@ -132,7 +132,7 @@ def audit_pair(id,data,keymap,rinf):
                 if j1==P:tally["e1"]+=1
     wanted=Counter({"INFINITY":1,Fraction(x,P2):-1})
     wanted=Counter({k:v for k,v in wanted.items() if v})
-    assert all(cusp_diff[k]==wanted[k] for k in cusp_diff|wanted)
+    assert all(cusp_diff[k]==wanted[k] for k in set(cusp_diff)|set(wanted))
     print("EXACT_EXCEPTIONAL_PAIR_TRANSPORT_PASS",id,tally,flush=True)
     return tally
 
