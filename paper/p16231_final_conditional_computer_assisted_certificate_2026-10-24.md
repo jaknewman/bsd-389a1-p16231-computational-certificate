@@ -330,3 +330,14 @@ Exact matrix analysis also identified explicit high-p exceptional transport witn
 A new [adversarial local direct Sage n3-versus-frozen C++ oracle](../verification/independent_c01_shapiro_exceptional_sage_oracle.py) is ready but **has not yet been executed**. It evaluates six individual pair contributions by direct Sage level-3 modular symbols, entirely independently of C01/Shapiro moment contraction, and requires equality against the previously SHA-frozen full-J executable, including IDs 38 and 67 which exercise both infinity paths. Its pass would extend the pre-existing (1,0) and (2,3) direct local validations to adversarial exceptional branches. Such a sampled test does not replace the formal algebraic argument or the shared eclib table gate.
 
 The p=16231 prime-primary Sha assertion remains subject to the combined source semantics, correct common data, and stated Sage/Kato precision assumptions. No full direct p=16231 n3 Sage series, exact p-adic u_p=1 or all-prime BSD established.
+---
+
+## Addendum — 2026-10-26: direct p=16231 exceptional Shapiro Sage/eclib oracles PASS
+
+The user has now executed both new auditors successfully (`EXACT_STATUS=0 0` and `ADVERSARIAL_STATUS=0 0`). The independent exact-integer audit found all 390 rational cusp-divisor relations with 2012 terms correct and inspected exact Gamma0(389*16231) decompositions for six selected full-domain pairs. The separate direct Sage/eclib level-3 weighted-moment oracle then returned precisely the same six pair contributions as the previously SHA-frozen, independently executed global dual-scalar C++ evaluator:
+
+`id 0: 2316; id 38 (one inner infinity): 6198; id 67 (one outer infinity plus 66 inner infinity): 8719; id 16234: 11725; id 131714565: 10993; id 263429129: 2316` (all modulo p=16231). Every direct Sage/C++ match printed PASS.
+
+This supplements the universal operator-duality theorem with strong adversarial **large-prime** finite-value validations targeting previously dangerous exceptional branches. The transcript and terminal provenance are in [executed source-to-J reference audit](../results/c01_shapiro_exact_and_adversarial_high_p_sage_PASS_2026-10-26.md). It does not replace a full independent Sage n3 high-p summation.
+
+The current chain of separately tested computation and remaining trust dependencies is summarized in [minimal p-primary Sha logical certificate](p16231_minimal_prime_primary_sha_certificate_2026-10-26.md). The conclusion is a documented computer-assisted and source/theorem-conditional statement about only the p=16231 primary Sha component, not exact p-adic u=1 or full BSD.
