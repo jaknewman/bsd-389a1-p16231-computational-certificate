@@ -61,3 +61,13 @@ Even under that theorem, Kato-class nonvanishing at one prime does not yield int
 - [Earlier conductor53 cubic note — cubic period is zero; order-nine correction supersedes its candidate nonvanishing route](conductor53_cubic_character_p16231_regular_but_not_uniform_2026-10-26.md).
 - [Rank-two Kato classes, Castella–Hsieh](https://www.cambridge.org/core/journals/forum-of-mathematics-sigma/article/on-the-nonvanishing-of-generalised-kato-classes-for-elliptic-curves-of-rank-2/72ED842AB428A7ED619B1B84287A6864).
 - [Waldspurger and toric test-vector principles](https://kimballmartin.github.io/papers/mw-rev.pdf).
+
+---
+
+## Updated 2026-10-26: mathematical adelic toric-period bridge now derived
+
+The previously outstanding Waldspurger comparison is now reduced to an abstract theorem about the **already executed** Stages 22, 23, 29, and 30, in [the detailed proof](389a1_chi53_waldspurger_gross_orbit_exact_identification_2026-10-26.md). Stage29's initial optimality at 53 propagates through the exact norm-19 class action of Stage22 because 19 is coprime to 53. All 18 orbit members are thus genuinely optimal embeddings of O_53; they exhaust the class group C18. Stage30 establishes that the Brandt class function belongs to the Jacquet–Langlands eigenline of E, and Stage23 fixes its index/mass normalization. Its character-weighted orbit sum equals a nonzero scalar multiple of the **genuine** automorphic toric period, not an arbitrary formal polynomial.
+
+The global Waldspurger implication **nonzero toric period => nonzero Rankin central L** then follows **without explicitly evaluating any local Waldspurger factors**. Thus, under the archived finite Sage evidence and its source conventions, `L(E/K,chi9,1) != 0` becomes a **computer-assisted conditional theorem**, not a new arithmetic hypothesis. For complete third-party reproducibility, the original numerical Stage29 output and all underlying stage14/22 JSON input data should be copied into the public repository. Four original scripts (14/22/23/30) are now archived at `historical/quaternion53/`; an optional shorter optimality certificate was created but has not run.
+
+This does NOT establish a uniform bound on all Sha primes, nor an unconditional independently reproduced Rankin value without trusted finite input.
