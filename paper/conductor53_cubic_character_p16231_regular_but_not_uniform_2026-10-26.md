@@ -44,7 +44,7 @@ Their Theorem B uses the **anticyclotomic p-adic theta element** `Theta_(f/K)` a
 
 ## Positive published comparison on the very same curve
 
-The 2021 lecture slides by Francesc Castella, *Kato classes*, explicitly use E=389a1 with the different auxiliary field `K=Q(sqrt(-2))` and p=11, and record a finite anticyclotomic theta computation `Theta_p(T)=-T²+58T³+... mod (p²,T^p)` yielding a generalized Kato nonvanishing example. This demonstrates an existing concrete rank-two construction for this exact E; it does not automatically propagate to p=16231 or uniform p.
+The 2021 lecture slides by Francesc Castella, *Kato classes*, explicitly use E=389a1 with the different auxiliary field `K=Q(sqrt(-2))` and p=11, and record a finite anticyclotomic theta computation `Theta_p(T)=-T²+58T³+... mod (p²,T^p)` yielding a generalized Kato nonvanishing example. This demonstrates an existing concrete rank-two construction for this exact E; it does not automatically propagate to p=16231 or uniform p. **Indeed K=Q(sqrt(-2)) is unsuitable at p=16231 for this theorem's split-prime branch**: 16231 is 7 mod 8, hence the Kronecker symbol (-2/16231)=-1, so 16231 is inert in Q(sqrt(-2)). In contrast, 16231 is 1 mod 3 and splits in K=Q(sqrt(-3)).
 
 ## Remaining mathematically decisive targets
 
