@@ -102,3 +102,17 @@ This paper is the *missing abstract adelic-identification argument*, not a forma
 - The nonvanishing implication in Waldspurger's formula: https://www.math.columbia.edu/~chaoli/doc/GanGrossPrasad.html
 - Sage Brandt module's exact right-ideal/double-class conventions: https://doc.sagemath.org/html/en/reference/modfrm/sage/modular/quatalg/brandt.html
 - [Previously archived period and twist](389a1_twist_minus3_exact_L1_and_chi53_order9_correction_2026-10-26.md).
+
+## One-fraction replacement for the Stage 29 local-optimality gate
+
+Here the maximal-order intersection statement can be certified without running another 53-adic Smith-normal-form pipeline. Given any of the archived actual quaternion embeddings `q_i` with `q_i²-q_i+2107=0`, set
+
+`omega_i=(q_i-27)/53`. Then `omega_i²+omega_i+1=0`, hence the maximal quadratic integer ring is `O_K=Z[omega_i]` and the conductor-53 suborder is `O_53=Z[q_i]`. An order in K containing O_53 must have conductor dividing 53; since 53 is prime, the *only* possible overorders are O_53 itself and O_K. Therefore
+
+`R_i intersect iota_i(K)=iota_i(O_53)  iff  omega_i notin R_i`.
+
+Because the 33 Sage right ideal representatives' left orders are explicit rational quaternion lattices, `omega_i notin R_i` is equivalent to **at least one nonintegral coefficient** in its coordinates relative to an integral Z-basis of R_i; the denominators can only be 1 or 53. The new exact Sage script [chi53_optimal_embedding_one_fraction_criterion.py](../verification/chi53_optimal_embedding_one_fraction_criterion.py) performs this check on all 18 actual stage14 embeddings. It is **CODE READY, NOT EXECUTED** at the time of this addendum; its full PASS is the sole new calculation needed to replace reliance on the longer Stage 29 local argument in an externally auditable archive.
+
+Once this gate passes, Lemmas 1–3, the already user-executed Stage 22 right-ideal identities, Stage 23 mass/eigenvector/orbit evaluation, and Stage 30 Sturm eigenspace check identify the actual toric integral at conductor 53 with a nonzero multiple of `P(zeta9)`. The global **one-direction** Waldspurger implication then gives nonzero Rankin central L-value **without** computing a list of local Waldspurger constants. The remaining risk is faithful execution/provenance and applicability of the cited automorphic theorem, not a missing infinite sum.
+
+Do not mark this new optimality shortcut executed until the user provides the new Sage log.
