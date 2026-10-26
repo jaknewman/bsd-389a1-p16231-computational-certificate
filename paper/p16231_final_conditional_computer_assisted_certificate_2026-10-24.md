@@ -269,3 +269,27 @@ This second method uses dense **dual scalar moments** and evaluates all 263,429,
 The other mathematical gates remain: archived V54/V61 n=2 coefficient, Sage 10.9 n=3 precision and Hecke normalization, independent p-adic regulator and rank/surjectivity, and the actual proved Kato/Sage p-primary bound theorem. Those were audited but the full `lp.series(n=3)` and direct `E.sha().p_primary_bound(16231)` were not run. The complete second-run log, checkpoint and executable SHA still merit preservation for independent researchers. This update is **not** a proof of full BSD and cannot upgrade `u_p=1 mod p` to exact p-adic equality.
 
 Evidence: [second full independent scalar run](../results/independent_scalar_J_global_263429130_pairs_PASS_2026-10-26.md), [dual-scalar source](../verification/independent_c01_scalar_J.cpp), [two local pilot tests](../results/independent_scalar_J_two_pilots_PASS_2026-10-26.md).
+
+---
+
+## Addendum — 2026-10-26: full second level-2 and regulator calculations PASS
+
+The complete independent scalar C01 `J=4486` recomputation was documented above. Two more independently implemented computations have now finished successfully on the user's Sage-enabled Ubuntu server:
+
+**1. Full level-2 `A2^(2)`:** Instead of V61's Fermat-quotient indexed `x=a+p*b`, the new `verification/independent_p16231_level2_u_enumeration.py` exhaustively runs its own cyclotomic exponent `u` on all 8,115 plus-symmetry representatives: `x=omega(a)*(1+p*u) mod p²`, `omega(a)=a^p mod p²`. It evaluates 131,698,335 nonzero-weight Sage/eclib modular symbol terms over 131,714,565 indexed residues. The user-reported output at `8115/8115` states `R2=79629286`, `R1=0`, `A2^(2)=19460969=1199p mod p²`, `LEVEL2_FULL_STATUS=0 0`. Thus the complete level-2 numerical value no longer depends solely on the earlier V61 iteration/chunks. It still shares the Sage/eclib normalized modular-symbol implementation. Evidence: [full second level-2 report](../results/independent_level2_u_full_131714565_residues_PASS_2026-10-26.md). New separate per-a and all-V61-block checksum auditor has been published but not yet run.
+
+**2. Regulator:** `verification/independent_p16231_regulator_two_height_algorithms.py` compared Sage 10.9 `padic_height` (sigma method) and `padic_height_via_multiply` (alternate method) on the two rank-2 generators. The user-reported transcript records exactly matching `h(P),h(Q),h(P+Q),h(P-Q)` and polarized determinant modulo p^5, `Reg_p/p³=1930 mod p`, plus BSD factor `B_p/p=9534 mod p`, with status `0 0`. These methods share underlying Sage arithmetic but compute heights by different algorithms. Evidence: [two-height comparison](../results/independent_level2_u_firstblock_and_two_height_regulator_PASS_2026-10-26.md).
+
+**Updated numerical chain:**
+
+`J=4486 (two full global C01 computations)`;
+
+`A2^(2)/p=1199 (two full level-2 computations)`;
+
+`J/(4*128²)=8335 mod p`;
+
+`A2^(3)/p=(1199+8335)=9534 mod p` (via the algebraically derived universal C01/Sage bridge, **not** full direct level-3 Sage execution);
+
+`B_p/p=9534 mod p` (two different Sage height algorithms).
+
+These now distinguish verified computation-level redundancies from still-shared theorem/normalization dependencies. They reinforce the claimed computer-assisted **conditional p-primary Sha consequence**, but cannot upgrade the quotient congruence `1 mod p` to an exact p-adic identity, and do not establish the global BSD conjecture. Publication still requires careful independent mathematical and machine-environment audit; direct Sage `lp.series(n=3)` and `Sha.p_primary_bound(16231)` have not run.
