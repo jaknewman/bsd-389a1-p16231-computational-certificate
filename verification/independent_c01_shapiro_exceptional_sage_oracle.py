@@ -101,8 +101,8 @@ def trace_pair(id,reps,maprep,rinf):
 def choose(reps,maprep,rinf):
     fixed=[0,P+3,TOTAL//2,TOTAL-1]
     selected=dict.fromkeys(fixed)
-    random_ids=list(range(800))+[random.Random(38916231).randrange(TOTAL)
-                                  for _ in range(40000)]
+    rng=random.Random(38916231)
+    random_ids=list(range(800))+(rng.randrange(TOTAL) for _ in range(40000))
     found={q:None for q in ("e0","e1")}
     for id in random_ids:
         counts=trace_pair(id,reps,maprep,rinf)
