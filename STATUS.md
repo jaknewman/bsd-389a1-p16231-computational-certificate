@@ -1,5 +1,14 @@
 # Verification ledger — updated 2026-10-29
 
+## Addendum 2026-10-29 — K599 authentic-table additivity and precision feasibility
+
+**K599 bounded pilots (actual Sage/eclib Manin 390 table):** user-executed five independent native-versus-Python BSGS/continued-fraction comparisons PASS; all 390 weights agree. Table SHA-256 `fc162c6f20459e2973c0641629d3c9feba3df39c0b42cd58aaf2e1bbed7435c8`. User-executed exact W390 chunk additivity on [1,400000] PASS with partial residue 9 mod 599 and 4,581,844 edges; early/middle/tail loop-throughput extrapolations 54.24 / 67.466 / 59.936 days for the complete 48,262,419,060,414-integer half-domain **on one core** (rough extrapolations, not a completed run). See [full user-reported benchmark and source-cost analysis](results/bsd389_p599_benchmark_and_precision_2026-10-29.md) and [standalone precision calculation](verification/bsd389_p599_precision_cost_gate.py).
+
+**Sage 10.9 supersingular Kato bound cost gate:** the generic \(\alpha\)-adic precision of the quadratic coefficient at level n is n-4; positive precision starts at n=5 with 76,985,418,245,398 classical measure evaluations. This is **not** a claim that p-primary bound must reach n=5 (its starting level depends on regulator valuations) or that no accelerated algorithm exists. **GLOBAL DELTA UNCOMPUTED; Sha[599^infinity] UNRESOLVED.** A locally invertible Mordell--Weil matrix does not imply the full Selmer localization is injective.
+
+---
+
+
 ## Addendum 2026-10-29 — Kurihara p107 archive recovered, supersingular p599 pilot
 
 **p=107:** User-run 710/710 completed half-domain chunks yielded half-sum 17 and Kurihara `delta_n=34 mod 107` with `n=141969819181`. Archive SHA-256: `b34131819db43fb6b227fa0e769f94b23733270df87dcd6b6dc47ed40693e754`. The independent local Mordell--Weil matrix determinant is `52 mod107`. Chan-Ho Kim's published Selmer theorem implies `Sha[107^infinity]=0` **conditionally on audited source execution, modular-symbol normalization and theorem hypotheses**. See [mathematical scope](paper/K107_certificat_mathematique_2026-10-28.md), [original native production](verification/kurihara_k107_production.py), [native C++](verification/kurihara_k107_native.cpp), [final independent audit](verification/kurihara_k107_final_audit.py). The large run archive remains on the user's Ubuntu server, not committed to Git.
