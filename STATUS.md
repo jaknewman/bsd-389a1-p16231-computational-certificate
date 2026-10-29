@@ -1,5 +1,14 @@
 # Verification ledger — updated 2026-10-29
 
+## Addendum 2026-10-29 — exact Fourier/Artin–Schreier trace reduction at p=599
+
+**PROVED ALGEBRAIC REDUCTION, NOT A COMPUTED KURIHARA VALUE:** At the two p599 auxiliary primes (6912461,13963889), the logarithmic Fourier constants satisfy `A_1^599-A_1=187` and `A_2^599-A_2=56`, hence `A_2=500*A_1+beta` for one embedding-dependent `beta in F_599`. The spectrum of the Kurihara weight lies in the F599-span of `1,A_1,A_1^2`. Exact Frobenius orders `3456230`, `3490972` give common degree `10071454220` and `9584` unit-frequency Frobenius orbits; combining plus-symbol/sign parity leaves **4792 classes**. An exact Artin–Schreier trace identity shows that only **three specified relative-trace coordinates per class (14376 positions)** contribute to the Fourier pairing. See [proof and exact limitations](paper/bsd389_p599_artin_schreier_symbol_trace_reduction_2026-10-29.md), [standalone numerical and toy ring check](verification/bsd389_k599_artin_schreier_trace_gate.py).
+
+**CRITICAL BOUNDARY:** The 14376 modular-symbol-side relative-trace coordinates and the embedding constant beta have NOT been computed, nor has a sublinear algorithm for producing them been constructed. The global Kurihara residue, the p599-primary Sha bound, and uniform support of Sha remain unresolved. Do not read a compressed algebraic expression as a completed computational certificate.
+
+---
+
+
 ## Addendum 2026-10-29 — K599 authentic-table additivity and precision feasibility
 
 **New exact algebraic reduction:** the additive Fourier transform of the mod-599 discrete-log weight is `F_q(t)=F_q(1)+log_q(t)` for nonzero frequencies; CRT factorizes the two-prime transform. This is mathematically proved but **does not compute the modular-symbol Fourier transform or imply nonvanishing of delta**. See [Fourier factorization lemma](paper/bsd389_p599_fourier_log_factorization_2026-10-29.md).
