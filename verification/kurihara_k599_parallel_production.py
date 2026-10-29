@@ -147,6 +147,8 @@ def main():
         print('K599_GLOBAL_DELTA_COMPLETE',final['kurihara_delta'],'NONZERO',final['kurihara_delta']!=0,
               'HALF',residue,'W390_SHA256',final['W390_sha256'],flush=True)
     else:
+        # Never leave an old COMPLETE artifact when checkpoints have been removed.
+        (root/'FINAL_COMPLETE.json').unlink(missing_ok=True)
         print('K599_INCOMPLETE_NO_CERTIFICATE',f'verified={seen}/{count}',f'units={units}/{PHI_HALF}',
               f'partial_mod599={residue}',flush=True)
 
