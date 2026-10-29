@@ -1,5 +1,16 @@
 # Verification ledger — updated 2026-10-29
 
+## Addendum 2026-10-29 — K599 Artin–Schreier beta gauge and authentic p5 end-to-end regression PENDING
+
+**Proved purely algebraically:** changing the chosen primitive n-th root by a suitable CRT exponent makes the embedding-dependent Artin–Schreier constant beta vanish, yielding `A_2=500*A_1` without changing the Kurihara sum. The modular-symbol Fourier coefficients must be recomputed relative to that same root; this is a coordinate simplification, **not** a sublinear algorithm or Sha bound.
+
+**Next executable gate prepared, NOT YET RUN in Sage:** `verification/bsd389_kurihara_fourier_trace_p5_authentic.py` uses genuine Sage/eclib Manin symbols for p=5, q1=41, q2=61 and should independently reconstruct the known `delta_2501=4 mod 5` from 20 sign/Frobenius frequency classes and 60 top Artin–Schreier coordinates. Python syntax checked; full Sage execution pending. See [complete mathematical proof and test plan](paper/bsd389_k599_beta_gauge_and_authentic_p5_regression_20261029.md).
+
+**UNCHANGED BOUNDARY:** No computed global Kurihara delta at p=599, no Sha[599^infinity] conclusion and no uniform bound for Sha support.
+
+---
+
+
 ## Addendum 2026-10-29 — exact Fourier/Artin–Schreier trace reduction at p=599
 
 **PROVED ALGEBRAIC REDUCTION, NOT A COMPUTED KURIHARA VALUE:** At the two p599 auxiliary primes (6912461,13963889), the logarithmic Fourier constants satisfy `A_1^599-A_1=187` and `A_2^599-A_2=56`, hence `A_2=500*A_1+beta` for one embedding-dependent `beta in F_599`. The spectrum of the Kurihara weight lies in the F599-span of `1,A_1,A_1^2`. Exact Frobenius orders `3456230`, `3490972` give common degree `10071454220` and `9584` unit-frequency Frobenius orbits; combining plus-symbol/sign parity leaves **4792 classes**. An exact Artin–Schreier trace identity shows that only **three specified relative-trace coordinates per class (14376 positions)** contribute to the Fourier pairing. See [proof and exact limitations](paper/bsd389_p599_artin_schreier_symbol_trace_reduction_2026-10-29.md), [standalone numerical and toy ring check](verification/bsd389_k599_artin_schreier_trace_gate.py).
