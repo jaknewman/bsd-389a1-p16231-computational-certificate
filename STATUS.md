@@ -1,5 +1,13 @@
 # Verification ledger — updated 2026-10-29
 
+## Addendum 2026-10-29 — authentic Hecke p5 regression, p7 dual probe pending
+
+**PASS (user-reported):** with authentic eclib/Manin symbols at p=5, all 40+60 Hecke fibres PASS, constant/first-log moments [0,0,0] mod 5, mixed moment delta_2501=4 mod 5, and multiplicative translations t=2,7,17,599 all reproduce 4. [Terminal transcript and scope](results/bsd389_k5_hecke_fibre_and_translation_PASS_2026-10-29.md).
+
+**NEW TEST, NOT YET RUN ON SAGE:** [dual p7 zero/nonzero regression](verification/bsd389_kurihara_hecke_dual_p7_regression.py) tests independent pairs (113,281) with delta=0 and (113,673) with delta=2, each including every Hecke fibre, the wild quotient's four coefficients and four translations. If it passes, it strengthens validation of the identity but does not compute delta_599 or prove Sha[599^infinity]=0. Structural identities remain [here](paper/bsd389_k599_hecke_marginals_wild_quotient_2026-10-29.md).
+
+---
+
 ## 2026-10-29: Hecke marginal identity and p599 wild quotient
 
 Hecke distribution proves all three lower moments (constant, log1, log2) of the q1*q2 modular-symbol element vanish modulo p=599, since a_q1=1799 and a_q2=-4191 both equal 2 modulo 599. Therefore the mixed Kurihara coefficient is invariant under translation of all numerator indices by any unit. The tame p-th-power subgroup has 269020480 elements and the p-Sylow quotient has 358801 logarithm classes; the projected Mazur-Tate element reduces to delta*X*Y in F599[X,Y]/(X^2,Y^2). **No fast tame orbit sum is known; delta599 and Sha599 remain uncomputed.** The previous 14376 Fourier trace targets also do not give a time saving automatically (390 original Manin weights). [Full proof](paper/bsd389_k599_hecke_marginals_wild_quotient_2026-10-29.md); [small-prime Sage test, not yet user-executed](verification/bsd389_kurihara_hecke_moment_translation_p5.py).
