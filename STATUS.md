@@ -1,5 +1,14 @@
 # Verification ledger — updated 2026-10-29
 
+## Addendum 2026-10-29 — p7 authentic dual zero/nonzero and bounded p599 production
+
+**P7 double regression user-executed PASS:** the authentic Sage/eclib Manin-390 Hecke fibre test checks every 392 fibres at (113,281) and all 784 fibres at (113,673). Lower moment triples vanish in both, while mixed Kurihara residues are 0 and 2 respectively modulo 7. Four multiplicative translations per pair reproduce the respective residues. [Full terminal log](results/bsd389_k7_hecke_zero_nonzero_dual_PASS_2026-10-29.md).
+
+**P599 optional bounded restartable production:** [parallel W390 source](verification/kurihara_k599_parallel_production.py) is derived from the original p107 producer, with native uint16-safe engine, SHA-pinned source table/binary, chunk additivity, exact interval unit counts, atomic restart checkpoints, and final certificate withheld unless all intervals are accounted for. Default is a plan-only audit: no new production without `--run`; `--run` alone produces at most two new chunks. `--run --full` is an explicit opt-in to the full multi-week CPU task. The published p599 parallel script itself has not yet been user-executed; separate local synthetic checks on an independently written draft passed resume/aggregation/finalization, but they do not certify that every change in this published version runs correctly. **No global p599 delta, Sha[p599], or uniform support conclusion.**
+
+---
+
+
 ## Addendum 2026-10-29 — authentic Hecke p5 regression, p7 dual probe pending
 
 **PASS (user-reported):** with authentic eclib/Manin symbols at p=5, all 40+60 Hecke fibres PASS, constant/first-log moments [0,0,0] mod 5, mixed moment delta_2501=4 mod 5, and multiplicative translations t=2,7,17,599 all reproduce 4. [Terminal transcript and scope](results/bsd389_k5_hecke_fibre_and_translation_PASS_2026-10-29.md).
