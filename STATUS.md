@@ -1,4 +1,18 @@
-# Verification ledger — updated 2026-10-24
+# Verification ledger — updated 2026-10-29
+
+## Addendum 2026-10-29 — Kurihara p107 archive recovered, supersingular p599 pilot
+
+**p=107:** User-run 710/710 completed half-domain chunks yielded half-sum 17 and Kurihara `delta_n=34 mod 107` with `n=141969819181`. Archive SHA-256: `b34131819db43fb6b227fa0e769f94b23733270df87dcd6b6dc47ed40693e754`. The independent local Mordell--Weil matrix determinant is `52 mod107`. Chan-Ho Kim's published Selmer theorem implies `Sha[107^infinity]=0` **conditionally on audited source execution, modular-symbol normalization and theorem hypotheses**. See [mathematical scope](paper/K107_certificat_mathematique_2026-10-28.md), [original native production](verification/kurihara_k107_production.py), [native C++](verification/kurihara_k107_native.cpp), [final independent audit](verification/kurihara_k107_final_audit.py). The large run archive remains on the user's Ubuntu server, not committed to Git.
+
+**p=599:** User-run exact counts verify good supersingular reduction, `q1=6912461`, `q2=13963889`, and independent rational reduction determinant `475 mod599`. **No Kurihara nonzero witness / no Sha bound** yet. The safe `uint16_t` bounded pilot and independent BSGS/Manin audit were tested on a **synthetic** Manin table (5/5 small intervals PASS). Genuine Sage table export and Ubuntu-native verification are the next tests. See [p599 certificate](paper/bsd389_p599_local_certificate_2026-10-29.md), [source-level computation gate](paper/bsd389_p599_supersingular_manin_pilot_and_gate_2026-10-29.md), [native pilot](verification/kurihara_native_p599_pilot.cpp), [independent pilot](verification/kurihara_p599_pilot_independent_check.py).
+
+**p=2:** Additional user-run Simon 2-descent `(2,2)` confirms already documented `Sha[2^infinity]=0`. **Twist -7:** user-run exact rational interval confirms analytic rank 1 and twist finiteness; does not imply original curve's Sha is finite.
+
+**Overall boundary:** Neither a uniform exceptional-prime bound nor global finiteness of Sha(E/Q), nor full BSD for rank 2, has been proved. The p=16231 certificate retains its separately stated conditional status.
+
+---
+
+
 
 **Final evidence-and-arithmetic checker (2026-10-24):** **PASS twice (reported), exit 0 both times**, with eight original source/binary/log SHA pins, 514,511-chunk archive reconciliation, 57/57 producer replay transcript checks, terminal J=4486, and conditional A2/Bp unit computation. [Complete user-reported output](results/p16231_final_certificate_ionos_double_PASS_2026-10-24.md). The checker does **not** execute the full original V19 producer or `Sha.p_primary_bound(16231)`.
 
