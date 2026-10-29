@@ -70,6 +70,18 @@ def relative_trace_k0(element, p, h):
     return total
 
 
+
+def prime_field_coordinates(a, base_field, degree):
+    """Coordinates in the ambient finite-field power basis.
+
+    Sage's PARI ffelt implementation supplies a.polynomial() but not
+    a.vector().  Pad to the full ambient degree so that B and H use
+    the same coordinates; do not truncate at the AS subfield degree.
+    """
+    coeffs = a.polynomial().list()
+    assert len(coeffs) <= degree
+    return vector(base_field, coeffs + [base_field(0)] * (degree-len(coeffs)))
+
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument('--table',default=None)
@@ -145,7 +157,7 @@ def main():
 
     # A1 is an AS generator of degree P=5 over F_5.
     powers=[A1**i for i in range(P)]
-    B=matrix(F,[list(a.vector()) for a in powers]).transpose()
+    B=matrix(F,[prime_field_coordinates(a,F,D) for a in powers]).transpose()
     assert B.rank()==P
     inv1=pow(Q2,-1,Q1)
     inv2=pow(Q1,-1,Q2)
@@ -171,7 +183,7 @@ def main():
 
         H=relative_trace_k0(shat,P,h)
         assert H**(P**P)==H
-        hc=B.solve_right(vector(F,list(H.vector())))
+        hc=B.solve_right(prime_field_coordinates(H,F,D))
         assert H==sum((K(int(hc[j]))*powers[j] for j in range(P)),K(0))
         tr_value=int(field_trace_p(what*H,P,P))
         top_formula=-(u2*int(hc[P-3])+u1*int(hc[P-2])+u0*int(hc[P-1]))%P
