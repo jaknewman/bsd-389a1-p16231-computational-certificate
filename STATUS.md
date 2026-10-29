@@ -1,5 +1,10 @@
 # Verification ledger — updated 2026-10-29
 
+## 2026-10-29: p=5 Fourier regression PASS
+
+Ubuntu Sage confirms direct Kurihara delta_2501 = 4 mod 5 and independent complete Fourier/Artin-Schreier reconstruction = 4 mod 5 across 20 sign-Frobenius classes and 60 projected trace coordinates. Runtime 1.013 seconds. Source: verification/bsd389_kurihara_fourier_trace_p5_authentic.py; report: results/bsd389_k5_authentic_fourier_artin_schreier_PASS_2026-10-29.md. This validates the p=5 formula but does not compute the p=599 delta or prove a sublinear algorithm.
+
+
 ## Addendum 2026-10-29 — K599 Artin–Schreier beta gauge and authentic p5 end-to-end regression PENDING
 
 **Proved purely algebraically:** changing the chosen primitive n-th root by a suitable CRT exponent makes the embedding-dependent Artin–Schreier constant beta vanish, yielding `A_2=500*A_1` without changing the Kurihara sum. The modular-symbol Fourier coefficients must be recomputed relative to that same root; this is a coordinate simplification, **not** a sublinear algorithm or Sha bound.
