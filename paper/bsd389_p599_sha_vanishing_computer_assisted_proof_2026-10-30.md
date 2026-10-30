@@ -2,6 +2,14 @@
 
 **Date:** 2026-10-30. **Claim:** \(\Sha(E/\mathbf Q)[599^\infty]=0\) for \(E:y^2+y=x^3+x^2-2x\), **as a computer-assisted mathematical deduction from the supplied, user-executed Sage/eclib certificates and the published Stein–Wuthrich/Perrin-Riou/Kato theorems**. The stated conclusion is *not* a direct output of `E.sha().p_primary_bound(599)`, which did not complete. As usual for a new computational proof, independent external mathematical review and public verification with the same pinned Sage data are valuable before formal publication. No claim about \(\Sha\) at other primes, or full BSD.
 
+## Verification correction — supersingular `Reg_p` vs `Reg_gamma` (2026-10-30)
+
+**Mandatory theorem-normalization audit remains.** Stein–Wuthrich (2013), §4.4, defines `Reg_gamma=Reg_p/log(kappa(gamma))^r`. Its supersingular **Conjecture 5.2**, eq. (5.3), uses `Reg_gamma` for the `T`-series; its printed supersingular **Algorithm 11.1, step (4)** and the corresponding proof formula instead display `Reg_p`. Meanwhile Sage 10.9 `sha_tate.an_padic` explicitly divides its regulator by `log(1+p)^r`. Since our computed first-coordinate p-adic valuations are **0 for the normalized regulator but 2 for the unnormalized regulator at rank 2**, the choice is numerically material; it must not be silently glossed over or replaced by an assumed typo.
+
+**Consequently, the final boxed assertion below is a *conditional computer-assisted proof claim* until the supersingular leading-term convention and this factor are reconciled against the precise theorem.** All finite `C2=543`, exact 390-Manin normalization, Hecke congruences, the source-derived `F0,2=571` residue, and the regulator computations remain valid user-reported PASS data. The claimed unconditional `b599=0` does not follow from the *literal unnormalized* `Reg_p` formula without an additional identification. Track in [issue #4](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/4).
+
+---
+
 ## Exact hypotheses and input certificates
 
 - \(E\) is the minimal model \([0,1,1,-2,0]\) of \(389a1\); conductor 389, discriminant +389, Tamagawa product 1, torsion order 1, two real components.
