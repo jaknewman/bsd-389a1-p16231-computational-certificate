@@ -10,6 +10,17 @@ E/\mathbb Q:\quad y^2+y=x^3+x^2-2x,\qquad p=16231.
 
 **Do not cite this repository as an unconditional proof of BSD or of** `Sha(E/Q)[16231^infinity] = 0` **until the outstanding verification obligations are discharged and reviewed.** A first-digit congruence does not prove an exact p-adic equality or full BSD.
 
+## p=107 — archived two-prime Kurihara witness and Kim criterion (2026-10-30)
+
+The historical 710-block exhaustive computation reports `delta_(369793*383917)=34 (mod 107)`. The precise application of **Chan-Ho Kim's Theorem 1.8** shows that an authentic normalized **unit two-prime witness**, combined with certified Mordell–Weil rank 2 and residual surjectivity, forces the finite Selmer quotient to vanish and hence `Sha(389a1/Q)[107^infinity]=0` **without assuming Sha finiteness**. This conclusion remains conditional on the published archive and normalization being authenticated and reviewed: do not confuse the old user-reported full computation with a fresh source replay.
+
+A new conductor-`107²` alternative uses **only 5,671 plus-symmetric modular symbols** (instead of `107³`-level enumeration or a 71-billion-term Kurihara sum) to test whether the (p=599) Hecke/Frobenius shortcut also gives a direct Stein–Wuthrich/Kato unit-regulator bound at p107. That new probe is **not yet user-executed**.
+
+- [Precise p107/Kim proof and trust boundary](paper/bsd389_p107_kim_two_prime_sha_criterion_2026-10-30.md).
+- [Fast independent p107 supersingular probe](verification/bsd389_p107_supersingular_p2_shortcut.py).
+- [Archive hash and point-count bridge](verification/bsd389_kim_kurihara_sha107_bridge.py).
+- [Live validation issue #6](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/6).
+
 ## p=599 — computer-assisted primary Sha vanishing (2026-10-30)
 
 **New independently regressed arithmetic evidence and a complete mathematical reduction:** the original genuine conductor-`599²` Manin moment `C2=543 (mod 599)`, the exact `390/390` normalization comparison to Sage's analytic modular symbols, and a direct small supersingular `Dp_valued_series` regression together validate the computational conventions. The exact Hecke lift/Frobenius/precision argument determines the quadratic Dieudonné-valued analytic coefficient's first residue `571 mod 599`; the normalized p-adic regulator is also a unit. Applying the published Stein–Wuthrich Algorithm 11.1 and Kato/Perrin-Riou yields **a computer-assisted proof of `Sha(389a1/Q)[599^infinity]=0`** from the pinned, user-executed certificates. It was **not** produced by a successful run of `p_primary_bound(599)`. External independent mathematical review is still recommended before claiming publication-grade verification. This result concerns *only* p=599, not the p=16231 project or BSD as a whole.
