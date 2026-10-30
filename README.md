@@ -10,6 +10,16 @@ E/\mathbb Q:\quad y^2+y=x^3+x^2-2x,\qquad p=16231.
 
 **Do not cite this repository as an unconditional proof of BSD or of** `Sha(E/Q)[16231^infinity] = 0` **until the outstanding verification obligations are discharged and reviewed.** A first-digit congruence does not prove an exact p-adic equality or full BSD.
 
+## p=599 finite-level certificate — 2026-10-30
+
+The user-executed independent finite conductor-`599^2` moment audits agree: `C0=C1=0`, `C2=543 mod 599`, across 179,101 sign pairs and 1,924,081 continued-fraction edges. The independent C++ engine reported PASS. A new bounded-memory Python verifier also completed on the user's Sage system with certified rank-2 Mordell–Weil generators, residual surjectivity, and normalized regulator first residue `571 mod 599`.
+
+A proposed Hecke/Frobenius/precision reduction yields the **derived** analytic residue `F0=571 mod 599`; it is not a direct calculation of `Dp_valued_series` and the `p_primary_bound(599)` calculation did not finish. **Do not cite this as a completed unconditional proof that Sha[599^infinity] vanishes** until the reduction and Stein–Wuthrich/Kato theorem application receive independent review.
+
+- [Verifier](verification/sha599_short_certificate.py) — requires external SHA256-pinned 390-entry Manin table.
+- [Mathematical derivation and proof obligations](verification/README_sha599.md).
+- [Verification ledger](STATUS.md) — detailed PASS / REVIEW-REQUIRED distinction.
+
 ## Current numerical record (updated 2026-10-19)
 
 | Object | Result | Evidence |
