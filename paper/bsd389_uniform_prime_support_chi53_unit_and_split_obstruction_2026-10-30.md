@@ -55,14 +55,14 @@ The same norm is obtained independently by the *exact Bareiss determinant* of th
 
 Independent standard-library-only code:
 [verification/bsd389_uniform_chi53_toric_unit.py](../verification/bsd389_uniform_chi53_toric_unit.py). Executed locally and produced:
-\`\`\`text
+```text
 UNIFORM_CHI53_EXACT_CYCLOTOMIC_FACTOR_PASS F=-3*zeta9*U
 UNIFORM_CHI53_EXPLICIT_INVERSE_PASS U*UINV=1
 UNIFORM_CHI53_NORM_DETERMINANT_PASS 729
 UNIFORM_CHI53_P_UNIT_ALL_PRIMES_EXCEPT_3_MATHEMATICAL_PASS
 SPLITTING_SCOPE chi53_K_minus3 only applies to p congruent 1 modulo 3
 BOUNDARY_NO_SHA_UNIFORM_FINITE_SUPPORT_PROOF; theta_order2_and_integral_primitivity_not_proved
-\`\`\`
+```
 
 **Precise nonclaim:** F(ζ) is an *archived finite Gross-orbit algebraic factor*, not a proven universal index of Sha or Selmer. Its identification with a normalized adelic toric period still uses the separate optimal-embedding, Jacquet–Langlands and test-vector conventions, as noted in [the source chi53 script](../verification/bsd389_chi53_order9_from_archive.py). More importantly, neither nonvanishing of the formal toric period nor even nonvanishing of a generalized Kato class automatically forces **integral p-primitivity** or Sha[p]=0. Therefore we **CANNOT put C=729 in the preceding uniform Selmer criterion** without a new integral comparison theorem. The derived ideal bound concerns only this toric factor.
 
