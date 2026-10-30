@@ -10,6 +10,14 @@ E/\mathbb Q:\quad y^2+y=x^3+x^2-2x,\qquad p=16231.
 
 **Do not cite this repository as an unconditional proof of BSD or of** `Sha(E/Q)[16231^infinity] = 0` **until the outstanding verification obligations are discharged and reviewed.** A first-digit congruence does not prove an exact p-adic equality or full BSD.
 
+## p=599 — computer-assisted primary Sha vanishing (2026-10-30)
+
+**New independently regressed arithmetic evidence and a complete mathematical reduction:** the original genuine conductor-`599²` Manin moment `C2=543 (mod 599)`, the exact `390/390` normalization comparison to Sage's analytic modular symbols, and a direct small supersingular `Dp_valued_series` regression together validate the computational conventions. The exact Hecke lift/Frobenius/precision argument determines the quadratic Dieudonné-valued analytic coefficient's first residue `571 mod 599`; the normalized p-adic regulator is also a unit. Applying the published Stein–Wuthrich Algorithm 11.1 and Kato/Perrin-Riou yields **a computer-assisted proof of `Sha(389a1/Q)[599^infinity]=0`** from the pinned, user-executed certificates. It was **not** produced by a successful run of `p_primary_bound(599)`. External independent mathematical review is still recommended before claiming publication-grade verification. This result concerns *only* p=599, not the p=16231 project or BSD as a whole.
+
+- [Complete computer-assisted mathematical proof](paper/bsd389_p599_sha_vanishing_computer_assisted_proof_2026-10-30.md).
+- [Independent user-run normalization and small-prime direct regression](results/p599_hecke_projection_independent_regression_PASS_2026-10-30.md).
+- [Theorem/proof audit and peer-review tracking](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/4).
+
 ## p=599 finite-level certificate — 2026-10-30
 
 **Source provenance reconciled:** GitHub's `sha599_short_certificate.py` now matches the user's executed local source **byte for byte** (blob `9acda8de4c526f96b96ad4e89847c782933c1528`). Its PASS log is user-executed on Sage with the authentic external table, not a GitHub Actions execution. The conditional analytic/Kato bridge **still requires independent mathematical review** ([issue #4](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/4)). The seven other local-only research scripts were recovered from the stash; see [reconciliation issue #5](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/5).
