@@ -1,5 +1,15 @@
 # Verification ledger — updated 2026-10-30
 
+## Addendum 2026-10-30 — p107 Kim theorem route fully articulated, frozen K107 archive rerun pending
+
+**Theorem checked in primary 2025/2026 source:** Chan-Ho Kim, Theorem 1.8 (1),(3), valid at good supersingular primes under residual surjectivity and p-unit Manin constant. The pre-existing exhaustive 710-block K107 production **reported** a genuine two-prime Kurihara `delta_n=34 (mod 107)`, with `n=141969819181`, primitive auxiliary primes `369793` and `383917`, and frozen archive SHA256 `b34131819db43fb6b227fa0e769f94b23733270df87dcd6b6dc47ed40693e754`. If the authentic normalized archive is independently accepted, the **unit two-prime witness plus certified MW rank 2** forces Selmer corank `rho=2`, `M2=M_infinity=0`, nondivisible Selmer quotient trivial, and hence `Sha(389a1/Q)[107^infinity]=0` **without pre-assuming Sha finiteness**. [Full precise proof and computational chain](paper/bsd389_p107_kim_two_prime_sha_criterion_2026-10-30.md).
+
+**New cost-saving independent route, NOT YET EXECUTED:** [p107 supersingular conductor-p² coefficient probe](verification/bsd389_p107_supersingular_p2_shortcut.py) computes the first quadratic moment using only **5,671 signed pairs**, checks all 106 Hecke fibres, and compares the derived coefficient `F0=C2/2 mod107` with the certified normalized regulator. If units are established, this may yield a second Stein–Wuthrich/Kato proof; if not, the probe is simply inconclusive. **No p107 output from this new probe has been obtained**.
+
+**Immediate run** in [issue #6](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/6): authenticate the existing complete K107 archive using `verification/bsd389_kim_kurihara_sha107_bridge.py`, plus run the independent low-cost p107 probe. Neither the hash check nor the short probe repeats the original 71-billion-term K107 summation. **p107 Sha conclusion remains a theorem-conditional archived computational claim until the source-data gates are rerun and reviewed.** No full BSD claim.
+
+---
+
 ## Addendum 2026-10-30 — p599 HECKE–FROBENIUS BRIDGE independently REGRESSED PASS; computer-assisted Sha599 bound zero derived
 
 **New genuine Sage user run:** `P599_ALL_390_MANIN_ENTRIES_SAGE_MATCH_PASS` verifies the **entire** genuine 390-Manin table (hash `fc162c6f20459e2973c0641629d3c9feba3df39c0b42cd58aaf2e1bbed7435c8`) against Sage 10.9 `E.padic_lseries(599)._modular_symbol`. `P599_ECLIB_NORMALIZATION_PASS` confirms real components 2. An independent direct supersingular regression at `(1483a1,p=5,n=3)` checks all **20** exact Hecke fibres and compares **actual** Sage `Dp_valued_series` quadratic first coefficient with the `p²` shortcut: `direct=derived=1 mod5`; all `PASS`. [Exact user stdout](results/p599_hecke_projection_independent_regression_PASS_2026-10-30.md).
