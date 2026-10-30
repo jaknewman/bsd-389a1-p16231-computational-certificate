@@ -95,8 +95,35 @@ def source_inputs(relpath, tablepath):
     return gen, rinf, raw_table
 
 
+def audit_all_exact_shapiro_factorizations(rinf):
+    """Exact, exhaustive over all p+1 coset indices; no symbol calls."""
+    Pmat = (P, 0, 0, 1)
+    assert mul(Pmat, (1, 0, 0, 1)) == Pmat
+    checked = 1  # j=0, no inverse needed
+    for j in range(1, P):
+        s = pow(LEVEL*j, -1, P)
+        assert (1-LEVEL*j*s) % P == 0
+        H = (P, -s, LEVEL*j, (1-LEVEL*j*s)//P)
+        rj = (1, 0, LEVEL*j, 1)
+        beta = (1, s, 0, P)
+        assert det(H) == 1 and H[2] % LEVEL == 0
+        assert mul(H, beta) == mul(Pmat, rj), (
+            "EXACT_SHAPIRO_FACTOR_FAIL", j)
+        checked += 1
+    # Exceptional infinity case, source original rinf = [-40,-1669;389,p].
+    Hinf = (-40*P, -1669, LEVEL, 1)
+    assert rinf == (-40, -1669, LEVEL, P)
+    assert det(Hinf) == 1 and Hinf[2] % LEVEL == 0
+    assert mul(Hinf, (1, 0, 0, P)) == mul(Pmat, rinf)
+    checked += 1
+    assert checked == P + 1 == 16232
+    print("P16231_ALL_16232_EXACT_SHAPIRO_P_BETA_FACTORIZATIONS_PASS",
+          "infinity", 1, flush=True)
+
+
 def audit(args):
     gens, rinf, raw = source_inputs(args.relations, args.table)
+    audit_all_exact_shapiro_factorizations(rinf)
     E = EllipticCurve(QQ, [0, 1, 1, -2, 0])
     assert int(E.conductor()) == LEVEL and int(E.ap(P)) == AP
     assert int(E.real_components()) == 2
