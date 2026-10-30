@@ -10,6 +10,14 @@ E/\mathbb Q:\quad y^2+y=x^3+x^2-2x,\qquad p=16231.
 
 **Do not cite this repository as an unconditional proof of BSD or of** `Sha(E/Q)[16231^infinity] = 0` **until the outstanding verification obligations are discharged and reviewed.** A first-digit congruence does not prove an exact p-adic equality or full BSD.
 
+## Where are we on COMPLETE BSD? Two logically distinct gaps remain (2026-10-30)
+
+**Proven for 389a1:** Mordell–Weil rank 2 equals complex analytic rank 2; torsion trivial and Tamagawa product 1. Classical two-descent proves Sha[2]=0, and Sage's published `p_primary_bound(5)=p_primary_bound(7)=0` certify those two primes. This project's complete p107 archive, p599 supersingular moments and p16231 V65/Hecke certificate add substantial prime-specific computer-assisted evidence, with their existing normalization/source assumptions.
+
+**NOT PROVEN:** (1) finiteness/triviality of **all** of `Sha(E/Q)`; (2) the **exact complex leading-coefficient formula** `L''(E,1)/2 = Omega_E*Reg(E)*#Sha(E/Q)`. Numerically the analytic Sha ratio is near 1, but a numerical approximation is not a proof of that exact identity. The new Mazur + Castella–Sano all-good-p Kurihara theorem is at **unrestricted auxiliary degree** and does not close the rank-two Fitting ideal.
+
+[Full independently source-audited BSD status and consistency ledger](paper/bsd389_full_BSD_state_and_uniform_Fitt2_checkpoint_2026-10-30.md) — [Issue #8: p-uniform Sha second Fitting ideal](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/8) — [Issue #9: exact complex BSD leading term](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/9).
+
 ## New exact uniform Kurihara theorem for 389a1 — every good p≥11 (2026-10-30)
 
 **Not merely a finite-prime computation:** Combining **Mazur's 1978 semistable Galois-surjectivity theorem** (all `p≥11`) with **Castella–Sano's January 2026 Theorem B** (refined Kurihara nonvanishing for good ordinary and, when N is squarefree, supersingular p) shows rigorously that **for EVERY prime `p≥11` except the multiplicative prime `389`**, the Kurihara family has an **admissible squarefree conductor `n(p)` with nonzero mod-p delta**, with no bound on `nu(n)`. Precisely `M_infinity(delta_p)=0` for all these p, because `Tam(E)=1`. There are **no unknown surjectivity exceptions** in this explicit large-prime range; the omitted small p are 2,3,5,7 and p389. Historical Sage checks at p5,7 exist separately.
