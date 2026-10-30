@@ -1,5 +1,14 @@
 # Verification ledger — updated 2026-10-30
 
+## Addendum 2026-10-30 — low-cost cyclotomic p599 conductor-p-squared experiment (pending Sage)
+
+**New independent arithmetic route, NOT yet run with genuine Sage data:** the tame-trivial projection of the Mazur–Tate element at conductor `p^2=358801` has first three coefficients `C_j = sum_a S(a/p^2) binom(k(a),j) (mod p)`, with `k(a)=-(a^(p-1)-1)/p (mod p)` (Fermat quotient). This needs only **179101** plus-symmetric unit representatives for p599, and every **598** Hecke fibre must vanish because `a_599=0` and `S(0)=0`; hence `C0=0` rigorously. The exponent/Teich decomposition was independently checked for every invertible residue mod p^2 at p=5,7,599. The real C1,C2 remain **UNKNOWN**. [Sage script with authentic SHA-pinned Manin table and all fibre audits](verification/bsd389_p599_cyclotomic_p2_moment_probe.py); [mathematical derivation and explicit comparison boundary](paper/bsd389_p599_cyclotomic_p2_mazur_tate_probe_2026-10-30.md).
+
+**Strict scope:** these are cyclotomic conductor-p² moments, NOT the original Kurihara `delta_(q1 q2)`. No implication to Sha[599^infinity] without an additional signed supersingular L-function/explicit reciprocity plus applicable Selmer bound theorem. No new claim of full BSD.
+
+---
+
+
 ## Addendum 2026-10-30 — p599 denominator automaton 4-worker authentic 80M PASS
 
 **User-executed matching dual-binary benchmark:** optimized denominator-state kernel (four workers) writes four native-SHA-pinned checkpoints for 80,000,000 numerator positions; residues are `525,370,28,182`, identical to the previous original-binary run. Accumulated partial contraction is `506 mod 599` from exactly 79,999,984 units; source table SHA256 `fc162c6f20459e2973c0641629d3c9feba3df39c0b42cd58aaf2e1bbed7435c8`. Optimized wall `3.459 s` versus baseline `3.706 s` (7.14% higher throughput, 6.66% shorter wall); CPU user `10.729 s` versus `13.236 s` (18.94% lower). Short-run extrapolation ~24.15 days wall at a sustained identical throughput is **not** a production guarantee. Only **4 / 2,413,121 chunks** checked in the 20m configured archive; global Kurihara delta599 and Sha[599^infinity] remain uncomputed. [Complete stdout, audit, boundaries](results/p599_denominator_automaton_parallel4_80m_PASS_2026-10-30.md). Keep old and new checkpoint roots separate due to binary hashes.
