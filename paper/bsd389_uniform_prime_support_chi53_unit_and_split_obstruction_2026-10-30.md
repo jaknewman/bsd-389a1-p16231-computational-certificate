@@ -112,6 +112,53 @@ The script for the preceding exact chi53 norm theorem has now also been run **su
 
 ---
 
+## 3 ter. Positive uniform theorem: infinitely many admissible auxiliary primes at every surjective p
+
+The previous lemma rules out a **fixed** finite set of auxiliary conductors. It does not say we cannot find auxiliary primes for an arbitrary p. In fact we can **prove their existence uniformly**, using only mod-p surjectivity and Chebotarev:
+
+**Theorem (exact, conditional only on residual surjectivity at the chosen p).** Let \(p\ge5\) be a rational prime such that
+\[
+\bar\rho_{E,p}:G_{\mathbf Q}\twoheadrightarrow \operatorname{GL}_2(\mathbf F_p)
+\]
+is surjective. Then the set of good primes \(q\ne p\) with
+\[
+q\equiv1\pmod p,\quad a_q(E)\equiv q+1\pmod p,\quad
+\dim_{\mathbf F_p}E(\mathbf F_q)[p]=1
+\]
+has natural density **at least** \(1/(p(p-1))\), and the subset with **nontrivial unipotent Frobenius** has density **exactly** \(1/(p(p-1))\). In particular it contains infinitely many primes, and it is always possible to choose two or more distinct such q for this p.
+
+**Proof.** Choose the conjugacy class \(C\) of
+\[
+U=\begin{pmatrix}1&1\\0&1\end{pmatrix}
+\in\mathrm{GL}_2(\mathbf F_p).
+\]
+Its centralizer consists exactly of invertible matrices
+\(\begin{psmallmatrix}a&b\\0&a\end{psmallmatrix}\), with \(a\in\mathbf F_p^\times\) and \(b\in\mathbf F_p\); it has \(p(p-1)\) elements. Since
+\(|\mathrm{GL}_2(\mathbf F_p)|=(p^2-1)(p^2-p)\), the class C has \(p^2-1\) elements. Chebotarev applied to \(\mathbf Q(E[p])/\mathbf Q\) gives primes q whose Frobenius class equals C with natural density
+\[
+\frac{|C|}{|\mathrm{GL}_2(\mathbf F_p)|}
+=\frac1{p(p-1)}>0.
+\]
+For every such q, the Weil pairing/determinant identity yields
+\(\det\bar\rho(\operatorname{Frob}_q)\equiv q\equiv1\bmod p\);
+the trace identity yields \(a_q(E)\equiv\operatorname{tr}(U)=2\equiv q+1\bmod p\).
+Finally, the reduction's p-torsion is the fixed subspace
+\(\ker(U-I)\), of dimension exactly one because \(U\) is nontrivial unipotent. QED.
+
+**Precise scope:** This proves basic **mod-p auxiliary-prime admissibility**, including cyclic p-torsion. More stringent p^n-level congruences or additional local conditions in a particular version of Kim/Kolyvagin's theorem would need separate checking in a higher torsion field. The historical uniform residual-surjectivity claim for 389a1 must be accepted with its own validated finite-exception list; the Chebotarev theorem does **not** certify that claim itself.
+
+**Crucial frontier:** Even infinitely many *admissible* q for each p do NOT imply a **nonzero Kurihara number** \(\widetilde\delta_{q_1q_2}\). The precise sought all-p theorem is of the form:
+\[
+\forall p\notin S,\quad
+\exists q_1(p)\ne q_2(p)\text{ satisfying admissibility and }
+\widetilde\delta_{q_1(p)q_2(p)}\not\equiv0\bmod p,
+\]
+or else a genuinely different integral Selmer criterion. Nothing in Chebotarev, by itself, proves this nonvanishing.
+
+Reference for exact conjugacy-class density: [Chebotarev theorem, H. W. Lenstra, Theorem 3.1](https://websites.math.leidenuniv.nl/algebra/Lenstra-Chebotarev.pdf). The finite-group centralizer computation above is self-contained.
+
+---
+
 ## 4. New sharp bottleneck and suggested next proof target
 
 We now have a fixed p-adic unit toric factor for **all p ≠ 3**. What we do **not** have is a p-uniform injection or a p-integral identity relating \(\Sha(E)[p]\) to this factor. More precisely:
