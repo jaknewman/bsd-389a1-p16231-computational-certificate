@@ -1,22 +1,22 @@
 # The p=599 primary Tate–Shafarevich bound for 389a1 — computer-assisted proof record
 
-**Date:** 2026-10-30. **Claim:** \(\Sha(E/\mathbf Q)[599^\infty]=0\) for \(E:y^2+y=x^3+x^2-2x\), **as a computer-assisted mathematical deduction from the supplied, user-executed Sage/eclib certificates and the published Stein–Wuthrich/Perrin-Riou/Kato theorems**. The stated conclusion is *not* a direct output of \`E.sha().p_primary_bound(599)\`, which did not complete. As usual for a new computational proof, independent external mathematical review and public verification with the same pinned Sage data are valuable before formal publication. No claim about \(\Sha\) at other primes, or full BSD.
+**Date:** 2026-10-30. **Claim:** \(\Sha(E/\mathbf Q)[599^\infty]=0\) for \(E:y^2+y=x^3+x^2-2x\), **as a computer-assisted mathematical deduction from the supplied, user-executed Sage/eclib certificates and the published Stein–Wuthrich/Perrin-Riou/Kato theorems**. The stated conclusion is *not* a direct output of `E.sha().p_primary_bound(599)`, which did not complete. As usual for a new computational proof, independent external mathematical review and public verification with the same pinned Sage data are valuable before formal publication. No claim about \(\Sha\) at other primes, or full BSD.
 
 ## Exact hypotheses and input certificates
 
 - \(E\) is the minimal model \([0,1,1,-2,0]\) of \(389a1\); conductor 389, discriminant +389, Tamagawa product 1, torsion order 1, two real components.
 - \(p=599\): good supersingular reduction, \(a_{599}=0\); mod-p Galois representation **surjective** (user's certified Sage computation).
-- \(\operatorname{rank}E(\mathbf Q)=2\); Sage \`E.gens(proof=True)\` returned two certified generators \((-1,1),(0,-1)\), with \`gens_certain()=True\).
+- \(\operatorname{rank}E(\mathbf Q)=2\); Sage `E.gens(proof=True)` returned two certified generators \((-1,1),(0,-1)\), with `gens_certain()=True\).
 - The \(\omega,\varphi(\omega)\)-coordinate \(D_p\)-regulator computed by Sage satisfies
   \[
   \operatorname{Reg}_\gamma(E/\mathbf Q)_0\equiv571\pmod{599},\qquad
   \operatorname{ord}_{599}(\operatorname{Reg}_\gamma(E/\mathbf Q)_1)=1,
   \]
   where \(\operatorname{Reg}_\gamma=\operatorname{Reg}_p/\log_{599}(1+599)^2\). Thus its vector valuation is **0** and it is nonzero. This is a normalized regulator; the unnormalized regulator's first coordinate has valuation 2.
-- The genuine eclib source Manin table has SHA256 \`fc162c6f20459e2973c0641629d3c9feba3df39c0b42cd58aaf2e1bbed7435c8\`, and every one of the 390 table values was compared against \`E.padic_lseries(599)._modular_symbol\` (user-executed PASS).
+- The genuine eclib source Manin table has SHA256 `fc162c6f20459e2973c0641629d3c9feba3df39c0b42cd58aaf2e1bbed7435c8`, and every one of the 390 table values was compared against `E.padic_lseries(599)._modular_symbol` (user-executed PASS).
 - Two independent finite-symbol engines (original C++ continued fractions, independently implemented Python full-convergent method) computed the conductor-\(p^2\) tame-trivial binomial moment \(C_2=543\bmod599\) from exactly 179,101 plus-symmetry pairs and 1,924,081 continued-fraction edges. \(C_0=C_1=0\), checksum 779927018. These moments are in the p-adic L-function's *actual* normalized modular-symbol convention.
 
-Source run log: [all-390 plus small supersingular regression](../results/p599_hecke_projection_independent_regression_PASS_2026-10-30.md). Source normalization script: [\`verification/bsd389_p599_hecke_projection_regression.py\`](../verification/bsd389_p599_hecke_projection_regression.py).
+Source run log: [all-390 plus small supersingular regression](../results/p599_hecke_projection_independent_regression_PASS_2026-10-30.md). Source normalization script: [`verification/bsd389_p599_hecke_projection_regression.py`](../verification/bsd389_p599_hecke_projection_regression.py).
 
 ## Step 1 — precise finite Hecke-to-analytic identity
 
@@ -48,10 +48,10 @@ These are exact Hecke and integer-weight arguments, not a conjectural leading-te
 
 ## Step 2 — Frobenius and proven approximation precision
 
-Read directly from the tagged Sage 10.9 source \`src/sage/schemes/elliptic_curves/padic_lseries.py\`:
-- \`measure(a,3)\`: \(\alpha^{-3}S_3(a)-\alpha^{-4}S_2(a)\), with \(\alpha^2=-p\).
-- \`series(3,prec=3)\`: the sum with weights \(w_3(a)\), divided by \(\mathrm{real\_components}=2\); the twist-period quotient is 1.
-- \`Dp_valued_series\`: write the series as \(G+\alpha H\), multiply \((G,-pH)\) by \(((1-\varphi)^{-2})^\top\), \(\varphi=\begin{psmallmatrix}0&-1/p\\1&0\end{psmallmatrix}\).
+Read directly from the tagged Sage 10.9 source `src/sage/schemes/elliptic_curves/padic_lseries.py`:
+- `measure(a,3)`: \(\alpha^{-3}S_3(a)-\alpha^{-4}S_2(a)\), with \(\alpha^2=-p\).
+- `series(3,prec=3)`: the sum with weights \(w_3(a)\), divided by \(\mathrm{real\_components}=2\); the twist-period quotient is 1.
+- `Dp_valued_series`: write the series as \(G+\alpha H\), multiply \((G,-pH)\) by \(((1-\varphi)^{-2})^\top\), \(\varphi=\begin{psmallmatrix}0&-1/p\\1&0\end{psmallmatrix}\).
 
 Thus the quadratic coefficient at level \(n=3\) has \(G=-B_3/(2p^2)\), \(H=A_3/(2p^2)\) and
 \[
@@ -66,7 +66,7 @@ For \(n=3\), the alpha-adic **proven** error bound is \(\mathrm O(\alpha^{-1})\)
 \]
 In particular, its vector valuation is **0**.
 
-Independent convention regression: at the genuinely supersingular pair \((1483a1,p=5)\), the full direct Sage \`Dp_valued_series(n=3,prec=3)\` calculation (100 units) produced the same \(T^2\)-coefficient residue as the conductor-\(p^2\) Hecke formula, 1 mod 5; all 20 exact Hecke fibres were verified. This tests a nontrivial real-components=1 convention. For \(p=599\), the all-390 eclib normalization test and \(\mathrm{real\_components}=2\) are user-executed PASS.
+Independent convention regression: at the genuinely supersingular pair \((1483a1,p=5)\), the full direct Sage `Dp_valued_series(n=3,prec=3)` calculation (100 units) produced the same \(T^2\)-coefficient residue as the conductor-\(p^2\) Hecke formula, 1 mod 5; all 20 exact Hecke fibres were verified. This tests a nontrivial real-components=1 convention. For \(p=599\), the all-390 eclib normalization test and \(\mathrm{real\_components}=2\) are user-executed PASS.
 
 ## Step 3 — the published, unconditional Selmer bound
 
@@ -95,13 +95,13 @@ This proof *does not use* the conjectural exact equality between L-leading coeff
 ## Scope, auditability and reproducibility
 
 - This is a **computer-assisted mathematical deduction**, trusting the user-executed Sage/eclib computations, the cryptographically pinned table, independently corroborated finite Manin sums, the exact normalization and the published Selmer theorem. It is not a fully formalized Lean/Coq proof and has not yet been externally peer-reviewed.
-- The original Sage \`sha.p_primary_bound(599)\` attempt consumed substantial resources and did **not return** 0. The proof replaces only its analytic-coefficient evaluation by the explicit Hecke identity and proven source-code precision bound, not by a heuristic assumption.
+- The original Sage `sha.p_primary_bound(599)` attempt consumed substantial resources and did **not return** 0. The proof replaces only its analytic-coefficient evaluation by the explicit Hecke identity and proven source-code precision bound, not by a heuristic assumption.
 - Nothing here proves the analogous statement for every prime, nor finiteness of the entire \(\Sha\) group, nor BSD for \(389a1\).
 
 **Reproduce the supplied finite and normalization data** (requires external authentic 390-Manin table):
-\`\`\`bash
+```bash
 python -u verification/sha599_short_certificate.py --table ~/bsd389_p599_manin_table.txt --sage
 python -u verification/bsd389_p599_hecke_projection_regression.py --table ~/bsd389_p599_manin_table.txt
-\`\`\`
+```
 
 An external mathematical review of the bridge and the paper theorem is recommended before public publication. Any found defect must be recorded and the theorem status corrected without changing the facts of the user-executed finite PASS results.
