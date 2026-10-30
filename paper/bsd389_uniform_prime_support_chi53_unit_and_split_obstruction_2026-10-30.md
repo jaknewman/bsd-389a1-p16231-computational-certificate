@@ -83,6 +83,35 @@ For the current fixed K=Q(sqrt(-3)), p>3 splits iff p≡1 mod 3. Thus 16231 is s
 
 Primary source for the splitting hypothesis: Castella–Hsieh, *On the nonvanishing of generalised Kato classes for elliptic curves of rank 2*, [Cambridge, §2.2 / Theorem 2.3](https://www.cambridge.org/core/journals/forum-of-mathematics-sigma/article/on-the-nonvanishing-of-generalised-kato-classes-for-elliptic-curves-of-rank-2/72ED842AB428A7ED619B1B84287A6864).
 
+## 3 bis. A second uniform obstruction: no fixed list of Kurihara auxiliary conductors covers all primes
+
+Our existing rank-two Kurihara certificates rely on **p-admissible auxiliary primes** \(q_1,q_2\), which satisfy at least \(q_i\equiv1\pmod p\), as well as \(a_{q_i}(E)\equiv q_i+1\pmod p\).
+
+**Elementary exact lemma.** Fix a squarefree auxiliary conductor \(n=q_1\cdots q_r\), with \(r\ge1\). If n is admissible for a prime p under these conditions then
+\[
+ p\mid q_i-1\quad\text{for every }i,\qquad
+ p\mid d_n:=\gcd(q_1-1,\ldots,q_r-1).
+\]
+Since \(d_n\) is a fixed nonzero integer, a **single fixed n** can serve only **finitely many** p. Any **finite list of fixed n** can serve only a finite union of such prime divisors. This is independent of the curve's Fourier coefficients: the \(q\equiv1\pmod p\) prerequisite alone suffices.
+
+Our exact previously used examples illustrate this stronger obstruction:
+
+| Fixed auxiliary pair \((q_1,q_2)\) | Exact gcd \(d_n\) | Eligible \(p\ge5\) from congruences alone |
+|---|---:|---|
+| (41,61) | \(20=2^2\cdot5\) | \(5\) |
+| (113,673) | \(112=2^4\cdot7\) | \(7\) |
+| (369793,383917) | \(1284=2^2\cdot3\cdot107\) | \(107\) |
+
+**Result:** Keeping a finite suite of previously computed Kurihara conductors cannot by itself replace all remaining p-specific calculations by a uniform argument. To use Kurihara–Kim uniformly, the auxiliary conductor \(n(p)\) must **vary with p**, and one must obtain an effective *uniform nonvanishing/primitivity theorem* that applies to those varying conductors. The existence of a nonzero witness at selected p=5,7,107 is not such a theorem.
+
+**Interaction with the previous section:** both the split-p anticyclotomic approach (requiring varying imaginary K or a new inert-prime theorem) and the Kurihara auxiliary-prime approach (requiring varying n) have an explicit reason why finitely many frozen local tests cannot settle infinitely many p. This does **not** make all-prime support impossible: it identifies the exact quantifier switch our next proof must supply.
+
+### Independent execution record
+
+The script for the preceding exact chi53 norm theorem has now also been run **successfully by the user on Ubuntu**, in addition to the original local independent run; see [verbatim PASS transcript](../results/chi53_uniform_toric_norm729_USER_SAGE_PASS_2026-10-30.md). This strengthens its computational provenance but changes none of the separate Selmer implications still to be proved.
+
+---
+
 ## 4. New sharp bottleneck and suggested next proof target
 
 We now have a fixed p-adic unit toric factor for **all p ≠ 3**. What we do **not** have is a p-uniform injection or a p-integral identity relating \(\Sha(E)[p]\) to this factor. More precisely:
