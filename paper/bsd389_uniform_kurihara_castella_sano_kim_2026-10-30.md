@@ -22,6 +22,31 @@ Non-CM check for the fixed curve: \(j(E)=112^3/389=1404928/389\notin\mathbf Z\),
 
 **This corrects the previous issue #8 target:** "for every p, find some admissible n with δ_n nonzero" is already established by the cited preprint (under explicit local hypotheses); only the **rank-two** condition \(\nu(n)=2\) is unresolved.
 
+## 1 bis. The exceptional set is **explicit** for E389a1: Mazur's semistable surjectivity theorem
+
+The general Serre open-image theorem in §1 is sufficient, but unnecessarily weak for this particular curve. **Mazur's theorem (1978, Theorem 4)** states:
+
+> If \(E/\mathbf Q\) is **semistable** and \(p\ge11\) is prime, then \(\bar\rho_{E,p}\) is surjective.
+
+This exact formulation is reproduced as **Theorem 2.1** in Grigorov–Jorza–Patrikis–Stein–Tarnita-Pătrașcu, *Computational Verification of the Birch and Swinnerton-Dyer Conjecture for Individual Elliptic Curves*, [source PDF §2.1.2, printed page 5](https://www.wstein.org/papers/bsdalg/bsdalg2.pdf), and in Mayle–Wang (2024) [*On the effective version of Serre's open image theorem*](https://doi.org/10.1112/blms.13002).
+
+E389a1 has conductor \(N=389\) (prime) and minimal discriminant \(\Delta=+389\) with \(v_{389}(\Delta)=1\). Its unique bad reduction is **multiplicative**, so E is **semistable**. Consequently, for **EVERY** prime \(p\ge11\), Mazur supplies the precise surjectivity required by Castella–Sano, with *no unknown surjectivity exceptions*. For \(p\ne389\), the reduction is good and either ordinary or supersingular, and \(N\) is squarefree; p-unit Manin constant and \(\mathrm{Tam}_E=1\) hold.
+
+**Exact unconditional-uniform conclusion from the published/prerequisite theorems:**
+\[
+\boxed{\forall\text{ primes }p\ge11,\ p\ne389:
+\qquad\mathcal M_\infty(\delta_p)=0.}
+\]
+Equivalently, **for every such p** there exists an admissible squarefree auxiliary conductor \(n(p)\) (not necessarily with 2 prime divisors) such that
+\[
+\boxed{\delta_{n(p)}\not\equiv0\pmod p.}
+\]
+This statement needs **no numerical search over p**, no input from \(\chi_{53}\), and no assumption of finiteness of Sha. Its excluded primes are explicitly \(\{2,3,5,7,389\}\) if one wants a statement covering *all* rational primes without importing the separate small-prime residual tests. The previously user-run surjectivity checks at \(p=5,7\), if accepted with their source certificates, extend the mod-p nonvanishing to every \(p\ge5\), \(p\ne389\). Theorem B does **not** directly apply at the multiplicative prime 389; Theorem A could apply if its own separate local Iwasawa main-conjecture hypothesis were established there.
+
+**Crucial logical boundary:** This is uniform **unrestricted-degree** Kurihara nonvanishing, NOT the sought uniform **two-prime** nonvanishing and NOT a finite-support bound on Sha.
+
+---
+
 ## 2. Kim's exact Selmer structure refines this to a prime-by-prime trichotomy
 
 **Primary reference:** C.-H. Kim, *The Structure of Selmer Groups and the Iwasawa Main Conjecture for Elliptic Curves*, [arXiv:2203.12159v6 PDF](https://arxiv.org/pdf/2203.12159), printed **page 7**, Theorem **1.8 (1)–(3)**, and page 6 definitions.
