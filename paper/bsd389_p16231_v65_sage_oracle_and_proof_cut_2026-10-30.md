@@ -1,8 +1,25 @@
 # p16231: an independent V65 eclib → Sage oracle and the remaining source-chain cut
 
-**Date:** 2026-10-30. **Status:** source-code and exact matrix lemmas written, *new 67-generator Sage script not yet executed by user*. Do not mark it PASS until the authenticated terminal output is provided.
+**Date:** 2026-10-30. **Current status:** 67-generator independent Sage verification **USER-EXECUTED PASS** (verbatim log below); source-to-reference and compiler/runtime assumptions remain explicitly scoped.
 
 Curve E = 389a1, N=389, p=16231, a_p=128 ordinary, rank 2. We are **not** repeating the historical 263,429,130 pairs, the 131,698,335 nonzero level-2 eclib evaluations, or an expensive full Sage n=3 L-series run.
+
+## Post-publication user-run audit — 2026-10-30: **PASS**
+
+The independent V65/original-Shapiro oracle was executed on the user’s Sage-enabled Ubuntu machine, not merely published. [Verbatim source and output transcript](../results/p16231_v65_independent_sage_manin_shapiro_PASS_2026-10-30.md).
+
+- `P16231_V65_ORIGINAL_SHAPIRO_SHA256_PASS`: exact original all-390 relation export, pinned SHA256.
+- `P16231_V65_BINARY_TABLE_SHA256_PASS`: exact source/oracle V65 binary, pinned SHA256.
+- `P16231_ALL_16232_EXACT_SHAPIRO_P_BETA_FACTORIZATIONS_PASS`: all 16,232 coset matrix identities, infinity included.
+- `P16231_V65_ALL_67_COMPLETE_HECKE_FIBRES_PASS entries 1087477`: all 67 stored beta fibres satisfy the Hecke identity.
+- `P16231_V65_INDEPENDENT_SAGE_FG_FP_PASS checks 134 oracle sage`: every generator's two anchor values checked with a different Sage symbol implementation.
+- `P16231_V65_INDEPENDENT_SAGE_BETA_SAMPLES_PASS checks 536`: eight independent sampled beta symbols per generator.
+- `P16231_V65_INDEPENDENT_SAGE_SHAPIRO_M0_PASS checks 335 infinity_representatives 67`: five M0 cosets per generator including all 67 infinity cases.
+- `P16231_V65_SHARED_MANIN_ORACLE_AUDIT_PASS`: reached final assertion-free completion.
+
+**Interpretation:** This closes the newly proposed *independent Sage validation of the shared V65 numeric oracle*. It does not directly recompute all 1,087,477 beta-symbol values (only all Hecke sums plus sampled values); and does not re-evaluate the 263m original pairs, direct level-three (p)-adic L-series, or `Sha.p_primary_bound(16231)`. The historical computer-assisted claim remains conditioned on the faithful full-computation provenance and exact source-to-reference algebra, with independent external mathematical review recommended before calling it a formal/publication-grade proof. It does not imply full BSD.
+
+---
 
 ## 1. Mathematical identity already established, independent of sampled outputs
 
