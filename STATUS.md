@@ -1,5 +1,12 @@
 # Verification ledger — updated 2026-10-30
 
+## Addendum 2026-10-30 — EXACT RANK-TWO REMAINING OBSTRUCTION = SECOND FITTING IDEAL
+
+With **Mazur + Castella–Sano** proving `M_infinity(delta_p)=0` at every good `p>=11`, and **Kim Theorem 1.8 (1),(2)** together with MW rank two, one obtains an exact identity
+`Fitt_{2,Zp}(Sel_{p∞}(E/Q)^dual)=p^{m2(p)} Zp`, where `m2(p)` is the minimum valuation of two-prime Kurihara numbers and `p^infinity Zp=0`. Thus `Fitt_2=Zp iff Sha[p^infinity]=0`. A single fixed integral comparison integer `C!=0` yielding `Fitt_2 ⊇ C·Zp` for every p outside an explicit finite set would prove the desired uniform Sha-prime support bound. **Such a comparison does not currently exist in our proof; neither generic IMC nor chi53's formal norm 729 supplies it.** [Exact theorem proof](paper/bsd389_uniform_kurihara_castella_sano_kim_2026-10-30.md) and [issue #8](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/8).
+
+---
+
 ## Addendum 2026-10-30 — EXPLICIT ALL-p UNRESTRICTED KURIHARA NONVANISHING: THEOREM, not new finite computation
 
 **Major verified 2026 mathematical theorem:** Castella–Sano (Jan 20 2026 **preprint**), **Theorem B**, proves `M_infinity(delta_p)=ord_p(Tam_E)` for surjective mod-p Galois representations with p-unit optimal Manin constant at any **good ordinary** p, or **good supersingular** p with squarefree conductor. For our **semistable E=389a1 with squarefree N=389 and Tamagawa product 1**, **Mazur's 1978 Theorem 4** guarantees surjectivity of the mod-p representation for **EVERY p≥11**, not merely all sufficiently large p. Thus the sharp, presently proven all-prime statement is `M_infinity(delta_p)=0` for **EVERY prime p≥11 except p=389**. This guarantees existence of some mod-p **unit Kurihara witness with an unspecified number of auxiliary primes** for each such p. The finite direct-theorem exclusions are explicitly `{2,3,5,7,389}`; historic independent residual-surjectivity proofs at p=5,7, if accepted, also extend it to those p. [Original theorem and the exact Kim consequence](paper/bsd389_uniform_kurihara_castella_sano_kim_2026-10-30.md). No p scan, twist, or chi53 period is necessary for this uniform statement.
