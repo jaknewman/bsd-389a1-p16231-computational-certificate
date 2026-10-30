@@ -87,6 +87,46 @@ Therefore, for these **good p with surjective E[p]**,
 
 **Warning:** "there exists at least one n of arbitrary length with δ_n nonzero mod p" now follows from Castella–Sano, but it **does not imply** m2(p)=0. Inferring the two-prime assertion from the unrestricted theorem would be equivalent to assuming the target Sha[p]-triviality. In particular, no fixed integer \`C=729\` has been proved to bound support of Sha.
 
+## 2 bis. The **second Fitting ideal** is the exact rank-two global target
+
+Kim's Theorem 1.8(1) says
+\[
+\operatorname{Fitt}_{i,\mathbf Z_p}
+  (\operatorname{Sel}_{p^\infty}(E/\mathbf Q)^\vee)=0
+\quad(0\le i\le\rho_p-1),
+\]
+while Theorem 1.8(2), when \(i\ge\rho_p\) and \(i\equiv\rho_p\bmod2\), says
+\[
+\operatorname{Fitt}_{i,\mathbf Z_p}
+  (\operatorname{Sel}_{p^\infty}^\vee)
+  =p^{m_i(p)-m_\infty(p)}\mathbf Z_p.
+\]
+Because \(m_\infty(p)=0\) and \(\rho_p\ge2\), setting \(i=2\) gives the **single exact rank-two formula valid in both cases**:
+\[
+\boxed{
+\operatorname{Fitt}_{2,\mathbf Z_p}
+  (\operatorname{Sel}_{p^\infty}(E/\mathbf Q)^\vee)
+=p^{m_2(p)}\mathbf Z_p
+}
+\]
+with convention \(p^\infty\mathbf Z_p=0\). Indeed, if \(\rho_p=2\), apply (2); if \(\rho_p>2\), both sides vanish by (1) and the definition \(m_2=\infty\).
+
+Consequently,
+\[
+\boxed{
+\operatorname{Fitt}_{2,\mathbf Z_p}
+(\operatorname{Sel}_{p^\infty}^\vee)=\mathbf Z_p
+\iff
+\Sha(E/\mathbf Q)[p^\infty]=0.
+}
+\]
+
+**This is the most concrete remaining uniform problem.** Construct a *genuinely p-independent integral determinant* \(C\in\mathbf Z\setminus\{0\}\), with a properly justified comparison (at all good p outside a controlled finite set) between the localization of the corresponding global integral complex and **this second Fitting ideal**. If the comparison yielded \(\operatorname{Fitt}_2\supseteq C\mathbf Z_p\) for all such p, then every prime \(p\nmid C\) would have \(\operatorname{Fitt}_2=\mathbf Z_p\), proving the desired uniform Sha support bound.
+
+**Status:** Such an integral comparison has *not* been constructed. Castella–Sano's \(\Lambda\)-adic **determinantal Iwasawa Main Conjecture** establishes the *unrestricted* minimum \(m_\infty=0\), not a p-independent integer C controlling \(m_2\). A determinant of the **formal chi53 Gross orbit** with norm 729 is a different object and is **not** known to map to \(\operatorname{Fitt}_2\) here. Merely naming this Fitting ideal does not supply the required comparison.
+
+---
+
 ## 3. Connection to verified historical calculations and the next real route
 
 Historical user-executed p=107 data: n=369793·383917, \(\delta_n=34\pmod{107}\) with genuine complete 710-block archive SHA256 \`b34131819db43fb6b227fa0e769f94b23733270df87dcd6b6dc47ed40693e754\`, as traced in [p107/Kim theorem note](bsd389_p107_kim_two_prime_sha_criterion_2026-10-30.md). These supply **m2(107)=0**, not merely the unrestricted m∞(107)=0 theorem, hence the specific Sha107 result under the source/archive trust boundary. The separate supersingular p107 cyclotomic shortcut corroborates the p-adic regulator unit but is not needed here.
