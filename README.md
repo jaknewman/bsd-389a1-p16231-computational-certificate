@@ -12,6 +12,8 @@ E/\mathbb Q:\quad y^2+y=x^3+x^2-2x,\qquad p=16231.
 
 ## p=599 finite-level certificate — 2026-10-30
 
+**Post-sync provenance correction:** The locally executed short-verifier script differs from the version committed to GitHub, so checked-in script reproduction is **PENDING** ([issue #5](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/5)). The finite C2 and native oracles are separately recorded. Do not mistake the user's local `PASS` log for a PASS of the current GitHub script.
+
 The user-executed independent finite conductor-`599^2` moment audits agree: `C0=C1=0`, `C2=543 mod 599`, across 179,101 sign pairs and 1,924,081 continued-fraction edges. The independent C++ engine reported PASS. A new bounded-memory Python verifier also completed on the user's Sage system with certified rank-2 Mordell–Weil generators, residual surjectivity, and normalized regulator first residue `571 mod 599`.
 
 A proposed Hecke/Frobenius/precision reduction yields the **derived** analytic residue `F0=571 mod 599`; it is not a direct calculation of `Dp_valued_series` and the `p_primary_bound(599)` calculation did not finish. **Do not cite this as a completed unconditional proof that Sha[599^infinity] vanishes** until the reduction and Stein–Wuthrich/Kato theorem application receive independent review.
