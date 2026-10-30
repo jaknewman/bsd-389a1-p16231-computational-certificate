@@ -1,5 +1,16 @@
 # Verification ledger — updated 2026-10-30
 
+## Addendum 2026-10-30 — p599 real two-chunk resume PASS, first two local primes confirmed
+
+**K599 two-block on authentic data USER-RUN PASS:** 1..1,000,000 has contraction 456, 1,000,001..2,000,000 has contraction 22, so the exact accumulated *partial* residue is 478 modulo 599. Both JSON checkpoints were written, and a second run without --run audited both records with identical results and no native recomputation. Source table SHA-256 `fc162c6f20459e2973c0641629d3c9feba3df39c0b42cd58aaf2e1bbed7435c8`. Under the 1m smoke configuration, coverage is 2 / 48,262,420 chunks and 2,000,000 / 48,262,408,622,240 units. [Complete archived stdout](results/bsd389_k599_two_checkpoint_smoke_PASS_2026-10-30.md).
+
+**Independent assistant-local exact search:** `python verification/bsd389_p599_auxiliary_local_certificate.py --search --limit 20000000 --hits 50` finds accepted primes 6,912,461 and 13,963,889, local rows [1,536] and [1,412], determinant 475 modulo 599; search covers earlier congruent candidates via necessary elliptic-group annihilation followed by exact point counting. [Search transcript](results/bsd389_k599_auxiliary_first_two_exact_search_2026-10-30.md). No smaller pair was found within the source criteria.
+
+**Boundary:** No K599 full Kurihara value; partial nonzero 478 does not imply full nonzero; no p599-primary Sha conclusion. Avoid exhaustive full production absent a measured resource plan.
+
+---
+
+
 ## 2026-10-30: K599 production-config dry-run PASS, no chunks
 
 **User-executed PASS (dry-run only):** safe configuration output identifies 48,263 chunks of 1,000,000,000 numerator positions each, pinned genuine 390-Manin table SHA-256 fc162c6f20459e2973c0641629d3c9feba3df39c0b42cd58aaf2e1bbed7435c8. Initial audit explicitly returns `verified=0/48263`, `units=0/48262408622240`, `K599_INCOMPLETE_NO_CERTIFICATE`. No global computation begun. [Exact transcript and optional bounded two-chunk smoke procedure](results/k599_checkpointed_production_dry_run_PASS_2026-10-30.md). Checkpoint config pins chunk size; use a **new outdir** for a different chunk size. No delta599 or Sha599 claim.
