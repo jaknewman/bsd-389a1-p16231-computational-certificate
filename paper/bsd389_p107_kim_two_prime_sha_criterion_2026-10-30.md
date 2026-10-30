@@ -74,6 +74,18 @@ injects a divisible group \((Q_{107}/Z_{107})^2\) into a divisible group of the 
 \]
 **conditional only on authenticating and accepting the archived full Kurihara calculation and normalization along with the reported arithmetic gates**. No conjectural BSD equality and no independent Sha finiteness assumption are used.
 
+## 2026-10-30 user-executed final gates — PASSED
+
+The Sage user has now run both source files. [Exact outputs and evidence boundaries](../results/p107_two_routes_user_run_PASS_2026-10-30.md).
+
+1. `verification/bsd389_kim_kurihara_sha107_bridge.py` authenticated the COMPLETE archive by its exact SHA256 `b34131819db43fb6b227fa0e769f94b23733270df87dcd6b6dc47ed40693e754` and independently confirmed `a_369793=2` and `a_383917=-854`, admissible under Kim. It **did not recalculate the 710 JSON payloads**: `delta=34` comes from the frozen historically audited exhaustive run. Given those validated historical inputs and the p-integral Néron-normalized plus-symbol convention, Kim's Theorem 1.8 makes the 107-primary triviality a *computer-assisted consequence* of established theorems, without assuming full BSD or previous finiteness of Sha.
+2. `verification/bsd389_p107_supersingular_p2_shortcut.py` freshly computed all 5,671 conductor-107² signed pairs and the 106 Hecke fibres: `C0=0 C1=0 C2=86 mod107`; derived first quadratic coefficient `F0=43 mod107`; normalized regulator valuations `[0,1]`, first residue 43; rank 2, full generators and residual surjectivity PASS. This corroborates the predicted unit ratio via a distinct *analytic numerical route*. It is **not** a direct computation of level 107³ or a Sage `p_primary_bound(107)` invocation.
+3. **Normalization note requiring precision:** Stein–Wuthrich §4.4 defines `Reg_gamma=Reg_p/log(gamma)^r` and Conjecture 5.2 uses `Reg_gamma` for the T-series, yet the printed supersingular step (4) of Algorithm 11.1 shows `Reg_p`. To claim a second *separate theorem-level analytic proof*, explicitly resolve this `log(gamma)^r` factor instead of treating the script's `P107_STEIN_WUTHRICH_BOUND_ZERO_DERIVED` as a Sage bound. Kim's theorem and the actual Kurihara `delta=34` are unaffected.
+
+**Status:** Two independent numerical/computational witnesses verified. Primary **Kim/Kurihara proof chain** validated against the frozen archive and original theorem; reproducibility and source-code execution trust boundaries are documented. Separate analytic route's regulator normalization remains for a targeted audit; not a reason to recompute the full 710 blocks.
+
+---
+
 ## 4. Cheap independent second route
 
 A new independent script, [\`verification/bsd389_p107_supersingular_p2_shortcut.py\`](../verification/bsd389_p107_supersingular_p2_shortcut.py), computes the tame-trivial cyclotomic conductor-107² quadratic moment from **5,671 plus-pairs**, checks all Hecke p²→p fibres and the normalized supersingular regulator. The exact p599 Hecke/Frobenius lemma applies to p107 because a_107=0 and the curve has 2 real components. This second route may or may not certify a unit ratio at p107; **its numerical output is currently pending**. If its first moment or normalized regulator is not a unit, it is inconclusive and the archived K107/Kim route remains the primary certificate.
