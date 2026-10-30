@@ -1,5 +1,13 @@
 # Verification ledger — updated 2026-10-30
 
+## Addendum 2026-10-30 — p16231 shared-V65 oracle independent Sage regression PUBLISHED, NOT YET RUN
+
+**Ordinary theorem check:** Stein–Wuthrich, Algorithm 11.1, page 1783 explicitly uses `Reg_gamma` for the **good ordinary** `p=16231` upper bound; thus the supersingular `Reg_p` vs `Reg_gamma` issue in [issue #4](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/4) **does not apply** to this prime. Existing independently archived complete outer sum `J=4486`, complete independent level-2 coefficient `A2(n2)/p=1199`, source Hecke correction `8335` and regulator factor `B/p=9534` imply derived `A2(n3)/p=9534 (mod16231)` and a unit quotient, *conditional on faithfully linking the common Manin/eclib oracle to the source-defined mathematical scalar*. No new full n3 sum or bound call was made.
+
+**Targeted new independent verifier:** [`verification/bsd389_p16231_v65_direct_sage_oracle.py`](verification/bsd389_p16231_v65_direct_sage_oracle.py) authenticates the original reference V65 binary table and original 390-Manin export by SHA256, checks all **67 complete Hecke fibres / 1,087,477 table entries**, and directly evaluates every generator's `F(G),F(PG)`, eight tame-fibre samples, and five Shapiro `M0` cosets **including 67 exceptional infinity cosets**, using Sage's independent `implementation='sage'` rather than the table-producing eclib implementation. **NOT YET USER EXECUTED**. The finite/infinity exact-matrix proof is in [new mathematical note](paper/bsd389_p16231_v65_sage_oracle_and_proof_cut_2026-10-30.md); task tracked in [issue #7](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/7). This tests the shared oracle without repeating the 263m global loop. Existing conditional Sha[16231^infinity] argument has not been promoted to an unconditional independent theorem by simply publishing this code.
+
+---
+
 ## Addendum 2026-10-30 — p107 DUAL USER-EXECUTED PASS; Kim/Kurihara route authenticated, analytic normalization crosscheck OPEN
 
 **Fresh Sage cyclotomic p107 computation PASS:** 5,671 plus-symmetric representatives at conductor `107²=11449`, **all 106 Hecke fibres** verified, `C0=C1=0,C2=86 (mod107)`. Hecke/Frobenius-derived projected quadratic residue `F0,2=43 mod107`; certified rank 2 (gens `(-1:1:1)`, `(0:-1:1)`), residual surjectivity, Tamagawa product 1; normalized `Reg_gamma` vector valuations `[0,1]` and first-coordinate residue `43 mod107`. Exact [user-run stdout](results/p107_two_routes_user_run_PASS_2026-10-30.md). This is **not** an explicit `107³` enumeration or finished `p_primary_bound(107)` call.
