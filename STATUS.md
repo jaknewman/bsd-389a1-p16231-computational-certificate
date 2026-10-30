@@ -1,5 +1,14 @@
 # Verification ledger — updated 2026-10-30
 
+## Addendum 2026-10-30 — denominator-only Manin finite-state optimization
+
+**PROVEN algorithmic equivalence; synthetic local differential PASS; authentic user-run validation pending.** The new [denominator-only modular-Manin native engine](verification/kurihara_native_p599_denominator_automaton.cpp) retains Euclidean quotients but tracks only two convergent denominators mod 389 and precomputes the 389x389 oriented Manin edge table. On assistant-local g++ -O3 synthetic 390-entry data the complete W390 vector, units, weighted terms, edge counts and contractions matched the original p599 engine across 7 scattered intervals, then on three independent 3-million-position ranges. Three-run local median native-loop speed ratios original/optimized were 1.295x (early), 1.386x (middle), 1.337x (tail). The genuine table and archived checkpoints must still be checked with the [9-interval differential gate](verification/kurihara_p599_denominator_automaton_differential.py), including five independent BSGS/CF oracle intervals. [Algorithm proof, benchmarks and strict scope](paper/bsd389_p599_manin_denominator_automaton_optimization_2026-10-30.md).
+
+**Safety:** compile to a different executable; existing checkpoints PIN original binary SHA and MUST NOT be reused directly with the changed executable. This is an O(n log n) constant-factor speedup, not sublinear extraction. Global delta599 / Sha599 remain uncomputed.
+
+---
+
+
 ## Addendum 2026-10-30 — K599 four-worker 80M checkpoint benchmark PASS
 
 **User-observed native parallel checkpoint run (four workers):** four disjoint 20,000,000-position chunks (1–80,000,000) all PASS: residues 525, 370, 28, 182; combined *partial* contraction 506 mod 599; 79,999,984 units, exactly agreeing with the exclusion of 11 multiples of q1 and 5 multiples of q2. Wall 3.706 s (user 13.236 s, sys 0.149 s), throughput about 21.59 million attempted numerators/s and an indicative full half-range extrapolation of 25.88 days wall **only if sustained**. Genuine Manin table hash fc162c6f20459e2973c0641629d3c9feba3df39c0b42cd58aaf2e1bbed7435c8. **Four out of 2,413,121 chunks certified in this 20m configuration; GLOBAL KURIHARA VALUE AND Sha[599] REMAIN UNCOMPUTED.** [Complete transcript, checks and limitations](results/bsd389_k599_four_workers_80m_benchmark_PASS_2026-10-30.md). A nonzero partial residue is no evidence for nonzero global delta; `--full` should not be launched as a routine regression.
