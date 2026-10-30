@@ -1,5 +1,15 @@
 # Verification ledger — updated 2026-10-30
 
+## Addendum 2026-10-30 — p599 short certificate user-executed PASS; Sha theorem application REVIEW-REQUIRED
+
+**User-executed:** `verification/sha599_short_certificate.py --table ~/bsd389_p599_manin_table.txt --sage` completed: `LIFT_WEIGHT_IDENTITIES_PASS`, `P599_LEVEL_P2_INDEPENDENT_PASS` with C0=C1=0, C2=543, 179101 pairs, 1924081 edges, checksum 779927018, and `SAGE_ARITHMETIC_GATES_PASS` with rank 2, full certified generators, residual surjectivity, and normalized regulator residue 571. Earlier independent native C++ run also reported `CYCLOTOMIC_P2_INDEPENDENT_NATIVE_PASS` for the same finite moments. SHA256 of authentic source table: `fc162c6f20459e2973c0641629d3c9feba3df39c0b42cd58aaf2e1bbed7435c8`.
+
+**Conditional bridge:** the script prints `ANALYTIC_FROBENIUS_DERIVED F0_modp 571 F1_modp 0` using symbolic Hecke, lift and alpha-adic precision arguments, **not** a direct p³ sum or a successful `p_primary_bound(599)` run. The heavy Sage process exited without an output bound. The finite-to-analytic lemma and exact application of the Stein–Wuthrich/Kato bound still need independent mathematical audit; **Sha[599^infinity]=0 is not yet an independently certified theorem of this repository.** Preserve the stronger finite-level nonvanishing claim as PASS, with this boundary.
+
+[Verifier](verification/sha599_short_certificate.py) · [Detailed note and outstanding proof obligations](verification/README_sha599.md).
+
+---
+
 ## Addendum 2026-10-30 — genuine p599 conductor-p² cyclotomic C2=543, augmentation order exactly two
 
 **USER-EXECUTED exact nonzero finite-level witness:** at p=599, conductor p²=358801, the **unhalved plus-symbol tame-trivial** Mazur–Tate element has moments C0=0, C1=0, **C2=543=-56 mod 599 !=0**, computed with authentic eclib-derived 390 Manin data (SHA256 fc162c6f20459e2973c0641629d3c9feba3df39c0b42cd58aaf2e1bbed7435c8) in 3.231 seconds. The run audits all **598 Hecke fibres** and **179101 sign pairs**. Thus the finite-level element has augmentation order **exactly 2** modulo p in the tame-trivial Fp[Gamma] projection. [Full user stdout and strict implications](results/p599_cyclotomic_p2_Mazur_Tate_quadratic_nonzero_PASS_2026-10-30.md); [proof, ± normalization and theorems that do NOT apply](paper/bsd389_p599_cyclotomic_leading_order_two_certified_2026-10-30.md).
