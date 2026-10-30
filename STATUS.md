@@ -1,5 +1,12 @@
 # Verification ledger — updated 2026-10-30
 
+## Addendum 2026-10-30 — K599 four-worker 80M checkpoint benchmark PASS
+
+**User-observed native parallel checkpoint run (four workers):** four disjoint 20,000,000-position chunks (1–80,000,000) all PASS: residues 525, 370, 28, 182; combined *partial* contraction 506 mod 599; 79,999,984 units, exactly agreeing with the exclusion of 11 multiples of q1 and 5 multiples of q2. Wall 3.706 s (user 13.236 s, sys 0.149 s), throughput about 21.59 million attempted numerators/s and an indicative full half-range extrapolation of 25.88 days wall **only if sustained**. Genuine Manin table hash fc162c6f20459e2973c0641629d3c9feba3df39c0b42cd58aaf2e1bbed7435c8. **Four out of 2,413,121 chunks certified in this 20m configuration; GLOBAL KURIHARA VALUE AND Sha[599] REMAIN UNCOMPUTED.** [Complete transcript, checks and limitations](results/bsd389_k599_four_workers_80m_benchmark_PASS_2026-10-30.md). A nonzero partial residue is no evidence for nonzero global delta; `--full` should not be launched as a routine regression.
+
+---
+
+
 ## Addendum 2026-10-30 — p599 real two-chunk resume PASS, first two local primes confirmed
 
 **K599 two-block on authentic data USER-RUN PASS:** 1..1,000,000 has contraction 456, 1,000,001..2,000,000 has contraction 22, so the exact accumulated *partial* residue is 478 modulo 599. Both JSON checkpoints were written, and a second run without --run audited both records with identical results and no native recomputation. Source table SHA-256 `fc162c6f20459e2973c0641629d3c9feba3df39c0b42cd58aaf2e1bbed7435c8`. Under the 1m smoke configuration, coverage is 2 / 48,262,420 chunks and 2,000,000 / 48,262,408,622,240 units. [Complete archived stdout](results/bsd389_k599_two_checkpoint_smoke_PASS_2026-10-30.md).
