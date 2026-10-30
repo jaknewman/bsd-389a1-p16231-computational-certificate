@@ -68,6 +68,24 @@ où \(p^\infty\mathbf Z_p=(0)\). En particulier, Sha[p^\infty]=0 si et seulement
 \]
 Cela annulerait Sha[p^\infty] pour tous les p hors de S et des diviseurs de C, mais ne prouverait toujours pas l'égalité complexe BSD. **Aucune telle comparaison n'a été établie**. La norme exacte 729 du facteur torique chi53 n'est PAS, jusqu'à preuve contraire, un tel entier de Fitting.
 
+## Renforcement inconditionnel découvert après rédaction
+
+La formule du **deuxième idéal de Fitting** elle-même ne nécessite en réalité **aucun théorème d'Iwasawa**, et est vraie pour p arbitraire, même p=2,3,389. En dualisant la suite exacte de Kummer de rang deux, la surjection vers \(\mathbf Z_p^2\) se scinde, donc
+\[
+\operatorname{Sel}_{p^\infty}(E/\mathbf Q)^\vee
+\simeq\mathbf Z_p^2\oplus\Sha(E/\mathbf Q)[p^\infty]^\vee
+\]
+et
+\[
+\boxed{\operatorname{Fitt}_2(\operatorname{Sel}_{p^\infty}^\vee)
+=\operatorname{Fitt}_0(\Sha[p^\infty]^\vee).}
+\]
+Cette égalité donne pour chaque p une classification exacte : idéal unité iff \(\Sha[p^\infty]=0\); idéal \((p^e)\) iff \(\Sha[p^\infty]\) est fini, d'ordre \(p^e\); idéal nul iff la composante p-primaire est infinie. Kim est nécessaire uniquement pour exprimer numériquement cet idéal au moyen des nombres de Kurihara pour les p où ses hypothèses sont satisfaites.
+
+[Preuve formelle élémentaire intégrale](bsd389_unconditional_rank2_kummer_fitt2_identity_2026-10-30.md). Le passage à une **borne uniforme** exige toujours de construire le déterminant fixe C et l'application de comparaison intégrale absents à ce jour. L'égalité complexe forte de BSD reste une obligation distincte.
+
+---
+
 ## Les deux chantiers pour BSD complète
 
 **Chantier arithmétique :** obtenir une vraie borne uniforme sur les premiers de Sha, puis démontrer la finitude et la valeur de toutes les composantes exceptionnelles.
