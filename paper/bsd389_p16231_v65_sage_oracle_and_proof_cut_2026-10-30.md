@@ -55,6 +55,8 @@ P r_\infty =
 \]
 hence \(F(P r_\infty G)=f_0\), exactly the special branch in \`historical/v65/v65_independent_terminal_ntt.cpp\`. The source's \(M_0(r_j G)=f_G-\alpha^{-1}F(P r_j G)\) follows with no coefficient rescaling.
 
+**Exhaustive extra algebraic gate:** The updated checker now tests the exact factorization `P*r_j=H_j*beta_s` for **every** Shapiro index `j=0,...,p` (16,232 cases, not just five). This branch-independent identity was also executed separately under ordinary Python and passed (`INDEPENDENT_EXACT_SHAPIRO_FACTORIZATIONS_PASS 16232`). The genuine Sage binary-table regression remains *unexecuted* until the user supplies its terminal log.
+
 This test probes a **shared oracle** in a way not supplied by the two full outer-sum computations. The test is still finite/sample-level for direct Sage cusp values, not exhaustive independent regeneration of all 1,087,477 eclib table entries.
 
 ## 3. Exact numerical consequences (already historically authenticated)
