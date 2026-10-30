@@ -1,5 +1,13 @@
 # Verification ledger — updated 2026-10-30
 
+## 2026-10-30 — NEW UNCONDITIONAL ALL-p RANK-TWO FITT₂ THEOREM (including bad/small p)
+
+Without any input from Castella–Sano, Kim, Mazur or p-specific computation, the Kummer exact sequence and Pontryagin duality split over the projective `Z_p^2` quotient and give, **for EVERY prime p** (including 2,3,389): `X_p=Sel_{p∞}(E/Q)^dual ≅ Z_p^2 ⊕ Sha(E/Q)[p∞]^dual`. Therefore the *exact* identity `Fitt_{2,Zp}(X_p)=Fitt_{0,Zp}(Sha[p∞]^dual)` holds unconditionally. It equals `Z_p` exactly for trivial Sha[p∞]; equals `p^e Z_p` with finite exponent e exactly for finite Sha[p∞] of order `p^e`; equals `(0)` exactly if Sha[p∞] is infinite. These are elementary module-theoretic facts independent of the 2026 Iwasawa/Kurihara theorem; Kim is only used at its eligible primes to **calculate** the Fitting ideal from two-prime deltas. [Full proof](paper/bsd389_unconditional_rank2_kummer_fitt2_identity_2026-10-30.md).
+
+**Still NOT proved**: an integer C≠0 and proved p-integral comparison `Fitt_2 ⊇ C*Z_p` uniformly outside finite explicit S; no `C=729` identification. Finite prime support and exact archimedean BSD leading-term equality remain independent open tasks. [Issue #8](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/8), [issue #9](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/9).
+
+---
+
 ## 2026-10-30 — COMPLETE BSD SCORECARD: rank established, TWO independent theorem gaps remain
 
 **Classical math/verified inputs:** E=389a1 has conductor 389, minimal discriminant +389, proven Mordell–Weil rank 2 and certified free basis, analytic vanishing order exactly 2, torsion 1 and Tamagawa product 1. The **weak BSD rank equality is established** for this curve (Cremona). Its **strong complex BSD** is still **NOT established**: numerical `L''(E,1)=1.51863300057685354046...`, period `Omega≈4.980425`, height regulator `Reg≈0.152460`, and analytic Sha quotient approximately 1 do **not** prove `L''(E,1)/2=Omega*Reg*#Sha` exactly.
