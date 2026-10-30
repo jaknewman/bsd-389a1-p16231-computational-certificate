@@ -159,6 +159,37 @@ Reference for exact conjugacy-class density: [Chebotarev theorem, H. W. Lenstra,
 
 ---
 
+## 3 quater. New 2026 theorem settles **unrestricted** Kurihara nonvanishing for every good p≥11
+
+A decisive external-theorem upgrade supersedes the earlier phrase "the nonvanishing of any Kurihara witness is the open obstacle". Precisely, Castella–Sano (January 20, 2026 **preprint**), [Theorem B, printed page 3](https://web.math.ucsb.edu/~castella/Kurihara.pdf), proves the refined Kurihara conjecture for a prime \(p>3\) under mod-p surjectivity and p-unit Manin constant if p has good ordinary reduction, or p has good supersingular reduction and N is squarefree. Our N=389 is prime, \(\mathrm{Tam}_E=1\), and E is semistable. **Mazur's 1978 theorem** guarantees residual surjectivity for *every prime p≥11* on a semistable curve (e.g. Grigorov–Jorza–Patrikis–Stein–Tarnita-Pătrașcu, [Theorem 2.1](https://www.wstein.org/papers/bsdalg/bsdalg2.pdf), §2.1.2).
+
+Therefore the original rank-two curve 389a1 satisfies the **unconditional-with-respect-to-Shafarevich–Tate, explicit all-prime theorem**
+\[
+\boxed{\mathcal M_\infty(\delta_p)=0 \quad
+\text{for every prime }p\ge11,\ p\ne389.}
+\]
+Hence at each such p there exists **some** admissible squarefree n=n(p) with \(\delta_n\not\equiv0\pmod p\). The remaining finite list outside this direct theorem is \(\{2,3,5,7,389\}\); earlier project Galois proofs at p5 and p7, if independently accepted, also allow them. None of this proves Sha[p]=0.
+
+**Kim's Theorem 1.8** [arXiv 2203.12159v6, page 7](https://arxiv.org/pdf/2203.12159) now pinpoints the remaining integral rank-two obstruction. For every p in that explicit good range, set
+\(m_2(p)=\min_{\nu(n)=2}v_p(\delta_n)\), in Kim's exact residue-ring sense. Since \(m_\infty(p)=0\) and \(\operatorname{rank}E(\mathbf Q)=2\), we have a theorem-level trichotomy:
+
+1. \(m_2=0\): Sha[p∞] is **zero**.
+2. \(0<m_2<\infty\): Sha[p∞] is **finite of order \(p^{m_2}\)**.
+3. \(m_2=\infty\): the Selmer corank exceeds 2, and Sha[p∞] has a **positive-corank divisible** component.
+
+Thus
+\[
+\boxed{\Sha(E/\mathbf Q)[p^\infty]=0
+\Longleftrightarrow
+\exists\text{ admissible }n=q_1q_2 :
+\delta_n\not\equiv0\pmod p.}
+\]
+The theorem guaranteeing nonvanishing for *some unrestricted n* does NOT force \(\nu(n)=2\). In fact, asserting the latter for every p outside a finite set is **equivalent** (on the validated good-prime range) to the sought uniform vanishing of almost all Sha-primary components. It cannot be inferred from Chebotarev, generic Iwasawa IMC, or the norm of the separate fixed chi53 factor.
+
+[Full rigorous source comparison and sharp Kim criterion](bsd389_uniform_kurihara_castella_sano_kim_2026-10-30.md).
+
+---
+
 ## 4. New sharp bottleneck and suggested next proof target
 
 We now have a fixed p-adic unit toric factor for **all p ≠ 3**. What we do **not** have is a p-uniform injection or a p-integral identity relating \(\Sha(E)[p]\) to this factor. More precisely:
