@@ -1,5 +1,16 @@
 # Verification ledger — updated 2026-10-30
 
+## Addendum 2026-10-30 — genuine p599 conductor-p² cyclotomic C2=543, augmentation order exactly two
+
+**USER-EXECUTED exact nonzero finite-level witness:** at p=599, conductor p²=358801, the **unhalved plus-symbol tame-trivial** Mazur–Tate element has moments C0=0, C1=0, **C2=543=-56 mod 599 !=0**, computed with authentic eclib-derived 390 Manin data (SHA256 fc162c6f20459e2973c0641629d3c9feba3df39c0b42cd58aaf2e1bbed7435c8) in 3.231 seconds. The run audits all **598 Hecke fibres** and **179101 sign pairs**. Thus the finite-level element has augmentation order **exactly 2** modulo p in the tame-trivial Fp[Gamma] projection. [Full user stdout and strict implications](results/p599_cyclotomic_p2_Mazur_Tate_quadratic_nonzero_PASS_2026-10-30.md); [proof, ± normalization and theorems that do NOT apply](paper/bsd389_p599_cyclotomic_leading_order_two_certified_2026-10-30.md).
+
+**INDEPENDENT ENGINE WRITTEN, NOT YET USER-EXECUTED:** [native C++ original full-convergent oracle](verification/bsd389_p599_cyclotomic_p2_independent_native.cpp), intended to reproduce C0=0,C1=0,C2=543 on all 179101 plus pairs and 598 Hecke fibres separately from Python. Do not claim native PASS until reported.
+
+**Boundary:** C2=543 is **not** the full Kurihara delta_(q1q2); this finite theta is not automatically the normalized supersingular signed p-adic L-function. Kurihara's 2002 supersingular theorem assumes p-adic unit L(E,1)/Omega_E (fails for rank-two 389a1). A verified applicable Selmer/Fitting leading-term comparison, precise normalization and regulator remain missing. No Sha[599^infinity]=0 or full BSD claim.
+
+---
+
+
 ## Addendum 2026-10-30 — low-cost cyclotomic p599 conductor-p-squared experiment (pending Sage)
 
 **New independent arithmetic route, NOT yet run with genuine Sage data:** the tame-trivial projection of the Mazur–Tate element at conductor `p^2=358801` has first three coefficients `C_j = sum_a S(a/p^2) binom(k(a),j) (mod p)`, with `k(a)=-(a^(p-1)-1)/p (mod p)` (Fermat quotient). This needs only **179101** plus-symmetric unit representatives for p599, and every **598** Hecke fibre must vanish because `a_599=0` and `S(0)=0`; hence `C0=0` rigorously. The exponent/Teich decomposition was independently checked for every invertible residue mod p^2 at p=5,7,599. The real C1,C2 remain **UNKNOWN**. [Sage script with authentic SHA-pinned Manin table and all fibre audits](verification/bsd389_p599_cyclotomic_p2_moment_probe.py); [mathematical derivation and explicit comparison boundary](paper/bsd389_p599_cyclotomic_p2_mazur_tate_probe_2026-10-30.md).
