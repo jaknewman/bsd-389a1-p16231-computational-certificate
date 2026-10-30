@@ -34,6 +34,9 @@ def load_table(p,file):
     a=list(map(int,raw.split()))
     assert len(a)==393 and a[0]==p
     assert all(0<=v<p for v in a[3:])
+    if p==599:
+        assert a[:3]==[599,6912461,13963889]
+        assert hashlib.sha256(raw).hexdigest()=='fc162c6f20459e2973c0641629d3c9feba3df39c0b42cd58aaf2e1bbed7435c8'
     print('CYCLOTOMIC_MANIN_TABLE_SHA256',hashlib.sha256(raw).hexdigest(),flush=True)
     return a[3:392],a[392]
 
@@ -49,6 +52,8 @@ def main():
     vals,infty=load_table(p,a.table)
     assert len(vals)==389
     s0=int(infty)
+    if p==599:
+        assert ap_E==0 and s0==0,('supersingular/rank-two normalization',ap_E,s0)
     print('CYCLOTOMIC_P2_CONFIG','p',p,'n',n,'a_p',ap_E,'S0_modp',s0,flush=True)
     s_at_p=[0]*p
     for b in range(1,p):
