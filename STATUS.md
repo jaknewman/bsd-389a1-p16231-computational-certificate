@@ -1,5 +1,14 @@
 # Verification ledger — updated 2026-10-30
 
+## Addendum 2026-10-30 — EXPLICIT ALL-p UNRESTRICTED KURIHARA NONVANISHING: THEOREM, not new finite computation
+
+**Major verified 2026 mathematical theorem:** Castella–Sano (Jan 20 2026 **preprint**), **Theorem B**, proves `M_infinity(delta_p)=ord_p(Tam_E)` for surjective mod-p Galois representations with p-unit optimal Manin constant at any **good ordinary** p, or **good supersingular** p with squarefree conductor. For our **semistable E=389a1 with squarefree N=389 and Tamagawa product 1**, **Mazur's 1978 Theorem 4** guarantees surjectivity of the mod-p representation for **EVERY p≥11**, not merely all sufficiently large p. Thus the sharp, presently proven all-prime statement is `M_infinity(delta_p)=0` for **EVERY prime p≥11 except p=389**. This guarantees existence of some mod-p **unit Kurihara witness with an unspecified number of auxiliary primes** for each such p. The finite direct-theorem exclusions are explicitly `{2,3,5,7,389}`; historic independent residual-surjectivity proofs at p=5,7, if accepted, also extend it to those p. [Original theorem and the exact Kim consequence](paper/bsd389_uniform_kurihara_castella_sano_kim_2026-10-30.md). No p scan, twist, or chi53 period is necessary for this uniform statement.
+
+**Precisely what remains:** Kim's [Theorem 1.8](https://arxiv.org/pdf/2203.12159) plus certified MW rank 2 and `M_infinity=0` classify p-primary Sha via `m2(p) = min_{nu(n)=2} valuation_p(delta_n)`:
+`m2=0` iff `Sha(E/Q)[p^infinity]=0`; `0<m2<infinity` gives finite Sha[p^infinity] of order `p^m2`; `m2=infinity` gives a positive-corank divisible part. An unrestricted-degree witness alone **does not** imply a two-prime witness. The all-but-finite uniform **Sha** support bound still requires proving `m2(p)=0` for all sufficiently large p by **some new integral rank-two control**. No global Sha finite or BSD theorem claimed. [Current issue #8](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/8).
+
+---
+
 ## Addendum 2026-10-30 — UNIFORM: REAL USER PASS, fixed-n Kurihara no-go, and Chebotarev q(p) positive-density existence
 
 **New user-executed exact chi53 certificate PASS:** all six expected stdout lines from `python -u verification/bsd389_uniform_chi53_toric_unit.py` received, including polynomial factorization, explicit inverse, integer 6×6 determinant `Norm(F)=729=3^6`, and mathematically correct `p≠3` unit scope. [Verbatim authenticated user-run record](results/chi53_uniform_toric_norm729_USER_SAGE_PASS_2026-10-30.md). **No Sha bound implied by norm 729 alone**.
