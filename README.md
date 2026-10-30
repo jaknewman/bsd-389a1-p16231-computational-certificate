@@ -10,6 +10,8 @@ E/\mathbb Q:\quad y^2+y=x^3+x^2-2x,\qquad p=16231.
 
 **Do not cite this repository as an unconditional proof of BSD or of** `Sha(E/Q)[16231^infinity] = 0` **until the outstanding verification obligations are discharged and reviewed.** A first-digit congruence does not prove an exact p-adic equality or full BSD.
 
+**New unconditional all-prime reduction:** For EVERY p, even 2,3,389, the proven Mordell–Weil rank two and the split Pontryagin-dual Kummer exact sequence give `Sel_{p∞}(E/Q)^dual ≅ Z_p^2 ⊕ Sha[p∞]^dual`; hence `Fitt_2(Sel^dual)=Fitt_0(Sha[p∞]^dual)`. Thus `Fitt_2=Z_p` iff that p-primary part is zero; `Fitt_2=p^e Z_p` iff it is finite of order `p^e`; and `Fitt_2=0` iff it is infinite. **No reduction-type or Iwasawa theorem is needed for this equivalence**, only for calculating `Fitt_2` from modular symbols. The missing proof remains a fixed p-independent integral determinant/control comparison, plus the separate exact complex BSD formula. [Unconditional theorem and proof](paper/bsd389_unconditional_rank2_kummer_fitt2_identity_2026-10-30.md).
+
 ## Where are we on COMPLETE BSD? Two logically distinct gaps remain (2026-10-30)
 
 **Proven for 389a1:** Mordell–Weil rank 2 equals complex analytic rank 2; torsion trivial and Tamagawa product 1. Classical two-descent proves Sha[2]=0, and Sage's published `p_primary_bound(5)=p_primary_bound(7)=0` certify those two primes. This project's complete p107 archive, p599 supersingular moments and p16231 V65/Hecke certificate add substantial prime-specific computer-assisted evidence, with their existing normalization/source assumptions.
