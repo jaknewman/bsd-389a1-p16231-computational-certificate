@@ -1,5 +1,12 @@
 # Verification ledger — updated 2026-10-30
 
+## Addendum 2026-10-30 — p599 denominator automaton 4-worker authentic 80M PASS
+
+**User-executed matching dual-binary benchmark:** optimized denominator-state kernel (four workers) writes four native-SHA-pinned checkpoints for 80,000,000 numerator positions; residues are `525,370,28,182`, identical to the previous original-binary run. Accumulated partial contraction is `506 mod 599` from exactly 79,999,984 units; source table SHA256 `fc162c6f20459e2973c0641629d3c9feba3df39c0b42cd58aaf2e1bbed7435c8`. Optimized wall `3.459 s` versus baseline `3.706 s` (7.14% higher throughput, 6.66% shorter wall); CPU user `10.729 s` versus `13.236 s` (18.94% lower). Short-run extrapolation ~24.15 days wall at a sustained identical throughput is **not** a production guarantee. Only **4 / 2,413,121 chunks** checked in the 20m configured archive; global Kurihara delta599 and Sha[599^infinity] remain uncomputed. [Complete stdout, audit, boundaries](results/p599_denominator_automaton_parallel4_80m_PASS_2026-10-30.md). Keep old and new checkpoint roots separate due to binary hashes.
+
+---
+
+
 ## Addendum 2026-10-30 — authentic p599 denominator automaton 9/9 PASS
 
 **USER-EXECUTED PASS on genuine Sage table:** optimized denominator-only Manin C++ engine and baseline match on all **nine** intervals for every W390 entry, contraction, both logarithm generators, unit/weighted/edge counts. Five short intervals additionally match independent Python BSGS/CF. Reproduced first two million authentic contraction values 456 and 22. Table SHA256 fc162c6f20459e2973c0641629d3c9feba3df39c0b42cd58aaf2e1bbed7435c8. Four local timing ratios 1.330, 1.260, 1.163, 1.389; conventional sample median **1.295x**. The original benchmark displayed 1.33 because it chose the upper central value; script now uses statistics.median. [Authenticated regression results](results/p599_automaton_authentic_nine_intervals_PASS_2026-10-30.md).
