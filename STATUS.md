@@ -1,5 +1,15 @@
 # Verification ledger — updated 2026-10-30
 
+## Addendum 2026-10-30 — UNIFORM: REAL USER PASS, fixed-n Kurihara no-go, and Chebotarev q(p) positive-density existence
+
+**New user-executed exact chi53 certificate PASS:** all six expected stdout lines from `python -u verification/bsd389_uniform_chi53_toric_unit.py` received, including polynomial factorization, explicit inverse, integer 6×6 determinant `Norm(F)=729=3^6`, and mathematically correct `p≠3` unit scope. [Verbatim authenticated user-run record](results/chi53_uniform_toric_norm729_USER_SAGE_PASS_2026-10-30.md). **No Sha bound implied by norm 729 alone**.
+
+**Second rigorous negative lemma:** for fixed auxiliary conductor `n=q1*...*qr` in mod-p Kurihara/Kim, the congruences `q_i=1 (mod p)` force `p|gcd(q_i−1)`, which has only finitely many prime factors. Thus even a finite *list* of fixed Kurihara conductors cannot cover all p. Existing pairs yield exact gcds `20=4*5`, `112=16*7`, `1284=4*3*107`. A uniform Kurihara approach requires `n(p)` to vary with p.
+
+**New rigorous positive theorem (Chebotarev):** For every `p≥5` where `E[p]` has surjective Galois representation, good rational primes q with nontrivial unipotent Frobenius `[[1,1],[0,1]]` have natural density **`1/[p(p−1)]`**. Such q satisfy `q≡1 modp`, `a_q≡q+1 modp`, and cyclic `E(F_q)[p]` of order p. Hence the basic p-admissible primes exist infinitely often, so selecting varying auxiliary primes is **not** the existential obstacle. **What remains unproved is choosing two with nonzero Kurihara `delta_(q1q2) modp` for EVERY p** (or constructing a different p-uniform integral Selmer comparison). This does not prove extra p^n-level local hypotheses or uniform Sha finiteness. [Full proof note](paper/bsd389_uniform_prime_support_chi53_unit_and_split_obstruction_2026-10-30.md); [issue #8](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/8).
+
+---
+
 ## Addendum 2026-10-30 — UNIFORM SUPPORT: fixed chi53 toric norm 729 EXACT PASS; Selmer bridge OPEN
 
 **New genuinely prime-uniform algebraic result:** From the existing 18-entry conductor-53 order-9 Gross orbit over `K=Q(sqrt(-3))`, exact polynomial reduction yields `F(zeta9) = -3*zeta9*U(zeta9)`, with `U=X^4+X^3-X^2+1` and explicit inverse `V=X^4-X^3-1` modulo `Phi9=X^6+X^3+1`. The full 6×6 exact multiplication determinant is **Norm(F)=3^6=729**, independently verified by a **locally executed pure-Python integer script**: [`verification/bsd389_uniform_chi53_toric_unit.py`](verification/bsd389_uniform_chi53_toric_unit.py). Therefore THIS fixed algebraic factor is a **p-adic unit at every p≠3**, not merely at a finite tested list. Its relation to a global toric period still depends on archived source/test-vector conventions.
