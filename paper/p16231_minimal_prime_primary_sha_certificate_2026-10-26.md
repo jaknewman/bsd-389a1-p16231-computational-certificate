@@ -2,6 +2,16 @@
 
 Date: 2026-10-26. The **computer-assisted numerical gates have independently reproduced results**, but the theorem below remains conditional on the exact algebraic identification and faithful common Sage/eclib source/data described explicitly. This is **not** a claim of exact p-adic BSD quotient 1 or BSD for every prime.
 
+## New user-executed independent V65 shared-source test — PASS (2026-10-30)
+
+An additional independent Sage verification has now passed on the user's Ubuntu server, using the **SHA-pinned original V65 binary table** and original 390-Manin Shapiro relation export. See [verbatim PASS log](../results/p16231_v65_independent_sage_manin_shapiro_PASS_2026-10-30.md), [test program](../verification/bsd389_p16231_v65_direct_sage_oracle.py), and [proof-cut note](bsd389_p16231_v65_sage_oracle_and_proof_cut_2026-10-30.md).
+
+**Verified checks:** 16,232/16,232 exact Shapiro coset factorizations including infinity; 67/67 complete Hecke fibres totaling 1,087,477 table entries; 134/134 `F(G),F(PG)` direct modular-symbol comparisons with **independent Sage implementation**, 536/536 direct beta-value samples, and 335/335 `M0` Shapiro comparisons including **67/67 infinity transports**. Both source-data SHA256 digests match the frozen original manifests. Unlike the two global J engines, the direct comparison does not use the eclib implementation producing the binary table.
+
+**What this newly closes:** strong independent numeric validation of the *shared V65 modular symbol and exceptional Shapiro oracle*. The historic full `J=4486` two-engine evaluations and full `A2(n2)/p=1199` independent computations remain as previously audited. The source-derived universal correction still gives `A2(n3)/p=9534`, matching `B_p/p=9534`. Good ordinary p=16231 has no supersingular regulator convention ambiguity. Together the exact source-level algebra and numerical evidence form a **computer-assisted conditional proof** of `Sha(389a1/Q)[16231^infinity]=0`, dependent on accepting the historically authenticated C++/Sage executions and the mathematical Hecke–Shapiro identification. The full n3 Sage series and p-primary-bound API were not run; exact p-adic quotient equality and all-prime BSD are not established. Independent external proof/data review remains recommended.
+
+---
+
 ## Precisely stated implication
 
 Let `E: y²+y=x³+x²−2x` over Q and `p=16231`. Let `A2` denote the coefficient of `T²` of the ordinary untwisted Sage 10.9 `E.padic_lseries(p).series(n=3,prec=3)` with eta=0, gamma=1+p, L_ratio plus modular symbol and period quotient one. Let
