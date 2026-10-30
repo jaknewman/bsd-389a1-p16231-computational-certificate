@@ -2,6 +2,8 @@
 
 > **Version integrity resolved:** The current GitHub verifier matches the exact user-executed file in the recovered stash: Git blob SHA1 `9acda8de4c526f96b96ad4e89847c782933c1528` (7,053 UTF-8 bytes). The historical PASS transcript thus has exact source provenance, but it is **not a fresh GitHub Actions run**. The analytic and theorem applicability review remains OPEN ([issue #4](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/4)).
 
+> **New normalization review (2026-10-30):** Stein–Wuthrich §4.4 and Conjecture 5.2 use the normalized `Reg_gamma` with the T-series, whereas supersingular Algorithm 11.1 step (4) displays unnormalized `Reg_p`. The rank-two `log(gamma)^2` factor matters to valuations. Until it is reconciled, treat `Sha[599^infinity]=0` as a conditional derived conclusion, not independently closed. All genuine finite and Manin PASS results are unchanged.
+
 **Status: finite arithmetic checks PASS (user-run); supersingular analytic bridge DERIVED, NOT independently certified; Sha[599^infinity] remains REVIEW-REQUIRED.** Do not label this as an unconditional proof or as the successful execution of `p_primary_bound(599)`.
 
 ## User-run evidence
