@@ -1,6 +1,6 @@
 # p=599 finite cyclotomic certificate and conditional supersingular bridge (2026-10-30)
 
-> **Version-integrity warning:** User reported PASS output from a *local* file named `verification/sha599_short_certificate.py`; Git stash recovery later flagged that local file as **DIVERGENT** from the GitHub-committed version. The repository version has **not** been shown to reproduce the user's run. See [issue #5](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/5). The algebraic Sha theorem bridge is separately review-required.
+> **Version integrity resolved:** The current GitHub verifier matches the exact user-executed file in the recovered stash: Git blob SHA1 `9acda8de4c526f96b96ad4e89847c782933c1528` (7,053 UTF-8 bytes). The historical PASS transcript thus has exact source provenance, but it is **not a fresh GitHub Actions run**. The analytic and theorem applicability review remains OPEN ([issue #4](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/4)).
 
 **Status: finite arithmetic checks PASS (user-run); supersingular analytic bridge DERIVED, NOT independently certified; Sha[599^infinity] remains REVIEW-REQUIRED.** Do not label this as an unconditional proof or as the successful execution of `p_primary_bound(599)`.
 
