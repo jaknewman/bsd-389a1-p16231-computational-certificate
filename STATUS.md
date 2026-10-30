@@ -1,5 +1,14 @@
 # Verification ledger — updated 2026-10-30
 
+## Addendum 2026-10-30 — authentic p599 denominator automaton 9/9 PASS
+
+**USER-EXECUTED PASS on genuine Sage table:** optimized denominator-only Manin C++ engine and baseline match on all **nine** intervals for every W390 entry, contraction, both logarithm generators, unit/weighted/edge counts. Five short intervals additionally match independent Python BSGS/CF. Reproduced first two million authentic contraction values 456 and 22. Table SHA256 fc162c6f20459e2973c0641629d3c9feba3df39c0b42cd58aaf2e1bbed7435c8. Four local timing ratios 1.330, 1.260, 1.163, 1.389; conventional sample median **1.295x**. The original benchmark displayed 1.33 because it chose the upper central value; script now uses statistics.median. [Authenticated regression results](results/p599_automaton_authentic_nine_intervals_PASS_2026-10-30.md).
+
+**Boundary:** partial exact equivalence and constant-factor optimization, no global Kurihara nonvanishing and no Sha[599^infinity] bound. Existing archive checkpoints pin old native binary SHA, so optimized engine MUST run with another executable path and a separate checkpoint --outdir.
+
+---
+
+
 ## Addendum 2026-10-30 — denominator-only Manin finite-state optimization
 
 **PROVEN algorithmic equivalence; synthetic local differential PASS; authentic user-run validation pending.** The new [denominator-only modular-Manin native engine](verification/kurihara_native_p599_denominator_automaton.cpp) retains Euclidean quotients but tracks only two convergent denominators mod 389 and precomputes the 389x389 oriented Manin edge table. On assistant-local g++ -O3 synthetic 390-entry data the complete W390 vector, units, weighted terms, edge counts and contractions matched the original p599 engine across 7 scattered intervals, then on three independent 3-million-position ranges. Three-run local median native-loop speed ratios original/optimized were 1.295x (early), 1.386x (middle), 1.337x (tail). The genuine table and archived checkpoints must still be checked with the [9-interval differential gate](verification/kurihara_p599_denominator_automaton_differential.py), including five independent BSGS/CF oracle intervals. [Algorithm proof, benchmarks and strict scope](paper/bsd389_p599_manin_denominator_automaton_optimization_2026-10-30.md).
