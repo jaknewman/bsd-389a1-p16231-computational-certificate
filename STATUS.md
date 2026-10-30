@@ -1,5 +1,13 @@
 # Verification ledger — updated 2026-10-30
 
+## Addendum 2026-10-30 — Sage stash reconciliation exact-source PASS; server sync pending
+
+**GitHub reconciliation completed from user-provided 87 KiB archive:** 24 conflicting/untracked paths inspected. Fifteen differences were exactly one additional terminal newline; one performance-statistics difference was resolved by keeping the correct GitHub `statistics.median` version; the eighth significant file, `sha599_short_certificate.py`, was replaced with the **byte-exact previously executed Sage source** (Git blob `9acda8de4c526f96b96ad4e89847c782933c1528`). All **seven** local-only scripts were committed to `verification/` with exact Git blob matches. Full 24-file classification, immutable blob hashes, and tested versus unexecuted distinctions: [reconciliation report](results/bsd389_stash_reconciliation_exact_2026-10-30.md). Follow-up [issue #5](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/5) remains open **solely for user-local fast-forward** because seven untracked scripts must be moved safely before `git pull`.
+
+**Scientific scope unchanged:** source import and byte equivalence do not establish theorem applicability, p599 Sha vanishing, p16231 Sha vanishing, or complete BSD; [Hecke/precision/Kato review #4](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/4) remains open.
+
+---
+
 > **SOURCE-PROVENANCE RESOLVED (2026-10-30):** The GitHub `verification/sha599_short_certificate.py` was replaced with the **exact user-executed local bytes**: Git blob `9acda8de4c526f96b96ad4e89847c782933c1528`, 7,053 UTF-8 bytes. Thus the archived Sage stdout is attributable to the exact checked-in source; this does not constitute a new GitHub Actions run or a proof of the supersingular theorem bridge. The remaining Hecke/Frobenius/precision and Stein–Wuthrich/Kato mathematical review stays OPEN in [issue #4](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/4). See also [stash reconciliation issue #5](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/5).
 
 ## Addendum 2026-10-30 — p599 short certificate user-executed PASS; Sha theorem application REVIEW-REQUIRED
