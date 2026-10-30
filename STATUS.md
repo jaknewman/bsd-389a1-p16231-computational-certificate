@@ -1,4 +1,11 @@
-# Verification ledger — updated 2026-10-29
+# Verification ledger — updated 2026-10-30
+
+## 2026-10-30: K599 production-config dry-run PASS, no chunks
+
+**User-executed PASS (dry-run only):** safe configuration output identifies 48,263 chunks of 1,000,000,000 numerator positions each, pinned genuine 390-Manin table SHA-256 fc162c6f20459e2973c0641629d3c9feba3df39c0b42cd58aaf2e1bbed7435c8. Initial audit explicitly returns `verified=0/48263`, `units=0/48262408622240`, `K599_INCOMPLETE_NO_CERTIFICATE`. No global computation begun. [Exact transcript and optional bounded two-chunk smoke procedure](results/k599_checkpointed_production_dry_run_PASS_2026-10-30.md). Checkpoint config pins chunk size; use a **new outdir** for a different chunk size. No delta599 or Sha599 claim.
+
+---
+
 
 ## Addendum 2026-10-29 — p7 authentic dual zero/nonzero and bounded p599 production
 
