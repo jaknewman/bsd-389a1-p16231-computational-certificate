@@ -1,5 +1,7 @@
 # p599 short certificate: user-executed terminal transcript (2026-10-30)
 
+> **Artifact mismatch uncovered after this transcript:** This was produced by the user's *local* `sha599_short_certificate.py` before synchronization; the local script was flagged as **DIVERGENT** from the one written to the GitHub repository. Treat the run as a local execution only. GitHub HEAD source reproduction is pending [issue #5](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/5). Do not infer that the current GitHub script has run successfully on Sage.
+
 This transcript was provided by the user from their Sage environment on Ubuntu. It is recorded as **user-reported execution**, not a GitHub Actions run or an independent assistant execution on the same authentic data. The table is not checked into the repository.
 
 ```text
