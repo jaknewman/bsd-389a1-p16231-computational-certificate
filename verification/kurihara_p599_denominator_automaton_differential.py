@@ -13,6 +13,7 @@ No global Kurihara or Sha certificate is asserted.
 import argparse
 import hashlib
 import re
+import statistics
 import subprocess
 from pathlib import Path
 
@@ -90,7 +91,7 @@ def main():
               'residue',new['contraction'],'weighted',new['weights'],
               'edges',new['edges'],flush=True)
     print('K599_DENOMINATOR_AUTOMATON_EXACT_DIFF_PASS','intervals',len(trials),
-          'median_loop_speed_ratio',round(sorted(speeds)[len(speeds)//2],3),flush=True)
+          'median_loop_speed_ratio',round(statistics.median(speeds),3),flush=True)
     print('BOUNDARY: bounded exact differential test; no full delta599 or Sha result.',flush=True)
 
 if __name__=='__main__':main()
