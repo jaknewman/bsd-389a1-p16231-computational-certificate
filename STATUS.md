@@ -1,5 +1,17 @@
 # Verification ledger — updated 2026-10-30
 
+## 2026-10-30 — COMPLETE BSD SCORECARD: rank established, TWO independent theorem gaps remain
+
+**Classical math/verified inputs:** E=389a1 has conductor 389, minimal discriminant +389, proven Mordell–Weil rank 2 and certified free basis, analytic vanishing order exactly 2, torsion 1 and Tamagawa product 1. The **weak BSD rank equality is established** for this curve (Cremona). Its **strong complex BSD** is still **NOT established**: numerical `L''(E,1)=1.51863300057685354046...`, period `Omega≈4.980425`, height regulator `Reg≈0.152460`, and analytic Sha quotient approximately 1 do **not** prove `L''(E,1)/2=Omega*Reg*#Sha` exactly.
+
+**First outstanding gap, Sha:** no uniform proof of finite prime support or finite entire Sha. Independently: 2-primary Sha trivial by classical 2-descent; 5/7-primary trivial by published Sage p-primary bound; genuine 107 Kurihara archive and 599/16231 p-adic programs carry the already recorded source/theorem qualifications. Mazur + Castella–Sano establish `M_infinity=0` for every good `p>=11` except 389, but **only for a possibly high-degree auxiliary conductor**, not necessarily `n=q1*q2`. Kim reduces the exact rank-two obstruction to `Fitt_2(Sel_{p∞}^dual)=p^m2 Zp`; we lack a p-independent **integral** determinant comparison proving `Fitt_2 ⊇ C*Zp` for a single nonzero C. [Uniform issue #8](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/8).
+
+**Second outstanding gap, complex analytic formula:** even a proof of Sha=0 would **not automatically** imply `L''(E,1)/2=Omega_E*Reg(E)`. Its exact equality is a separate theorem-level task. [Issue #9](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/9).
+
+**Additional exact sanity lemma (Cassels–Tate/Kim):** if p-primary Sha is finite and nontrivial, its order is a perfect square. Equivalently any positive finite `m2(p)` is an **even integer ≥2**. An experimental `m2=1` would falsify the claimed arithmetic normalization rather than prove a smaller Sha. Full independent [BSD proof-status note](paper/bsd389_full_BSD_state_and_uniform_Fitt2_checkpoint_2026-10-30.md).
+
+---
+
 ## Addendum 2026-10-30 — EXACT RANK-TWO REMAINING OBSTRUCTION = SECOND FITTING IDEAL
 
 With **Mazur + Castella–Sano** proving `M_infinity(delta_p)=0` at every good `p>=11`, and **Kim Theorem 1.8 (1),(2)** together with MW rank two, one obtains an exact identity
