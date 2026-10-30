@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
-"""Restartable audited Kurihara p=107 half-sum using native 390-Manin program.
+"""Restartable audited Kurihara p=599 half-sum using native 390-Manin program.
 
-Starts only with --run and at most two new chunks by default; --run --full explicitly opts into all remaining work. Each chunk stores the entire W390 vector, provenance,
-SHA256 and a verified dot product. Merging refuses missing or inconsistent chunks.
+Without --run, audit the existing checkpoints only. With --run, calculate at most
+2 new chunks by default; --run --full explicitly opts into all remaining work.
+Each chunk stores the W390 vector, table/binary SHA256 provenance and the
+verified dot product. Complete coverage is required for a global delta claim.
+A changed chunk size or binary requires a NEW --outdir; otherwise the pinned
+config check intentionally fails. No Sha claim follows merely from this run.
 """
 import argparse, hashlib, json, os, re, subprocess, tempfile, time
 from pathlib import Path
