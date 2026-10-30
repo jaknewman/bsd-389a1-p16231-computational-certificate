@@ -23,7 +23,11 @@
 
 The previously executed `sha599_short_certificate.py` and the seven local-only scripts are now exactly matched on GitHub by **Git's blob SHA**, not merely filename or line counts.
 
-## User-local final step
+## Final synchronization — confirmed 2026-10-30
+
+The user verified all seven restored files against `origin/main` with `EXACT_MATCH` and moved them into `/home/bsdadmin/bsd389_reconciled_20261030_201422`. Their `git pull --ff-only origin main` fast-forwarded `df4b0ae..ffcef89`; subsequent `git status --short` was empty, and `git log -1 --oneline` reported `ffcef89` on `HEAD -> main, origin/main, origin/HEAD`. Original stash untouched. **Issue #5 closed as completed.** Later status-documentation commits do not invalidate that successful synchronization; those can be fast-forwarded separately.
+
+## User-local final step (completed; historical instructions below)
 
 The Sage server will still have seven `??` untracked scripts. Because the files were now added to remote `main`, blindly running `git pull --ff-only` could fail again with "untracked working tree files would be overwritten". Move those seven files to a separate backup **after** comparing `git hash-object` to `origin/main:path`, then fast-forward pull. Do not `stash pop`, `stash drop` or overwrite other files. Keep [Issue #5](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/5) open until user-local synchronization confirmed.
 
