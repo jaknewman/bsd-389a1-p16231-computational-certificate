@@ -1,5 +1,7 @@
 # Verification ledger — updated 2026-10-30
 
+> **SOURCE-PROVENANCE NOTE (2026-10-30, post-sync):** The Sage server stash reconciliation found that `verification/sha599_short_certificate.py` in the user's successful local execution is **byte-divergent** from the version subsequently published to GitHub `main`. The reported stdout remains genuine user-reported evidence for the local script, but the published GitHub verifier is **NOT YET confirmed to reproduce this run**. Do not label the checked-in verifier as user-executed until comparison/reconciliation and rerun. See [issue #5](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/5). The separate arithmetic/theorem bridge remains review-required ([issue #4](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/4)).
+
 ## Addendum 2026-10-30 — p599 short certificate user-executed PASS; Sha theorem application REVIEW-REQUIRED
 
 **User-executed:** `verification/sha599_short_certificate.py --table ~/bsd389_p599_manin_table.txt --sage` completed: `LIFT_WEIGHT_IDENTITIES_PASS`, `P599_LEVEL_P2_INDEPENDENT_PASS` with C0=C1=0, C2=543, 179101 pairs, 1924081 edges, checksum 779927018, and `SAGE_ARITHMETIC_GATES_PASS` with rank 2, full certified generators, residual surjectivity, and normalized regulator residue 571. Earlier independent native C++ run also reported `CYCLOTOMIC_P2_INDEPENDENT_NATIVE_PASS` for the same finite moments. SHA256 of authentic source table: `fc162c6f20459e2973c0641629d3c9feba3df39c0b42cd58aaf2e1bbed7435c8`.
