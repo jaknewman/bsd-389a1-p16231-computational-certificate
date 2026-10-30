@@ -3,7 +3,7 @@
 
 For E=389a1 and p=107, a_p=0.  Compute the tame-trivial plus-symbol
 quadratic moment C2 using only p(p-1)/2 = 5671 rational cusp symbols,
-not (p-1)*p^2 = 1,212,? level-p^3 terms, and do not rerun K107's
+not (p-1)*p^2 = 1,213,594 level-p^3 terms, and do not rerun K107's
 70,984,909,590 half-range positions.
 
 The conditional exact Hecke/Frobenius derivation is the same as the one
@@ -124,7 +124,7 @@ def main():
     if f0 != 0 and valuations[0] == 0:
         print("P107_STEIN_WUTHRICH_BOUND_ZERO_DERIVED",
               "analytic_val", 0, "regulator_val", 0, flush=True)
-        print("P107_SHA_ZERO_CONDITIONAL_ON_PROVEN_HECCKE_AND_KATO_BRIDGE",
+        print("P107_SHA_ZERO_CONDITIONAL_ON_PROVEN_HECKE_AND_KATO_BRIDGE",
               flush=True)
     else:
         print("P107_FIRST_DIGIT_NOT_ENOUGH_FOR_SHA_BOUND",
