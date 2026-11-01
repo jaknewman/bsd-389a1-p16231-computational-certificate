@@ -17,7 +17,11 @@ In fact **Bézout is unnecessary**: \(\boxed{v_{382}=-1}\) alone is a unit at **
 \]
 Similarly \(m_E^+(5/389)=-2\). A **one-cusp** rational normalized modular symbol furnishes a *completely fixed prime-uniform symbol nonvanishing certificate*. This conclusion is logically stronger in economy than just knowing \(\gcd(v_a)=1\), although it does not strengthen the bound on Selmer.
 
-Verbatim [independent user-run stdout](../results/bsd389_fixed_rational_manin_independent_JSON_USER_RUN_PASS_2026-11-01.md). A new two-oracle one-cusp direct Sage/eclib regression is published at [\`verification/bsd389_single_cusp_global_unit.py\`](../verification/bsd389_single_cusp_global_unit.py), **not yet executed by the user**. It independently checks the four cusps \(a=382,384,7,5\) under both symbol implementations, instead of looking up the JSON again.
+Verbatim [independent user-run stdout](../results/bsd389_fixed_rational_manin_independent_JSON_USER_RUN_PASS_2026-11-01.md). The two-oracle one-cusp direct Sage/eclib regression [\`verification/bsd389_single_cusp_global_unit.py\`](../verification/bsd389_single_cusp_global_unit.py) has **now been executed by the user and passed all 8/8 direct evaluations**. [Verbatim PASS stdout](../results/bsd389_single_cusp_global_unit_USER_RUN_PASS_2026-11-01.md). It independently checks the four cusps \(a=382,384,7,5\) under both symbol implementations, instead of looking up the JSON again.
+
+### Stronger exact decomposition, 2026-11-01
+
+The two-prime logarithmic weight has not only total augmentation zero: it annihilates **every additively separable function** `f(x,y)=u(x)+v(y)` on the CRT unit group. For any anchors `x0,y0`, its value depends only on the **mixed anchored finite difference** `f(x,y)-f(x,y0)-f(x0,y)+f(x0,y0)`. This is an exact source-independent functional identity at every odd p satisfying `q1=q2=1 mod p` individually; see [full proof and relevant mixed quotient dimension](bsd389_kurihara_two_auxiliary_mixed_difference_lemma_2026-11-01.md). It **does not** prove that the actual E modular-symbol class has a nonzero mixed component detectable at some conductor of degree two.
 
 ### Structural obstruction to a naive uniform Kurihara functional identity
 
