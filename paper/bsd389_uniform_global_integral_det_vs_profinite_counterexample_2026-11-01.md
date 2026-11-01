@@ -130,6 +130,29 @@ The excluded primes in S and those dividing b would require separate bounds.
 
 **The only unproved mathematical input is the existence and integrality of \(\Delta\) and the comparison to \(I_p\)**. This is the desired new theorem, not something supplied by local C01/Kurihara computations or the Gross-orbit norm 729.
 
+### Exact improvement: the rational-scalar existence condition is itself equivalent to the Sha-finiteness goal
+
+The phrase "non-circular sufficient theorem" in the preceding heading must be read **constructively**: *construct* a specific scalar by a genuinely independent procedure, and independently *prove* its Selmer comparison. Merely asserting the **existence** of a nonzero rational scalar with all-local integral membership is **logically equivalent** to the finiteness we are trying to establish.
+
+Indeed, the universal Kummer/Fitting identity gives at each p either \(I_p=(p^{e_p})\) with \(e_p\) finite and \(\#\Sha[p^\infty]=p^{e_p}\), or \(I_p=(0)\) if that p-primary part is infinite. Thus
+\[
+\{n\in\mathbf Z:\ \forall p,\ n\in I_p\}\ne0
+\iff \Sha(E/\mathbf Q)\text{ is finite}.
+\]
+And in the finite case the intersection is **exactly**
+\[
+\{n:\forall p,\ n\in I_p\}=\#\Sha(E/\mathbf Q)\,\mathbf Z.
+\]
+With finite S excluded, the analogous intersection is nonzero iff the **prime-to-S** part of Sha is finite. Allowing a rational \(a/b\) outside primes dividing b changes no substance, since b is invertible at those primes.
+
+This is a theorem (and a conceptual guardrail) [proved completely here](bsd389_global_diagonal_Fitt_intersection_exact_criterion_2026-11-01.md). Consequently **we have not yet found a new method to prove finite Sha merely by postulating Delta**; the only worthwhile next step is a new *independently constructed* arithmetic object and a *proved uniform integral realization*. It is a significantly stronger obligation than obtaining a nonzero element in an abstract determinant line.
+
+### Genuine new user terminal verification
+
+The artificial profinite counterexample was **actually run on the user's Ubuntu Sage terminal** (Python standard library), successfully producing \(q=59\,552\,011\), \(q^2=3\,546\,442\,014\,144\,121\), and all expected PASS lines. [Verbatim user-run log](../results/bsd389_uniform_profinite_det_counterexample_USER_RUN_PASS_2026-11-01.md). This supports the explicit example and does not change the abstract proof boundaries or establish anything about the actual Sha of 389a1.
+
+---
+
 ## 5. Appropriate framework and remaining archimedean work
 
 The motivic fundamental/determinant line and its p-adic integral lattice are the natural setting to formulate a **rationally descended** global zeta element. The **Equivariant Tamagawa Number Conjecture** (Bloch–Kato; Fukaya–Kato; Fontaine–Perrin-Riou) predicts exactly this sort of compatibility among a rational line, its p-adic realizations and the complex leading \(L\)-value. See [Fouquet, §2.2.3, Conjecture 2.11](https://jep.centre-mersenne.org/item/10.5802/jep.38.pdf) and [2026 survey of motivic fundamental lines, §2.10](https://link.springer.com/article/10.1007/s40687-026-00646-7).
