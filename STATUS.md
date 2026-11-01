@@ -1,4 +1,14 @@
-# Verification ledger — updated 2026-10-30
+# Verification ledger — updated 2026-11-01
+
+## 2026-11-01 — RIGOROUS PROFINITE DETERMINANT NO-GO; the p-uniform target requires rational descent
+
+**Exact proof (new):** `R=Zhat=∏_p Z_p` supports a perfectly finitely presented fake rank-two Selmer-like module `X=R²⊕(R/bR)²`, `b=(p)_p`, with **nonzero global profinite determinant** `det diag(b,b)=b²`; nevertheless `Fitt_2(X⊗Z_p)=p²Z_p` for **EVERY** p. It respects the square-order paired-torsion constraint. By Euclid, for any fixed `C∈Z\{0}` and any finite exclusion set S, choosing prime q dividing `abs(C)*∏_{l∈S} l + 1` gives q∉S, q∤C, but the fake `Fitt_2(X_q)=q²` does **not** contain C. The abstract example proves that **a finite perfect complex over Zhat is not enough** for all-prime Sha support. Independently checked explicit instance: C=729, S={2,3,5,7,389}, q=59552011, Fitt_2=q²=3546442014144121. **This is NOT an elliptic-curve Sha counterexample.**
+
+**More powerful circularity theorem:** A finitely generated `Z`-module M whose completions recover ALL real arithmetic `X_p=Sel_{p∞}(E/Q)^dual` would, via rank 2 and known Sha[5∞]=0, **already imply global Sha finiteness**; conversely Sha finite produces such an abstract M. So a global integral model cannot be simply postulated: constructing its p-adic Selmer identifications without assuming finiteness is the hard new theorem.
+
+**Precise viable hypothesis to PROVE:** a single rational scalar `Delta=a/b∈Q×`, explicit finite S and a demonstrated local integral comparison `Delta∈Fitt_2(X_p)` for all p∉S, p∤b. Then C=abs(a) bounds the non-exceptional support (and p-adic valuations) automatically. **Neither Delta nor the comparison exists in the current proof.** Global motivic determinant/fundamental-line and ETNC-style zeta elements describe the candidate framework, not an established result for 389a1. [Full mathematical proof](paper/bsd389_uniform_global_integral_det_vs_profinite_counterexample_2026-11-01.md), [short checker](verification/bsd389_uniform_profinite_det_counterexample.py), [uniform issue #8](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/8). **No full Sha finiteness or BSD claim**.
+
+---
 
 ## 2026-10-30 — NEW UNCONDITIONAL ALL-p RANK-TWO FITT₂ THEOREM (including bad/small p)
 
