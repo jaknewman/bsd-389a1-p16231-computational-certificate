@@ -1,5 +1,16 @@
 # Verification ledger — updated 2026-11-01
 
+## 2026-11-01 — USER-EXECUTED REAL p5 MIXED JET PASS, MAXIMAL MIXED RANK 39, AND A NEW UNIFORM HECKE THEOREM
+
+**Real genuine Sage Ubuntu run:** 1,200 distinct `eclib` plus-symbol evaluations at denominator `2501=41*61` filled all **2,400 CRT unit locations** via plus involution, with **24/24 independent direct Sage samples** matching. The complete actual p5 low mixed moments are `(M00,M10,M01,M11)=(0,0,0,4) mod5`. The anchored mixed difference contraction gives `4`; **matrix rank 39 is MAXIMAL** for a 40×60 matrix with its first row/column zero, with **1,846 nonzero entries**; primitive-root change produces `4→3` via unit factor `2 mod5`. The historic independent p5 two-prime Kurihara `delta_2501=4` is recovered exactly by this new direct eigen-symbol computation. [Full verbatim user-run output](results/bsd389_p5_real_kurihara_mixed_jet_SAGE_PASS_2026-11-01.md). No large all-p computation implied.
+
+**New exact universal, UNCONDITIONAL WITHIN p-ADMISSIBILITY Hecke lemma:** For any p≥5, good q1,q2 with `q_i≡1` and `a_qi≡q_i+1≡2 modp`, write `Theta_n(X,Y)=Σ m_E^+(a(x,y)/n)X^j1(x)Y^j2(y)`. By the exact Hecke relation, its first marginal is
+`Theta_n(X,1)=(a_q2-X^d-X^{-d}) theta_q1(X)`, `d=log_g1(q2 modq1)`. Since the factor `2-X^d-X^-d=-(X^d-1)^2/X^d` lies in augmentation ideal **I1²** modulo p, and `theta_q1(1)=(a_q1−2)m(0)=0 modp`, the marginal lies in **I1³**. Symmetrically `Theta_n(1,Y)∈I2³`. Thus all five lower or pure moments `M00=M10=M01=M20=M02=0 modp`; **the complete total-degree ≤2 jet is `delta_n T U`**, with `delta_n=M11` the only *possible* nonzero quadratic component. At p5 the already measured `delta=4` therefore gives the **new mathematically deduced** stronger identity `Theta_2501(1+T,1+U)=4TU (mod5,(T,U)^3)` (M20/M02 inferred rigorously from Hecke, NOT directly printed by script). [Full proof, correct unregularized theta conventions](paper/bsd389_kurihara_hecke_marginals_force_low_jets_2026-11-01.md). The relevant Hecke identity is standard, [Mazur–Rubin, Lemma 1.1(vii)(a)](https://bpb-us-e1.wpmucdn.com/sites.harvard.edu/dist/a/189/files/2023/01/MODULAR-SYMBOLS-CONTINUED.pdf).
+
+**Boundary:** the Hecke theorem FORCES all other degree≤2 coefficients to vanish but does **not force M11≠0**. The genuine p5 nonvanishing, even with maximal mixed matrix rank, is one special-prime witness, not a p-uniform Fitt₂/Sha prime-support bound or strong BSD proof. [Issue #8](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/8).
+
+---
+
 ## 2026-11-01 — KURIHARA TWO-PRIME MIXED JET: EXACT [TU] FORMULA, NEW COUNTEREXAMPLE, REAL p5 PILOT PUBLISHED NOT RUN
 
 **Exact new structural identity:** For p-admissible `q1,q2`, primitive roots `g1,g2` and normalized E modular symbols `f_E(k,l)=m_E^+(CRT(g1^k,g2^l)/(q1q2)) modp`, the Mazur–Tate group-ring polynomial `Theta(X,Y)=sum f_E(k,l)X^kY^l` satisfies **`delta_(q1*q2)=[TU]Theta(1+T,1+U) modp`**. This follows exactly because `[TU](1+T)^k(1+U)^l=k*l`; the coefficient is well-defined mod p as p divides `q_i−1`. Changing primitive roots `g_i→g_i^{u_i}` multiplies this coefficient by unit `(u1*u2)^(-1) modp`. In particular ROOT CHANGES CANNOT TURN ZERO INTO A UNIT.
