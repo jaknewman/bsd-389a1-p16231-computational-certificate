@@ -1,5 +1,15 @@
 # Verification ledger — updated 2026-11-01
 
+## 2026-11-01 — INDEPENDENT CANONICAL JSON AUDIT PASS; ACTUAL ONE-CUSP UNIT `m_E^+(7/389)=-1`
+
+**Genuine user terminal PASS** of the independent standard-library JSON verifier against the user's original `~/bsd389_fixed_rational_manin_content.json` with pinned SHA256 `9719d0863045ef63fe3519b23da0c4bb74303ee3d84cb9791f95e2a29d456dd4`. All 389 exact fractions, 228 nonzeros, `D=g=1`, 389 plus-evenness checks, and explicit Bézout verified. **New specific values:** `m_E^+(382/389)=-1` (index 382, Bézout coefficient +1) and `m_E^+(384/389)=-2` (index 384, coefficient −1); `(-1)-(-2)=1`. Since `382≡-7 (mod389)` and sign-plus evenness holds, `m_E^+(7/389)=-1`. **One single normalized classical plus-symbol is a p-adic unit for EVERY p**, no exceptions and no extra denominator. This is a stronger *short* global modular-symbol certificate than just `gcd(v)=1`. [Verbatim independent user run](results/bsd389_fixed_rational_manin_independent_JSON_USER_RUN_PASS_2026-11-01.md); [formal math note with important boundary](paper/bsd389_fixed_rational_manin_Dg1_exact_certificate_and_limit_2026-11-01.md).
+
+**New one-cusp independent two-oracle Sage/eclib script — NOT USER RUN:** [`verification/bsd389_single_cusp_global_unit.py`](verification/bsd389_single_cusp_global_unit.py) will check exactly the cusp pairs `(382,7)` with value `-1` and `(384,5)` with value `-2`, independently in both implementations (eight exact values). It does not need the JSON or 389 new calls.
+
+**Critical limitation:** this `-1` is **NOT** a two-auxiliary-prime Kurihara delta. The two-prime discrete-log weight functional has augmentation zero on the whole ambient function space (CRT product of zero sums), so it CANNOT be identified with bare cusp evaluation on that full space; any bridge must use the actual E-cuspidal Hecke eigenspace, level compatibility, and p-integral Selmer comparison. No `Fitt₂` or full Sha/BSD theorem follows. [Issue #8](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/8).
+
+---
+
 ## 2026-11-01 — REAL USER 389/389 SAGE/eclib FIXED RATIONAL SYMBOLS PASS; D=g=1
 
 **Fresh genuine Ubuntu Sage run:** `verification/bsd389_fixed_rational_manin_content.py` ran to completion with **389/389 exact Sage/eclib normalized modular-symbol matches**, **228 nonzero**, common rational denominator **D=1**, integral vector content **g=1**, exact two-term Bézout identity `sum c_a m_E^+(a/389)=1`, and canonical JSON SHA256 `9719d0863045ef63fe3519b23da0c4bb74303ee3d84cb9791f95e2a29d456dd4`. JSON located on the user's server at `~/bsd389_fixed_rational_manin_content.json`, not uploaded to repo. [Verbatim user-run record](results/bsd389_fixed_rational_manin_content_USER_RUN_PASS_2026-11-01.md); [precise all-prime mathematical consequence and scope](paper/bsd389_fixed_rational_manin_Dg1_exact_certificate_and_limit_2026-11-01.md).
