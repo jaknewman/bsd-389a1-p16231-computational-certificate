@@ -61,6 +61,34 @@ Indeed, if a fixed nonzero integer C satisfied \(C R\subseteq(b^2)\), then \(p^2
 
 Reference: [Stacks Project, Lemma 15.8.4](https://stacks.math.columbia.edu/tag/07Z6), direct-sum/base-change rules for Fitting ideals.
 
+### Constructive Euclid witness even after excluding finitely many primes
+
+Let \(S\) be ANY finite set of excluded primes and \(C\in\mathbf Z\setminus\{0\}\) ANY proposed fixed comparison integer. Choose a prime divisor \(q\) of
+\[
+N=|C|\prod_{\ell\in S}\ell+1.
+\]
+Then \(\gcd(q,C)=1\) and \(q\notin S\) by construction; nevertheless the abstract model's \(q\)-component has \(I_q=q^2\mathbf Z_q\), so \(C\mathbf Z_q\not\subseteq I_q\).
+
+This is a **complete constructive mathematical disproof for every (C,S)** of the inference "a finite perfect \(\widehat{\mathbf Z}\)-complex with nonzero determinant gives an integral uniform support bound." It is not a heuristic sample of p.
+
+For illustration only, with \(C=729\) and \(S=\{2,3,5,7,389\}\), one obtains
+\[
+N=729(2\cdot3\cdot5\cdot7\cdot389)+1=59\,552\,011,
+\]
+which is itself prime (a simple independent exact trial division was performed). At \(q=N\) the matrix of relations in a four-generator presentation of \(X_q\) is
+\[
+A_q=
+\begin{pmatrix}
+0&0\\0&0\\q&0\\0&q
+\end{pmatrix}.
+\]
+Its \(2\times2\) minors have GCD \(q^2=3\,546\,442\,014\,144\,121\), confirming
+\(I_q=q^2\mathbf Z_q\), while \(729\) is a \(q\)-unit. The exact witness uses a fabricated algebraic module, NOT the real \(X_q\) of 389a1.
+
+The [small pure-Python checker](../verification/bsd389_uniform_profinite_det_counterexample.py) accepts \`--integer C --exclude p1,p2,...\` and constructs such a q using the prime factor of N, then computes all six \(2\times2\) minors. Its local computations have been independently reproduced (witness \`C=729,S={2,3,5,7,389},q=59552011,Fitt2=q²\`). The **universal quantification** is proved by Euclid's argument above, not by testing a finite list of primes.
+
+---
+
 ## 3. Stronger circularity audit: global finite \(\mathbf Z\)-module models are equivalent to Sha finiteness
 
 **Theorem for the fixed E=389a1.** Suppose there exists a finitely generated \(\mathbf Z\)-module M and, for **every prime p**, an isomorphism of \(\mathbf Z_p\)-modules
