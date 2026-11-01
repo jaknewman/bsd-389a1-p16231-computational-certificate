@@ -1,5 +1,15 @@
 # Verification ledger — updated 2026-11-01
 
+## 2026-11-01 — KURIHARA TWO-PRIME MIXED JET: EXACT [TU] FORMULA, NEW COUNTEREXAMPLE, REAL p5 PILOT PUBLISHED NOT RUN
+
+**Exact new structural identity:** For p-admissible `q1,q2`, primitive roots `g1,g2` and normalized E modular symbols `f_E(k,l)=m_E^+(CRT(g1^k,g2^l)/(q1q2)) modp`, the Mazur–Tate group-ring polynomial `Theta(X,Y)=sum f_E(k,l)X^kY^l` satisfies **`delta_(q1*q2)=[TU]Theta(1+T,1+U) modp`**. This follows exactly because `[TU](1+T)^k(1+U)^l=k*l`; the coefficient is well-defined mod p as p divides `q_i−1`. Changing primitive roots `g_i→g_i^{u_i}` multiplies this coefficient by unit `(u1*u2)^(-1) modp`. In particular ROOT CHANGES CANNOT TURN ZERO INTO A UNIT.
+
+**Critical stronger algebraic counterexample (EXACT and locally executed):** For every p≥5 with p|q_i−1, the sign-plus-symmetric toy distribution `f(k,l)=k*l modp` has **p-unit sample f(1,1)=1** and **nonzero mixed rank-one anchored difference**, yet `delta= (sum_k k²)(sum_l l²)=0 modp` because each residue is repeated and `sum_{r∈Fp}r²=0`. Its exact instantiations at historical p5 (41,61), p7 (113,673) and p107 (369793,383917) were **independently executed locally and passed**. The failure to force a true Kurihara unit is therefore stronger than simply annihilating additively separable functions. [Pure Python algebraic regression](verification/bsd389_kurihara_mixed_functional_obstruction.py). **This is a synthetic example, not actual E or Sha.**
+
+**New genuinely elliptic p5 pilot — NOT YET USER EXECUTED:** [`verification/bsd389_p5_kurihara_mixed_jet_direct.py`](verification/bsd389_p5_kurihara_mixed_jet_direct.py) computes **1,200 direct eclib modular symbols at denominator 2501** and fills all 2,400 CRT positions via sign-plus involution, compares 24 positions with independent Sage modular symbols, computes `M00,M10,M01,M11` and anchored mixed matrix rank, checks unit scaling on generator changes, and tests the previously audited p5 `M11=delta_2501=4 mod5`. This is a small true-E validation of the new jet interpretation, NOT a uniform theorem or full Sha proof. [Formal proof and run design](paper/bsd389_kurihara_theta_mixed_coefficient_and_p5_real_probe_2026-11-01.md), [issue #8](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/8).
+
+---
+
 ## 2026-11-01 — USER 8/8 SAGE/ECLIB ONE-CUSP PASS + EXACT TWO-PRIME MIXED-DIFFERENCE LEMMA
 
 **Genuine new Ubuntu Sage test PASS:** `verification/bsd389_single_cusp_global_unit.py` independently reproduced **eight out of eight** exact values from Sage's internal modular symbols and eclib: `m_E^+(382/389)=m_E^+(7/389)=-1`, `m_E^+(384/389)=m_E^+(5/389)=-2`. The exact identity `(-1)-(-2)=1` passed. **One single classical sign-plus modular symbol `m_E^+(7/389)=-1` is a unit mod EVERY prime p** without a scan. [Full user-run stdout](results/bsd389_single_cusp_global_unit_USER_RUN_PASS_2026-11-01.md). This is independent of the earlier 389-value JSON and its independent checksum/Bezout audit.
