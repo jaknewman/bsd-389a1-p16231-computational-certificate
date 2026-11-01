@@ -1,6 +1,6 @@
 # From the prime-uniform classical symbol to the **actual** mixed Mazur–Tate coefficient
 
-**2026-11-01.** This note gives an exact theorem-level reformulation of two-prime Kurihara weights as a *bidegree (1,1) Taylor coefficient* in a finite group ring, a stronger precise limitation on what one-cusp primitivity can prove, and a reproducible **real E=389a1 p=5** test. **The new p=5 script has not yet been user-executed**, so its computed moments/rank or a new PASS are not claimed. No uniform Sha or complete BSD result is claimed.
+**2026-11-01.** This note gives an exact theorem-level reformulation of two-prime Kurihara weights as a *bidegree (1,1) Taylor coefficient* in a finite group ring, a stronger precise limitation on what one-cusp primitivity can prove, and a reproducible **real E=389a1 p=5** test. **The new p=5 script HAS NOW BEEN USER-EXECUTED and ALL GATES PASSED**; see the post-execution update below. No uniform Sha or complete BSD result is claimed.
 
 ## 1. Exact coefficient-of-TU lemma
 
@@ -76,7 +76,38 @@ The new [Sage direct mixed-jet pilot](../verification/bsd389_p5_kurihara_mixed_j
 6. Changes both primitive roots and independently verifies that \(M_{11}\) scales by the predicted F5-unit.
 7. Checks the historically reported result \(M_{11}=\widetilde\delta_{2501}=4\bmod5\).
 
-**The new pilot tests the actual E eigensymbol and its two-prime variation**, unlike the synthetic obstruction above. A PASS would validate the mixed-coefficient interpretation at p5 with an independent direct algorithm, **not** a proof that the analogous coefficient remains nonzero for all p.
+**The new pilot HAS NOW PASSED** on the user's actual Sage Ubuntu server and tests the actual E eigensymbol and its two-prime variation, unlike the synthetic obstruction above. It validates the mixed-coefficient interpretation at p5 with an independent direct algorithm, **not** a proof that the analogous coefficient remains nonzero for all p.
+
+## 3 bis. Actual user-run PASS and universal Hecke deduction of the *entire* quadratic jet
+
+User terminal run [archived here](../results/bsd389_p5_real_kurihara_mixed_jet_SAGE_PASS_2026-11-01.md) reports:
+```text
+P5_ALL_2400_CRT_UNITS_SYMMETRIC_COMPLETE_PASS eclib_evaluations 1200 direct_independent_sage_samples 24
+P5_THETA_LOWEST_MOMENTS M00 0 M10 0 M01 0 M11 4
+P5_MIXED_ANCHORED_JET_PASS direct 4 difference 4 matrix_rank 39 nonzero_mixed_entries 1846
+P5_PRIMITIVE_ROOT_CHANGE_UNIT_SCALING_PASS old 4 new 3 factor 2
+P5_INDEPENDENT_DIRECT_KURIHARA_DELTA_MATCH_PASS p 5 n 2501 delta_mod_p 4
+```
+The anchored mixed difference matrix has 40 rows and 60 columns, the first row/column zero, so **rank 39 is the maximum mathematically possible**. The new direct \(\delta=4\) agrees with the historically exhaustive independent Kurihara calculation. All 24 independent Sage spot checks pass.
+
+A new **universal Hecke marginal theorem**, proved from the exact modular-symbol relation (not experimental extrapolation), now shows substantially more than the four computed low bidegree-\((0,0),(1,0),(0,1),(1,1)\) moments. For every odd p≥5 and p-admissible pair,
+\[
+\bar\Theta_{q_1q_2}(X,1)
+=(2-X^d-X^{-d})\,\bar\theta_{q_1}(X)
+=-X^{-d}(X^d-1)^2\bar\theta_{q_1}(X)
+\in (X-1)^3
+\]
+because \(\bar\theta_{q_1}(1)=(a_{q_1}-2)m(0)=0\pmod p\). The second marginal likewise lies in \((Y-1)^3\). Hence **\(M_{20}=M_{02}=0\pmod p\)** in addition to the three directly measured zero coefficients. Therefore the **full total-degree-2** Taylor jet for the actual p5 user run satisfies
+\[
+\boxed{
+\Theta_{2501}(1+T,1+U)\equiv4TU\pmod{5,(T,U)^3}.
+}
+\]
+The two pure-quadratic zeros are **theorem-derived**, not numerical outputs claimed to have been emitted by the original p5 script. [Complete universally quantified proof and conventions](bsd389_kurihara_hecke_marginals_force_low_jets_2026-11-01.md). [New small standalone point-count and marginal-factor audit](../verification/bsd389_p5_hecke_marginal_local_audit.py) is **published but not yet user-run**, and makes no new 2501-denominator symbol evaluations.
+
+This shows **all other degree≤2 moments must vanish for EVERY admissible pair**, but it **does not force the single remaining coefficient \(M_{11}\) to be nonzero**. At p5 it is truly nonzero because of the independent run; that remains a p-specific fact.
+
+---
 
 ## 4. Last arithmetic gap
 
