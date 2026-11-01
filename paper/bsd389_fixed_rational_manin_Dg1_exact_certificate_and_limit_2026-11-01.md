@@ -1,5 +1,44 @@
 # A genuine global primitive integral modular-symbol vector for 389a1 — exact limits for rank-two Sha
 
+## 2026-11-01 independent JSON audit PASS — an even shorter **ONE-CUSP** certificate
+
+The user has now run \`verification/bsd389_fixed_rational_manin_independent_audit.py\` against the actual exported canonical JSON, without Sage or eclib. All assertions passed: exact matching SHA256 \`9719d0863045ef63fe3519b23da0c4bb74303ee3d84cb9791f95e2a29d456dd4\`; all 389 fractions, 228 nonzero, \`D=g=1\`, all 389 sign-plus evenness comparisons and an explicit two-term Bézout identity.
+
+**Actual coefficients, not guessed:**
+\[
+v_{382}=m_E^+(382/389)=-1,\qquad
+v_{384}=m_E^+(384/389)=-2,
+\qquad
+1\cdot v_{382}+(-1)\cdot v_{384}=(-1)-(-2)=1.
+\]
+In fact **Bézout is unnecessary**: \(\boxed{v_{382}=-1}\) alone is a unit at **every** prime. Since \(382\equiv-7\bmod389\), periodicity and the independently checked sign-plus evenness give
+\[
+\boxed{m_E^+(7/389)=m_E^+(382/389)=-1.}
+\]
+Similarly \(m_E^+(5/389)=-2\). A **one-cusp** rational normalized modular symbol furnishes a *completely fixed prime-uniform symbol nonvanishing certificate*. This conclusion is logically stronger in economy than just knowing \(\gcd(v_a)=1\), although it does not strengthen the bound on Selmer.
+
+Verbatim [independent user-run stdout](../results/bsd389_fixed_rational_manin_independent_JSON_USER_RUN_PASS_2026-11-01.md). A new two-oracle one-cusp direct Sage/eclib regression is published at [\`verification/bsd389_single_cusp_global_unit.py\`](../verification/bsd389_single_cusp_global_unit.py), **not yet executed by the user**. It independently checks the four cusps \(a=382,384,7,5\) under both symbol implementations, instead of looking up the JSON again.
+
+### Structural obstruction to a naive uniform Kurihara functional identity
+
+For an auxiliary conductor \(n=q_1q_2\) with each \(q_i\equiv1\bmod p\), let \(j_i\) be the discrete logarithm modulo p on \((\mathbf Z/q_i\mathbf Z)^\times\). For p **odd**,
+\[
+\sum_{x\in(\mathbf Z/q_i\mathbf Z)^\times}j_i(x)
+\equiv\sum_{k=0}^{q_i-2}k
+=\frac{(q_i-1)(q_i-2)}2\equiv0\bmod p,
+\]
+since \(p\mid q_i-1\) and 2 is invertible. Via the Chinese remainder theorem, the two-prime Kurihara weight \(w(x)=j_1(x)j_2(x)\) has **augmentation zero**:
+\[
+\sum_{x\in(\mathbf Z/n\mathbf Z)^\times}w(x)
+=\big(\sum j_1\big)\big(\sum j_2\big)\equiv0\bmod p.
+\]
+
+Thus the associated weighted functional annihilates the **constant function 1** on the full function space on \((\mathbf Z/n\mathbf Z)^\times\), whereas a single-cusp evaluation does not. Consequently **no universal identity between these functionals exists on the entire unrestricted ambient function space**. This does NOT say the particular cuspidal \(E\)-eigensymbol is killed. It shows the required bridge must **incorporate the cuspidal/Hecke eigenspace and compatibility of levels**, not simply equate a single cusp evaluation with a raw sum of all two-prime weights.
+
+The additional *needed arithmetic statement* remains: some p-admissible \(n=q_1q_2\) must yield \(\widetilde\delta_n(E)\not\equiv0\bmod p\) for each target p, or a different integral Selmer comparison. The \(-1\) symbol in the fixed \(\{a/389\}\) sample does **not** prove this nonvanishing. At p covered by Kim, making that inference without further work is equivalent to assuming the desired \(\Sha[p^\infty]=0\) conclusion.
+
+---
+
 **Date 2026-11-01. Status:** the arithmetic source calculation has been **genuinely user executed** with 389/389 independent Sage/eclib equality checks. This is a strong global modular-symbol certificate, NOT a rank-two Euler-system class, two-prime Kurihara witness, all-p Fitting bound, Sha finiteness result or proof of strong BSD.
 
 ## 1. Fixed arithmetic input, constructed without using Sha
