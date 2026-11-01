@@ -1,5 +1,15 @@
 # Verification ledger — updated 2026-11-01
 
+## 2026-11-01 — REAL USER 389/389 SAGE/eclib FIXED RATIONAL SYMBOLS PASS; D=g=1
+
+**Fresh genuine Ubuntu Sage run:** `verification/bsd389_fixed_rational_manin_content.py` ran to completion with **389/389 exact Sage/eclib normalized modular-symbol matches**, **228 nonzero**, common rational denominator **D=1**, integral vector content **g=1**, exact two-term Bézout identity `sum c_a m_E^+(a/389)=1`, and canonical JSON SHA256 `9719d0863045ef63fe3519b23da0c4bb74303ee3d84cb9791f95e2a29d456dd4`. JSON located on the user's server at `~/bsd389_fixed_rational_manin_content.json`, not uploaded to repo. [Verbatim user-run record](results/bsd389_fixed_rational_manin_content_USER_RUN_PASS_2026-11-01.md); [precise all-prime mathematical consequence and scope](paper/bsd389_fixed_rational_manin_Dg1_exact_certificate_and_limit_2026-11-01.md).
+
+**Proven, given authentic exact symbolic data:** the fixed vector `(m_E^+(a/389))_{a=0..388}` lies in `Z^389` and is primitive. Thus **for every rational prime p**, at least one of these 389 entries is nonzero modp. This is a genuinely p-uniform *fixed modular-symbol* fact, but **NOT** a nonzero *two-prime Kurihara delta*, not uniform primitivity of an Euler system, and not a rank-two Selmer `Fitt₂` or Sha support bound. Restricted weighted functional families can annihilate primitive vectors at every p. Full BSD still not proved.
+
+**New minimal independent JSON audit — NOT USER EXECUTED:** [`verification/bsd389_fixed_rational_manin_independent_audit.py`](verification/bsd389_fixed_rational_manin_independent_audit.py) verifies the original canonical SHA256, all 389 rational fractions, the precise 228 nonzeros, denominator/content `D=g=1`, plus-symbol evenness, and the exact two-term Bézout identity and displays its indices/coefficient values. It only reads the existing JSON and uses **Python standard library**, without re-evaluating symbols. Do not record its PASS until the actual user run.
+
+---
+
 ## 2026-11-01 — ACTUAL p-INDEPENDENT ARITHMETIC INPUTS + MAZUR-RUBIN CORE-RANK SOURCE AUDIT
 
 **Constructed global rank-two MW exterior generator:** the historically Sage-saturated basis `P=(-1:1:1)`, `Q=(0:-1:1)` yields `omega_MW=P∧Q` generating `Λ²_Z(E(Q)/torsion)`, primitively over every `Z_p`, without using or assuming Sha finite. **This primitivity is NOT the Selmer Fitt₂ unit assertion.** A synthetic exact counterexample `X=Z_p²⊕(Z_p/p)²` has the identical primitive free wedge but `Fitt₂(X)=p²Z_p`. See [the new full proof/counterexample](paper/bsd389_rank2_MW_wedge_vs_higher_euler_core_rank_2026-11-01.md) and [tiny sanity checker, not yet executed by user](verification/bsd389_mw_wedge_vs_fitt2_sanity.py). It does not calculate real Sha.
