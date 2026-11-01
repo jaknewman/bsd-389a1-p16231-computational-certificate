@@ -1,5 +1,16 @@
 # Verification ledger — updated 2026-11-01
 
+## 2026-11-01 — REAL p5 LOCAL HECKE AUDIT USER PASS; maximal-rank toy proves M11 remains genuinely independent
+
+**Genuine user's independent local Python audit PASSED** after fast-forward to `f4ed858`:
+`a41=-3, a61=-8`; CRT root logs `d1=34,d2=54`; both exact modulo-5 marginal-factor jets `(0,0,4)`; and Hecke-implied `M00=M10=M20=M01=M02=0`. **M11=4 was NOT recomputed by this local script**; it is the separate genuine p5 Sage/eclib 2400-CRT run, hence the fully justified `Theta_2501≡4TU mod(5,(T,U)^3)` still stands. [Verbatim local PASS log](results/bsd389_p5_hecke_marginal_local_audit_USER_RUN_PASS_2026-11-01.md).
+
+**New precise limitation, proved by explicit finite-difference construction:** Over the **same 40×60 F5 CRT grid**, choose sign-plus symmetric arrays g1,g2 and let `f=(1-shift_k)^3*g1+(1-shift_l)^3*g2`. All FIVE Hecke-derived `M00,M10,M20,M01,M02` vanish, in fact each full partial marginal is in the cube of its augmentation ideal. The **weighted mixed coefficient M11 also vanishes** (3rd finite difference kills every polynomial test of degree≤2 in one coordinate). Yet a deterministic example with SHA256-seeded g1,g2 has a **unit sample f(1,1)=4** and **anchored mixed matrix rank 39/39 MAXIMAL**; the genuine E distribution independently had maximum mixed rank 39 but **M11=4≠0**. Hence **even the combination of p-unit entries, sign-plus symmetry, Hecke marginal cubic divisibility and MAXIMAL mixed rank cannot force Kurihara M11 nonvanishing** on an arbitrary distribution. [Exact proof](paper/bsd389_p5_hecke_marginal_PASS_and_maximal_rank_zero_mixed_counterexample_2026-11-01.md); [published tiny pure-Python synthetic checker](verification/bsd389_p5_maximal_mixed_rank_zero_kurihara_toy.py), **not yet user run**. The toy is not a true E eigen-symbol and is no BSD counterexample.
+
+**Actual next math target:** identify a genuinely arithmetic extra condition (full Hecke eigenline and compatible auxiliary level/distribution + integral Kolyvagin/Selmer comparison) implying a nonzero weighted mixed coefficient for some admissible pair as p varies, rather than inferring it from marginal jet/rank alone. This remains **UNPROVED**; no uniform Sha finiteness or strong BSD claim. [Issue #8](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/8).
+
+---
+
 ## 2026-11-01 — USER-EXECUTED REAL p5 MIXED JET PASS, MAXIMAL MIXED RANK 39, AND A NEW UNIFORM HECKE THEOREM
 
 **Real genuine Sage Ubuntu run:** 1,200 distinct `eclib` plus-symbol evaluations at denominator `2501=41*61` filled all **2,400 CRT unit locations** via plus involution, with **24/24 independent direct Sage samples** matching. The complete actual p5 low mixed moments are `(M00,M10,M01,M11)=(0,0,0,4) mod5`. The anchored mixed difference contraction gives `4`; **matrix rank 39 is MAXIMAL** for a 40×60 matrix with its first row/column zero, with **1,846 nonzero entries**; primitive-root change produces `4→3` via unit factor `2 mod5`. The historic independent p5 two-prime Kurihara `delta_2501=4` is recovered exactly by this new direct eigen-symbol computation. [Full verbatim user-run output](results/bsd389_p5_real_kurihara_mixed_jet_SAGE_PASS_2026-11-01.md). No large all-p computation implied.
