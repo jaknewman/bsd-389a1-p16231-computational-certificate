@@ -1,5 +1,15 @@
 # Verification ledger — updated 2026-11-01
 
+## 2026-11-01 — USER 8/8 SAGE/ECLIB ONE-CUSP PASS + EXACT TWO-PRIME MIXED-DIFFERENCE LEMMA
+
+**Genuine new Ubuntu Sage test PASS:** `verification/bsd389_single_cusp_global_unit.py` independently reproduced **eight out of eight** exact values from Sage's internal modular symbols and eclib: `m_E^+(382/389)=m_E^+(7/389)=-1`, `m_E^+(384/389)=m_E^+(5/389)=-2`. The exact identity `(-1)-(-2)=1` passed. **One single classical sign-plus modular symbol `m_E^+(7/389)=-1` is a unit mod EVERY prime p** without a scan. [Full user-run stdout](results/bsd389_single_cusp_global_unit_USER_RUN_PASS_2026-11-01.md). This is independent of the earlier 389-value JSON and its independent checksum/Bezout audit.
+
+**New exact mathematical filter:** For (q_i≡1mod p) and odd p, write Kurihara weights as `w(x,y)=j1(x)j2(y)` in CRT coordinates. Since `sum_{x∈G_i} j_i(x)=0 modp`, their functional `L(f)=sum j1(x)j2(y) f(x,y)` satisfies, for all anchors `x0,y0`, `L(f)=L(f(x,y)-f(x,y0)-f(x0,y)+f(x0,y0))`. In particular it annihilates **all additive/separable** `f(x,y)=u(x)+v(y)`, even primitive vectors with some unit entries. It factors through a mixed quotient of dimension `(q1−2)(q2−2)` over F_p. This identifies the actual **second-coordinate interaction** which a two-prime Kurihara number detects. [Self-contained formal proof](paper/bsd389_kurihara_two_auxiliary_mixed_difference_lemma_2026-11-01.md).
+
+**Scope:** This one-cusp unit and mixed-difference lemma **do not** prove any two-prime weighted nonvanishing for the E eigensymbol, `Fitt₂(Sel_{p∞}^dual)=Z_p`, `Sha[p∞]=0`, a uniform prime-support bound or complete BSD. The missing arithmetic theorem is **non-annihilation on the actual E cusp eigensymbol for at least one p-admissible pair of auxiliaries**, or an alternate integral Euler/Kolyvagin Fitting comparison. It is not supplied by primitive free-vector algebra alone. [Uniform issue #8](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/8).
+
+---
+
 ## 2026-11-01 — INDEPENDENT CANONICAL JSON AUDIT PASS; ACTUAL ONE-CUSP UNIT `m_E^+(7/389)=-1`
 
 **Genuine user terminal PASS** of the independent standard-library JSON verifier against the user's original `~/bsd389_fixed_rational_manin_content.json` with pinned SHA256 `9719d0863045ef63fe3519b23da0c4bb74303ee3d84cb9791f95e2a29d456dd4`. All 389 exact fractions, 228 nonzeros, `D=g=1`, 389 plus-evenness checks, and explicit Bézout verified. **New specific values:** `m_E^+(382/389)=-1` (index 382, Bézout coefficient +1) and `m_E^+(384/389)=-2` (index 384, coefficient −1); `(-1)-(-2)=1`. Since `382≡-7 (mod389)` and sign-plus evenness holds, `m_E^+(7/389)=-1`. **One single normalized classical plus-symbol is a p-adic unit for EVERY p**, no exceptions and no extra denominator. This is a stronger *short* global modular-symbol certificate than just `gcd(v)=1`. [Verbatim independent user run](results/bsd389_fixed_rational_manin_independent_JSON_USER_RUN_PASS_2026-11-01.md); [formal math note with important boundary](paper/bsd389_fixed_rational_manin_Dg1_exact_certificate_and_limit_2026-11-01.md).
