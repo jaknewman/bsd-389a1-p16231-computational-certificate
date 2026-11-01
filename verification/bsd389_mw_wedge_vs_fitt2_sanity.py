@@ -60,8 +60,7 @@ def main():
         print('SYNTHETIC_PRIMITIVE_WEDGE_NOT_SHA_BOUND_PASS',
               'p',p,'wedge_unit',wedge_coefficient,
               'fake_Fitt2_generator',local_fitt,flush=True)
-    print('BOUNDARY_SYNTHETIC_MODULE_NOT_ACTUAL_SELME R_OR_SHA'.replace(' ',''),
-          flush=True)
+    print('BOUNDARY_SYNTHETIC_MODULE_NOT_ACTUAL_SELMER_OR_SHA',flush=True)
     print('REMAINING_REQUIREMENT_ACTUAL_GLOBAL_EULER_SYSTEM_AND_INTEGRAL_FITTING_COMPARISON',
           flush=True)
 
