@@ -99,6 +99,36 @@ For our elliptic curve over Q (\(d=1,K=\mathbf Q\)), **this gives core rank 1**,
 
 **Key conceptual distinction:** the algebraic \(P\wedge Q\) is known and globally primitive. The unknown is an *Euler-system special element* with appropriate extension norm relations **and a proven regulator/determinant comparison** to the bottom wedge that also detects the torsion in the Selmer complex. One cannot obtain this comparison simply by dividing any two nonzero elements in a one-dimensional rational space, because the integral divisibility and Selmer cohomological content are exactly what are missing.
 
+## 4 bis. A second **concrete global arithmetic object**: the rational 389-cusp modular-symbol vector
+
+Besides the global MW wedge, the curve's classical modular form gives a genuinely **p-independent rational modular-symbol map**
+\[
+m_E^+:\mathbf Q\to\mathbf Q,\qquad
+r\longmapsto [r]^+_E
+\]
+normalized by the Néron real period. This is a **proven modularity/Manin–Drinfeld arithmetic object**, independent of Sha finiteness. The [Sage modular-symbol documentation](https://doc.sagemath.org/html/en/reference/arithmetic_curves/sage/schemes/elliptic_curves/ell_modular_symbols.html) explains its rationality, normalization and the independently implemented \`sage\` and \`eclib\` oracles.
+
+Choose the fixed 389 cusps \(a/389\) (\(0\le a<389\)); this is a **finite sample**, not a claim to contain all rational cusps or all 390 Manin–Shapiro relations. Put
+\[
+v_a=m_E^+(a/389),\qquad
+D=\operatorname{lcm}_{0\le a<389}\operatorname{den}(v_a)>0,
+\quad
+g=\gcd_{a}(D v_a)>0.
+\]
+The vector \(V=(Dv_a)_a\in\mathbf Z^{389}\) is a **fixed integral vector**. A computable integer Bézout identity gives coefficients \(c_a\in\mathbf Z\) with
+\[
+\boxed{\sum_{a=0}^{388}c_a D\,m_E^+(a/389)=g.}
+\]
+Consequently, for every prime p **not dividing Dg**, at least one sample \(m_E^+(a/389)\) is a **p-adic unit**. This is an *exact uniform algebraic nonvanishing statement about modular symbols*, not a theorem about Selmer or Sha.
+
+A new [Sage/eclib exact cross-oracle exporter](../verification/bsd389_fixed_rational_manin_content.py) calculates the 389 normalized rational values by **both independent symbol implementations**, checks every equality, computes exact D and g, constructs the Bézout witness and writes a SHA256-pinned canonical JSON. **It has not yet been executed by the user**, so D, g, nonzero count, and SHA are deliberately left unknown in this note. The resulting object is p-independent and genuinely derived from E. We must not assume that its content ideal is \(\operatorname{Fitt}_2\).
+
+### Precise remaining bridge
+
+The existence of the independent p-uniform symbol vector and an integral MW generator does NOT provide the missing class in a genuine rank-two Selmer complex. A successful further argument would have to **construct the relevant arithmetic Euler/Kolyvagin special element from those sources**, prove the correct field-extension norm relations and local Selmer conditions, compare its integral lattice to the actual \(Fitt_2(X_p)\), and then descend that comparison to ONE rational p-uniform scalar. This must not simply assert the existence of an Euler system whose *leading term* has the desired value.
+
+---
+
 ## 5. Minimal constructive next goal, avoiding more gigantic prime scans
 
 The next deliverable must be a fully specified candidate (not an abstract existence assertion):
