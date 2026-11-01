@@ -14,7 +14,7 @@ Run from the Sage-enabled Python environment:
     python -u verification/bsd389_single_cusp_global_unit.py
 """
 
-from sage.all import EllipticCurve, QQ, ZZ
+from sage.all import EllipticCurve, QQ
 
 N = 389
 VALUES = {
@@ -48,7 +48,7 @@ def main():
         assert QQ(symbol(QQ(384)/N)) == QQ(symbol(QQ(5)/N))
     assert total == 8
     assert (VALUES[382] - VALUES[384]) == 1
-    assert ZZ(VALUES[7]).is_unit()
+    assert abs(VALUES[7]) == 1
     print(
         "ONE_CUSP_BOTH_SAGE_ECLIB_8_DIRECT_VALUES_PASS",
         "checks", total, flush=True
