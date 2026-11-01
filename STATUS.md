@@ -1,5 +1,17 @@
 # Verification ledger — updated 2026-11-01
 
+## 2026-11-01 — ACTUAL p-INDEPENDENT ARITHMETIC INPUTS + MAZUR-RUBIN CORE-RANK SOURCE AUDIT
+
+**Constructed global rank-two MW exterior generator:** the historically Sage-saturated basis `P=(-1:1:1)`, `Q=(0:-1:1)` yields `omega_MW=P∧Q` generating `Λ²_Z(E(Q)/torsion)`, primitively over every `Z_p`, without using or assuming Sha finite. **This primitivity is NOT the Selmer Fitt₂ unit assertion.** A synthetic exact counterexample `X=Z_p²⊕(Z_p/p)²` has the identical primitive free wedge but `Fitt₂(X)=p²Z_p`. See [the new full proof/counterexample](paper/bsd389_rank2_MW_wedge_vs_higher_euler_core_rank_2026-11-01.md) and [tiny sanity checker, not yet executed by user](verification/bsd389_mw_wedge_vs_fitt2_sanity.py). It does not calculate real Sha.
+
+**Important theorem applicability correction:** Mazur–Rubin *Controlling Selmer groups in the higher core rank case* (2016), [original paper introduction p.2](https://www.math.uci.edu/~krubin/preprints/higherkolysys.pdf) explicitly gives core rank `r=d[K:Q]` for the specified **unramified Selmer structure** of an abelian variety's `T_p` under its standard hypotheses. At E/Q (`d=1`), **core rank is 1, not 2**; the known MW rank 2 does not allow one to import a 'higher core rank 2' Stark/Kolyvagin theorem without choosing and proving a distinct Selmer structure and explaining the comparison to real Sha. Burns–Sakamoto–Sano's higher derivative theorem (accepted 2025) supplies **abstract machinery**, not a pre-built rank-two Euler system for our curve.
+
+**Second actual fixed p-independent source candidate — NOT USER RUN:** [`verification/bsd389_fixed_rational_manin_content.py`](verification/bsd389_fixed_rational_manin_content.py) extracts 389 rational normalized plus symbols `m_E^+(a/389)` from independent `sage` and `eclib` implementations. It computes an exact fixed common denominator `D`, integer content `g`, an explicit Bézout identity `sum c_a D*m_E^+(a/389)=g`, and a SHA256-pinned canonical JSON. This would show unit nonvanishing in this **finite modular-symbol sample** at all primes not dividing `Dg`, **not** a uniform two-auxiliary-prime Kurihara witness or Sha triviality. Exact D,g and hash are **not reported before genuine user execution**. [Research proof and boundaries](paper/bsd389_rank2_MW_wedge_vs_higher_euler_core_rank_2026-11-01.md), [issue #8](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/8).
+
+**Remaining arithmetic theorem:** construct an actual Euler/Stark/Kolyvagin system for a specified T and local Selmer structure (checked core rank), certify norm relations and integral primitivity, and prove its comparison to the **unmodified** `Fitt₂(Sel_{p∞}(E/Q)^dual)` uniformly outside a fixed finite S, descended to one rational scalar. No such proof has been obtained; BSD strong and full Sha finiteness remain unproved.
+
+---
+
 ## 2026-11-01 — REAL USER PROFINITE PASS + EXACT GLOBAL FITT INTERSECTION ⇔ SHA FINITENESS
 
 **True Ubuntu user run PASS:** `verification/bsd389_uniform_profinite_det_counterexample.py --integer 729 --exclude 2,3,5,7,389` returned `q=59552011`, `Fitt2=q²=3546442014144121`, and all expected assertions. [Full user transcript](results/bsd389_uniform_profinite_det_counterexample_USER_RUN_PASS_2026-11-01.md). This is an **artificial profinite module**, not actual `Sha(389a1)`; it disproves the inference that merely having a nonzero global profinite determinant gives a fixed integer support bound.
