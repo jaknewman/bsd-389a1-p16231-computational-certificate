@@ -18,6 +18,16 @@ E/\mathbb Q:\quad y^2+y=x^3+x^2-2x,\qquad p=16231.
 
 **New exact rank-two *weight* filter:** For `p|(q1-1),p|(q2-1)`, the 2-prime Kurihara CRT weights `j1(x)j2(y)` annihilate every additively separable function `f(x,y)=u(x)+v(y)`. They depend only on the **mixed finite difference** `f(x,y)-f(x,y0)-f(x0,y)+f(x0,y0)`; the relevant mixed quotient dimension is `(q1-2)(q2-2)`. [Full mathematical proof](paper/bsd389_kurihara_two_auxiliary_mixed_difference_lemma_2026-11-01.md). This **explains exactly why the fixed one-cusp unit cannot by itself force a two-prime Kurihara unit**, and isolates the non-annihilation theorem still required for a uniform Sha/Fitt₂ bound. No complete BSD or Sha finiteness claim.
 
+## Proven all-odd-prime Hecke rigidity: exact Smith determinant **2** (2026-11-02)
+
+**Genuine user Ubuntu Sage run fully PASSED:** exact Smith determinantal gcd `D2=14500=2²*5³*29`, then **D23=2** on the 66×33 integral Hecke stack `(T2+2I;T3+2I)`, and **D235=2** after adding `T5+3I`. Direct mod2 rank31/kernel2, mod5 and mod29 rank32/kernel1; all source hashes checked. User-local canonical JSON SHA256 `86e79229d1c60d38ec59ecd8776c0c471716a1ffdf1098d46d58a8a59253f02a`. [True user terminal results](results/bsd389_integral_hecke_smith_2_3_5_USER_PASS_2026-11-02.md).
+
+**Exact new theorem for INFINITELY MANY primes:** nonzero 32 Smith factors of A23 multiply to **2**, hence the integer cokernel `coker(A23^t)=Z⊕Z/2`, and the common kernel of `T2+2I` and `T3+2I` modulo **EVERY odd prime p** is **exactly one-dimensional** in the *specified* integral weight-2 sign-plus level-389 Manin lattice. At p2 it is dimension 2. No exceptional odd prime; no conjectural extrapolation. [Full proof](paper/bsd389_integral_hecke_smith_2_global_odd_prime_rigidity_2026-11-02.md).
+
+**One small remaining HECKE question:** all additional compatible integral matrices can only reduce Smith gcd2 to gcd1, never increase it. Therefore a **single F2 rank test** gives the exact new all-p gcd: rank31→D2, rank32→D1. [New SHA-pinned, **not yet user-run**, low-cost mod2-only Hecke scan](verification/bsd389_hecke_mod2_exception_targeted_scan.py) tests T7,T11,... through 61. Sage confirms the level-389 weight-2 cuspidal Sturm bound is65, but this is not automatic completeness on the full characteristic-2 plus modular-symbol space.
+
+**Not BSD:** This is **C_Hecke**, not **C_Sha**, and it does NOT prove p-uniform degree-two Kurihara nonvanishing, `Sha[p∞]=0`, global finiteness of Sha, or the exact strong complex BSD identity. [Open #8](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/8).
+
 ## REAL integral Hecke certificate: 29000 and optimal Smith refinement (2026-11-02)
 
 **Actual user Sage/eclib T2 four-cusp PASS:** both independent implementations give `[2,-2,-1,-1]`, satisfying the exact T2 relation; the zero-extended fake eight-term perturbation violates it by `-6=4 mod5`. **Actual integral Sage lattice dimension 33**, `T2+2I` rational rank32, **one exact 32×32 minor 29000=2³·5³·29**. Hence **the integral Hecke eigenline kernel is provably dim1 modulo EVERY p outside {2,5,29}**. Direct mod5 rank29/kernel4; mod7,107 rank32/kernel1. **These are real arithmetic results, not predictions**. [Both verbatim user run logs](results/bsd389_T2_Hecke_and_integral_minor_29000_USER_PASS_2026-11-02.md).
