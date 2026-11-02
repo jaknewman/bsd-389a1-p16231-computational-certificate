@@ -42,3 +42,30 @@ A sound global strategy would require a theorem giving a p-independent integral 
 - **Iwasawa:** independent genuine Sage 10.9 certified upper exponent 0, establishing p107 Sha-primary triviality within the documented hypotheses.
 - **Kurihara:** frozen 710 blocks independently reaggregated into delta=34 mod107, but original native numerator loop and correct Néron symbol normalization are separate proof-source obligations.
 - **Uniformity:** not established. Neither audit turns a finite list of verified primes into a bound for all primes.
+
+## 5. Precise supersingular two-component source audit (2026-11-02)
+
+The Sage source for `Sha.an_padic` has a separate supersingular branch, not simply an ordinary one-variable ratio. In the branch for good supersingular p, it constructs:
+
+```python
+K = reg[0].parent()
+lg = log(K(1 + p))
+bsdp = tam / tors / lg**r * reg
+lps = lp.Dp_valued_series(n, quadratic_twist=D, prec=r + 1)
+lstar = [lps[0][r], lps[1][r]]
+shan0 = lstar[0] / bsdp[0] if bsdp[0] != 0 else 0
+shan1 = lstar[1] / bsdp[1] if bsdp[1] != 0 else 0
+```
+
+It raises a `RuntimeError` if both candidate quotients are nonzero yet inconsistent at available precision, and chooses the candidate with better relative precision. Subsequently `p_primary_bound` returns `shan.valuation()` under its residual and reduction preconditions. The actual source should be inspected whenever the installed Sage version differs from the public source. Source: <https://github.com/sagemath/sage/blob/develop/src/sage/schemes/elliptic_curves/sha_tate.py>; 2013 Stein–Wuthrich <https://wstein.org/papers/mcom2649-iwasawa-alg.pdf>.
+
+**What the run proves:** Sage returned a certified p107 upper exponent 0. It does *not* reveal both component values or their precise digits in the user's published log, and it does not prove a fixed-integer identity between p-adic quotients for varying primes. Do not invent component valuations or claim they were separately printed.
+
+### Formal obstruction to extrapolating finite certificates
+
+For any finite set of primes S, there exists an infinite torsion abelian group
+`A = ⊕_{p∉S} (Z/pZ)`. It has `A[p∞]=0` for every p in S, while A is infinite. Thus finite sets of proven p-primary vanishings cannot logically imply a uniform global bound, even when each proof is independent.
+
+The proposed uniform p-adic conclusion `v_p(B_p)=0` for all large good p is itself powerful enough, combined with appropriate residual and local hypotheses, to force Sha to have finite support and thereby be finite once the remaining p-parts are bounded. No such implication follows from p-adic BSD *predictions* or numerical real BSD leading-term estimates alone.
+
+**Focused next proof obligation:** supply a non-circular p-independent integrality/comparison theorem that controls `B_p` or the two-prime Kurihara leading coefficient outside a finite set. No formula or fixed integer accomplishing this has yet been constructed.
