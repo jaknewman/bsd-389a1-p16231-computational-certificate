@@ -1,6 +1,6 @@
 # A genuine two-auxiliary **Mordell–Weil localization determinant** for p = 5, 7, 107
 
-**2026-11-02.** This is a new, **independent elliptic-curve arithmetic** bridge between the known rank-two MW points and the very auxiliary primes of the historically computed two-prime Kurihara witnesses. The finite-field computations below were **executed locally by the assistant using a pure-Python elliptic group law**, independently of Sage/eclib and of the Kurihara symbol computations; the new GitHub verification script **has NOT YET been user-run on Ubuntu**. Its outputs are not silently claimed as authentic user stdout.
+**2026-11-02.** This is a new, **independent elliptic-curve arithmetic** bridge between the known rank-two MW points and the very auxiliary primes of the historically computed two-prime Kurihara witnesses. The finite-field computations below were **executed locally by the assistant using a pure-Python elliptic group law**, independently of Sage/eclib and of the Kurihara symbol computations; the new GitHub verification script **HAS NOW BEEN RUN ON THE USER'S UBUNTU MACHINE AND PASSED** (canonical SHA256 `3d9f3b2b6f5594adbc5927794159f5425fb20cd8825ce944b52f3522d1f29e7e`); [verbatim user-run transcript](../results/bsd389_MW_local_determinants_USER_RUN_PASS_2026-11-02.md). Its outputs are not silently claimed as authentic user stdout.
 
 **Mathematical conclusion:** Three exact 2×2 local determinant matrices have p-unit determinants. This is not p-uniform. Together with **separately authenticated nonzero rank-two Kurihara δ**, exact surjectivity/Manin/local hypotheses and Kim's mod-p theorem, this gives an explicit Selmer localization route to Sha[p]=0. **Without the separate δ witness and theorem, a unit local determinant alone is NOT a Sha certificate.**
 
@@ -71,7 +71,13 @@ The inverses are respectively 3, 5 and 31. Thus in all three examples, the two k
 \]
 none divisible by its residue prime. Since E has good reduction at p=5,7,107 and its formal group over Qp has no p-torsion for odd p, these suffice to conclude \(E(Q_p)[p]=0\), as required in Kim's modp theorem.
 
-The local arithmetic was executed in the assistant's current Python container, and its independent transcript is archived [here](../results/bsd389_MW_local_determinants_ASSISTANT_EXECUTED_2026-11-02.md). The new reproducible script for the user's **Sage or plain Python** environment is [here](../verification/bsd389_MW_two_auxiliary_local_determinants.py), published but not yet user-executed.
+The local arithmetic was executed in the assistant's current Python container, and its independent transcript is archived [here](../results/bsd389_MW_local_determinants_ASSISTANT_EXECUTED_2026-11-02.md). The new reproducible script for the user's **Sage or plain Python** environment is [here](../verification/bsd389_MW_two_auxiliary_local_determinants.py), published and now independently **executed by the user (PASS)**.
+
+## 2 bis. Independent primary-source confirmation for the specific p5 case
+
+Chan-Ho Kim's [primary paper, §8 Example (1), printed page 35](https://preprint.press.jhu.edu/ajm/sites/default/files/AJM-kim.pdf#page=35) explicitly treats **this very curve 389a1 at p5 with auxiliary q41,61**. The author records nonzero two-prime Kurihara δ and concludes **Sha(E389a1/Q)[5∞]=0** and the exact semilocal Selmer isomorphism. Our genuine user-run two-row matrix `[[1,3],[1,0]]` with determinant2 **identifies rational MW generators inside this previously published isomorphism**. This is new independent arithmetic detail, NOT a claim to have first established Kim's p5 Sha result.
+
+[Source-backed scope note and fast cross-certificate for p107](bsd389_Kim_primary_p5_example_and_p107_joint_archive_gate_2026-11-02.md).
 
 ## 3. The precise, **conditional-on-Kurihara-certificate** Sha bridge (no circular finiteness assumption)
 
