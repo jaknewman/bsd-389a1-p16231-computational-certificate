@@ -94,7 +94,9 @@ def main():
     assert original["hecke_primes_and_ap"] == [[2, -2]]
     v = vector(ZZ, original["primitive_integer_eigenvector"])
     assert len(v) == 33
-    assert v != 0 and ZZ(v.content()) == 1
+    from math import gcd
+    assert any(x != 0 for x in v)
+    assert reduce(gcd, (abs(int(x)) for x in v), 0) == 1
     print("HECKE_SMITH_BASELINE_CANONICAL_SHA256_PASS", BASELINE_SHA256,
           flush=True)
 
