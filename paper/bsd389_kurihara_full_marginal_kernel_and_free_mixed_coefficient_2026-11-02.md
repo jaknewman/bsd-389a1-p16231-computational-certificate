@@ -72,6 +72,24 @@ This proof shows that **even knowing the FULL Hecke-predicted two marginals at e
 
 This also proves the p5 local \((a_{41},a_{61},d_1,d_2)\) audit, even enhanced to exact knowledge of \(\theta_{41}\) and \(\theta_{61}\), cannot on its own force \(M_{11}=4\); the independent real E symbol computation carries essential information.
 
+### Numerical specialization to the **real p5 θ data** (purely formal perturbation!)
+
+The actually executed E389a1 p5 Sage/eclib audit gives \(M_{11}(\Theta_E)=4\) and \(h_1=40,h_2=60\). Put
+\[
+H_5=(1+X^{20}Y^{30})(1-X)(1-Y).
+\]
+Then the **abstract altered group-ring vector**
+\[
+\Theta_{\mathrm{toy}}=\Theta_E+3H_5\in\mathbf F_5[C_{40}\times C_{60}]
+\]
+has exactly the **same two ENTIRE Hecke-marginal polynomials** as \(\Theta_E\), and is still sign-plus symmetric, but
+\[
+M_{11}(\Theta_{\mathrm{toy}})=4+3\cdot2=10\equiv0\pmod5.
+\]
+Thus even knowing the **actual full one-prime Hecke marginals and the genuine M11=4 for E** cannot be a source of a marginal-only proof of nonvanishing: an explicit eight-term abstract perturbation destroys M11 with no change to either marginal. \(\Theta_{\mathrm{toy}}\) is **NOT** claimed to come from any true modular form, to retain maximal mixed rank, or to satisfy Manin/global Hecke relations. The violated/missing constraints are precisely the arithmetic information that future work must exploit.
+
+---
+
 ## 3. Canonical eight-term sparse CRT support, verified with no huge arrays
 
 In the exponent coordinates \(0\le k<h_1,\ 0\le\ell<h_2\), formula (1) has coefficients
