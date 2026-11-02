@@ -1,5 +1,21 @@
 # Verification ledger — updated 2026-11-02
 
+## 2026-11-02 — **USER UBUNTU 3/3 MW LOCAL DET PASS** p5=2, p7=3, p107=38; primary Kim 389a1 p5 Sha theorem cross-checked; p107 dual provenance gate published
+
+**Real user-run Python script PASS**, independent of Sage/eclib and the Kurihara modular-symbol computation, [full authentic stdout](results/bsd389_MW_local_determinants_USER_RUN_PASS_2026-11-02.md):
+- `p5,q=(41,61)`: exact point counts `a41=-3,a61=-8`, local rows `[1,3],[1,0]`, **det2 mod5**; `#E(F5)=9`.
+- `p7,q=(113,673)`: `a113=9,a673=2`, rows `[1,3],[1,6]`, **det3 mod7**; `#E(F7)=13`.
+- `p107,q=(369793,383917)`: `a369793=2,a383917=-854`, rows `[1,15],[1,53]`, **det38 mod107**; `#E(F107)=108`.
+- Actual user-local canonical JSON SHA `3d9f3b2b6f5594adbc5927794159f5425fb20cd8825ce944b52f3522d1f29e7e` at `~/bsd389_MW_local_determinants_5_7_107.json`. In each case the rational P,Q localize to a basis of two one-dimensional Fp Kummer targets. This is true **local MW arithmetic** and **NOT** by itself a global Selmer/Sha proof. [Reproducible source](verification/bsd389_MW_two_auxiliary_local_determinants.py).
+
+**IMPORTANT INDEPENDENT PRIMARY-SOURCE CHECK:** Chan-Ho Kim [§8 example (1), printed p35](https://preprint.press.jhu.edu/ajm/sites/default/files/AJM-kim.pdf#page=35) literally uses **the same 389a1 equation and q41,q61 at p5**, and concludes `Sha(E389a1/Q)[5∞]=0` and `Sel(E[5])≅E(Q41)/5⊕E(Q61)/5`, from nonzero δ. This published example independently validates our **p5** prior Selmer conclusion. Our now-user-run matrix det2 explicitly identifies P,Q as a basis inside those two local groups. Kim's [Theorem 1.10 printed p8](https://preprint.press.jhu.edu/ajm/sites/default/files/AJM-kim.pdf#page=8) requires residual GL2, p-unit Manin constant, E(Qp)[p]=0 and p-unit Tamagawa, and nonzero δ at **minimal** auxiliary degree, for the semilocal Selmer isomorphism.
+
+**Next focused program PUBLISHED, NOT YET USER RUN:** [`verification/bsd389_p107_Kim_joint_local_Kurihara_archive_gate.py`](verification/bsd389_p107_Kim_joint_local_Kurihara_archive_gate.py) authenticates the NEW user MW local JSON canonical SHA and its exact p107 local det38, then the **OLD** complete p107 Kurihara archive frozen SHA `b34131819db43fb6b227fa0e769f94b23733270df87dcd6b6dc47ed40693e754`. It records previously reported global `δ107=34` (DOES NOT recompute massive sum) and spells out conditional Kim Thm1.10 ⇒ Sel dim2, MW dim2, hence Sha[107∞]=0 **only if old algorithm/normalization and all theorem hypotheses valid**. It is **not a new all-p Sha proof**. [Detailed primary-source proof and scope](paper/bsd389_Kim_primary_p5_example_and_p107_joint_archive_gate_2026-11-02.md).
+
+**Uniform Chebotarev theorem ALREADY PROVED** at large p: arbitrarily many suitable q-pairs with MW wedge unit; does **not** force the same pair to give nonzero **global Kato/Kurihara δ**. That remains the open all-p Selmer `Fitt₂` / Sha finite-support research problem. Exact strong complex BSD leading term also still unresolved.
+
+---
+
 ## 2026-11-02 — NEW UNIFORM KUMMER/CHEBOTAREV THEOREM: infinitely many p-admissible LOCAL MW-wedge-unit pairs for EVERY p≥11
 
 **Genuine new Galois-theoretic proof (no Sha assumed):** Let p≥5 with `Gal(Q(E[p])/Q)=GL2(Fp)` and the rational MW points `P=(-1,1),Q=(0,-1)` independent modulo p. Over `K=Q(E[p])`, the Kummer classes of P,Q remain linearly independent because `H¹(GL2(Fp),Fp²)=0` by the **central scalar 2I** (Sah lemma, proved explicitly). Their two-point Kummer extension image `U≤E[p]²` is GL2-stable; irreducibility + scalar endomorphism ring force **U=E[p]²** (any proper submodule would force a forbidden linear relation between the restricted Kummer classes). Choose nonidentity unipotent `A=[[1,1],[0,1]]` with det1 and trace2, and two lifts with prescribed independent Kummer translation pairs `(w,0)` and `(0,w)` in the 1D quotient `E[p]/(A−I)E[p]`. Chebotarev yields infinitely many distinct primes q1,q2 with `q≡1 modp, a_q≡2 modp, dim E(Fq)/p=1` and local MW restriction **2×2 determinant a unit**. For E389a1, independently certified saturated MW basis and Mazur semistable GL2-surjectivity yield this for **EVERY p≥11**, including arbitrarily large p, without scanning any primes. [Complete exact proof and references](paper/bsd389_uniform_Chebotarev_Kummer_MW_local_two_auxiliary_wedge_2026-11-02.md).
