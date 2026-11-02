@@ -1,5 +1,15 @@
 # Verification ledger — updated 2026-11-02
 
+## 2026-11-02 — USER p107 JOINT MW/KURIHARA SOURCE AUTHENTICATION PASS; 710-BLOCK DIRECT FROZEN TAR INTERNAL AUDITOR READY (NOT RUN)
+
+**Real user's Sage Ubuntu PASS:** NEW pure-Python MW local JSON SHA `3d9f3b2b6f5594adbc5927794159f5425fb20cd8825ce944b52f3522d1f29e7e`; p107 at q(369793,383917), local matrix `[[1,15],[1,53]]` determinant **38≠0 mod107**, `#E(F107)=108`; and OLD COMPLETE K107 Kurihara tar.gz SHA `b34131819db43fb6b227fa0e769f94b23733270df87dcd6b6dc47ed40693e754`, EXACT. Historic p107 delta34 is **hardcoded archive value NOT recomputed by this joint short script**. New canonical joint user-local JSON SHA `cb2b7a59c66d2582fb5faf36ef2e6d3e7dcc507839de0fc404638f8d4ba2d37d`. [Authentic full user stdout](results/bsd389_p107_Kim_joint_local_Kurihara_archive_USER_PASS_2026-11-02.md).
+
+**New actually useful mathematical proof-source check ready, NOT YET USER RUN:** [`verification/bsd389_p107_frozen_tar_710_internal_reaggregate.py`](verification/bsd389_p107_frozen_tar_710_internal_reaggregate.py) directly **streams the actual SHA-frozen tar.gz** instead of merely trusting its hash, reconstructs **all 710 per-chunk canonical SHA256 payloads**, each chunk's exact range and W390 dot product against ORIGINAL SHA-pinned M390 table, the COMPLETE 390-vector weighted aggregate SHA `ee3fa1f5fca6de2b04300cbcc042e00e1a19a0e060adb24d2f3b90afabc0f8d0`, and half-sum17/full **delta34** from the archived recorded data. It verifies `FINAL_COMPLETE.json` and emits its own canonical SHA JSON. If M390 bytes are not embedded, it MUST be supplied as `--table /original/path` and original SHA must match. **No giant native loop or tar extraction**. This targets a genuinely outstanding full-payload reproducibility audit in [issue #6](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/6). [Exact audit plan and mathematical scope](paper/bsd389_p107_joint_MW_Kim_and_frozen_710_inner_archive_audit_2026-11-02.md).
+
+**Theorem:** [Kim Thm1.10](https://preprint.press.jhu.edu/ajm/sites/default/files/AJM-kim.pdf) gives **conditional** `Sha(E/Q)[107∞]=0` from valid normalized p107 two-prime Kurihara delta34 and independently certified residual GL2, unit Manin constant/Tamagawa, E(Q107)[107]=0, and saturated MW rank2. An archive SHA or finite local determinant alone does **NOT** establish the old 71-billion-term arithmetic, nor any uniform all-p Sha control/strong BSD. The new full-payload audit reconstructs the **stored** 710-block sum but does NOT rederive every massive original W390 block or formal-prove native symbol indexing.
+
+---
+
 ## 2026-11-02 — **USER UBUNTU 3/3 MW LOCAL DET PASS** p5=2, p7=3, p107=38; primary Kim 389a1 p5 Sha theorem cross-checked; p107 dual provenance gate published
 
 **Real user-run Python script PASS**, independent of Sage/eclib and the Kurihara modular-symbol computation, [full authentic stdout](results/bsd389_MW_local_determinants_USER_RUN_PASS_2026-11-02.md):
