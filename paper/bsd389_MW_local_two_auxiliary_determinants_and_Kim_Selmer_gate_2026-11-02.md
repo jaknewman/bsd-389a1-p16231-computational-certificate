@@ -92,7 +92,7 @@ For E389a1 with genuinely proved Mordell–Weil rank2, **IF a nonzero Kurihara w
 \]
 forces \(\Sha[p]=0\). Since any nonzero p-primary torsion group contains an element killed by p, it follows \(\Sha[p^\infty]=0\). **This does not assume Sha finiteness a priori.**
 
-This is an explicit "two known points, two local primes" **Selmer/Sha argument** once the hypotheses and the *actual* Kurihara witness are certified. For the same pairs, historically reported Kurihara residues are:
+This is an explicit "two known points, two local primes" **Selmer/Sha argument** once the hypotheses and the *actual* Kurihara witness are certified. **Important logical economy:** once Kim already gives a Selmer space of dimension two and the MW rank-two saturated basis is certified, the Kummer injection of MW/p into Sel(E[p]) alone forces Sha[p]=0. Therefore our nonzero 2×2 LOCAL determinant is a valuable *independent verification and identification of the local images*, but is **not an additional necessary hypothesis** for that Sha implication. Its independent use is to provide a concrete local arithmetic witness and to motivate the separate all-p Chebotarev theorem. For the same pairs, historically reported Kurihara residues are:
 - p5 q=(41,61), \(\delta=4\bmod5\) (**independently user-reproduced direct 2400-position mixed-jet computation**);
 - p7 q=(113,673), \(\delta=2\bmod7\) (previous arithmetic archive; not recalculated here);
 - p107 q=(369793,383917), \(\delta=34\bmod107\) (previous complete certificate archive with frozen SHA256 `b34131819db43fb6b227fa0e769f94b23733270df87dcd6b6dc47ed40693e754`; not recalculated here).
