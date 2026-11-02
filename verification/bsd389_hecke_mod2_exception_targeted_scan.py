@@ -13,7 +13,10 @@ primitive integer E-eigenvector)?
 
 Reads and authenticates the user's genuine Smith JSON checksum, then
 reconstructs its rank/provenance, and checks additional primes ell<=61
-without recomputing any Smith matrices. The Sage Sturm bound at
+without recomputing any Smith matrices. Since the baseline exact Smith gcd
+is 2, each new stacked gcd divides 2, and so its EXACT value can be
+deduced from the F2 rank ALONE: rank31 -> gcd2, rank32 -> gcd1.
+The Sage Sturm bound at
 weight 2 level 389 is 65; the program prints this as context and does
 NOT claim that testing Hecke primes <=61 alone exhausts all operators
 on the entire integral modular-symbol lattice, or all modular symbols
@@ -103,11 +106,17 @@ def main():
         assert 31 <= rank <= 32,("BAD_MOD2_RANK",ell,rank)
         if ell in PREVIOUS_PRIMES:
             assert rank==31,("INCONSISTENT_REAL_USER_SMITH_BASELINE",ell,rank)
+        # The new exact determinantal gcd divides the OLD gcd 2.
+        # It is even iff rank modulo 2 is < the QQ rank 32.
+        # Thus one mod-2 rank is a rigorous proof of the exact gcd.
+        D_exact = 2 if rank == 31 else 1
         print("HECKE_MOD2_PRIME_EIGENRANK",
               "ell",ell,"ap",int(E.ap(ell)),
-              "rank",rank,"kernel_dim",DIM-rank,flush=True)
+              "rank",rank,"kernel_dim",DIM-rank,
+              "exact_Smith_gcd_deduced",D_exact,flush=True)
         steps.append({"ell":ell,"a_ell":int(E.ap(ell)),
-                      "mod2_rank":rank,"kernel_dim":DIM-rank})
+                      "mod2_rank":rank,"kernel_dim":DIM-rank,
+                      "exact_Smith_gcd_from_D2_and_mod2":D_exact})
         if rank==32 and not args.all_primes:
             print("HECKE_MOD2_EXCEPTION_ELIMINATED_FOR_FIXED_STACK_PASS",
                   "by_prime",ell,"odd_prime_results_unchanged",flush=True)
@@ -126,6 +135,7 @@ def main():
         "integral_lattice_dimension":DIM,
         "tested":steps,
         "final_F2_rank":final["mod2_rank"],
+        "final_exact_all_prime_Smith_gcd": final["exact_Smith_gcd_from_D2_and_mod2"],
         "final_F2_kernel_dimension":final["kernel_dim"],
         "odd_prime_Fp_kernel_dimension":1,
         "scope":("Fixed level-389 integral modular-symbol Hecke matrices, "
@@ -136,6 +146,8 @@ def main():
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_bytes(encoded+b"\n")
     digest=hashlib.sha256(encoded).hexdigest()
+    print("HECKE_MOD2_SCAN_EXACT_GLOBAL_SMITH_GCD_FROM_F2_RANK",
+          report["final_exact_all_prime_Smith_gcd"],flush=True)
     print("HECKE_MOD2_SCAN_CANONICAL_JSON_SHA256",digest,flush=True)
     print("HECKE_MOD2_SCAN_REPORT",args.output,flush=True)
     print("BOUNDARY_HEKKE_CONGRUENCE_ONLY_NOT_SHA_FITTING_OR_BSD",flush=True)
