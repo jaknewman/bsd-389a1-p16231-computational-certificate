@@ -1,5 +1,22 @@
 # Verification ledger — updated 2026-11-02
 
+## 2026-11-02 — REAL SMITH USER RUN: **D(T2,T3)=2**, ALL ODD p HECKE EIGENLINE DIM1; FINAL MOD2 TARGET
+
+**Actual user Ubuntu Sage run PASS**, checksum-linked to earlier genuine integer minor29000:
+- Baseline source JSON SHA256 `afccd10890e7c24f591f828576e78f901de7ba83b46fe17a7582567233297c64` and original rank/minor reconstructions PASS.
+- Actual exact 32nd Smith determinant divisor for `T2+2I` **D2=14500=2²·5³·29**, modulo2 rank31, mod5 rank29, mod29 rank31.
+- Actual **STACK T2+2I;T3+2I** (66×33) has **D23=2**, mod2 rank31, mod5 rank32, mod29 rank32.
+- Adding `T5+3I` (99×33) keeps **D235=2** and identical mod2/mod5/mod29 ranks.
+- Canonical user-local JSON `~/bsd389_hecke_smith_refinement.json` SHA256 `86e79229d1c60d38ec59ecd8776c0c471716a1ffdf1098d46d58a8a59253f02a`. [Verbatim real user terminal transcript](results/bsd389_integral_hecke_smith_2_3_5_USER_PASS_2026-11-02.md).
+
+**Stronger exact UNIFORM theorem:** The 32 nonzero Smith factors for A23 have product2, so 31 are1 and one is2. Therefore `coker(A23^t: Z^66→Z^33) ≅ Z⊕Z/2`. It follows immediately **for EVERY ODD PRIME p**, including p3,p5,p7,p29,p107,p389 and arbitrary large p, **the Fp common kernel of fixed integral matrices T2+2I,T3+2I has dimension ONE**. At p2 it has dimension2. No prime scan is needed: this is an exact integral Smith result. This uniform theorem concerns only the chosen **genuine integral sign-plus modular-symbol Hecke lattice of rank33**, NOT full characteristic-p Manin base change nor the Selmer `Fitt₂`. [Exact proof](paper/bsd389_integral_hecke_smith_2_global_odd_prime_rigidity_2026-11-02.md).
+
+**No more Smith needed:** Any further stack B with operators also annihilating the verified common E primitive integer eigenvector has 32nd determinantal divisor D(B)|2. Hence the **entire global integer D(B) is now decided by ONE mod2 rank**: rank31→D=2; rank32→D=1. New [tiny mod2-only Sage scan](verification/bsd389_hecke_mod2_exception_targeted_scan.py) reads the user's SHA-pinned Smith JSON, checks T2/T3/T5 baseline and tests T7,T11,...≤61 over F2 only, halting if rank32. **NOT USER RUN YET**, no conclusion on whether 2 is removable. Weight2 level389 Sturm bound is 65 for cuspidal Hecke data; scan does not claim automatic completeness for the ambient plus integral/mod2 lattice.
+
+**NON-NEGOTIABLE BSD boundary:** D=2 is **C_Hecke** — a congruence eigenspace determinant — **not C_Sha**, NOT a uniform rank-two Kurihara M11 witness and NOT a Selmer Fitt₂ / global Sha finite-support proof. The exact complex leading-term equality is a separate open obligation. [Issue #8](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/8).
+
+---
+
 ## 2026-11-02 — REAL USER T2 HECKE/EIGENLINE PASS: MINOR 29000; EXACT SMITH 5^3 LOWER-BOUND THEOREM
 
 **Two genuine new Sage Ubuntu user runs passed** after checkout `893a91d`. First, true normalized plus-symbol `T_2` evaluated identically in **Sage and eclib** on `r=1/2501` cusp quadruple `[2,-2,-1,-1]`, satisfying `-2*m(r)-m(2r)-m(r/2)-m((r+1)/2)=0` EXACTLY. The artificial 8-term `H`, extended by zero at other cusps, has `[1,0,0,0]` and adding `3H` gives **exact T2 defect -6=4 mod5**, while formally switching mixed Kurihara M11:4→0. This rules out that **particular zero extension**, not all global alternatives.
