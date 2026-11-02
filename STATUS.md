@@ -1,5 +1,17 @@
 # Verification ledger — updated 2026-11-02
 
+## 2026-11-02 — USER MOD2 18-PRIME HECKE SCAN PASS: EXTRA KERNEL PERSISTS THROUGH ALL T_n≤65; CONGRUENCE BRANCH COMPLETE FOR ALL ODD p
+
+**Genuine user's Sage Ubuntu scan PASS:** authenticated the actual previous Smith JSON SHA `86e79229d1c60d38ec59ecd8776c0c471716a1ffdf1098d46d58a8a59253f02a`, and tested **all 18 good prime Hecke operators ell≤61** on the same integral level389 sign-plus Hecke lattice of dimension33 with the certified primitive E eigenvector. **Every growing stack has F2 rank31/kernel dimension2 and exact all-minor Smith gcd2**. No tested operator eliminates the mod2 extra eigenvector. Canonical final user-local JSON SHA `0e24d302d61882689fe6084e9ed7302ddc0b483096744dc047c7e6a523970cf5`. [Verbatim genuine user output](results/bsd389_hecke_mod2_exception_prime_scan_USER_PASS_2026-11-02.md).
+
+**New exact theorem, no more computation necessary:** By coprime Hecke multiplicativity `T_mn=T_m T_n` and weight2 prime-power recurrence `T_l^r=T_l T_l^(r−1)−l T_l^(r−2)` (proper notation `T_{ell^r}=T_ell T_{ell^{r−1}}−ell T_{ell^{r−2}}`), every `T_n` with **n≤65** is an integer polynomial in the 18 prime T_ell for ell≤61. The elliptic Fourier coefficients a_n satisfy the SAME relations. Therefore the **same two-dimensional F2 Hecke eigenkernel** persists for **ALL 1≤n≤65**: no composite-index scan is necessary. Exact rank32 over Q and prior full Smith D=2 imply all the extended stacks still have exact determinantal gcd2. [Proof, complete mathematical scope](paper/bsd389_hecke_mod2_persistence_through_sturm_window_2026-11-02.md).
+
+**Sturm caveat:** 65 is a proved Hecke span bound for **cuspidal** forms, but the rank33 signed **ambient** integral modular-symbol lattice includes Eisenstein data. Official Sage `hecke_bound()` docs explicitly warn that its noncuspidal bound is an *unproven guess*. Thus `T_n,n≤65` persistence is proved; **every n arbitrarily large on the full ambient module is NOT claimed**. This does not affect the already exact all-odd-prime fact from Smith `D(T2,T3)=2`: **EVERY odd prime has one-dimensional Hecke kernel** in the specified lattice.
+
+**Research decision:** STOP further p2 Hecke prime scans for the global Sha goal. The Hecke congruence uniform theorem is already optimal for all odd primes; a mod2 congruence exception is NOT Sha[2] and earlier actual 2-descent handles p2 separately. The **open core problem** remains an actual p-uniform **two-prime Kurihara M11 / integral Euler-Kolyvagin Selmer Fitt₂ comparison**, and separately strong complex BSD term. [Issue #8](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/issues/8).
+
+---
+
 ## 2026-11-02 — REAL SMITH USER RUN: **D(T2,T3)=2**, ALL ODD p HECKE EIGENLINE DIM1; FINAL MOD2 TARGET
 
 **Actual user Ubuntu Sage run PASS**, checksum-linked to earlier genuine integer minor29000:
