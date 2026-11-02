@@ -1,6 +1,6 @@
 # p107: genuinely authenticated joint MW/Kurihara evidence and a direct internal 710-chunk audit
 
-**November 2, 2026.** The user's genuine p107 two-source SHA verification is PASS; the direct tarball internal 710-payload replay program has been PUBLISHED BUT NOT USER-RUN. This is arithmetic proof provenance for one prime, not global Sha finiteness or full BSD.
+**November 2, 2026.** The user's genuine p107 two-source SHA verification is PASS; the direct tarball internal 710-payload replay has NOW BEEN GENUINELY EXECUTED ON THE USER'S UBUNTU AND PASSED. This is arithmetic proof provenance for one prime, not global Sha finiteness or full BSD.
 
 ## Genuine new user result
 
@@ -18,7 +18,7 @@ The two sources are now demonstrably the previously authenticated ones. A SHA id
 
 The project already has [verification/kurihara_k107_final_audit.py](../verification/kurihara_k107_final_audit.py), which verifies the 710 archived JSON payload hashes, M390 dot products, exact contiguous interval coverage, final 390-dimensional weight vector, and delta=34, but requires a directory of extracted data plus original Manin table/native executable file paths.
 
-The new independent [verification/bsd389_p107_frozen_tar_710_internal_reaggregate.py](../verification/bsd389_p107_frozen_tar_710_internal_reaggregate.py) directly streams the **frozen tar.gz without extracting any file or running the native 71-billion-term computation**. It checks the original full SHA, looks for all 710 named block payloads, config and final JSON, and matches the original 390-entry modular-symbol table by its exact SHA256 (00cdb5cd7ad9c7093877836412a77fe3f67985aa2e1878ddd03b8092ab90ee2f). If the original table is not embedded in the archive it requires the exact original bytes via the --table argument, and **fails rather than inventing values**.
+The new independent [verification/bsd389_p107_frozen_tar_710_internal_reaggregate.py](../verification/bsd389_p107_frozen_tar_710_internal_reaggregate.py) directly streams the **frozen tar.gz without extracting any file or running the native 71-billion-term computation**. It checks the original full SHA, looks for all 710 named block payloads, config and final JSON, and matches the original 390-entry modular-symbol table by its exact SHA256 (00cdb5cd7ad9c7093877836412a77fe3f67985aa2e1878ddd03b8092ab90ee2f). The user's REAL run confirms that the original M390 table **WAS embedded in the archive**, so no extra table file was required. For any other archive where the table is missing, the auditor still requires exact bytes via the --table argument and **fails rather than inventing values**.
 
 For every one of 710 JSON blocks, its full validation includes:
 1. Original canonical payload SHA, expected block index and exact interval of length up to 100 million.
@@ -28,7 +28,7 @@ For every one of 710 JSON blocks, its full validation includes:
 5. Coverage of every integer from 1 through 70,984,909,590 with no gap/overlap, independent half-contraction 17 and full delta=34, and FINAL_COMPLETE agreement.
 6. A new canonical SHA256 pinned JSON report containing the audited output.
 
-This is a **second implementation of the finite archived-data aggregation**, NOT an independent recomputation of the original 70,984,909,590 numerators, and NOT a formal proof that the native Manin index map and Néron period normalization are correct for all entries. Those remain separate source audits.
+This is a **second, NOW USER-VALIDATED implementation of the finite archived-data aggregation**, NOT an independent recomputation of the original 70,984,909,590 numerators, and NOT a formal proof that the native Manin index map and Néron period normalization are correct for all entries. Those remain separate source audits.
 
 Ubuntu command (no extraction, no very large recomputation):
 
@@ -39,7 +39,7 @@ Ubuntu command (no extraction, no very large recomputation):
       --output ~/bsd389_p107_frozen_tar_710_internal_reaggregate.json \
       2>&1 | tee ~/bsd389_p107_frozen_tar_710_internal_reaggregate.log
 
-If it prints K107_TAR_M390_TABLE_REQUIRED_FOR_INDEPENDENT_DOT_CHECK, locate the exact original table file and rerun with --table /absolute/path/to/table.txt. No preemptive new PASS or SHA is claimed.
+The actual user run **PASSED 710/710 payload SHA256 validations and dot contractions**, contiguous coverage 1…70,984,909,590, aggregate W390 hash ee3fa1f5fca6de2b04300cbcc042e00e1a19a0e060adb24d2f3b90afabc0f8d0, and exact half=17/delta=34 against the frozen FINAL_COMPLETE record. Its canonical JSON SHA256 is 439bd3aa0bc8c861dfad63ac7b1ece48a3c5faabf28308d7c2e3fa62a06f8e62. [Verbatim user's real Ubuntu stdout](../results/bsd389_p107_frozen_tar_710_internal_reaggregate_USER_PASS_2026-11-02.md). No further table input is required for this original archive because the table and native binary were both embedded.
 
 ## Precise conditional Kim p107 consequence
 
