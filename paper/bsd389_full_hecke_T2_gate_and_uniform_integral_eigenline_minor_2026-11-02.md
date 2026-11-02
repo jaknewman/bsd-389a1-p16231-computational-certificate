@@ -21,7 +21,7 @@ The earlier [eight-term theorem](bsd389_kurihara_full_marginal_kernel_and_free_m
 \[
 H(X,1)=H(1,Y)=0,\quad [TU]H(1+T,1+U)=2.
 \]
-Consequently the **formal** \(\Theta_E+3H\) changes the true E189a1 p5 mixed coefficient \(4\) to \(4+3\cdot2=0\bmod5\) while fixing both *entire* marginals.
+Consequently the **formal** \(\Theta_E+3H\) changes the true E389a1 p5 mixed coefficient \(4\) to \(4+3\cdot2=0\bmod5\) while fixing both *entire* marginals.
 
 ### Exact sparse support at denominator 2501
 
