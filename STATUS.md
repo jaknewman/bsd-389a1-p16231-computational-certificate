@@ -1,4 +1,14 @@
-# Verification ledger — updated 2026-11-01
+# Verification ledger — updated 2026-11-02
+
+## 2026-11-02 — USER PASS p5 TOY MAX RANK39/M11=0; EXACT 8-TERM KERNEL SHOWS **FULL** MARGINALS LEAVE M11 ARBITRARY
+
+**Real user's Ubuntu test PASS** on the previously published synthetic 40×60 p5 distribution: sign-plus and unit `f(1,1)=4`, five `M00,M10,M20,M01,M02` zeros, anchored mixed rank **39/39 maximum**, yet **M11=0**. This is synthetic, NOT the actual E=389a1 eigensymbol: genuine Sage/eclib `M11=4` from earlier user run. [Exact new verbatim log](results/bsd389_p5_maximal_mixed_rank_zero_kurihara_toy_USER_PASS_2026-11-02.md).
+
+**Stronger exact new algebraic theorem, all odd p:** in `R=Fp[X,Y]/(X^h1−1,Y^h2−1)`, with even `h_i=q_i−1`, `s=X^(h1/2)Y^(h2/2)` and `s²=1`, define the **eight-term** element `H=(1+s)(1-X)(1-Y)`. Then **(i)** sign-plus `sH=H`; **(ii)** BOTH COMPLETE one-prime marginal polynomials vanish *identically*, `H(X,1)=H(1,Y)=0` (not just their low moments); **(iii)** the two-prime mixed Kurihara coefficient `[TU]H(1+T,1+U)=2∈Fp×`. Therefore, for any sign-plus group-ring theta and desired d∈Fp, adding `(d−M11)/2 *H` preserves EXACTLY both full Hecke-marginal polynomial identities and sign symmetry while setting `M11=d`, arbitrarily. **The full one-variable Hecke marginal data simply cannot imply M11≠0**, even if it is known in its entirety. [Complete proof](paper/bsd389_kurihara_full_marginal_kernel_and_free_mixed_coefficient_2026-11-02.md) and [eight-term small checker (PUBLISHED, not yet user executed)](verification/bsd389_two_prime_full_marginal_kernel_8term.py).
+
+**Important boundary:** H is an ABSTRACT group-ring perturbation; there is **no claim** that it satisfies all modular Manin/Hecke eigenrelations across conductors or equals a genuine E modular symbol distribution. The source of possible nonvanishing must therefore lie precisely in the full two-dimensional E eigensymbol + arithmetic Euler/Kolyvagin/Selmer comparison. Uniform Sha finite support, strong BSD exact complex formula remain **UNPROVED**. The universal theorem is a **no-go for marginal-only inference**, not a no-go for BSD itself.
+
+---
 
 ## 2026-11-01 — REAL p5 LOCAL HECKE AUDIT USER PASS; maximal-rank toy proves M11 remains genuinely independent
 
