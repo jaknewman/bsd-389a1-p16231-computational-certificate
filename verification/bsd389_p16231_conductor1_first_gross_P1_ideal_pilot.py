@@ -148,14 +148,33 @@ def main():
         "scope":"One true conductor-one adelic P_1^a right ideal only"
     }
     if args.classify:
-        hits=[]
+        # The Brandt list contains pairwise inequivalent right ideals
+        # of the fixed quaternion order. An explicit equivalence witness
+        # to ONE of them uniquely identifies the class; no need to
+        # repeat potentially expensive tests against the other 32.
+        import time
+        winner=None
+        start=time.monotonic()
         for k,ideal in enumerate(ideals):
-            if ideal.is_right_equivalent(T):
-                hits.append(k)
-                print("P1_BRANDT_CLASS_CANDIDATE",k,flush=True)
-        assert len(hits)==1, ("BRANDT_CLASS_UNIQUENESS_FAILED",hits)
-        res["brandt_class"]=hits[0]
-        print("P1_CONDUCTOR1_TRUE_GROSS_BRANDT_CLASS_PASS",a,hits[0],flush=True)
+            print("P1_CLASSIFY_TESTING",k,"OF",len(ideals),flush=True)
+            equivalent,witness=ideal.is_right_equivalent(T,certificate=True)
+            if not equivalent:
+                continue
+            assert witness*T==ideal, ("INVALID_RIGHT_IDEAL_WITNESS",k)
+            winner=k
+            res["brandt_class"]=k
+            res["right_equivalence_witness"]=str(witness)
+            print("P1_RIGHT_IDEAL_EQUALITY_WITNESS_PASS",k,flush=True)
+            break
+        assert winner is not None, "NO_BRANDT_CLASS_MATCH_FOUND"
+        value=int(V[winner])
+        res["brandt_eigenvector_value"]=value
+        res["theta_n0_single_a_bracket_mod_p"]=(-value)%P
+        print("P1_CONDUCTOR1_TRUE_GROSS_BRANDT_CLASS_PASS",a,winner,flush=True)
+        print("P1_TRUE_GROSS_BRANDT_VALUE_PASS",a,value,flush=True)
+        print("P1_THETA_N0_SINGLE_A_BRACKET_MODP",a,(-value)%P,flush=True)
+        print("P1_CLASSIFY_ELAPSED_SECONDS",round(time.monotonic()-start,3),flush=True)
+        print("BOUNDARY_ONE_A_VALUE_NOT_THETA_SUM_OR_DERIVATIVE",flush=True)
     else:
         print("P1_CLASSIFICATION_NOT_REQUESTED",flush=True)
     dest=home/("bsd389_p16231_gross_P1_a"+str(int(a)%M)+
