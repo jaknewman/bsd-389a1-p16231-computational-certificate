@@ -53,6 +53,4 @@ for k,row in enumerate(rows):
 assert len(seen)==18
 print("CHI53_ALL_18_OPTIMAL_EMBEDDINGS_PASS",flush=True)
 print("CHI53_INITIAL_GROSS_POINT_CONDUCTOR_EXACTLY_53_PASS",flush=True)
-print("BOUNDARY: proves exact optimality; uses prior stage22 for class action,
-      "stage30 for JL eigenform and global Waldspurger theorem.",flush=True)
-
+print('BOUNDARY: optimality only; use archived stage22 and stage30 for the remaining arithmetic data.', flush=True)
