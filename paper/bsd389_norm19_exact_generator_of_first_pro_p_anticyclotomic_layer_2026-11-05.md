@@ -42,7 +42,7 @@ Therefore **G generates the entire kernel Pic(O_(p²))→Pic(O_p)** of order p. 
 The local 2-component representation of g^5410 modulo p² is exactly
 G=(144261128,166000481) in the basis (1,omega). Its split ratio is w(G)=148945842 modulo p². Its cube is nontrivial mod p² but its 3p-th power is 1: this independently confirms order p **after quotient by the global unit ratios mu_3**.
 
-An assistant-side standard-library Python calculation checked **all 16,231 successive powers G^i**, i=0,...,p−1, by comparing the independently computed split CRT log to i·14426 mod p, with zero collisions. This is an executed algebraic check in the assistant runtime; the published source needs user Ubuntu replay for the project provenance.
+**Ubuntu replay confirmed on 2026-11-05:** the user's actual standard-library Python execution checked **all 16,231 successive powers G^i**, i=0,...,p−1, comparing the split CRT logarithm to i·14426 mod p with zero collisions; it printed `NORM19_FIRST_P_LAYER_COMPLETE_16231_LOG_ORBIT_PASS 16231` and `FIRST_LAYER_STATUS=0`. See the [authentic verbatim USER PASS record](../results/bsd389_p16231_norm19_first_layer_generator_USER_PASS_2026-11-05.md).
 
 ## 4. Convert to a local ratio 1+p
 
