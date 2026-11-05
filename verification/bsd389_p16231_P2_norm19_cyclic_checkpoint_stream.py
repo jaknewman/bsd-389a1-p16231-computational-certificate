@@ -163,6 +163,7 @@ def main():
     ap.add_argument("--checkpoint-every",type=int,default=256)
     ap.add_argument("--oracle-every",type=int,default=512)
     ap.add_argument("--bridge-5410",action="store_true")
+    ap.add_argument("--bridge-16231",action="store_true")
     args=ap.parse_args()
     assert 0<=args.target_n<H and args.checkpoint_every>=1
     assert args.oracle_every>=0
@@ -182,9 +183,19 @@ def main():
         z=E["coords"](j,q)
         maxcoord=max(maxcoord,max(abs(int(t)) for t in z))
         n=k
-        if args.oracle_every and (n%args.oracle_every==0 or
-             (args.bridge_5410 and n==5410)):
+        if (args.oracle_every and n%args.oracle_every==0) or \
+           (args.bridge_5410 and n==5410) or \
+           (args.bridge_16231 and n==P):
             check_anchor(n,j,q,a,args.bridge_5410)
+            if args.bridge_16231 and n==P:
+                # At step p, w^p is exactly the Teichmuller component.
+                # Independent genuine P2 anchor already user-certified
+                # for a=121898074, Brandt class 24, value zero.
+                assert a==pow(w,P,M)==121898074
+                assert (S*n)%P==0
+                assert j==24 and int(E["V"][j])==0
+                print("NORM19_STREAM_P_STEP_TEICH_ANCHOR_PASS",
+                      n,"A",a,"CLASS",j,"VALUE",int(E["V"][j]),flush=True)
         if n%args.checkpoint_every==0 or n==args.target_n:
             o=make_object(j,q,n,a,mom,hist,maxcoord,origin)
             atomic_store(o)
