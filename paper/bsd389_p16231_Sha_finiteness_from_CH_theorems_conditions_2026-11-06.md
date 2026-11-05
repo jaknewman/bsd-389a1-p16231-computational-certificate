@@ -42,3 +42,11 @@ Even a rigorous finiteness theorem for Sha at p=16231 does not prove full BSD, n
 F. Castella and M.-L. Hsieh (2022), On the nonvanishing of generalised Kato classes for elliptic curves of rank 2, Theorems A, B, section6 Appendix; https://www.cambridge.org/core/journals/forum-of-mathematics-sigma/article/on-the-nonvanishing-of-generalised-kato-classes-for-elliptic-curves-of-rank-2/72ED842AB428A7ED619B1B84287A6864
 
 M. Chida and M.-L. Hsieh, Special values of anticyclotomic L-functions for modular forms, Theorem B (functional equation), 2018; https://www.math.ntu.edu.tw/~mlhsieh/research/central.pdf
+
+## Update: the auxiliary 53-tower existence/regularity is now supplied
+
+The earlier explicit-character caveat is now resolved at the existence level by Chida--Hsieh Theorem D. Take their tower prime 53 and residual prime 16231. Their hypotheses hold for E389a1: good ordinary at53 with a53=-6; 53^2 does not divide N=389; (D_K,Nminus)=1; and mod16231 Galois representation is absolutely irreducible (Mazur rational-isogeny bound plus tame multiplicative inertia at389). Theorem D gives all but finitely many anticyclotomic 53-power-order ring-class characters with L(E/K,chi,1) nonzero.
+
+Regularity is also automatic for a sufficiently deep character: pi=145+51*omega has Norm(pi)=16231, and in the norm-one local 53-adic algebra the ratio pi/pi_bar has 54th power equal to 1+53*(8+16*omega) mod53^2, a nonzero trace-zero tangent. Hence the Frobenius at the target split prime 16231 is a topological generator of the pro-53 anticyclotomic quotient, so every nontrivial character of 53-power order has chi(pbar_16231)!=1. Thus the two p-stabilization eigenvalues of the weight-one CM theta form are distinct.
+
+The complete arithmetic proof and exact two-dimensional residue computation are available in paper/bsd389_p16231_auxiliary53_analytic_existence_via_CH_TheoremD_2026-11-06.md and verification/bsd389_p16231_aux53_frobenius_generator_gate.py. This removes the need to evaluate L(E/K,chi,1) for a specified conductor-53 character. The mathematical corollary remains dependent on the integral finite-to-infinite theta identification documented in paper/bsd389_p16231_theta_order2_closed_analytic_argument_2026-11-06.md. Sha[p^infinity] finiteness, not triviality, is the resulting theorem-level target.
