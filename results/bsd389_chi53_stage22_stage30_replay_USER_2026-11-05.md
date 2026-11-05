@@ -95,3 +95,10 @@ STAGE30_STATUS=0
 ```
 
 A successful retry would finish the source/JSON Hecke provenance for the 33-dimensional Brandt eigenvector. The nonzero toric factor `Norm P(zeta9)=729` is independently certified; identifying it with a Waldspurger period still requires its automorphic and local-test-vector hypotheses. No pro-p anticyclotomic theta second derivative and no new full Sha proof is established by this stage.
+
+
+## FINAL RETRY UPDATE — STAGE30 STATUS 0 (2026-11-05)
+
+The previous JSON-export failure above is now superseded by a **new user-executed end-to-end PASS** of the corrected script. The new run printed `STAGE30_HECkE_STURM_AND_MULTIPLICITY_ONE_PASS`, successfully wrote `/home/bsdadmin/bsd389_chi53_stage30_hecke_sturm.json`, printed `EXIT_STATUS_SUCCESS`, and returned `STAGE30_FINAL_STATUS=0`.
+
+For the **full verbatim 18-prime Hecke log**, see [Stage30 FINAL USER PASS](bsd389_chi53_stage30_Hecke_Sturm_FINAL_USER_PASS_2026-11-05.md). This earlier file preserves the actual first failure as historical provenance; it must not be mistaken for the present status.
