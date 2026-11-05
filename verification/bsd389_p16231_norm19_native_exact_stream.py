@@ -11,6 +11,7 @@ import argparse
 import ctypes
 import hashlib
 import json
+import os
 from pathlib import Path
 import runpy
 import shutil
@@ -40,9 +41,25 @@ def get_native():
     compiler=shutil.which("g++")
     if not compiler:
         raise SystemExit("NORM19_NATIVE_NEEDS_GPLUSPLUS_WITH_BOOST_HEADERS")
+    # Conda's C++ compiler may use its own sysroot and not search
+    # /usr/include; find the header in the active env explicitly.
+    candidates=[Path(os.environ["CONDA_PREFIX"])/"include"
+                ] if os.environ.get("CONDA_PREFIX") else []
+    candidates += [Path("/usr/include"),Path("/usr/local/include")]
+    includes=[p for p in candidates
+              if (p/"boost/multiprecision/cpp_int.hpp").is_file()]
+    if not includes:
+        raise SystemExit(
+            "NORM19_NATIVE_MISSING_BOOST_HEADERS: "
+            "install into activated sage environment: "
+            "conda install -c conda-forge libboost-headers")
     if not SO.exists() or CORE.stat().st_mtime>SO.stat().st_mtime:
-        subprocess.run([compiler,"-O3","-std=c++17","-shared","-fPIC",
-                        str(CORE),"-o",str(SO)],check=True,timeout=120)
+        command=[compiler,"-O3","-std=c++17","-shared","-fPIC"]
+        command += ["-I"+str(p) for p in includes]
+        command += [str(CORE),"-o",str(SO)]
+        print("NORM19_NATIVE_BOOST_INCLUDE_DIRS",
+              [str(p) for p in includes],flush=True)
+        subprocess.run(command,check=True,timeout=120)
     print("NORM19_NATIVE_CPP_COMPILED_PASS",CORE_SHA,flush=True)
     lib=ctypes.CDLL(str(SO))
     for name in ("bsd_register_edge","bsd_set_state"):
