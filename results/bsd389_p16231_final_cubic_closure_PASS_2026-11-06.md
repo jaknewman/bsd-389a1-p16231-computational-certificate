@@ -1,0 +1,1 @@
+Full finite theta postrun USER PASS at p=16231: `FULL_THETA_AUDIT_STATUS=0`. Full H=87809710. Raw moments [0,0,4083]; normalized [0,0,3739]. Histogram M0=0. Last norm19 oriented Gross neighbor closes via cubic unit 213756225 at Brandt class9; `NORM19_FULL_FINITE_LAYER_POSTRUN_AUDIT_PASS`. The infinite theta identification and any Sha/BSD consequences are separate.
