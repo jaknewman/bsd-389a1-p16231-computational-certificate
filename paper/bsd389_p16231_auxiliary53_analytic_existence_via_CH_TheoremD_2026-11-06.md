@@ -38,6 +38,17 @@ The Artin image of (pi) is the class of pi in this quotient, with inverse or con
 
 Consequently for all characters chi of sufficiently large 53-power conductor, chi((pi)) !=1 and likewise chi((pi_bar))!=1. Indeed a nonzero t in Z_53 is 53^e times a unit; a character of order 53^n with n>e has nontrivial value at t.
 
+## 2b. Stronger explicit mod-53² certificate (no logarithm ambiguity)
+
+The above infinite-order argument is sharpened by a **finite, exact computation**. For pi=145+51*omega, put v=pi/pi_bar=pi²/16231 in the unramified local ring K_53. Writing v in the basis (1,omega), integer arithmetic modulo 53²=2809 gives
+
+v=(2306,269) modulo 2809,
+v^54=(425,848)=1+53*(8+16*omega) modulo 2809.
+
+The residual norm-one subgroup over F_53 has order 53+1=54. Raising to 54 kills its prime-to-53 residue component. The first nonzero principal-unit tangent 8+16*omega has trace 2*8-16=0 mod53 and is NOT zero. Because the norm-one principal units form a one-dimensional Z_53 module, this proves that the pro-53 part of v is a **topological generator** rather than merely a nonzero element. Therefore every nontrivial 53-power-order character of this anticyclotomic tower is regular at the split target prime16231.
+
+The complete finite certificate is verification/bsd389_p16231_aux53_frobenius_generator_gate.py. Its user-run PASS is not yet recorded; the residue computations (v, v^54) were independently reproduced by exact Python arithmetic during drafting.
+
 ## 3. Existence with BOTH central nonvanishing and regularity
 
 Theorem D excludes only finitely many chi for which L(E/K,chi,1)=0. The Frobenius argument excludes only finitely many characters in the 53-power tower for which chi((pi_bar))=1. Their intersection complement is infinite.
