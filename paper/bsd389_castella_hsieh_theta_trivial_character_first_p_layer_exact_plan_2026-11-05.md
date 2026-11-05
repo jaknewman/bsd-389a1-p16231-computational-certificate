@@ -77,3 +77,18 @@ No global finite support of Sha, p16231 theta coefficient, or strong BSD proof i
 - Castella–Hsieh, original PDF: https://web.math.ucsb.edu/~castella/Kato.pdf, §§2.4,5.6,Appendix §6.
 - Published journal page: https://www.cambridge.org/core/journals/forum-of-mathematics-sigma/article/on-the-nonvanishing-of-generalised-kato-classes-for-elliptic-curves-of-rank-2/72ED842AB428A7ED619B1B84287A6864
 - Historical user certificates on optimality, Stage22 exact transports, Stage30 Hecke eigenspace and finite norm729: results folder, 2026-11-05.
+
+
+## 7. Compression to 33 Brandt-class count vectors (no unproved speed claim)
+
+Let v_0,...,v_32 be the **already certified** Stage30 integer Hecke eigenvector. For each i=0,...,p−1 and j=0,...,32 define the actual, provenance-preserving class multiplicities
+
+C_(n,i,j) = #{a∈mu_(p−1): class(P_n^(a(1+p)^i))=j}.
+
+Then every aggregate in Section 4 can be written as
+
+W_i = ∑_(j=0)^32 v_j (alpha_p C_(1,i,j) − C_(2,i,j)) (mod p).
+
+This replaces 263,429,130 explicit *weighted* values by only 2·p·33 class counts, **after the genuine Gross-point class assignments have been obtained**. It does **not** claim that computing those class counts is faster without an explicit and proved recursion on local quaternionic p-power neighbors. No Stage14 conductor53 orbit can be substituted for these C counts.
+
+The next nontrivial computational research target is therefore a proved recurrence/automaton which evaluates or batches the 33-class indicators of P_1 and P_2 for the p-power local unipotent matrices, together with independent small-p reproduction of the published E389a1 p11 K−2 theta leading coefficient 10 mod 121.
