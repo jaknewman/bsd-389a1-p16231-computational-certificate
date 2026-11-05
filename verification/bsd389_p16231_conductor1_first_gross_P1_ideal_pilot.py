@@ -54,6 +54,13 @@ assert int(W.det())%M == data["basis_map_determinant"]
 W_inverse=W.inverse()
 print("P1_CONDUCTOR1_SPLIT_CHART_LOADED_PASS",data["selected_brandt_index"],flush=True)
 print("P1_CONDUCTOR1_SPLIT_CHART_SHA256",hashlib.sha256(raw).hexdigest(),flush=True)
+# r_0(a)_p=[[1,a],[0,1]] belongs to GL2(Z_p), hence
+# P_0^a is the base class 32 for every p-adic unit a.
+# Its previously certified Brandt Hecke eigenvector entry is zero.
+V=(0,0,0,1,-1,1,-1,-1,1,-1,-1,-1,0,0,1,-1,-1,0,
+   0,2,2,1,0,0,0,1,1,-2,1,-2,-2,2,0)
+assert len(V)==33 and V[32]==0
+print("CH_P0_ALL_UNITS_BASE_CLASS32_BRANDT_VALUE_ZERO_PASS",flush=True)
 
 def coords(z):
     return basis_map.solve_right(vector(QQ,z.coefficient_tuple()))
