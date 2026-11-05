@@ -10,7 +10,7 @@ reps=list(BM.right_ideals())
 assert len(reps)==33
 V=vector(QQ,(0,0,0,1,-1,1,-1,-1,1,-1,-1,-1,0,0,1,-1,
              -1,0,0,2,2,1,0,0,0,1,1,-2,1,-2,-2,2,0))
-assert V.length()==33 and gcd([ZZ(t) for t in V])==1
+assert len(V)==33 and gcd([ZZ(t) for t in V])==1
 print("CH_JL_INTEGER_PRIMITIVE_BRANDT_V_PASS",flush=True)
 I=identity_matrix(QQ,33)
 matrices=[]
@@ -26,7 +26,7 @@ for A in matrices:
     stack=stack.stack(A)
     rank=stack.rank()
     null=33-rank
-    print("CH_JL_COMMON_HECKE_EIGENSPACE",len(range(0,stack.nrows()//33)),
+    print("CH_JL_COMMON_HECKE_EIGENSPACE",stack.nrows()//33,
           "DIM",null,flush=True)
 assert 33-stack.rank()==1,(
     "CH_JL_JOINT_HECKE_EIGENSPACE_NOT_UNIQUE",33-stack.rank())
