@@ -69,18 +69,24 @@ def cm_roots_for_order(order):
                 roots[coord] = x
     return basis, roots, len(units)
 
+# The exact Brandt weight is half the number of order units. An
+# integral omega root has six units mu_6, hence only weights divisible
+# by three can contain O_K. This prefilter avoids 33 PARI enumerations.
+from collections import Counter
+hist = dict(sorted(Counter(int(w) for w in weights).items()))
+print("CONDUCTOR1_CM_BRANDT_WEIGHT_HISTOGRAM", hist, flush=True)
+candidate_indices = [idx for idx,w in enumerate(weights) if int(w) % 3 == 0]
+assert candidate_indices, "NO_WEIGHT_DIVISIBLE_BY_THREE"
 matches = []
-for idx, ideal in enumerate(ideals):
-    order = ideal.left_order()
+for idx in candidate_indices:
+    order = ideals[idx].left_order()
     basis, roots, n_units = cm_roots_for_order(order)
     assert n_units == 2 * int(weights[idx])
-    if roots:
-        assert int(weights[idx]) % 3 == 0
-        for coord in roots:
-            matches.append((idx, coord))
-        print("CONDUCTOR1_CM_ORDER_FOUND", idx,
-              "ROOTS", len(roots), "UNITS", n_units,
-              "BRANDT_WEIGHT", int(weights[idx]), flush=True)
+    for coord in roots:
+        matches.append((idx,coord))
+    print("CONDUCTOR1_CM_ORDER_FOUND", idx,
+          "ROOTS",len(roots),"UNITS",n_units,
+          "BRANDT_WEIGHT",int(weights[idx]),flush=True)
 
 assert matches, "NO_MAXIMAL_CM_EMBEDDING: unexpected at discriminant 389"
 print("CONDUCTOR1_CM_GLOBAL_EMBEDDINGS_PASS",
