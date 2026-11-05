@@ -63,7 +63,7 @@ print('STAGE30_HECkE_STURM_AND_MULTIPLICITY_ONE_PASS',flush=True)
 # independent Waldspurger assertion.
 report = {
     'curve':'389a1','weight':2,'level':389,'sturm_bound':int(sturm),
-    'primes':primes,'hecke_data':rows,'right_column_nullity':int(nullity),
+    'primes':[int(ell) for ell in primes],'hecke_data':rows,'right_column_nullity':int(nullity),
     'brandt_vector':[int(x) for x in v],
     'status':'STAGE30_HECkE_STURM_AND_MULTIPLICITY_ONE_PASS',
     'waldspurger_adelic_period_identification':'NOT_CERTIFIED_BY_THIS_SCRIPT'
