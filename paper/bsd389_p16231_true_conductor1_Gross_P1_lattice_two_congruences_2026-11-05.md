@@ -88,3 +88,12 @@ Once base lattice passes, a separate **single-class** attempt can run the same s
 **Published source:** Castella–Hsieh appendix p. 26 https://web.math.ucsb.edu/~castella/Kato.pdf
 
 **Sage right ideal API:** https://doc.sagemath.org/html/en/reference/algebras/sage/algebras/quatalg/quaternion_algebra.html
+
+
+## 4 bis. A genuine trivial-character theta simplification at n=0
+
+For **every** p-adic unit a, the local matrix r_0(a)=[[1,a],[0,1]] belongs to GL2(Z_p), and it is the identity away from p. Consequently P_0^a=R_32 as a local-global right ideal, hence its Brandt right class (after multiplying by I_32) is identically **32**. The independently user-validated 33-coordinate Stage30 Hecke eigenvector satisfies v[32]=0. Therefore
+
+phi_f(P_0^a)=v[32]=0 for EVERY a in Z_p^×.
+
+This is a genuine direct consequence of the conductor-one base and the actual Brandt eigenvector, not an extrapolation from the conductor-53 finite toric period. It eliminates the alpha_p*phi_f(P_0^a) term in the theta formula at n=0. It does **not** determine the P_1^a term or the n=1 quadratic theta coefficient. The P1 pilot checks the frozen-v vector's baseline coordinate before any new ideal construction.
