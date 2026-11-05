@@ -115,6 +115,27 @@ def main():
     print("NORM19_POWER_5410_FIRST_P_LAYER_GENERATOR_PASS",list(G),flush=True)
     print("NORM19_FIRST_LAYER_LOG_AND_INVERSE_PASS",ell,15071,flush=True)
 
+    # Castella–Hsieh use u=1+p.  The element 12089+p*omega
+    # represents this ratio in the split local coordinates.
+    U=(12089,P)
+    assert local_ratio(U)==1+P
+    assert ringclass_log(U)==P-1
+    # Equality in Pic(O_(p^2)) means CRT ratios differ by mu_3.
+    # U=G^1160 and G=U^1805 in the canonical order-p kernel.
+    assert 1160*ell%P==P-1
+    assert 1160*1805%P==1
+    ratio=local_ratio(U)*pow(pow(local_ratio(G),1160,MOD),-1,MOD)%MOD
+    assert pow(ratio,3,MOD)==1
+    print("CH_STANDARD_U_1_PLUS_P_LOCAL_RATIO_PASS",local_ratio(U),flush=True)
+    print("NORM19_GENERATOR_TO_CH_U_POWER_PASS",1160,flush=True)
+    print("CH_U_TO_NORM19_GENERATOR_POWER_PASS",1805,flush=True)
+    # If gamma_G=gamma_U^1805 and F_G(T)=c2_G*T²+O(T³):
+    # F_U(T)=F_G((1+T)^1805-1) and c2_U=1805²*c2_G.
+    assert (1805*1805)%P==11825
+    assert (1160*1160)%P==14658
+    assert (11825*14658)%P==1
+    print("THETA_SECOND_COEFFICIENT_COORDINATE_FACTOR_MODP_PASS",11825,flush=True)
+
     # Exhaustively audit all p powers with independent modular CRT logarithm.
     v=(1,0)
     checked=set()
