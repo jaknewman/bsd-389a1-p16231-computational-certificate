@@ -125,3 +125,13 @@ Do not mark this new optimality shortcut executed until the user provides the ne
 **Corollary based on actual archived data.** Stage 29 had already checked optimality at the initial point (local 53 intersection `R_i∩K=O_53`, all other primes maximal), and Stage 22 had checked 18 forward/inverse rational ideal identities. Inductively **all 18 orbit points are genuine conductor-53 Gross points**. Thus the above finite class-orbit toric period identification does not need a new run; the one-fraction script is a short reproducibility alternative and is explicitly optional.
 
 This closes the **abstract mathematical gap** previously labelled `WALDSPURGER_TEST_VECTOR_OPEN` for the implication from the nonzero period to nonzero Rankin central L-value, *assuming faithful archived user-run Stage 22/23/29/30 inputs* and the stated Hecke/Jacquet–Langlands identification. Because only the vanishing implication is used, an explicit local factor evaluation is unnecessary. The archived original Sage computations are not newly executed by this argument.
+
+## UPDATE 2026-11-05 — ALL 18 ONE-FRACTION CHECKS ACTUALLY USER-EXECUTED
+
+The historical 2026-10-26 text above describes the short one-fraction verifier as “not executed” *at that earlier time*. This has now changed. The user has executed [the exact Sage verifier](../verification/chi53_optimal_embedding_one_fraction_criterion.py) on Ubuntu against the original Stage14 oriented-orbit JSON. **All 18/18 denominator checks passed**, including the last orbit point; the user observed `CHI53_ALL_18_OPTIMAL_EMBEDDINGS_PASS`, `CHI53_INITIAL_GROSS_POINT_CONDUCTOR_EXACTLY_53_PASS`, and `OPTIMALITY_STATUS=0`.
+
+See the [verbatim authenticated user-run log](../results/bsd389_chi53_all18_optimal_embeddings_USER_PASS_2026-11-05.md). This closes the **computational optimal-embedding verification gate** for all 18 archived oriented points, assuming the original Stage14 JSON is faithful.
+
+A new [lightweight Stage14→Stage30→toric norm bridge](../verification/chi53_stage14_to_order9_toric_norm729_bridge.py) has also been committed, but is **NOT YET USER-EXECUTED**. It cross-checks the saved sequence of Stage14 class indices against the archived Stage30 integer Brandt eigenvector, reconstructs the 18 Gross orbit evaluations and proves the order-nine cyclotomic norm 729. It does not independently reprove Stage22 class transports, Stage30 Hecke eigenvector identity, the pro-p anticyclotomic theta second derivative, or Sha finiteness.
+
+**Mathematical boundary unchanged:** even nonzero Rankin central L-value via the Waldspurger route does not imply the missing anticyclotomic pro-p theta order two, finite Sha[p∞] triviality or full BSD.
