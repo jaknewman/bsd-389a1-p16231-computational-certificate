@@ -16,6 +16,9 @@ be the bilinear pairing associated to a p-adic class-field-theory character whic
 
 **Theorem.** For every x,y in \(E(K)\otimes\mathbf Q_p\), \(h_p^{ac}(x,y)=0\).
 
+
+**Applicability warning (crucial for 389a1):** The Agboola–Castella 2019 BDP theorem assumes the *Heegner hypothesis* (every prime dividing N splits in K). Here (389\equiv2\pmod3) is **inert** in (K=\mathbf Q(\sqrt{-3})), so that paper's BDP leading-term formulas **cannot be invoked for our chosen K**. We use only the general character-theoretic sign relation for an anticyclotomic-equivariant height; its conclusion is a formal sign argument independent of the Heegner setting. The Castella–Hsieh generalized Kato/definite-quaternionic theta framework is distinct and has precisely the odd inert (N^-=389) hypothesis relevant to E389a1. Their theta coefficient cannot be equated to the classical ordinary anticyclotomic MW height determinant.
+
 **Proof.** Since the \((-)\)-eigenspace of \(E(K)\otimes Q_p\) is zero, \(cx=x\) and \(cy=y\). Galois equivariance gives
 \(h_p^{ac}(x,y)=-h_p^{ac}(x,y)\), hence \(2h_p^{ac}(x,y)=0\). Because p is odd, the height vanishes. This is true for the complete rank-two MW space, not only for selected P,Q. QED.
 
