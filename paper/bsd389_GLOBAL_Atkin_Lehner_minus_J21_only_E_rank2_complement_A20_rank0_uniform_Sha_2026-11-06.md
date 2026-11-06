@@ -81,6 +81,19 @@ Thus the two Sha groups agree outside ONE genuinely finite, p-INDEPENDENT set \(
 
 In particular, \(J^-(\mathbf Q)\) has **free rank EXACTLY 2** by the isogeny and (2). There are no unknown additional MW rank contributions, unlike on full J where A_2,A_3,A_6 have positive ranks.
 
+
+**Corollary 2A (the ENTIRE p-infinity Selmer is E outside a truly finite support).** The quotient \(B^-\) has Mordell–Weil rank ZERO, so its finite rational points contribute nothing to \(B^-(\mathbf Q)\otimes\mathbf Q_p/\mathbf Z_p\). By Kummer,
+\[
+\operatorname{Sel}_{p^\infty}(B^-/\mathbf Q)
+\cong\Sha(B^-/\mathbf Q)[p^\infty].
+\]
+Consequently, for every \(p\notin\{2,5\}\) with \(p\nmid D_B\), the entire right-hand second summand in (4) is zero:
+\[
+\boxed{\operatorname{Sel}_{p^\infty}(J^-/\mathbf Q)
+\simeq\operatorname{Sel}_{p^\infty}(E/\mathbf Q).}\tag{6a}
+\]
+This is a stronger statement than equality of the Sha components: the *complete* p-power Selmer groups, including the two divisible MW directions, match. It follows from the independently proven finiteness of the rank-zero complement; it still provides NO bound on the surviving E-Selmer.
+
 ## Theorem 3: GLOBAL full-Sha INJECTION, even at 2 and 5
 
 The composite
