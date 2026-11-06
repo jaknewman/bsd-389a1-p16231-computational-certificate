@@ -77,6 +77,23 @@ Therefore:
 \]
 Interpret the ratio as 1 when \(p\nmid[F:Q]\). This is an unconditional *descent estimate conditional only on the finite group upstairs being known*; it does NOT construct or bound that upstairs group. For all p not dividing the degree, the restriction is INJECTIVE and the bound is simply \(\#\Sha(E/Q)[p^\infty]\le\#\Sha(E/F)[p^\infty]\).
 
+
+### Corollary for the FIXED K=Q(sqrt(-3)): injection of the ENTIRE Sha, all p
+
+Take \(F=K=\mathbf Q(\sqrt{-3})\), so \(d=2\). The kernel of
+\(\Sha(E/Q)\to\Sha(E/K)\) is annihilated by 2, by corestriction. But the
+research archive's independently user-executed PARI/mwrank 2-descent
+(`results/full_BSD_sha_2_primary_TRIVIAL_PASS_2026-10-19.md`)
+establishes \(\Sha(E/Q)[2]=0\). Therefore:
+\[
+\boxed{\operatorname{res}_{K/Q}:\Sha(E/Q)\hookrightarrow\Sha(E/K)
+\text{ is injective on the FULL group, at EVERY p.}}
+\]
+This is a single global theorem, including p=2 and p=3, not a
+statement of a direct-sum decomposition at 2 (which would be false to
+derive via the odd-idempotent argument). It does not imply either group
+is finite.
+
 ## Theorem C — exact 2024 Burns–Kurihara–Sano scope for analytic rank two
 
 The peer-reviewed article David Burns, Masato Kurihara, Takamichi Sano, *On derivatives of Kato's Euler system for elliptic curves*, J. Math. Soc. Japan 76 (2024), pp.855–919, is mathematically rigorous but often its subtitle “arbitrary rank” is read too strongly. Its actual statements specify:
