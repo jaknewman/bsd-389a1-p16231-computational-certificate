@@ -10,7 +10,7 @@ assert all(twist_cubic(-3*x)==-27*f(x) for x in map(Q,(-4,-1,0,1,5)))
 print("TWIST_EXACT_CUBIC_RELATION_PASS")
 # A Weierstrass equation y^2+a3*y=x^3+a2*x^2+a4*x+a6
 # has invariants b2=4*a2, b4=2*a4, b6=a3^2+4*a6,
-# b8=4*a2*a6+a2*a3^2-a4^2, Delta=-b2^2*b8-8*b4^3-27*b6^2+9*b2*b4*b6 all /1728? 
+# b8=4*a2*a6+a2*a3^2-a4^2, Delta=-b2^2*b8-8*b4^3-27*b6^2+9*b2*b4*b6 with no 1728 denominator. 
 # Standard formula: -b2^2*b8 - 8*b4^3 - 27*b6^2 + 9*b2*b4*b6, divided by 1728? 
 # discriminant formula uses /1728 only for c4^3-c6^2; /1728; direct b polynomial /1728? calculate.
 a2,a3,a4,a6=-3,1,-18,-7
@@ -18,7 +18,7 @@ b2=4*a2
 b4=2*a4
 b6=a3*a3+4*a6
 b8=4*a2*a6+a2*a3*a3-a4*a4
-Delta=(-b2*b2*b8-8*b4**3-27*b6*b6+9*b2*b4*b6)//1728
+Delta=(-b2*b2*b8-8*b4**3-27*b6*b6+9*b2*b4*b6)
 # NOTE: expression for Delta directly is /1728? Actually test will catch.
 assert Delta==389*729,(Delta,389*729)
 print("MINIMAL_TWIST_DELTA_PASS",Delta)
