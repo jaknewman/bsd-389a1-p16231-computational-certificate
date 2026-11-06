@@ -51,6 +51,32 @@ No conjectural global finiteness is used in any of these implications.
 
 **Important direction:** A proof of finiteness upstairs is a VALID route to proving it downstairs, but is never an “easier rank-zero/one problem” for E=389a1: Theorem A forces rank at least two upstairs. The implication in (2) means that importing a theorem ASSUMING Sha(E/F)[p∞] finite does not discharge the sought Sha(E/Q)[p∞] finiteness; the source theorem assumes a condition strong enough to already contain the conclusion.
 
+
+### Quantitative form of Theorem B — an actual descent bound, not merely a finiteness implication
+
+When \(\Sha(E/F)[p^\infty]\) is finite, the restriction exact sequence and the order of its finite kernel give
+\[
+\#\Sha(E/Q)[p^\infty]\le
+\#\Sha(E/F)[p^\infty]\cdot
+\#\Sha(E/Q)[p^a].
+\]
+The exact Kummer sequence, using the certified rank-two full Mordell–Weil basis and no rational torsion, gives
+\[
+\#\Sha(E/Q)[p^a]
+=\frac{\#\mathrm{Sel}_{p^a}(E/Q)}{\#(E(Q)/p^aE(Q))}
+=\frac{\#\mathrm{Sel}_{p^a}(E/Q)}{p^{2a}}.
+\]
+Therefore:
+\[
+\boxed{
+\#\Sha(E/Q)[p^\infty]\ \le\
+\#\Sha(E/F)[p^\infty]\;
+\frac{\#\mathrm{Sel}_{p^{v_p([F:Q])}}(E/Q)}
+{p^{2v_p([F:Q])}}.
+}\tag{4}
+\]
+Interpret the ratio as 1 when \(p\nmid[F:Q]\). This is an unconditional *descent estimate conditional only on the finite group upstairs being known*; it does NOT construct or bound that upstairs group. For all p not dividing the degree, the restriction is INJECTIVE and the bound is simply \(\#\Sha(E/Q)[p^\infty]\le\#\Sha(E/F)[p^\infty]\).
+
 ## Theorem C — exact 2024 Burns–Kurihara–Sano scope for analytic rank two
 
 The peer-reviewed article David Burns, Masato Kurihara, Takamichi Sano, *On derivatives of Kato's Euler system for elliptic curves*, J. Math. Soc. Japan 76 (2024), pp.855–919, is mathematically rigorous but often its subtitle “arbitrary rank” is read too strongly. Its actual statements specify:
