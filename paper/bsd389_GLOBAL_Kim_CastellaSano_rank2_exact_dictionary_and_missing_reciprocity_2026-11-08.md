@@ -56,12 +56,12 @@ Proof of final equivalence: a unit two-prime number forces rho=2 and M2=0 by def
 
 ## 3. An exact Kummer-local **strict Selmer = Sha[p]** theorem (no Kim needed)
 
-Take any pair q1,q2 of good auxiliary primes with v_p(#E(F_{qi}))=1 and nonzero local Mordell–Weil determinant, whose existence for **every p>=5** was established in the separate full Kummer–Chebotarev theorem. Let
+Take any pair q1,q2 of good auxiliary primes with **nonidentity unipotent mod-p Frobenius** and nonzero local Mordell–Weil determinant, whose existence for **every p>=5** was established in the separate full Kummer–Chebotarev theorem. For the concrete examples in §5 we additionally have v_p(#E(F_{qi}))=1, which is useful for direct computations but is NOT required for this theorem. Let
 
   loc_{q_i}: Sel_p(E/Q) -> H^1_f(Q_{q_i}, E[p])
                             ≅ E(Q_{q_i})/p ≅ E(F_{q_i})/p.
 
-Here each right-hand space has Fp dimension 1 because v_p(#E(F_{qi}))=1. Choose any generators to identify their sum with Fp², and set loc_{q1,q2}=(loc_{q1},loc_{q2}). Our independent local determinant proof shows its restriction to E(Q)/pE(Q) is an isomorphism onto Fp².
+Here each right-hand space has Fp dimension 1 because the nonidentity unipotent Frobenius fixes a one-dimensional subspace of E[p], so dim_Fp E(F_{qi})[p]=1. No assumption on v_p(#E(F_{qi})) beyond positivity is needed. Choose any generators to identify their sum with Fp², and set loc_{q1,q2}=(loc_{q1},loc_{q2}). Our independent local determinant proof shows its restriction to E(Q)/pE(Q) is an isomorphism onto Fp².
 
 **Exact lemma:**
 
