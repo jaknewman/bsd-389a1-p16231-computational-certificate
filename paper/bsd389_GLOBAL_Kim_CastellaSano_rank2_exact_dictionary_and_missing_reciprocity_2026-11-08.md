@@ -54,7 +54,44 @@ Proof of final equivalence: a unit two-prime number forces rho=2 and M2=0 by def
 
 **What this means:** proving the two-prime unit witness at all sufficiently large p would solve exactly the missing all-prime Sha problem. This criterion is **not** a separate proof that the witnesses exist.
 
-## 3. The local Kummer determinant is NOT a substitute for the global theorem
+## 3. An exact Kummer-local **strict Selmer = Sha[p]** theorem (no Kim needed)
+
+Take any pair q1,q2 of good auxiliary primes with v_p(#E(F_{qi}))=1 and nonzero local Mordell–Weil determinant, whose existence for **every p>=5** was established in the separate full Kummer–Chebotarev theorem. Let
+
+  loc_{q_i}: Sel_p(E/Q) -> H^1_f(Q_{q_i}, E[p])
+                            ≅ E(Q_{q_i})/p ≅ E(F_{q_i})/p.
+
+Here each right-hand space has Fp dimension 1 because v_p(#E(F_{qi}))=1. Choose any generators to identify their sum with Fp², and set loc_{q1,q2}=(loc_{q1},loc_{q2}). Our independent local determinant proof shows its restriction to E(Q)/pE(Q) is an isomorphism onto Fp².
+
+**Exact lemma:**
+
+  Sel_p(E/Q) = (E(Q)/p E(Q)) ⊕ Sel_p^{strict(q1,q2)}(E/Q),
+
+where the strict Selmer group is the KERNEL of loc_{q1,q2} (zero local condition at both q_i). Indeed for every global Selmer class s, the local MW isomorphism selects a unique m in E(Q)/p with loc(s)=loc(m), so s-m lies in the strict kernel; the intersection is zero.
+
+Projecting the strict factor to the quotient in Kummer's exact sequence
+
+  0 -> E(Q)/p E(Q) -> Sel_p(E/Q) -> Sha(E/Q)[p] -> 0
+
+therefore gives an **actual canonical (given the pair) isomorphism**
+
+  **Sel_p^{strict(q1,q2)}(E/Q) ≅ Sha(E/Q)[p].**
+
+In particular
+
+  Sha(E/Q)[p]=0  <==>  strict Selmer kernel = 0
+                 <==>  loc_{q1,q2}:Sel_p(E/Q)->Fp² is an isomorphism.
+
+This is a genuinely sharp global arithmetic reduction from the local determinant. It does **NOT** say the strict kernel is zero: the determinant proves only that the known MW subspace maps onto Fp²; possible Sha classes correspond exactly to the further global Selmer classes in the kernel.
+
+Combining with the Kim–Castella–Sano criterion for **good** p>=5 yields the exact (non-pointwise) equivalence:
+
+  strict Selmer kernel at ANY separating (q1,q2) is zero
+      <==> there exists SOME eligible pair (q1',q2') with bar δ_(q1'q2') !=0.
+
+This does **not** assert δ_(q1q2) equals a unit times the local determinant at the SAME pair. Proving such a pointwise reciprocity law would require a separate integral theorem.
+
+## 4. The local Kummer determinant is NOT a substitute for the global theorem
 
 Earlier in this PR we proved by Kummer–Chebotarev that for every p>=5 there exist infinitely many pairs of eligible q1,q2 whose two MW point reductions give an invertible 2×2 matrix mod p. This detects the known rank-2 rational Mordell–Weil subspace.
 
@@ -67,7 +104,7 @@ would be a NEW integral reciprocity theorem. None of the papers above proves thi
 
 Indeed, the exact Selmer structure theorem shows why this is a substantive obstacle: the local determinant remains nonzero on a two-dimensional MW subspace even if extra p-Selmer/Sha directions exist. The missing comparison must detect/control those global directions. A *purely local* inference would simply assume away the obstruction.
 
-## 4. Concrete finite-field calibration (delta values from archival CERTIFICATES, not recomputed here)
+## 5. Concrete finite-field calibration (delta values from archival CERTIFICATES, not recomputed here)
 
 The independent lightweight Python verifier `verification/bsd389_global_kummer_vs_kurihara_bridge_audit_2026_11_08.py` computes group laws and local ratios.
 
@@ -85,7 +122,7 @@ At p=7:
 
 These computations are **consistency checks, not proof of a formula**. The determinants transform by local coordinate choices; the Kurihara numbers transform by choices of primitive roots / integral periods. Both units are noncanonical.
 
-## 5. Remaining distinct gates
+## 6. Remaining distinct gates
 
 * **Arithmetic:** Find a noncircular theorem forcing rho_p=2 and M2=0 for all sufficiently large good p, or a global Selmer annihilator. The Castella–Sano M_infty=0 theorem does NOT force rho_p=2. p=389 is bad and outside their explicit unconditional Theorem B; small 2,3 need separate sources.
 * **Complex:** Independently prove L''(E,1)/2 = Omega_E Reg_E (expected Sha=1), by an exact rank-two archimedean height reciprocity or independent rationality/denominator theorem. None of Kim, Castella–Sano, Kummer–Chebotarev or the existing Faltings–Hriljac divisor normalization provides this identity.
