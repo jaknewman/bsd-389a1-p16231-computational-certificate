@@ -73,3 +73,17 @@ See conversation files \`bsd389_new_obstruction/rank4_kurihara_obstruction_audit
 - Serre's open-image theorem; Sah's lemma; Chebotarev.
 
 **Verdict:** A definitive no-go for the *generic* local-Kummer + global-primitive shortcut, but the rank-two-specific global Sha and exact archimedean BSD problems remain OPEN.
+
+## 5. Sharpened dichotomy specifically for 389a1
+
+The root number of E389a1 is +1 and δ_1=L(E,1)/Ω=0 exactly, so the Kurihara functional equation kills odd auxiliary lengths and ρ_p≥2. If **every** two-prime coefficient vanishes in its actual integral coefficient ring, then ρ_p≥4. The Kim structure theorem gives
+
+    corank_Zp Sha(E389a1)[p∞] = ρ_p−2 ≥2,
+
+so Sha(E389a1)[p∞] contains an abstract divisible subgroup (Qp/Zp)^2.
+
+On the other hand, **if any** two-prime coefficient survives at some actual finite p^h precision, then ρ_p=2 and Sha[p∞] is finite.
+
+This is an exact source-based **finite-versus-divisible alternative** for every eligible good p, not a test that can be decided by looking only modulo p. A vanishing δ mod p can coexist with a nonzero δ mod p², as the previously audited depth-25 p=5 example shows.
+
+The root number +1, rank two and vanishing central L-value of E389a1 are recorded by [LMFDB 389.a1](https://www.lmfdb.org/EllipticCurve/Q/389a1/).
