@@ -52,3 +52,28 @@ Kim (with Pollack), The refined Tamagawa number conjectures for GL₂, arXiv:250
 Castella–Sano, On refined nonvanishing conjectures by Kurihara and Kolyvagin, arXiv:2601.14504, Th. B, §1.1.3: https://web.math.ucsb.edu/~castella/Kurihara.pdf
 
 **OPEN:** construction of a nonzero GLOBAL annihilator, and exact complex rank-two BSD L''(E,1)/2=Ω Reg·#Sha.
+
+## NEW authenticated depth-2, valuation-one Kurihara witness (p=5)
+
+This nonunit phenomenon is **actually present** on E=389a1, and was computed independently in the current turn:
+
+    p=5, q1=5351, q2=13001, n=69568351,
+    a_q1=-23,  #E(F_q1)=5375,
+    a_q2=-73,  #E(F_q2)=13075.
+
+Both are eligible at **precision 25**: q_i≡1 mod25 and a_qi≡q_i+1 mod25, with the Kurihara ideal I_n=(25). Using the independently archived EXACT integral 390-entry Manin vector with Néron normalization, two full direct arithmetic implementations produced:
+
+    C++17 HALF_RANGE:       delta_(5351*13001) = 15 mod25;
+    Python/Numba FULL_RANGE: delta_(5351*13001) = 15 mod25,
+        weighted nonzero full-range terms = 64,097,280,
+        primitive roots (q1,q2)=(11,3).
+
+The independent full-range implementation **does not assume plus-symmetry** when accumulating the sum. It tested that symmetry on separate cusp samples. The authentic coefficient is divisible by p but NONZERO at modulus p², so v5(delta)=1.
+
+By the **new valuation-one principle** of §2 above, this *single* nonunit witness still forces
+
+    **Sha(E/Q)[5∞]=0**,
+
+as an alternate proof based on the two published theorem inputs and Cassels–Tate square-order parity. This component was already known to vanish, so this is a new **methodological/high-precision certificate**, not a new prime-support theorem.
+
+Companion audit source/complete execution logs are packaged in the conversation archive; no claim of a prime-uniform annihilator follows.
