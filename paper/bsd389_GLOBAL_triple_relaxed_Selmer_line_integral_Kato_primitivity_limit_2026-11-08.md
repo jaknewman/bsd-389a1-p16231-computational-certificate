@@ -1,10 +1,12 @@
 # BSD 389a1 — A sharp Poitou–Tate relaxed-Selmer line and the limits of Kato primitivity (8 Nov 2026)
 
+**2026-11-09 correction (primary-source audit).** Castella–Sano 2026, Theorem 2.1.3, proves the *integral unit* reciprocity relation `exp^*(res_p κ_n^Kato)=u_n · p^{t_p} · δ_n` with `u_n ∈ (Z_p/I_n)^×` and `p^{t_p}=#E(Q_p)[p∞]`. For the nonanomalous test primes 5,7,11,13,17 of E389a1, `t_p=0`. The comparison unit is **not** the missing theorem; the missing uniform assertion is the existence of a genuinely nonzero *two-prime* derived Kato/Kurihara specialization. Source: https://arxiv.org/pdf/2601.14504, Theorem 2.1.3.
+
 **Mathematical status:** precise unconditional global Selmer consequence from Poitou–Tate for each prime satisfying the stated local hypotheses; exact new p=5/p=7 arithmetic calculations performed in Python. **Not** a proof of uniform Sha vanishing or the complex rank-two BSD leading coefficient.
 
 ## Sources and no-circularity audit
 
-Chan-Ho Kim, *The refined Tamagawa number conjectures for GL₂*, arXiv:2505.09121, §4 (especially Remark 4.1, formula preceding Proposition 4.2), proves an explicit reciprocity formula in which the singular localization of the Kato-derived class maps under the dual exponential to a Kurihara number times a nonzero conductor-independent scalar involving local Euler and period constants. The integral unit status of the period comparison is not known in general. Kim's *valuation difference* structure formula bypasses the scalar, but does **not** turn a generic Kummer-local determinant into a two-prime unit Kurihara witness.
+Chan-Ho Kim, *The refined Tamagawa number conjectures for GL₂*, arXiv:2505.09121, §4 (especially Remark 4.1, formula preceding Proposition 4.2), proves an explicit reciprocity formula in which the singular localization of the Kato-derived class maps under the dual exponential to a Kurihara number times a nonzero conductor-independent scalar involving local Euler and period constants. Castella–Sano Theorem 2.1.3 proves that the residual comparison scalar is a **unit**, up to the explicit factor `#E(Q_p)[p∞]`. At the test primes 5,7,11,13,17 this local torsion factor is one. This still does **not** turn a generic Kummer-local determinant into a two-prime unit Kurihara witness.
 
 Castella–Sano, arXiv:2601.14504, Theorem B gives at least one **some-length** nonzero mod-p Kurihara number for every good p>=5 in the prime-conductor case under the stated hypotheses. It does NOT give a two-factor unit witness.
 
