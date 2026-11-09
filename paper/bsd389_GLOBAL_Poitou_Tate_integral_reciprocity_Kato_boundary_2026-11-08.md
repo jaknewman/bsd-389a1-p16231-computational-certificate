@@ -1,5 +1,7 @@
 # BSD 389a1 — exact two-prime Poitou–Tate reciprocity and a Kato normalization obstruction (2026-11-08)
 
+**2026-11-09 correction (primary-source audit).** Castella–Sano 2026, Theorem 2.1.3, proves the *integral unit* reciprocity relation `exp^*(res_p κ_n^Kato)=u_n · p^{t_p} · δ_n` with `u_n ∈ (Z_p/I_n)^×` and `p^{t_p}=#E(Q_p)[p∞]`. For the nonanomalous test primes 5,7,11,13,17 of E389a1, `t_p=0`. The comparison unit is **not** the missing theorem; the missing uniform assertion is the existence of a genuinely nonzero *two-prime* derived Kato/Kurihara specialization. Source: https://arxiv.org/pdf/2601.14504, Theorem 2.1.3.
+
 **STATUS: PROVED conditional only on STANDARD cohomological Selmer hypotheses; NO global Sha finiteness, Kurihara unit uniformity, or exact complex BSD.**
 
 ## 1. Two-point finite–singular reciprocity
@@ -52,13 +54,13 @@ Thus **at p=5 and p=7** the images of P,Q generate H¹_f(Q_p,E[p]) (a line). For
 
 This is an actual theorem for arbitrary such c, not a computation of any particular Kato class.
 
-## 4. Why Kim's Kato reciprocity does NOT supply the missing unit
+## 4. The Kato comparison unit IS established; two-prime nonvanishing is missing
 
-Chan-Ho Kim, *The refined Tamagawa number conjectures for GL₂*, arXiv:2505.09121, §4, explicitly notes that the exact integral image of the dual exponential and the integral period comparison factor C_per are **not calculated in general**. His reciprocity relates Kato-derived singular p-localizations to modular-symbol Kurihara quantities up to a common nonzero scalar; the factor cancels in **differences of valuations** used by the structure theorem (see §4, Remark 4.1 and Proposition 4.2). It cannot simply be declared a p-adic unit.
+The §4 discussion in Kim concerns subtle image/index issues; it must not be interpreted as denying the stronger result later proved in Castella–Sano 2026, Theorem 2.1.3: the Kato-derived dual exponential is `u_n · p^{t_p} · δ_n` with `u_n` explicitly a p-adic unit and `p^{t_p}=#E(Q_p)[p∞]`. For p=5,7,11,13,17 of E389a1, t_p=0. The unresolved issue is to force a **specific two-auxiliary** Kato derivative/δ to be nonzero for every sufficiently large p, not to prove the existence of the unit `u_n`.
 
 No universal identity δ_(q1q2)=u·det B with u∈Fp× has been established. The previously audited 7-admissible (113,281) pair has δ=0 although q281 alone separates P,Q; but Frob_281=I, so it does not refute a hypothetical narrower nonidentity-unipotent-pair version.
 
-**Exact outstanding tasks:** construct an appropriate Kato-derived global c with finite conditions away p,q1,q2; verify the integral p-unit period comparison; prove a nonzero singular localization at p that pairs with the rational MW image for all sufficiently large p; and ensure a TWO-prime unit witness rather than an unspecified higher-level one. None follows from the local Kummer determinant or Poitou–Tate alone.
+**Exact outstanding tasks:** construct an appropriate Kato-derived global c with finite conditions away p,q1,q2; use the already-proved unit comparison of Castella–Sano; prove a nonzero singular localization at p that pairs with the rational MW image for all sufficiently large p; and ensure a TWO-prime unit witness rather than an unspecified higher-level one. None follows from the local Kummer determinant or Poitou–Tate alone.
 
 **The complex BSD identity L''(E,1)/2=Omega_E Reg_E remains a separate unproved archimedean theorem.**
 
