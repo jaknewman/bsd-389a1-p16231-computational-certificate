@@ -41,3 +41,16 @@ To finish prime-uniform Sha, a theorem controlling the actual global p-Selmer/Fi
 **Reproducibility:** Standalone companion files in current conversation: \`bsd389_anomalous_local_torsion_audit.py\`, \`bsd389_anomalous_local_torsion_report.json\`, \`audit.log\`, and a ZIP archive with all four artifacts. Python standard library only.
 
 **References:** Silverman, *The Arithmetic of Elliptic Curves*, formal groups and local reduction; Castella–Sano (2026), Theorem B (https://arxiv.org/pdf/2601.14504), and Kim (2025), §3–§5 (https://arxiv.org/pdf/2505.09121).
+
+## 4. One-pair *binary* Sha certificate in the covered range (source-theorem deduction)
+
+For each **good** p with 5≤p<10000, the present exact local theorem gives E(Q_p)[p]=0. The residual representation is surjective for p≥11 by the semistable theorem and by already archived proofs for p=5,7. Moreover p∤c_phi and Tam_E=1 (optimal parametrization, squarefree conductor).
+
+Choose *any* two p-Kurihara-admissible good auxiliary q,r with v_p(#E(F_q))=v_p(#E(F_r))=1 and nonzero local MW determinant D_{qr}. The prior note \`paper/bsd389_GLOBAL_exact_Kurihara_support_from_transverse_Selmer_and_rigidity_2026-11-09.md\` deduces from Kim's primitive Kolyvagin system rigidity and Castella–Sano's refined nonvanishing theorem:
+
+    δ_(qr) mod p !=0  iff  Sha(E/Q)[p∞]=0;
+    δ_(qr) mod p  =0  iff  Sha(E/Q)[p] !=0.
+
+This is a **conditional-to-source THEOREM for each pair**, not a numerical assertion about p=859 etc: no Kurihara δ at any of the five newly audited anomalous primes was computed. It turns a single **properly separating** complete Kurihara sum into a binary p-primary Sha certificate, positive or negative. Existence of separating q,r follows from the full Mordell–Weil Kummer–Chebotarev theorem and does not require Sha=0.
+
+**Crucial global boundary:** The single-pair dichotomy does NOT prove δ_(qr) is nonzero for any previously untested p, let alone all sufficiently large p. Proving this would still be the required uniform Selmer/Sha theorem. At bad p=389, Castella–Sano's good-p Theorem B may not be applied automatically despite the local torsion vanishing just established.
