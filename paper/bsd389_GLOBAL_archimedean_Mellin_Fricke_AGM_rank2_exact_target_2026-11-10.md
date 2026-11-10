@@ -81,3 +81,14 @@ The October 2026 full BSD formula at q-Selmer corank 0 or 1 does not apply becau
 The executable script in the user's conversation is \`bsd389_archimedean_rank2_exact_20261110.py\`, with the companion document \`bsd389_archimedean_rank2_exact_20261110.md\`.
 
 Sources: [LMFDB 389.a1](https://www.lmfdb.org/EllipticCurve/Q/389a1/); standard Mellin/Fricke equations of weight-two newforms; Deligne Ramanujan inequality; Stein–Wuthrich; [the 2026 CM rank-two paper](https://arxiv.org/abs/2611.09192).
+
+## 8. A strictly weaker exact recognition target than the full leading-term identity
+
+Define the positive real number q_E = L''(E,1)/(2 Ω_E Reg_E). Suppose independently that:
+
+1. q_E is rational, and
+2. v_p(q_E)≥0 for every rational prime p.
+
+Then q_E is a positive integer. **Any rigorously certified real enclosure 0<q_E<2 therefore proves q_E=1 exactly**. This is elementary but isolates an *integrality-and-rationality* route to the complex identity that does not require deriving all real-period digits symbolically. We have NOT established either arithmetic hypothesis. Neither a numerical interval alone, nor a p-adic BSD comparison at finitely many primes, establishes condition (1) or (2). Even if q_E=1 were proved, the finiteness and triviality of Sha would remain a separate obligation until independently proven.
+
+A stronger rational bridge q_E=q_{E,p} in Q_p at all p, in compatible normalizations, is exactly the type of archimedean/p-adic comparison discussed as **conjectural** in the November 2026 rank-two CM literature and is not available for this non-CM curve.
