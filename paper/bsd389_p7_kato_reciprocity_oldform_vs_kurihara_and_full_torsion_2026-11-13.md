@@ -86,9 +86,9 @@ $$
 
 The structural arithmetic difference is visible already in the **auxiliary Kurihara ideal**
 $$
-I_q=(q-1,\ a_q-q-1)\mathbf Z_7,\qquad I_n=\prod_{q\mid n}I_q.
+I_q=(q-1,\ a_q-q-1)\mathbf Z_7,\qquad I_n=\sum_{q\mid n}I_q.
 $$
-For both pairs, \(v_7(I_n)=2\), whereas the oldform mixed eigenvalues have valuations 3 and 2 respectively. For q281 the second factor in \(\#E(\mathbf F_{281})=294\) cannot be read off from \(v_7(I_{281})=1\). The filtrations are **not** identical.
+For both pairs, \(v_7(I_n)=1\), whereas the oldform mixed eigenvalues have valuations 3 and 2 respectively. This corrects an earlier product-ideal convention: Castella–Sano's I_n is the **sum** of the auxiliary ideals. For q281 the extra factor in \(\#E(\mathbf F_{281})=294\) cannot be read off from \(v_7(I_{281})=1\). The filtrations are **not** identical.
 
 This does **not** prove that full 7-torsion at q281 caused delta_n=0; it only proves the two primes differ sharply in local Galois type and that the naive local-unit criterion fails.
 
