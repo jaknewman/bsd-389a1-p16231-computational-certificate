@@ -48,7 +48,7 @@ for q1,q2,a1,a2,delta_archived in ARCHIVED_PAIRS:
           "pair",(q1,q2),"aq",(a1,a2),
           "points",(n1,n2),"vp_mixed",v_mix,
           "saturated_mixed_unit_mod7",u_mix,
-          "vp_Kurihara_auxiliary_ideal_product",2,
+          "vp_Kurihara_auxiliary_I_n_sum",1,
           "archived_delta_mod7",delta_archived)
 
 # Direct, witness-based verification E(F_281)[7] ≅ (Z/7)^2.
