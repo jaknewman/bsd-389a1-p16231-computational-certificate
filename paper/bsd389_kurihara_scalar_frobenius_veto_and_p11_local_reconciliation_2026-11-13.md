@@ -1,6 +1,6 @@
 # E389a1 — scalar-Frobenius veto for unit two-prime Kurihara numbers; exact p11 local reconciliation
 
-Date 2026-11-13. **Proved using published Kim 1.8 and 1.10 plus Kummer:** the veto theorem below. **Executed independently:** exact p11 finite-field Kummer matrix and normalization. **Not executed:** independent full p11 Kurihara sum (Sage required). No uniform Sha or strong BSD claim.
+Date 2026-11-13. **Proved using published Kim 1.8 and 1.10 plus Kummer:** the veto theorem below. **Executed independently:** exact p11 finite-field Kummer matrix and normalization. **2026-11-14 execution update:** the independent full p11 Kurihara sum **was executed by the user on Ubuntu Sage** and returned delta=1 mod11, with all 392040 units checked and full-vs-half-sum PASS. See [authenticated stdout transcription](../results/bsd389_p11_kurihara_397x991_FULL_USER_PASS_2026-11-14.md). The present note originally predates the actual run. No uniform Sha or strong BSD claim.
 
 ## A. Scalar-Frobenius veto (theorem)
 
@@ -70,7 +70,7 @@ $$
 $$
 Thus the external determinant 2 =3·8 mod11 matches all four entries exactly. This establishes normalization compatibility of *local* data; it does not certify any particular Kurihara coefficient.
 
-The external source separately reports delta_tilde_(397·991) nonzero mod11 (the displayed coefficient 5 or 6 depends on primitive-root/period conventions), over phi(397·991)=392040 units. **This delta was not independently recomputed here.** A Sage/eclib 390-Manin full-sum audit is provided as a separate executable and must be genuinely run before claiming new independent delta certification.
+The external source separately reports delta_tilde_(397·991) nonzero mod11 (the displayed coefficient 5 or 6 depends on primitive-root/period conventions), over phi(397·991)=392040 units. **Execution update (2026-11-14):** The user's genuine Sage/eclib 390-Manin full-sum run calculated **delta=1 mod11**, with moments [0,0,0,1], 392040 units and exact half/full sum agreement. The full transcript is [archived here](../results/bsd389_p11_kurihara_397x991_FULL_USER_PASS_2026-11-14.md). This is now a second, code-independent-of-Sage-p_primary_bound Kurihara–Kim route to Sha11 triviality, not a new all-prime bound.
 
 Under verified full p11 delta nonvanishing and the theorem conditions (residual surjectivity, Manin 11-unit, E(Q11)[11]=0 since #E(F11)=16, Tamagawa=1), Kim 1.8/1.10 gives another proof of Sha[11∞]=0. That conclusion is separately known from the project's genuine user-run Sage p_primary_bound(11)=0; the present result supplies **new local and normalization evidence, not the first p11 proof**.
 
@@ -78,4 +78,4 @@ Under verified full p11 delta nonvanishing and the theorem conditions (residual 
 
 Theorem (1) removes scalar-Frobenius two-factor candidates **before** any expensive modular symbol sum and proves that a genuine two-prime unit also forces the MW local matrix determinant to be a unit. Yet there is no established theorem guaranteeing a unit δ at some pair for all large p. Strong BSD further requires exact complex leading term.
 
-**Verdict:** conditional-on-published-theorem scalar-Frobenius veto proved, p11 local arithmetic and full basis reconciliation executed; all-large-p primitivity and full BSD remain OPEN.
+**Updated verdict (2026-11-14):** scalar-Frobenius veto proved under Kim's published hypotheses; p11 local arithmetic and full basis reconciliation independently executed; user-executed **full authentic p11 Kurihara coefficient=1 mod11 PASS**. Consequently Kim 1.8/1.10 proves p11 Kato primitivity, semilocal Selmer isomorphism and 11-adic Sha triviality, and yields the Iwasawa main conjecture in the theorem's formulation (see the complete hypothesis audit in the archived log note). No uniform Sha or full BSD proof.
