@@ -24,6 +24,34 @@ For E389a1 apply this to the corresponding Selmer and Sha summands for every p�
 
 For full Hecke equivariance: the E-factor idempotent is the central primitive idempotent in the semisimple rational Hecke algebra, and at primes away from the modular congruence number 40 it is integral. A Hecke-linear map therefore intertwines e at those primes. The elementary idempotent argument itself needs only e-compatibility, not any stronger assertion on arbitrary correspondences.
 
+## 1 bis. A **positive exact** Fitting factorization inside the minus Jacobian
+
+This construction does not by itself bound Sha(E), but it identifies a natural *modular* target that contains E's desired rank-two Fitting ideal and no other unknown positive-rank factor.
+
+Let \(X_p(A)=\operatorname{Sel}_{p^\infty}(A/\mathbf Q)^\vee\) and \(I_p(A)=\operatorname{Fitt}_{2,\mathbf Z_p}(X_p(A))\). Because B^- has **rank zero and finite Sha**, its \(p^\infty\)-Selmer group is finite; write \(b_p=v_p(\#\Sha(B^-/\mathbf Q)[p^\infty])\). For every p≥7 the prime-to-p isogeny gives \(X_p(J^-)\simeq X_p(E)\oplus X_p(B^-)\).
+
+A finitely generated \(\mathbf Z_p\)-module of rank at least 2 satisfies \(\operatorname{Fitt}_0(X_p(E))=\operatorname{Fitt}_1(X_p(E))=0\). The direct-sum formula for Fitting ideals then yields **without any finiteness assumption on Sha(E)**:
+
+$
+\boxed{\operatorname{Fitt}_{2,\mathbf Z_p}(X_p(J^-))
+=\operatorname{Fitt}_{2,\mathbf Z_p}(X_p(E))\,
+\operatorname{Fitt}_{0,\mathbf Z_p}(X_p(B^-))
+=p^{b_p}\operatorname{Fitt}_{2,\mathbf Z_p}(X_p(E)).}
+\tag{F}
+$
+
+If Sha(E)[p∞] is infinite, both sides vanish, so (F) still holds. If finite, its order is the p-power generator of its Fitt2 factor.
+
+The finite complement contributes the genuinely fixed finite integer \(D_B=\#\Sha(B^-/\mathbf Q)\), supported at finitely many primes. Thus for all p≥7 outside the prime divisors of \(D_B\),
+
+$
+\boxed{I_p(J^-)=I_p(E).}\tag{F'}
+$
+
+**Consequently, a single independently constructed nonzero integer \(D\) with \(D\in I_p(J^-)\) for all p≥7 would force \(D\in I_p(E)\) at those primes, hence globally finite prime support for E-Sha outside 2,3,5.** This is a precise and valid *conditional* transfer from a modular-Jacobian Selmer determinant to the original elliptic curve. In fact no knowledge of \(D_B\) is required to transfer the **membership**, since \(I_p(J^-)\subseteq I_p(E)\) by (F).
+
+**What is not supplied:** a nonzero such \(D\), or a \(\mathbf Z\)-complex whose \(p\)-completions actually realize \(X_p(J^-)\). Formula (F) is a genuine proof-level geometric Fitting factorization and tells us exactly which J^- complex a successful arithmetic construction should target; simply computing Hecke eigenlattice Smith factors does not compute \(I_p(J^-)\).
+
 ## 2. Theorem B — a fixed *trivial-Galois* modular-symbol lattice cannot receive E[p]
 
 Let p≥5 be a prime such that ρ_{E,p}:G_Q→GL_2(F_p) is surjective. Let W be any F_p-vector space on which G_Q acts trivially (e.g. a **bare** integer 390-Manin-symbol coefficient lattice modulo p, given an artificially trivial Galois action).
