@@ -124,6 +124,31 @@ The criterion is **sufficient but need NOT be necessary**: isogeny Selmer over K
 
 This is a concrete upgrade over the previously sought *abstract* fixed integral Hecke matrix: the map (4) truly exists and has an explicitly arithmetic target, but **the target varies with p** and no fixed determinant D has been produced.
 
+## 2 bis. A sharp representation-theoretic obstruction: the descent is a NON-SPLIT embedding
+
+Let \(W=V/C\) with Borel character \(\chi\), and \(G=\Gamma_p\).
+Frobenius reciprocity sends the B-equivariant quotient \(V\twoheadrightarrow W\) to a natural \(G\)-equivariant map
+
+$
+\boxed{V\hookrightarrow \operatorname{Ind}_B^G W,}
+\tag{NS1}
+$
+
+where the induced module has dimension \([G:B]\dim W=p+1\), rather than 2. It is injective because V is irreducible for G and the underlying B-quotient is nonzero.
+
+**Theorem (genuine non-split embedding).** This map has **NO** G-equivariant retraction:
+
+$
+\boxed{\operatorname{Hom}_G(\operatorname{Ind}_B^G W,V)
+=\operatorname{Hom}_B(W,V)=0.}\tag{NS2}
+$
+
+**Proof.** Choose a basis with \(C=\mathbf F_p e_1\) and \(B=\{\left(\begin{smallmatrix}a&b\\0&d\end{smallmatrix}\right)\}\). On \(W=V/C\), B acts by \(\chi(g)=d\). If a B-equivariant homomorphism W→V sends 1 to v, the unipotent \(\left(\begin{smallmatrix}1&1\\0&1\end{smallmatrix}\right)\), acting trivially on W, forces v to be fixed by it, hence \(v\in \mathbf F_p e_1\). But \(\left(\begin{smallmatrix}2&0\\0&1\end{smallmatrix}\right)\) also acts trivially on W and multiplies e1 by 2, so v=0. Frobenius reciprocity gives (NS2), ruling out any retraction. QED.
+
+This proves a precise *limit* of the descent: the p+1-dimensional induced coefficient module has \(p-1\) additional dimensions and no canonical G-equivariant projector onto V. In particular it is unjustified to identify the entire isogeny Selmer group over K with the rational p-Selmer: our proven map (4) is **injective, generally not surjective**. The sufficient condition (6) can therefore be strictly stronger than what is needed to kill Sha.
+
+The source-side finite-group checker verifies the Hom_B vanishing explicitly for p=5,7,11. This is not a counterexample to strong BSD; it prevents incorrectly treating the constructed injection as an isomorphism.
+
 ## 3. A smaller class-field realization of the target
 
 In a basis with C=<e1>, B consists of upper triangular matrices \(\begin{psmallmatrix}a&b\\0&d\end{psmallmatrix}\), a,d∈Fp×, b∈Fp. The quotient character is \(\chi(B)=d\). Its kernel has order p(p−1), so the field
