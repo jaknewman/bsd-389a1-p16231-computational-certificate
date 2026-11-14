@@ -46,11 +46,38 @@ for p in [5,7,11,13,107,16231]:
         d//=p;valuation+=1
     assert valuation==(2 if p in (7,11) else 0)
     print("FIXED_FINITE_FREE_COMPLEX_FITT_2_AUDIT_PASS",p,"vp_D",valuation)
-# Exactly test the 2nd Fitting direct-sum law for rank-two E plus rank-zero B.
+# Check the Fitting ideals via actual integer *presentation matrices*:
+#   X_E = Zp^2 + (Zp/p^e)^2; X_B = Zp/(p^b); X_J = X_E + X_B.
+# All modules here remain synthetic, not actual E389a1 Sha.
+from math import gcd
+from itertools import combinations
+
+def det3(A):
+    return (A[0][0]*(A[1][1]*A[2][2]-A[1][2]*A[2][1])
+           -A[0][1]*(A[1][0]*A[2][2]-A[1][2]*A[2][0])
+           +A[0][2]*(A[1][0]*A[2][1]-A[1][1]*A[2][0]))
+
+def maximal_minor_content(A,m):
+    result=0
+    for inds in combinations(range(len(A)),m):
+        M=[A[i] for i in inds]
+        z=(M[0][0]*M[1][1]-M[0][1]*M[1][0]) if m==2 else det3(M)
+        result=gcd(result,abs(z))
+    return result
+
 for p in (7,11,107):
     for e in (0,1,2,3):
         for b in (0,1,2):
-            assert (2*e+b)==2*e+b
-            print("JMINUS_FITT2_DIRECT_SUM_VALUATION_PASS",p,e,b,2*e+b)
+            a=p**e
+            c=p**b
+            M_E=[[0,0],[0,0],[a,0],[0,a]]
+            M_J=[[0,0,0],[0,0,0],[a,0,0],[0,a,0],[0,0,c]]
+            ideal_E=maximal_minor_content(M_E,2)
+            ideal_B=c
+            ideal_J=maximal_minor_content(M_J,3)
+            assert ideal_E==p**(2*e)
+            assert ideal_J==ideal_E*ideal_B
+            print("JMINUS_FITT2_PRESENTATION_MINORS_PASS",p,e,b,ideal_J)
+
 print("FORMAL_COMPARISON_REQUIRED actual X_p ≅ H(C)⊗Z_p NOT CONSTRUCTED")
 print("SCOPE: FORMER SHA AND 21x21 MATRICES ARE MODELS, NOT ACTUAL E389a1 COMPUTATIONS")
