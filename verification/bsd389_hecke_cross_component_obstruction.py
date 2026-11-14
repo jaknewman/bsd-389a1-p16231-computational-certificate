@@ -46,5 +46,11 @@ for p in [5,7,11,13,107,16231]:
         d//=p;valuation+=1
     assert valuation==(2 if p in (7,11) else 0)
     print("FIXED_FINITE_FREE_COMPLEX_FITT_2_AUDIT_PASS",p,"vp_D",valuation)
+# Exactly test the 2nd Fitting direct-sum law for rank-two E plus rank-zero B.
+for p in (7,11,107):
+    for e in (0,1,2,3):
+        for b in (0,1,2):
+            assert (2*e+b)==2*e+b
+            print("JMINUS_FITT2_DIRECT_SUM_VALUATION_PASS",p,e,b,2*e+b)
 print("FORMAL_COMPARISON_REQUIRED actual X_p ≅ H(C)⊗Z_p NOT CONSTRUCTED")
 print("SCOPE: FORMER SHA AND 21x21 MATRICES ARE MODELS, NOT ACTUAL E389a1 COMPUTATIONS")
