@@ -40,3 +40,14 @@ for p in (107,16231):
     print("BIG_FIELD_DEGREE_FORMULA",p,
           "F",p*(p-1)**2*(p+1),"K",p+1,"L",p*p-1)
 print("NO_ISOGENY_SELMER_OR_SHA_COMPUTED")
+
+# Exact Frobenius-reciprocity test: Hom_B(W,V)=0.
+# W carries chi([[a,b],[0,d]])=d. If a B-equivariant map
+# W -> V sends 1 to (x,y), unipotent [[1,1],[0,1]]
+# forces y=0; diag(2,1), acting trivially on W, forces x=0.
+for p in (5,7,11):
+    eligible=[(x,y) for x in range(p) for y in range(p)
+              if (x+y)%p==x and (2*x)%p==x]
+    assert eligible==[(0,0)]
+    print("BOREL_INDUCED_STANDARD_RETRACTION_IMPOSSIBLE_PASS",p,
+          "Hom_B_W_to_V_dim",0,"Ind_module_dim",p+1)
