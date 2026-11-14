@@ -71,3 +71,46 @@ assert jprime==jformula
 print("P5_EXACT_TARGET_FRICKE_J_PASS",flush=True)
 print("CONSTRUCTED K5_DEGREE=6 KERNEL_DEGREE=2 ISOGENY_DEGREE=5")
 print("SCOPE: NO ISOGENY SELMER, SHA OR COMPLEX BSD COMPUTED")
+
+
+# Prove the FULL rational isogeny morphism, not only its kernel/codomain.
+# Write X' = N(X)/h(X)^2 with
+# N = (5X+2a)h^2 -2 f_E'(X)h h' +4 f_E(X)((h')^2-2h).
+# Vélu's normalized y-map is Y' = Y dX'/dX.
+# Verify Y'^2 = X'^3 + A'X' + B' after clearing denominators,
+# by exact polynomial identities in (QQ[t]/f5)[X].
+def trimx(C):
+    C=list(C)
+    while C and C[-1]==zero:C.pop()
+    return C
+def addx(U,V):
+    return trimx([((U[i] if i<len(U) else zero)+(V[i] if i<len(V) else zero)).rem(F)
+                  for i in range(max(len(U),len(V)))])
+def negx(U):return trimx([(-z).rem(F) for z in U])
+def scalex(U,c):return trimx([mul(z,c) for z in U])
+def mulx(U,V):
+    if not U or not V:return []
+    R=[zero]*(len(U)+len(V)-1)
+    for i,x in enumerate(U):
+        for j,y in enumerate(V):
+            R[i+j]=(R[i+j]+mul(x,y)).rem(F)
+    return trimx(R)
+def derivx(U):
+    return trimx([(i*U[i]).rem(F) for i in range(1,len(U))])
+h=[b,a,one]
+D=mulx(h,h)
+hp=derivx(h)
+fE=[K(B),K(A),zero,one]
+fpE=derivx(fE)
+N=addx(addx(mulx([mul(K(2),a),K(5)],D),
+             scalex(mulx(fpE,mulx(h,hp)),K(-2))),
+       scalex(mulx(fE,addx(mulx(hp,hp),scalex(h,K(-2)))),K(4)))
+assert len(N)==6 and len(D)==5 and N[-1]==one
+W=addx(mulx(derivx(N),D),negx(mulx(N,derivx(D))))
+lhs=mulx(fE,mulx(W,W))
+rhs=addx(addx(mulx(mulx(mulx(N,N),N),D),
+             scalex(mulx(N,mulx(mulx(D,D),D)),Ap)),
+         scalex(mulx(mulx(D,D),mulx(D,D)),Bp))
+assert addx(lhs,negx(rhs))==[]
+print("P5_FULL_EXPLICIT_VELU_RATIONAL_MAP_EQUATION_PASS",
+      "numerator_degree",len(N)-1,"denominator_degree",len(D)-1)
