@@ -84,6 +84,24 @@ The same exact script independently verifies stronger n=2 **actual local p²-div
 - p=5, \(R_{5,2}=-4P-3Q=(6832045/511392996,\ -315516267935/11564641211544)\), and \(t([9]R_{5,2})\equiv0\bmod125\);
 - p=7, \(R_{7,2}=-4P-5Q=(-5476046670171/4640693967529,\ 10357242007585928617/9997108243588095083)\), and \(t([13]R_{7,2})\equiv0\bmod343\).
 
+**A stronger exact fifth-adic surprise.** The local audit goes beyond the p² congruence: for the *same* primitive vector
+$
+R_{5}^\star=-4P-3Q,
+$
+the exact fraction \(t([9]R^\star_5)\) has
+$
+\boxed{v_5(t([9]R^\star_5))=5.}
+$
+Indeed the rational numerator is divisible by \(5^5\) and NOT by \(5^6\), while its denominator is a 5-adic unit; a direct residue check gives \(t([9]R^\star_5)\equiv6250\bmod5^6\). Formal log identifies the reduction kernel with \(5\mathbf Z_5\), hence \(R^\star_5\) is locally divisible by \(5^4=625\) in \(E(\mathbf Q_5)\) (but not by \(5^5\)). By Theorem A this **single explicit rational point** constructs a mathematically genuine **everywhere-unramified extension**
+$
+\boxed{
+[\mathbf Q(E[5^4],[5^4]^{-1}R^\star_5):\mathbf Q(E[5^4])]
+=5^8=390625.
+}
+\tag{EXPLICIT-5-4}
+$
+For comparison, \(v_7(t([13]R^\star_7))=3\) for \(R^\star_7=-4P-5Q\), so its certified local divisibility exponent is precisely \(7^2\), producing degree \(7^4=2401\). These exact numerator valuations were recomputed from independent rational-coordinate group operations, **not** inferred merely from the p² formal log linear congruence. No full number-field class group calculation is claimed.
+
 Both vectors are primitive modulo p, so the corresponding **everywhere-unramified** division extensions above F_{5,2} and F_{7,2} have genuine degrees
 $$
 \boxed{[L_{5,2}:F_{5,2}]=625,\qquad[L_{7,2}:F_{7,2}]=2401.}
