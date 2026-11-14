@@ -148,6 +148,29 @@ There is an even more general sufficient criterion without the non-anomalous ass
 
 **Crucial honest boundary:** The desired UNIFORM assertion \(m_p\le3\) for all sufficiently large p is *not proved*. Nor has any \(A_p^{(389\,\mathrm{split})}\) been computed for p=599 or 16231. Thus (MAIN) is a new primewise **arithmetic characterization**, not an unconditional Sha annihilator or a BSD proof. Also the size and Galois structure of F_p vary drastically with p; no fixed integral presentation has been built.
 
+## 4 bis. Connection to the actual all-large-p Kurihara target
+
+Assume the additional published-theorem hypotheses of Kim Theorem 1.10 and Castella–Sano Theorem B: good p≥5, full residual image, Manin p-unit, Tamagawa p-units and E(Q_p)[p]=0. All are satisfied for the non-anomalous good p under discussion.
+
+Let \(\mu_p\) be the **minimal number of distinct p-admissible auxiliary primes** in a genuinely nonzero mod-p Kurihara coefficient, in the normalization of the cited theorems. From their minimal-degree theorem and the genuine Kummer sequence,
+$
+\mu_p=\dim_{\mathbf F_p}\operatorname{Sel}_p(E/\mathbf Q)
+=2+\dim_{\mathbf F_p}\Sha(E/\mathbf Q)[p].
+$
+Combining with (MAIN) gives the **exact arithmetic class-field-to-Kurihara identity**
+$
+\boxed{\mu_p=2\lfloor m_p/2\rfloor.}\tag{KURI}
+$
+
+Consequently
+$
+\boxed{\mu_p=2\iff m_p\le3,\qquad
+\mu_p\ge4\iff m_p\ge4.}\tag{KURI2}
+$
+Thus, **for this curve and all these p**, the user's desired uniform Kurihara upper bound \(\mu_p\le3\) is equivalent to the **concrete class-field multiplicity bound** \(m_p\le3\). It is a change of arithmetic target, **NOT** a proof of that uniform bound. The class-field module's actual multiplicity remains unknown for the unproved primes.
+
+Sources: Kim, *The structure of Selmer groups and the Iwasawa main conjecture for elliptic curves*, Theorems 1.8/1.10, https://preprint.press.jhu.edu/ajm/sites/default/files/AJM-kim.pdf; Castella–Sano (2026), Theorem B, https://arxiv.org/html/2601.14504.
+
 ## 5. Executed arithmetical regression
 
 The dependency-free certificate
