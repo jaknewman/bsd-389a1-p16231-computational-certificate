@@ -83,19 +83,18 @@ without assuming Sha finite.
 
 (i) The prime-to-S direct sum \(\bigoplus_{p\notin S}\Sha(E/\mathbf Q)[p^\infty]\) is finite.
 
-(ii) There exists a bounded complex \(C^\bullet\) of finite free R-modules and an index i such that **for every p∉S** an R-completed arithmetic isomorphism
+(ii) There exists a bounded complex \(C^\bullet\) of finite free R-modules and an index i with **rank_R H^i(C)=2**, such that **for every p∉S** an R-completed arithmetic isomorphism
 $$
 \boxed{H^i(C^\bullet)\otimes_R\mathbf Z_p\simeq X_p}
 \tag{C1}
 $$
 holds (as Z_p-modules, without requiring canonical choice). It is enough to require the same for a single finitely generated R-module H instead of a perfect complex.
 
-**Proof (ii⇒i).** The R-cohomology H=H^i(C) is finitely generated, since the complex consists of finite free R-modules. As R is a PID, H≅R^r⊕T with finite torsion T, whose prime divisors all lie outside S. Choose any p∉S for which the already-known Sha[p∞]=0, e.g. p=7 if p∉S, or choose an ordinary covered p outside the finite S by Stein–Wuthrich's finite range when possible; **more directly**, for any p∉S, the rank of H⊗Zp equals r, and the source X_p has rank \(2+\operatorname{corank}\Sha[p^\infty]\). To conclude r=2 without assuming a certified p outside S, add the natural requirement \(\operatorname{rank}_R H=2\), which is the rank-two version of (ii). Under this requirement, comparing torsion gives \(\Sha[p^\infty]^\vee\simeq T\otimes\mathbf Z_p\). Hence every p∉S outside the finitely many primes dividing #T has Sha[p∞]=0, and all remaining p-parts are finite. Their direct sum is finite; indeed its exact order equals #T.
+**Proof (ii⇒i).** The R-cohomology H=H^i(C) is finitely generated, since the complex consists of finite free R-modules. As R is a PID, H≅R^r⊕T with finite torsion T, whose prime divisors all lie outside S. The rank-two requirement in (ii) gives r=2 for every p∉S. Comparing the torsion in each completed module gives \(\Sha[p^\infty]^\vee\simeq T\otimes\mathbf Z_p\). Hence every p∉S outside the finitely many primes dividing #T has Sha[p∞]=0, and all remaining p-parts are finite. Their direct sum is finite; indeed its exact order equals #T.
 
 **Proof (i⇒ii).** If the prime-to-S Sha group is finite, put \(T=\bigoplus_{p\notin S}\Sha(E/\mathbf Q)[p^\infty]^\vee\) as a finite R-module. Take H=R²⊕T. A finite presentation of T over the PID R resolves H by a bounded complex of finite free R-modules with H^i(C)=H; completing at every p∉S gives \(H\otimes_R\mathbf Z_p\simeq X_p\). The isomorphisms are abstract, not canonical or arithmetic constructions; this proof uses the desired finiteness as input. QED.
 
-Thus the correct exact formulation of (ii) is:
-**there exists a finite free R-complex C with rank_R H^i(C)=2 and comparison (C1) for all p∉S**.
+The rank-two condition is essential; without it, a fixed complex of a larger free rank could model positive p-divisible Sha corank and the equivalence would no longer follow.
 
 **Consequences if an independent C and these comparisons were ever actually constructed:**
 - Smith normal form of an R-presentation of H yields a fixed finite torsion module T; its order D=#T is a **single p-independent** annihilator of all Sha[p∞] for p∉S.
