@@ -276,6 +276,47 @@ Thus we have an **actually displayed number field K5, an actual cyclic subgroup 
 
 This check is more substantial than merely exhibiting a root of \(\Phi_5(j(E),Y)\), because it proves directly that the specific 5-division factor is a cyclic K5-stable kernel.
 
+## 4 ter. Full explicit degree-5 Vélu morphism, with exact equation verification
+
+The kernel polynomial and codomain can be supplemented by a completely explicit **rational-map** description over K5, not just a claim of isogeny existence.
+
+Retain the short E_s, set \(\alpha=a(t),\beta=b(t)\) and
+$
+h(X)=X^2+\alpha X+\beta,\qquad
+f_E(X)=X^3-3024X+46224.
+$
+Write \(h_X'(X)=2X+\alpha\). Define
+$
+\boxed{
+N(X)=(5X+2\alpha)h(X)^2
+-2(3X^2-3024)h(X)h_X'(X)
++4f_E(X)\big((h_X'(X))^2-2h(X)\big).
+}
+\tag{VM}
+$
+Then **the exact normalized Vélu map** from E_s to the already constructed E'_5 is
+$
+\boxed{\phi(X,Y)=\left(\frac{N(X)}{h(X)^2},\
+Y\frac{d}{dX}\frac{N(X)}{h(X)^2}\right).}
+\tag{RM}
+$
+Its x-map numerator has degree 5 and denominator degree 4.
+
+The SymPy verifier performs **genuine exact finite number-field arithmetic** on coefficients of degree-19 polynomials over \(K_5=\mathbf Q[t]/(f_5)\), and proves the following identity after clearing denominators:
+$
+\boxed{
+f_E(X)\big(N'(X)h(X)^2-N(X)(h(X)^2)'\big)^2
+=N(X)^3h(X)^2
++A' N(X)h(X)^6
++B'h(X)^8,
+}\tag{WE}
+$
+with the explicit Vélu A',B' from (V). This is exactly
+\(Y'^2=X'^3+A'X'+B'\) after substituting
+\(Y^2=f_E(X)\) and (RM). Combined with the proven kernel and the normalized differential property, (RM) gives the actual 5-isogeny **as rational functions**, not merely its target model. The certificate was genuinely executed in the assistant's local Python environment, and the equivalent GitHub source includes this final equation audit.
+
+The construction is unconditional in the sextic field K5. The mathematical problem of proving \(\dim_{\mathbf F_5}\operatorname{Sel}_{\hat\phi}(E'_5/K_5)=2\), and the still harder prime-uniform statement, is separate and not claimed.
+
 ## 5. Execution and exact next task
 
 Two Python-standard-library verifiers plus a third SymPy number-field certificate were executed by the assistant on November 14, 2026:
