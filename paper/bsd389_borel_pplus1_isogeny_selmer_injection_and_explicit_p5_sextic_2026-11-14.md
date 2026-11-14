@@ -215,9 +215,70 @@ is explicitly defined and carries a 5-isogeny of E_K. Since the residual image i
 
 This is a major reduction in **field degree**, not a computed Selmer dimension or proven all-large-p annihilator.
 
+## 4 bis. A GENUINE explicit cyclic p=5 kernel and Vélu codomain — no abstract isogeny left
+
+We can go beyond the sextic and **construct the 5-isogeny itself** by an exact kernel polynomial on the specific E389a1.
+
+Use the exact rational short Weierstrass model
+$
+E_s:Y^2=X^3-3024X+46224,
+\quad X=36x+12,\quad Y=216y+108.
+$
+This is checked by the identity
+\((X^3-3024X+46224)-Y^2
+=46656(x^3+x^2-2x-y^2-y)\).
+Let \(t\in K_5=\mathbf Q[t]/(f_5)\) and put
+$
+u=t^2+10t+5,\quad
+v=t^2+22t+125,\quad
+w=t^2+4t-1,\quad
+e=t^2+22t+89.
+$
+Define two **explicit elements of K5**
+$
+a(t)=-\frac{321u}{7w},\qquad
+b(t)=\frac{1008e}{u}.
+$
+Then the monic quadratic polynomial
+$
+\boxed{h_5(X)=X^2+a(t)X+b(t)\in K_5[X]}
+\tag{K}
+$
+is the kernel polynomial of a cyclic subgroup \(C\subset E_s[5]\) defined over K5.
+
+**Proof, computationally fully exact, with no Sage or approximations.**
+The companion executable
+[verification/bsd389_p5_explicit_isogeny_kernel_velu_certificate.py](../verification/bsd389_p5_explicit_isogeny_kernel_velu_certificate.py)
+operates in the actual degree-six **number field** using rational-polynomial remainders modulo f5, and verifies:
+1. The canonical degree-12 **short-model 5-division polynomial**
+   $\psi_5(X)=32(X^3+AX+B)^2
+   (X^6+5AX^4+20BX^3-5A^2X^2-4ABX-8B^2-A^3)
+   -(3X^4+6AX^2+12BX-A^2)^3$
+   with \(A=-3024,B=46224\) has **zero remainder** modulo \(h_5(X)\).
+2. For \(N_2=X^4-2AX^2-8BX+A^2\) and
+   \(D_2=4(X^3+AX+B)\), the exact rational duplication formula
+   \(x(2P)=N_2(x(P))/D_2(x(P))\) verifies
+   $N_2(X)+D_2(X)(X+a(t))\equiv0\bmod h_5(X).$
+   Since the roots are nonzero 5-torsion x-coordinates, duplication exchanges them; they are precisely \(\{x(P),x(2P)\}\) for **one cyclic subgroup**, not two unrelated 5-torsion pairs. Thus the kernel \(C=\{O,\pm P,\pm2P\}\) is K5-Galois stable.
+3. Vélu's standard odd-order formulas, using the two roots' symmetric sums, produce the exact **codomain coefficients**:
+   $\boxed{
+   A'=-\frac{3024(t^2+250t+3125)}{t^2+10t+5},
+   \quad
+   B'=\frac{46224(t^2-500t-15625)}{t^2+4t-1}.}
+   \tag{V}
+   $
+   The comparison is an identity in \(K_5\), checked coefficientwise.
+4. The target \(E'_5:Y^2=X^3+A'X+B'\) has
+   $\boxed{j(E'_5)=\frac{(t^2+250t+3125)^3}{t^5}}$
+   as an **exact K5 identity**, independently matching the classical Fricke target-j formula.
+
+Thus we have an **actually displayed number field K5, an actual cyclic subgroup C of E[5], and an explicit Vélu codomain E'_5**, all mathematically certified by exact number field arithmetic. The rational maps \(\phi\) can be formed from the certified Vélu data if desired. This is **not** yet a computation of the dual-isogeny Selmer dimension over K5; no new Sha vanishing or uniform D follows.
+
+This check is more substantial than merely exhibiting a root of \(\Phi_5(j(E),Y)\), because it proves directly that the specific 5-division factor is a cyclic K5-stable kernel.
+
 ## 5. Execution and exact next task
 
-Two independent Python-standard-library verifiers were executed by the assistant on November 14, 2026:
+Two Python-standard-library verifiers plus a third SymPy number-field certificate were executed by the assistant on November 14, 2026:
 - [exact 6th-degree X0(5) fiber and Borel counts](../verification/bsd389_degree_pplus1_isogeny_field_gate.py): j, f5, rigorous irreducibility mod3 and quotient character subgroup orders for p5,7,11, with large p formulas.
 - [direct finite-group Sah H1 audit](../verification/bsd389_division_field_sah_cohomology_audit.py): independent **linear algebra on all generator cocycle relations** for GL2(Fp), with 480, 2016, 13200 matrices at p5,7,11, giving dim Z1=2, dim B1=2 and dim H1=0 each time. This is a *finite computational check of H1*, not a computation of H2 (the latter follows from Sah's general theorem), and not a computation of actual ray class groups, isogeny Selmer groups, or Sha.
 
