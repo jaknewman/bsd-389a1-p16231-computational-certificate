@@ -52,6 +52,17 @@ and the certified group E(Q)≅Z² give the second equality of (1). A nonzero p-
 
 Primary PDF: https://preprint.press.jhu.edu/ajm/sites/default/files/AJM-kim.pdf (Theorem 1.10 and proof of equation (6.1), concluding μ_p=dim Sel_p at printed page 33).
 
+## B.1. Even-degree gap from the functional equation
+
+The functional equation for Mazur–Tate elements implies that the Kurihara invariants of auxiliary degree r vanish in the wrong root-number parity (Kim, Proposition 3.14; Castella–Sano, §1.1.3). For E389a1 the global root number is +1, so every odd-degree mod-p coefficient is zero, and the minimum μ_p is **even**:
+
+$
+\boxed{\mu_p\in\{2,4,6,\ldots\},\qquad
+\dim_{\mathbf F_p}\Sha(E/\mathbf Q)[p]\in\{0,2,4,\ldots\}.}\tag{P}
+$
+
+This gap does not require global finiteness of Sha; it is the combination of the theorem (1) with the modular functional equation. Consequently **if Sha[p] is nonzero, every two- and three-factor coefficient is zero modulo p**, and the first possible unit degree is at least four. This is a useful necessary obstruction in any proposal to extract degree-two units uniformly.
+
 ## C. Generalization: scalar-Frobenius is impossible in *any minimal* mod-p witness
 
 Let n=q1...qμ be a unit witness with μ=μ_p, under A. Kim's semilocal theorem provides an isomorphism
