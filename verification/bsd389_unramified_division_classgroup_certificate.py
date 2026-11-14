@@ -79,6 +79,21 @@ for p,(a,b),level2 in WITNESSES:
         print("BSD389_UNRAMIFIED_KUMMER_LEVEL2_EXACT_LOCAL_PASS",
               "p",p,"N",n,"primitive_R",f"{a2}P+{b2}Q",
               "R",R2,"t([N]R) mod p³",0,flush=True)
+        # Compute the EXACT p-valuation of the normalized formal parameter,
+        # not a floating-point numerical approximation.
+        W=mul(R2,n)
+        t=-W[0]/W[1]
+        assert t.denominator%p
+        numerator=abs(t.numerator)
+        valuation=0
+        while numerator and numerator%p==0:
+            numerator//=p
+            valuation+=1
+        assert valuation==({5:5,7:3}[p])
+        print("BSD389_UNRAMIFIED_KUMMER_HIGHER_EXACT_VALUATION_PASS",
+              "p",p,"v_p_t_nR",valuation,
+              "p_divisibility_exponent",valuation-1,
+              "class_number_forced_power_exponent",2*(valuation-1),flush=True)
 from fractions import Fraction
 for ell in (5,7,11,107,16231):
     d=Fraction(ell**2,(ell-1)**2*(ell+1))
