@@ -40,6 +40,58 @@ Primary literature:
 
 **Important limitation:** Showing (2) remains equivalent, within this Kurihara route, to the all-large-p vanishing we want. This note does not manufacture (2) from Hecke Smith data or local Chebotarev information.
 
+## 1 bis. NEW 2026 theorem sharpening: an ODD first-nonzero-degree dichotomy for Kato's genuine Kolyvagin CLASSES and a TWO-auxiliary finiteness certificate
+
+**2026-11-15 (actual theorem, not a synthetic model).** This is a rigorously deduced arithmetic corollary of the **published** Burungale–Castella–Grossi–Skinner, *Non-vanishing of Kolyvagin systems and Iwasawa theory*, Cambridge J. Math. 14 (2026), no.2, Corollary C and Theorem C, together with Dokchitser p-parity and the genuine rank-two MW group of E389a1.
+
+Primary 2026 source: https://arxiv.org/pdf/2312.09301 (revision v2 dated 2026-01-18), **PDF p.4, Theorem C and Corollary C**. The authors' **Kato Kolyvagin class** κ_n^Kato∈H¹(Q,T_pE/I_n T_pE) is **not** the scalar Kurihara number δ_n and is **not** the unit witness μ_p of §1. The two notions must NEVER be interchanged.
+
+Let p≥5 be a prime of good **ORDINARY** reduction, p≠389, with E(Qp)[p]=0, and assume E[p] is irreducible (in particular all surjective residual GL2 primes). No assumption of finite Sha. Burungale et al. Theorem C applies **unconditionally** in the irreducible case (by the "in particular" clause of that theorem), and their Corollary C gives
+
+    d_Kato(p) := min{ν(n) : κ_n^Kato != 0} = corank_Zp H¹_str(Q,E[p∞]).
+
+Here ν(n) counts DISTINCT auxiliary prime factors and n=1 (ν=0) is allowed in the definition. The system is not everywhere zero by Theorem C, so d_Kato(p) is finite.
+
+Define s_p=corank_Zp Sha(E/Q)[p∞]. The standard exact p∞ Kummer sequence reads
+
+    0 → E(Q)⊗Qp/Zp → Sel_{p∞}(E/Q) → Sha(E/Q)[p∞] → 0,
+
+where the first term is (Qp/Zp)^2 (saturated proven MW rank2). At good p, the finite local Kummer target is E(Qp)⊗Qp/Zp ≅ Qp/Zp, and the localization of MW to it is ONTO: a non-torsion rational P maps to a nonzero p-adic logarithm and hence induces multiplication by a nonzero element a∈Zp on Qp/Zp, which is surjective even when v_p(a)>0. This does NOT require that the mod-p MW localization be primitive. Lifting any class of Sha through Sel_{p∞}, one can use a global MW class to kill its p-local Kummer image. Thus one obtains the exact strict localization Kummer sequence
+
+    0 → ker[(Qp/Zp)^2→Qp/Zp] → H¹_str(Q,E[p∞])
+      → Sha(E/Q)[p∞] → 0,
+
+up to possible finite changes of local conditions at the bad place 389, which have NO effect on Zp coranks (and for p not dividing 388 the ℓ=389 finite local cohomology gate vanishes altogether). As the source of the local map has corank2 and its image has corank1, the kernel has corank1. Hence
+
+    **corank H¹_str(Q,E[p∞]) = 1+s_p.**
+
+Combining with BCGS Corollary C:
+
+    **d_Kato(p) = 1+s_p.**
+
+By the p-parity theorem, since E has global sign +1 and MW rank2,
+    corank_Zp Sel_{p∞}(E/Q) = 2+s_p ≡0 mod2,
+so s_p is even. Consequently
+
+    **d_Kato(p)∈{1,3,5,...}.**
+
+In particular, a SINGLE **Genuine cohomology class** κ_n^Kato≠0 with ν(n)≤2 forces d_Kato(p)≤2, hence by the odd gap d_Kato(p)=1, s_p=0, and
+
+    **Sha(E/Q)[p∞] is FINITE.**
+
+Conversely, if Sha(E/Q)[p∞] is finite, s_p=0 and BCGS gives d_Kato(p)=1, so there EXISTS a nonzero genuine Kato Kolyvagin class at **one** auxiliary prime. This yields the exact arithmetic equivalence:
+
+    **Sha(E/Q)[p∞] finite ⇔ ∃ q∈L_Kato(p) with κ_q^Kato≠0
+    ⇔ ∃ n with ν(n)≤2 and κ_n^Kato≠0.**
+
+The middle equivalence uses BCGS Theorem C (for the existence and exact order) and the parity gap. The \(\kappa_q^{\mathrm{Kato}}\) may be nonzero *at higher p-power precision* and need NOT have nonzero reduction modulo p. Thus this theorem certifies **finiteness**, NOT the stronger vanishing Sha[p∞]=0. Full vanishing still requires an actual mod-p **unit Kurihara witness at auxiliary degree2**, or an equivalent integral Fitting/Selmer result.
+
+**Why this is an actual new dichotomy, not circular use of finiteness:** BCGS Corollary C applies to nonzero Kato Kolyvagin classes without assuming Sha finite, and our MW localization surjectivity follows from an already proved rank-two non-torsion point. We prove only an equivalence; the low-degree Kato witness needed to use it has **not been produced for all large p**. BCGS Theorem C guarantees some κ_n≠0 but allows ν(n)≥3. Their refined theorem that the minimum p-divisibility index M∞ equals the sum of Tamagawa valuations (=0 for our curve) guarantees a primitive derivative at *some*, potentially arbitrarily large auxiliary degree, NOT that d_Kato(p)=1. The distinction between these two quantifiers is essential.
+
+**Density-one range.** By Serre's open-image theorem, residual GL2 holds for all but finitely many p. For the non-CM curve, p with a_p=0 (supersingular) have density0 and p with a_p=1 (anomalous, for p≥7) have density0: for any auxiliary ℓ with full GL2(Fℓ), Chebotarev bounds the density of primes with a_p=a by #GL2 matrices of fixed trace a / #GL2 ≪1/ℓ; let ℓ→∞. Hence the exact ODD Kato degree / strict Sha corank formula above applies on a NATURAL DENSITY-ONE set of p. This is a true global theorem on a density-one family, but density-one eligibility does **not** imply that Sha is finite there, because low-degree nonvanishing is still unknown.
+
+**Research significance.** For global finiteness one need only a two-auxiliary **nonzero genuine Kato cohomology class**, not necessarily a scalar Kurihara p-unit; parity upgrades this to a one-auxiliary nonzero class. For full Sha triviality, the stricter mod-p degree-two unit certificate from §1 remains necessary in this approach. The two-prime MW-localization density theorem from PR#20 and the transverse Selmer identification from PR#16 do NOT by themselves make the genuine Kato classes nonzero; this is the actual remaining global obstruction. No all-large-p low-degree nonvanishing or complex BSD equality is claimed.
+
 ## 2. Minimal-witness Selmer decomposition — fully proved
 
 Fix a good p for which, in addition, E(Q_p)[p]=0 and Kim's semilocal theorem 1.10 applies. Let n=q1⋯qr be any **minimal mod-p unit** Kurihara witness with r=μ_p.
