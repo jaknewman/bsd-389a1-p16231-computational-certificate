@@ -91,6 +91,31 @@ The final equivalence needs no *global* finiteness hypothesis: a nonzero p-prima
 
 **Terminology caution.** The chosen complementary lines need not be the canonical Mazur–Rubin **Kolyvagin transverse local condition**; they are simply linear complements. Identifying their explicit classes with derived Kato classes requires additional proofs. Equation (T) is not itself a Kolyvagin-system primitivity theorem.
 
+## 3 bis. NEW UNCONDITIONAL *EXISTENCE* of suitable auxiliary pairs for EVERY sufficiently large p (2026-11-15)
+
+The local invertibility assumption in Theorems 1–2 above is not an unproved hypothesis anymore as far as **existence** of auxiliary primes is concerned.
+
+**Uniform-in-p theorem.** For every prime p≥5 with residual surjective mod-p representation GL₂(Fp), there exist infinitely many ordered pairs of distinct rational primes (q₁,q₂), q_i∤389p, such that:
+1. q_i≡1 mod p and Frob_{q_i} on E[p] is NONTRIVIAL unipotent, so each local finite/Kummer space L_{q_i} is 1-dimensional, and H¹(Q_{q_i},E[p]) has dimension2;
+2. the 2×2 matrix of local Kummer images of the SATURATED MW generators P,Q at q₁,q₂ is invertible mod p;
+3. the local transverse Selmer S_tr(p;q₁,q₂) is canonically identified, relative to these primes and lines, with Sha(E/Q)[p], **without any finiteness assumption on Sha**.
+
+In particular, since E389a1 has nonintegral j=1404928/389 and hence no CM, Serre's open-image theorem implies this assertion **for all sufficiently large rational p**, with no restriction to non-anomalous p. (The exceptional finite set need not be explicitly identified for this theorem.)
+
+**Proof of existence (not an assumption about p-division translations).** Let F=Q(E[p]), Γ=GL₂(Fp), V=E[p]. The two global Kummer classes of P,Q are independent because P,Q are a proved saturated basis modulo p. Sah's lemma using the central element −I shows H¹(Γ,V)=0, so their restrictions h_P,h_Q to G_F remain independent in Hom_Γ(G_F,V). The combined image H⊂V² is a Γ-submodule whose coordinate projections are both onto V. Every proper such subdirect Γ-module is the graph of a Γ-automorphism V→V, which by Schur is scalar; that would make h_P,h_Q dependent. Therefore H=V² and
+
+   **Gal(F([p]⁻¹P,[p]⁻¹Q)/F)=V²**.
+
+For each nontrivial unipotent g∈Γ, the local quotient V/(g−1)V has dimension1; over any lift of g to the composite Kummer extension, its complete kernel V² allows all Fp² pairs of Kummer translation coordinates, uniformly. The uniformity is invariant under local conjugation up to a nonzero common scalar, so Chebotarev ensures an infinity of primes with any chosen projective MW localization row. Choose two distinct primes whose rows are independent. Their local conditions are exactly those used in Theorems 1–2 above. The resulting S_tr≅Sha[p] is therefore available at every eligible p. QED.
+
+The conditional pair-density formula in [PR #20](https://github.com/jaknewman/bsd-389a1-p16231-computational-certificate/pull/20) is now UNCONDITIONAL under residual GL₂:
+
+  **ordered-pair density = (1−1/p)(1−1/p²) / (p²(p−1)²)>0.**
+
+**Precisely what this does NOT prove:** S_tr(p;q₁,q₂)=0. The existence of two independent MW localization directions and Poitou–Tate duality do not annihilate a Sha[p] contribution. One must still prove a genuine integral Kato/Kolyvagin/Kurihara unit for these pairs, or compute the actual strict/transverse Selmer independently. For a hypothetical rank-two E with Sha[p]≠0, the same universal pair-existence theorem remains true, while the transverse Selmer has dimension≥2. Consequently replacing a Kurihara derivative by the nonzero MW determinant is logically INVALID without an additional theorem.
+
+This is a genuinely universal **existence** theorem, not the desired universal **vanishing** theorem. It closes the Galois/Kummer/auxiliary-prime selection leg at once for all large p, and isolates the only remaining obstacle in that route as the integral Euler-system annihilation of S_tr.
+
 ## 4. Existing concrete MW matrices and finite-field-only audit
 
 The following genuine user-recorded MW local matrices are in [the saved results](../results/bsd389_MW_local_determinants_USER_RUN_PASS_2026-11-02.md).
