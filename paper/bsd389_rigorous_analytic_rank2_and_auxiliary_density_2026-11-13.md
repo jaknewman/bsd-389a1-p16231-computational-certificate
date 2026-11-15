@@ -83,6 +83,50 @@ $$
 
 Here the pair-density assertion follows by applying Chebotarev to each prime and taking the product-density limit as q1,q2≤X tend to infinity; no effective least-prime bound is asserted. It counts *MW-local detection*, not Kurihara units. The companion verifier exhaustively counts GL2 matrices and row determinants for p5,7 and gives exact rational values also at p107 and p16231.
 
+## 3 bis. New proof: the rank-two Kummer translation hypothesis is AUTOMATIC, independent of Sha
+
+**Updated 2026-11-15.** This closes an actual hypothesis left conditional in §3 above and thus upgrades the genuine MW-localization pair-density result to an **unconditional theorem for every p≥5 with full residual GL₂**. It does **NOT** close Sha[p], force a nonzero Kurihara coefficient or prove BSD.
+
+Let V=E[p] be the natural irreducible two-dimensional Fp-representation, F=Q(E[p]), Γ=Gal(F/Q)=GL₂(Fp), and let
+P=(-1,1), Q=(0,-1)
+be the **proved saturated integral MW basis**. The Kummer map gives an injection
+
+  E(Q)/pE(Q)=Fp·P ⊕ Fp·Q ↪ H¹(G_Q,V).
+
+Because the central −I∈Γ acts as −1 on V and p is odd, Sah's lemma yields H¹(Γ,V)=0. Inflation–restriction therefore injects H¹(G_Q,V) into Hom_cont(G_F,V)^Γ. Denote the images of the two Kummer classes by h_P,h_Q. They are Fp-linearly INDEPENDENT by injectivity. Their combined image
+
+  H = im((h_P,h_Q): G_F→V⊕V)
+
+is a Γ-stable subspace of V². Each coordinate projection of H is nonzero and hence onto V, by the irreducibility of V. If H were proper, Goursat's lemma for Γ-modules would give an isomorphism of the two simple Γ-quotients and hence, by Schur's lemma End_Γ(V)=Fp, force H to be the graph of a scalar endomorphism: h_Q=λh_P. This contradicts their linear independence. Thus
+
+  **H=V²**,
+
+and the genuine finite Galois field
+  M_p=F([p]^{-1}P,[p]^{-1}Q)
+satisfies
+
+  **Gal(M_p/F)=E[p]⊕E[p]  and [M_p:F]=p^4.**
+
+No Sha finiteness, analytic L-value hypothesis or p-adic height primitivity is used. In particular, this proof holds for anomalous primes as well when residual GL₂ is surjective.
+
+For every nonidentity unipotent g in Γ, (g−1)V is a one-dimensional subspace, so the local quotient V/(g−1)V has dimension1. Given any g-lift to Gal(M_p/Q), translation by the whole kernel V² realizes EVERY pair of quotient values
+
+  (h_P(Frob_q),h_Q(Frob_q)) mod (g−1)V ∈ Fp²,
+
+each with exactly p² preimages. These quotient pairs are independent of the choice of local conjugation up to a common nonzero scalar. Chebotarev's theorem applied to the union of corresponding conjugacy classes gives a positive density of primes with ANY chosen projective local MW direction. There are p²−1 nonidentity unipotents in Γ, and |Γ|=p(p−1)²(p+1), so the density of genuine 1D local conditions is exactly
+
+  **δ_1D=(p²−1)/|Γ| = 1/[p(p−1)].**
+
+Conditional on this event the ordered pair of MW local values is UNIFORM on Fp², without an extra Kummer-image assumption. Choosing two independent rational primes therefore yields independent MW local lines with exact conditional proportion
+
+  **(1−1/p²)(1−1/p)**,
+
+and their pair density is exactly the formula (6) in §3. Thus §3's previous 'Assume also that ... full Kummer translation image' can be deleted **for every p≥5 with residual GL₂**.
+
+**Sharp separation of the remaining obstruction.** This theorem proves the abundance of *well-typed auxiliary prime pairs with invertible Mordell–Weil localization matrices*. It does **NOT** prove their rank-two Kurihara derivative is a p-unit. That derivative is a genuinely independent global Euler-system/Selmer invariant; replacing it by the MW localization determinant without proving the relevant Kato–Kurihara integral reciprocity and torsion control would be circular. In general a curve can have rank2 and nonzero Sha[p], yet its two MW points still have the full V² Kummer image over its division field. Hence positive density of MW-detecting auxiliary pairs **cannot** by itself give Sha[p]=0.
+
+This unconditional theorem removes a genuine *global Galois extension hypothesis* from the existing route to the desired all-p Kurihara witnesses. It is not the desired uniform nonvanishing theorem.
+
 ## 4. Correction of the published Kurihara coefficient modulus
 
 Castella–Sano, [§1.1.1](https://web.math.ucsb.edu/~castella/Kurihara.pdf), explicitly define
