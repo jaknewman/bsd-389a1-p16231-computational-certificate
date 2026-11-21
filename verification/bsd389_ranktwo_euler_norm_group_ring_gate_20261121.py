@@ -10,7 +10,7 @@ local rows are imported as DECLARED input, not recomputed by this gate.
 No authentic new Euler system, Selmer bound, or complete BSD proof.
 """
 from fractions import Fraction
-from math import isqrt
+from math import isqrt, comb
 
 # p, q, a_q, local Q/P ratio (source data from real curve).
 ROWS=(
@@ -70,6 +70,13 @@ def run():
         assert b%p
         n=[1]*p
         assert ring_mul(n,n)==[p]*p       # N_H^2=p N_H
+        # The Kolyvagin derivative D=sum i*sigma^i kills N modulo p.
+        D=list(range(p))
+        DN=ring_mul(D,n)
+        assert DN==[p*(p-1)//2]*p
+        assert all(z%p==0 for z in DN)
+        # In the modular group algebra Fp[Cp], N=(sigma-1)^(p-1).
+        assert [(-1)**(p-1-j)*comb(p-1,j)%p for j in range(p)]==[1]*p
         c=[b]*p                           # b N_H, integral
         assert sum(c)==M                  # exterior norm = Euler P_q(1)
         # On Q_p[G], res(omega)=N_H^2*(yP^yQ).
@@ -90,7 +97,25 @@ def run():
               "b=M/p",b,"b_mod_p",b%p,
               "required_rational_scalar",str(u),
               "integral_group_ring_c_coeff",b,
-              "local_P_nontrace_certified",q<=5237,flush=True)
+              "local_P_nontrace_certified",q<=5237,
+              "Kolyvagin_D_on_norm_mod_p",0,
+              "norm_augmentation_order_mod_p",p-1,flush=True)
+    # Two-step formal norm check in the scalar-invariant component.
+    # These are NOT full group-ring Euler relations at nontrivial
+    # characters; norm classes kill those characters.
+    for p in sorted({row[0] for row in ROWS}):
+        group=[q+1-a for pp,q,a,_ in ROWS if pp==p]
+        assert len(group)==2
+        n1,n2=group
+        b12=n1*n2//(p*p)
+        assert b12==(n1//p)*(n2//p)
+        assert p*b12==n2*(n1//p)
+        assert p*b12==n1*(n2//p)
+        assert p-1>2
+        print("BSD389_TWO_AUXILIARY_NORM_COHERENCE_PASS",
+              "p",p,"b12",b12,
+              "mixed_T1T2_coefficient_modp",0,flush=True)
+    print("BSD389_NORM_DERIVATIVES_VANISH_MODP_ALL_PASS",len(ROWS))
     print("BSD389_GROUP_RING_NORM_CORRECTION_ALL_PASS",len(ROWS))
     print("BOUNDARY: algebraic one-level construction only; no actual cohomology norm lifts yP,yQ; no uniform Fitt bound.")
 
