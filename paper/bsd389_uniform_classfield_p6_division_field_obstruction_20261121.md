@@ -1,5 +1,21 @@
 # E389a1: a class-field-theoretic p^6 obstruction to nonzero Sha[p]
 
+**CORRIGENDUM / STRENGTHENING (2026-11-21, later):**
+The restriction p!=97 in this first class-group note is UNNECESSARY.
+At 389, the split Tate parameter has valuation one, and every
+local p-Kummer point has a unit Tate representative. After restricting
+to K=Q(E[p]), adjoining its p-th root is unramified at 389,
+even when p=97 divides #F_389^*. Thus no extra strict local
+condition at 389 is needed for ANY good p>=5. Moreover one can
+replace the very large K by the tame cyclotomic-complement
+subfield F=K^{diag(1,a)} of degree p(p^2-1), obtaining the
+stronger necessary condition p^3|h(F) at nonanomalous p and
+p^2|h(F) at anomalous p, including 97. See the COMPLETE
+updated proof in
+paper/bsd389_tame_subfield_classgroup_descent_uniform_good_primes_20261121.md.
+The initial sections below are retained for provenance and state
+a WEAKER older version.
+
 Date: 2026-11-21. Status: rigorous uniform **necessary condition** for p-primary Sha at eligible p, not a proof that the necessary condition fails for all sufficiently large p.
 
 Let E/Q be the minimal curve
