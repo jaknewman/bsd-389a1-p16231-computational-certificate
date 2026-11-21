@@ -117,7 +117,7 @@ def run():
               "mixed_T1T2_coefficient_modp",0,flush=True)
     print("BSD389_NORM_DERIVATIVES_VANISH_MODP_ALL_PASS",len(ROWS))
     print("BSD389_GROUP_RING_NORM_CORRECTION_ALL_PASS",len(ROWS))
-    print("BOUNDARY: algebraic one-level construction only; no actual cohomology norm lifts yP,yQ; no uniform Fitt bound.")
+    print("BOUNDARY: formal one- and two-level norm identities only; no actual coherent H1 lifts or nontrivial Kolyvagin derivative; no uniform Fitt bound.")
 
 if __name__=="__main__":
     run()
