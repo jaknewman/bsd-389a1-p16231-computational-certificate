@@ -53,6 +53,21 @@ def pairpow(z,e,M):
         e//=2
     return r
 
+def power_exact(z,e):
+    def mul(x,y):
+        a,b=x;c,d=y
+        return (a*c-b*d,a*d+b*c-b*d)
+    r=(1,0)
+    while e:
+        if e&1:r=mul(r,z)
+        z=mul(z,z);e//=2
+    return r
+
+def cubic_safe_depth(p):
+    r=1
+    while 53**r<=2*p**9:r+=1
+    return r
+
 def efficient_global_depth_bound(p):
     # Integer proof of 53^m <= 2 p^27.
     v=0
@@ -66,7 +81,15 @@ def audit(p):
     m=valuation(D,53)
     assert m>=1
     assert 53**m <= 2*p**27
+    A,B=power_exact((a,b),18)
+    assert A and B and A-B
+    assert sum(t%53==0 for t in (A,B,A-B))==1
+    m18=valuation(A*B*(A-B),53)
+    assert m18==m and 53**m<=2*p**9
+    safe18=cubic_safe_depth(p)
+    assert safe18>m
     r=efficient_global_depth_bound(p)
+    assert safe18<=r
     assert r>m
     # Verify the correct local element exactly in O_K/(53^(m+1)).
     # w^2=-1-w, bar(pi)=(a-b)-b*w, pi/bar(pi)=pi^2/p.
@@ -82,6 +105,8 @@ def audit(p):
           "p",p,"pi",(a,b),"m",m,
           "first_regular_conductor_exponent",m+1,
           "uniform_safe_exponent",r,
+          "cubic_unit_safe_exponent",safe18,
+          "cubic_18_power_residues",(A%53,B%53),
           "v54_mod_53_to_mplus1",v54,flush=True)
     return a,b,m
 
@@ -101,6 +126,7 @@ def main():
         # by a sixth root of unity changes pi/barpi by a cubic root,
         # whose 54th power is 1.
         assert b*U and 53**m <= 2*p**27 and T*T+3*b*b==4*p
+    print("BSD389_AUX53_CUBIC_UNIT_EXACT_DEPTH_AND_SHARP_BOUND_PASS")
     print("BSD389_FIXED_AUX53_RINGCLASS_FROBENIUS_UNIFORM_PASS",
           "tested_split_primes",len(values),
           "observed_depths",sorted({v[2] for v in values.values()}))
