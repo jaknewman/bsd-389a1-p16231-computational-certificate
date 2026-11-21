@@ -230,3 +230,55 @@ LMFDB gives numerical agreement with Sha_an near 1,
 which does not identify the actual #Sha without
 the global finiteness theorem and a genuinely exact
 archimedean/integral comparison.
+
+
+## 8. A sharp uniform mod-p Selmer dimension threshold
+
+Let p>=5, p!=389. The Kummer exact sequence at level p is
+  0 -> F_p^2 -> Sel(Q,E[p]) -> Sha(E/Q)[p] -> 0.
+The p-Selmer parity theorem, in this setting of analytic
+root number +1 and MW rank two, ensures
+  dim_Fp Sel(Q,E[p]) is EVEN.
+
+Therefore a bound as weak as
+  dim_Fp Sel(Q,E[p]) <= 3
+already forces dim_Fp Sel(Q,E[p])=2 and Sha[p]=0.
+Consequently Sha[p^infty]=0 (every nonzero p-primary
+torsion group has an element of order p).
+
+**A useful all-prime sufficient criterion** is thus an explicit
+finite set S and a proof of dim_Fp Sel(E[p]) <=3 for
+every p>=5 outside S union {389}. It would yield finite
+p-support of Sha; separate p-primary finiteness at
+p in S union {2,3,389} would finish the global finiteness.
+
+This is strictly weaker-looking than calculating exact two-factor
+Kurihara numbers, but no such uniform dimension upper bound
+has been proved in the project. It must come from a genuine
+global cohomological/euler-system argument, not local
+MW determinant surjectivity.
+
+## 9. Why finitely many fixed auxiliary pairs cannot prove all-prime support
+
+For any fixed auxiliary prime q used in a p-Kurihara number,
+admissibility includes q == 1 (mod p). Hence
+  p | (q-1).
+For a fixed pair q1,q2, any admissible p divides
+  gcd(q1-1,q2-1).
+Thus a finite list of fixed pairs can certify only a
+FINITE set of p. Examples from the archive:
+
+| pair (q1,q2) | gcd(q1-1,q2-1) | eligible prime >=5 |
+|---|---:|---:|
+| (41,61) | 20 | 5 |
+| (113,673) | 112 | 7 |
+| (397,991) | 198 | 11 |
+| (1667,5237) | 238 | 7,17 |
+| (1289,3727) | 46 | 23 |
+| (369793,383917) | 1284 | 107 |
+
+Additional trace and Frobenius conditions may reduce the eligible
+set further. This elementary fact rules out extrapolating
+our finitely many archived pairs to a fixed p-independent
+certificate. A true uniform result must construct q_i=q_i(p)
+and control nonvanishing, or bypass pairwise Kurihara tests.
