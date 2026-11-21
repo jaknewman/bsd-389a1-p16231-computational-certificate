@@ -13,8 +13,8 @@ This code does NOT compute or verify the published theta values.
 from fractions import Fraction as F
 from math import gcd
 
-N={5:9,7:13,11:16}
-EXPECTED={5:(18,1,7),7:(16,46,9),11:(41,35,113)}
+N={5:9,7:13,11:16,17:24,23:28}
+EXPECTED={5:(18,1,7),7:(16,46,9),11:(41,35,113),17:(19,206,239),23:(398,209,273)}
 
 def add(P,Q):
     if P is None: return Q
