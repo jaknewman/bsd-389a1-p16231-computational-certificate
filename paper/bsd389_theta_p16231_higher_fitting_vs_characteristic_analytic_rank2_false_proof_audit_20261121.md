@@ -1,3 +1,30 @@
+> **MAJOR 2026-11-21 CORRIGENDUM — THE SELMER-SPECIFIC JORDAN BIT IS NOT MISSING.**
+> The abstract modules A/B/C below remain VALID counterexamples to a
+> claim about arbitrary Lambda-modules and characteristic ideals ALONE.
+> They CANNOT all be the genuine anticyclotomic Selmer module of
+> E389a1: Castella--Hsieh (2022) Theorem 4.1 imposes the
+> anti-equivariant derived-height filtration. Since
+> L(E^(-3),1) != 0, complex conjugation acts by +1 on
+> Sel(K,V_p E), so all ODD height jumps are zero and
+> all EVEN jumps occur with EVEN multiplicity.
+> Their formula (5.10), combined with the established
+> ONE-SIDED Bertolini--Darmon/Pollack--Weston divisibility
+> (char X_ac) ⊇ (Theta²), proves:
+>     4 <= 2*dim Sel(K,V_p E)
+>       <= ord_T(char X_ac) <= 2*ord_T Theta=4.
+> Thus the authentic J-primary Selmer has two Jordan
+> blocks of length two, and Sha[16231∞] is FINITE,
+> CONDITIONAL on correct source identification of the
+> archived full Gross theta and its exact order two.
+> There is **NO NEED** to separately construct a nontrivial
+> T-action or compute a true second Fitting presentation
+> merely to establish this p-primary finiteness.
+> The complete corrected theorem, proof and provenance
+> are in [the derived-height/Jordan (2,2) proof cut](
+> bsd389_p16231_theta2_derived_heights_FORCE_jordan22_and_sha_finite_proofcut_20261121.md).
+> The discussion below is retained to show why the
+> Selmer-specific derived-height hypothesis is indispensable.
+
 # E389a1: the exact higher-Fitting obstruction hidden by a quadratic anticyclotomic theta unit
 
 2026-11-21. **Formal theorem, explicit three-module counterexample, and audit of a recent unrefereed rank-two BSD claim.**
