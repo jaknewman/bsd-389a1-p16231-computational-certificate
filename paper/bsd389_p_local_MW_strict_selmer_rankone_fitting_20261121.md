@@ -234,3 +234,86 @@ Reference on local conditions and propagation: Bloch--Kato,
 *L-functions and Tamagawa numbers of motives*, 1990;
 see also https://math.stanford.edu/~conrad/BSDseminar/Notes/L14.pdf
 and https://www.math.keio.ac.jp/~kurihara/20.ASPMstyle.pdf .
+
+
+## 5 ter. Global finite-level local-condition bridge for the six primes
+
+We can now identify not just the chosen local Selmer structure,
+but the **standard propagated torsion Bloch--Kato structure** of
+the explicitly chosen Galois block. The following is a statement
+about Galois representations and Bloch--Kato local conditions,
+**not** the existence of a cuspidal GL(3) automorphic lift.
+
+**Theorem (for p in {5,7,11,107,599,16231}, every n>=1).**
+Put k=k_n and M=T_p(E)(-k)/p^n. Identify M with E[p^n]
+through chi_p^{-k}=1 mod p^n. For every place v of Q,
+the natural propagated Bloch--Kato subgroup of H^1(Q_v,M)
+equals the elliptic Kummer subgroup, *except at v=p*,
+where it is zero. Thus, at the level of finite Galois
+coefficients and their intrinsic propagated conditions,
+
+  Sel_BK(Q, M) ~= Sel_{p^n}^str(E/Q)
+
+and (using the locally primitive MW point P)
+
+  Sel_BK(Q,M) / M_n^str ~= Sha(E/Q)[p^n],
+  M_n^str ~= Z/p^nZ.
+
+**Proof.** The place p was settled in Section 5 bis.
+For a finite place l != p, let T'=T_p(E)(-k),
+V'=T' tensor Q_p, and A'=V'/T'.
+The twist by the p-adic cyclotomic character is unramified at l.
+
+If l != 389, E has good reduction and T' is unramified.
+The eigenvalues of geometric/arithmetic Frobenius on V'
+have complex absolute value l^(1/2-k) or l^(k-1/2),
+depending on the Frobenius convention; neither is 1,
+as k>=4. Therefore H_f^1(Q_l,V')=H_ur^1(Q_l,V')=0.
+The torsion finite condition on M is then the image of
+H^0(Q_l,A')/p^n in H^1(Q_l,M). Since T' is unramified
+and Frob_l-1 is invertible on V', the module of invariants
+A'^G is isomorphic to coker(Frob_l-1 on T'). The connecting
+map identifies
+
+  H_f^1(Q_l,M) = H_ur^1(Q_l,M).
+
+The isomorphism M~=E[p^n] preserves the unramified subgroup.
+For E of good reduction and l!=p, the usual local Kummer
+image E(Q_l)/p^n equals H_ur^1(Q_l,E[p^n]).
+Thus the desired conditions agree at all l != p,389.
+
+At l=389, E has multiplicative reduction of type I_1:
+v_389(Delta_min)=1, hence c_389=1. It is *split*
+because -c6=856 is a quadratic residue modulo 389
+(and 856 mod389=78 has Legendre symbol +1).
+The identity component has residue torus of order 388
+and the formal kernel is pro-389. None of the six
+p divides 388. Consequently E(Q_389)[p]=0
+and E(Q_389)/p^n=0 for these p.
+As chi_p^{-k}=1 mod p, the residual Galois module
+T'/p is E[p], which has no Q_389-invariants; hence
+H^0(Q_389,A')=0. Also H_f^1(Q_389,V')=H_ur^1
+(Q_389,V')=0: on the inertia-invariant line of
+the split multiplicative Tate representation the
+unramified Frobenius eigenvalue, after twisting, is
+389^(1-k) (or its inverse with geometric Frobenius),
+not 1. Thus the propagated H_f^1(Q_389,M)=0,
+agreeing with Kummer.
+
+At the real place, H^1(R,M)=0 since p is odd and the
+absolute Galois group has order 2. All local conditions
+now agree with the strict elliptic structure. QED.
+
+**Precise scope:** the proof uses the usual Bloch--Kato
+propagation from V' through A' to M, and is restricted
+at the bad place to the six p where the 389-adic
+local p-torsion is absent. The good-prime argument is
+general for p>=5 outside the bad prime. The result
+does NOT show a three-dimensional 2+1 lattice lies in
+a genuine automorphic Hecke family, nor does it show
+the reverse Fitting inequality or a nonzero determinant.
+
+Mathematical background on unramified Bloch--Kato
+and elliptic Kummer local conditions: 
+https://math.stanford.edu/~conrad/BSDseminar/Notes/L14.pdf ;
+https://virtualmath1.stanford.edu/~conrad/BSDseminar/refs/BKTamagawa.pdf .
