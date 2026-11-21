@@ -236,9 +236,16 @@ archimedean/integral comparison.
 
 Let p>=5, p!=389. The Kummer exact sequence at level p is
   0 -> F_p^2 -> Sel(Q,E[p]) -> Sha(E/Q)[p] -> 0.
-The p-Selmer parity theorem, in this setting of analytic
-root number +1 and MW rank two, ensures
+The p-infinity Selmer parity theorem (Dokchitser--Dokchitser,
+*On the Birch--Swinnerton-Dyer quotients modulo squares*,
+Ann. of Math. 172 (2010)) gives even corank for the
+divisible Sha p-primary component because the analytic
+root number is +1. The alternating Cassels--Tate
+pairing on Sha modulo its maximal divisible subgroup
+gives even F_p-dimension for the p-torsion of the finite
+quotient (p odd). Combining both with rank MW=2:
   dim_Fp Sel(Q,E[p]) is EVEN.
+See https://annals.math.princeton.edu/2010/172-1/p11 .
 
 Therefore a bound as weak as
   dim_Fp Sel(Q,E[p]) <= 3
