@@ -51,11 +51,30 @@ def dbl(J,m):
     assert on_curve(ans,m)
     return ans
 
+def near_infinity_plus_finite(near,finite,m,p):
+    # The generic Jacobian addition formula is incomplete when either
+    # input reduces to infinity modulo p. Use the invariant vector
+    # field for the elliptic formal group, exact modulo p^2.
+    X,Y,Z=near
+    assert Z%p==0 and X%p and Y%p
+    XX,YY,ZZ=finite
+    assert ZZ%p
+    zi=pow(ZZ,-1,m)
+    x=XX*zi*zi%m
+    y=YY*zi*zi*zi%m
+    t=-X*Z*pow(Y,-1,m)%m
+    assert t%p==0
+    out=((x+2*y*t)%m,(y+(3*x*x+A)*t)%m,1)
+    assert on_curve(out,m)
+    return out
+
 def add(J,K,m,p):
     X1,Y1,Z1 = J
     X2,Y2,Z2 = K
-    if Z1 % m == 0: return K
-    if Z2 % m == 0: return J
+    if Z1%p==0 and Z2%p==0:
+        raise AssertionError("ladder invariant violated: both points infinity mod p")
+    if Z1%p==0:return near_infinity_plus_finite(J,K,m,p)
+    if Z2%p==0:return near_infinity_plus_finite(K,J,m,p)
     z1sq = Z1*Z1 % m
     z2sq = Z2*Z2 % m
     u1 = X1*z2sq % m
@@ -151,6 +170,19 @@ def run():
               "p",p,"a_p",a,"N_p",npoints,
               "P_t_over_p",t_values[0],"Q_t_over_p",t_values[1],
               "Q_over_P_mod_p",coeff)
+    # p=19 forces an intermediate infinity branch in the ladder.
+    # Regression prevents false projective arithmetic at bad charts.
+    p=19
+    npoints=15
+    m=p*p
+    regression=[]
+    for x,y in GEN:
+        J=ladder(((36*x+12)%m,(216*y+108)%m,1),npoints,m,p)
+        xx,yy,zz=J
+        assert zz%p==0 and xx%p and yy%p
+        regression.append(((-6*xx*zz*pow(yy,-1,m))%m)//p)
+    assert tuple(regression)==(16,8),regression
+    print("BSD389_FORMAL_INFINITY_ADDITION_BRANCH_PASS",tuple(regression))
     print("BSD389_P_STRICT_RANK_ONE_LOCAL_GATE_PASS",
           "primes",len(PRIMES),"point_checks",count,
           "independent_rational_checks",6)
