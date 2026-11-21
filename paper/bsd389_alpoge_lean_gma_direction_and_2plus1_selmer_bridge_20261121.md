@@ -99,3 +99,15 @@ For minimal model y^2+y=x^3+x^2-2x, b2=4, b4=-4, b6=1, b8=-3, c4=112 and discrim
 Try to locate a *2+1 Eisenstein/congruence* construction (e.g. Klingen-type lift) whose mod-p offdiagonal cocycle is E[p], then test the **direction of its Selmer/Fitting bound**, and only then ask for a single p-independent determinant and slope bound.
 
 This precisely corrects the over-optimistic transfer 'RH determinant -> E Sha' and preserves the rigorous structural insight of the Lean GMA proof.
+
+## 8. New exact Hodge–Tate regularity obstruction for the 2+1 candidate
+
+The rational p-adic representation V_p(E) has Hodge–Tate weights 0 and 1 in a cohomological convention (or 0 and -1 in the dual Tate-module convention). Its trivial 1-dimensional companion has weight 0, so the natural 3-dimensional direct sum V_p(E) plus Q_p has a repeated Hodge–Tate weight 0. It is **not regular**. Thus it is NOT an immediate instance of the regular algebraic GL3 cuspidal automorphic representation theorem invoked for the RH construction.
+
+More generally take R_p(a,b)=V_p(E)(a) direct_sum Q_p(b) with fixed integer Tate twists a,b. The upper-right Galois module of ad(R_p(a,b)) is V_p(E)(a-b). To keep it isomorphic to the untwisted V_p(E) as a p-adic Galois representation one must have a=b: comparing determinants forces cyclotomic^(2(a-b))=1, and the p-adic cyclotomic character has infinite image. But a=b leaves the original Hodge–Tate weight repeated, so the 3-dimensional sum is not regular.
+
+If a!=b removes the repeated weight, the upper-right coefficient is the **wrong twisted motive** V_p(E)(a-b). At the residual mod-p level one could choose a-b divisible by p-1, making cyclotomic^(a-b) trivial mod p; this does not identify the p-infinity Selmer conditions, and choosing such a nonzero twist for all arbitrarily large p requires a twist that depends on p. No fixed nonzero integer k has (p-1)|k for all large p. In fact even an isom of residual representations V[p](k)~V[p] requires (p-1)|2k by determinants, which is impossible for all sufficiently large p unless k=0.
+
+**Precise repair needed:** a nonregular/Eisenstein automorphic deformation and an integral Selmer comparison compatible with the E[p] upper-right block, or a derived comparison that corrects the Tate twist; regular-algebraic GL3 alone does not supply this.
+
+Sources for the regularity/Hodge–Tate distinction: Michael Harris, Takagi notes (https://webusers.imj-prg.fr/~michael.harris/Takagi.pdf); contemporary background on regular algebraic automorphic Galois representations https://arxiv.org/abs/2607.11763 .
