@@ -205,3 +205,27 @@ Sources:
   https://londmathsoc.onlinelibrary.wiley.com/doi/10.1112/jlms.12563
 - Project's previous p6 criterion:
   paper/bsd389_uniform_classfield_p6_division_field_obstruction_20261121.md
+
+
+## Nonzero class groups are forced by the proven MW rank itself
+
+Even when Sha[p]=0, if p is nonanomalous then
+dim Sel(Q,E[p])>=2, r_p=1, and Theorem B gives
+  rank_p Cl(F_p)>=1.
+Therefore **p divides h(F_p) for EVERY nonanomalous
+good p>=5**, independently of any conjectural Sha
+component. A blanket hope that p does not divide
+this class number for sufficiently large p is
+mathematically impossible for this curve.
+
+The useful separating threshold is p-rank <=2,
+not rank zero. To prove such a bound uniformly
+one would need to distinguish the forced
+Mordell--Weil class from every additional
+unramified p-extension of F_p, including those
+which have nothing to do with Sha(E).
+
+This is precisely why the new class-field criterion,
+although smaller and more uniform, remains
+a NECESSARY obstruction and not a missing
+elementary final step to the BSD theorem.
