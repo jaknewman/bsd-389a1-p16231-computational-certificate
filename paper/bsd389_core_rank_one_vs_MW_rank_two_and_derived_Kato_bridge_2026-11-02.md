@@ -1,3 +1,21 @@
+> **SOURCE AUDIT CORRECTION (2026-11-21).** The original
+> summary below describes Burns--Kurihara--Sano's
+> "order of vanishing" assertion as unconditional in arbitrary rank.
+> Their published Theorem 1.3 **explicitly assumes the
+> finiteness of Sha(E/F)[p-infinity]** in condition (b);
+> Section 4 also globally assumes the finiteness of
+> Sha(E/Q)[p-infinity] (printed page 876).
+> Their higher-rank Bockstein/leading-term comparison
+> must therefore NOT be used to prove that same finiteness.
+> The unconditional route relevant to E389a1 is instead
+> Castella--Sano Theorem B plus Kim Theorem 3.11:
+> genuine derived Kato classes with nonzero mod-p
+> local dual exponential exist at some squarefree
+> auxiliary conductor at each good nonanomalous prime.
+> This does NOT force auxiliary degree TWO.
+> Full proof and exact source references:
+> [2026-11-21 derived Kato local transversality](bsd389_unconditional_derived_Kato_local_transversality_at_all_nonanomalous_primes_20261121.md).
+
 # E389a1: core rank one versus Mordell–Weil rank two — precise Kato derivative bridge
 
 Date: 2026-11-02. New source-based mathematical obstruction to a naive application of rank-two Euler systems.
