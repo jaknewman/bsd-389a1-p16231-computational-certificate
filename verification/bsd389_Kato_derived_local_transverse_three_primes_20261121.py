@@ -12,7 +12,8 @@ unknown normalization unit u_n, and proves no uniform two-factor witness
 or global Sha finiteness.
 """
 from hashlib import sha256
-from math import isqrt
+from math import isqrt, gcd
+from fractions import Fraction as F
 
 P=389
 DIGITS=(
@@ -80,10 +81,44 @@ def ap(q):
             s+=1 if z==1 else -1
     return -s
 
+def add_rational(A,B):
+    if A is None:return B
+    if B is None:return A
+    x,y=A;u,v=B
+    if x==u and y+v==-1:return None
+    lam=((3*x*x+2*x-2)/(2*y+1)
+         if A==B else (v-y)/(u-x))
+    xx=lam*lam-1-x-u
+    yy=lam*(x-xx)-y-1
+    assert yy*yy+yy==xx*xx*xx+xx*xx-2*xx
+    return xx,yy
+
+def mul_rational(A,n):
+    R=None
+    while n:
+        if n&1:R=add_rational(R,A)
+        A=add_rational(A,A)
+        n//=2
+    return R
+
+def local_MW_P_primitive(p):
+    order=p+1-ap(p)
+    R=mul_rational((F(-1),F(1)),order)
+    assert R is not None
+    x,y=R
+    t=-x/y
+    assert gcd(t.denominator,p*p)==1
+    tm=t.numerator*pow(t.denominator,-1,p*p)%(p*p)
+    assert tm%p==0
+    coefficient=tm//p
+    assert coefficient=={5:3,7:2,11:8}[p],(p,coefficient)
+    return coefficient
+
 def verify(p,q1,q2,delta_expected):
     assert all(is_prime(q) and q%p==1 and q!=P for q in (q1,q2))
     assert ap(p)=={5:-3,7:-5,11:-4}[p]
     assert (p+1-ap(p))%p!=0     # nonanomalous -> local E(Qp)[p]=0
+    primitive_coefficient=local_MW_P_primitive(p)
     assert all((q+1-ap(q))%p==0 for q in (q1,q2))
     g1,log1=dlogs(q1,p);g2,log2=dlogs(q2,p)
     n=q1*q2
@@ -110,6 +145,8 @@ def verify(p,q1,q2,delta_expected):
           "half_units",num,"total_units",2*num,
           "roots",(g1,g2),"moments",moment,
           "nonanomalous",True,"local_torsion_exponent_t",0,
+          "P_local_Kummer_primitive_coefficient",primitive_coefficient,
+          "Kummer_P_plus_derived_Kato_form_local_H1_basis",True,
           "expstar_kappa_n_mod_p","UNKNOWN_UNIT_TIMES_"+str(delta_expected),
           flush=True)
 
@@ -122,7 +159,7 @@ def run():
     # mu invariant 0, and a NONUNIT degree-two coefficient.
     for p in (5,7,11,17,23,107):
         f={2:p,3:1}
-        assert min(v%p==0 for v in f.values())==False
+        assert any(v%p!=0 for v in f.values())
         assert f[2]%p==0 and f[3]%p==1
     print("BSD389_IMC_PRIMITIVITY_DOES_NOT_FORCE_DEGREE_TWO_UNIT_PASS")
     print("BSD389_KATO_DERIVED_TRANSVERSE_TEST_ALL_PASS")
