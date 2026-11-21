@@ -42,47 +42,72 @@ Consequently
 
 This is **unit nonvanishing**, stronger than just finiteness.
 
-## p=11: a separate published theta-order-2 route
+## p=11: unit ideal, via a fully authenticated two-prime Kurihara witness
 
-F. Castella--M.-L. Hsieh, *On the non-vanishing of generalised
-Kato classes for elliptic curves of rank two*, Forum Math. Sigma
-10 (2022), Theorems A, B, Appendix §6, Table 1,
-https://web.math.ucsb.edu/~castella/Kato.pdf
+A weaker independent argument comes from F. Castella--M.-L. Hsieh,
+*On the non-vanishing of generalised Kato classes for elliptic
+curves of rank two*, Forum Math. Sigma 10 (2022), Table 1,
+Theorems A and B: for E389a1, p=11, K=Q(sqrt(-2)), the theta
+series begins 10*T^2+69*T^3+... modulo (11^2,T^11).
+Their theorem implies rational Selmer dimension 2, hence the
+**finiteness** of Sha[11-infty]. It does not give its order or
+prove triviality.
 
-Their table states for E389a1, p=11 and K=Q(sqrt(-2)):
+A *strictly stronger existing archive*, found on branch
+  proof/p11-local-and-kurihara-scalar-veto-2026-11-13,
+contains a completed **user-run Sage/eclib** proof:
+  results/bsd389_p11_kurihara_397x991_FULL_USER_PASS_2026-11-14.md
+records the full 392040-unit calculation
+  delta_{397*991} = 1 mod 11,
+  moments = (0,0,0,1),
+  half-sum = 6 and 2*6=1 modulo 11.
+This was ALREADY DONE on 14 November 2026 and must not be
+presented as a first discovery on 21 November.
 
-   Theta_{f/K}(T) mod (11^2,T^11)
-    = 10 T^2 + 69 T^3 + T^4 + 103 T^5 + 106 T^6
-      + 66 T^7 + 117 T^8 + 55 T^9 + 110 T^10.
+The existing separate hypothesis audit checks:
+- residual mod-11 image GL_2(F_11);
+- Manin constant 1, hence 11-unit;
+- E(Q_11)[11]=0 because #E(F_11)=16;
+- c_389=1; and
+- admissible q397,q991 with q=1 mod11,
+  a_q=2 mod11 and 11 exactly divides #E(F_q).
+Kim's Theorem 1.8 then yields
+   Sha(E/Q)[11-infty] = 0.
+Consequently the **unit** ideal, stronger than nonzero:
+   Fitt_{1,Z_11}(X_11^str) = Z_11.
 
-In particular ord_T Theta_{f/K}=2 (assuming the cited published
-Sage/Brandt computation is correct). Their Appendix explicitly
-states the example is within the hypotheses of Theorems A and B,
-with the needed auxiliary CM character supplied by standard
-existence results. Arithmetic crosschecks:
-  - (-8/11)=+1: p=11 splits in K;
-  - (-8/389)=-1: conductor prime 389 inert in K;
-  - a_11(E)=-4: good ordinary since 11 does not divide a_11;
-  - E[11] irreducible and ramified at 389 (non-CM
-    semistable rational 11-isogeny exclusion and v_389(Delta)=1).
+A new 21 November independent pure-Python calculation using the
+frozen 390-symbol Manin vector and exhaustive continued
+fractions has reproduced that archived pair and found
+TWO ADDITIONAL unit pairs:
 
-Theorem B: ord_T Theta=2 implies nonzero generalized Kato class.
-Theorem A: this nonzero class implies
-  dim_{Q_11} Sel(Q,V_11 E) = 2.
-The proved rank of E(Q) is 2. The p-infty Kummer exact
-sequence then gives corank_Z11 Sha[11-infty]=0; cofinite
-generation yields **Sha[11-infty] finite**.
+| q1 | q2 | phi(q1*q2) | M00,M10,M01,M11 (mod 11) | MW determinant |
+|---:|---:|---:|---|---:|
+| 397 | 991 | 392040 | 0,0,0,1 | 8 |
+| 397 | 1321 | 522720 | 0,0,0,9 | 3 |
+| 991 | 1321 | 1306800 | 0,0,0,10 | 6 |
 
-Therefore
+Finite-field traces: a397=24, a991=-53, a1321=2.
+The local Mordell--Weil rows on P=(-1,1), Q=(0,-1) are
+(1,10), (1,7), (1,2) respectively. All group orders have
+exact 11-valuation one. For the three pairs the inverse
+pair half-sums are 6,10,5 and double to 1,9,10 mod11.
 
-    Fitt_{1,Z_11}(X_11^str) != 0.
+Verification:
+  verification/bsd389_p11_three_kurihara_independent_standard_python_20261121.py
+is a plain-Python, nontruncated complete audit. Its 390-entry
+source vector is SHA256 pinned, but the script does NOT
+independently recompute it from Sage/eclib. For the 397x991
+pair the earlier user-run Sage calculation provides that
+independent normalization evidence; the two newly discovered
+pairs should be crosschecked by Sage if separately published.
+**The p11 Sha theorem already follows from the archived pair**;
+the other two pairs add redundancy, not a logically needed
+assumption.
 
-We do NOT know its 11-adic valuation from this theta-order-2
-criterion. In particular **10 mod 11 is a unit as a theta
-coefficient but is NOT evidence that Fitt_1 is the unit ideal**.
-An integral leading-term formula with the correct regulator,
-Tamagawa and comparison factors would be needed to deduce that.
-This is a genuine nonvanishing, not a new proof of Sha[11]=0.
+A unit of the quadratic theta coefficient in Castella--Hsieh
+is **not** a unit Fitting proof; it is the genuine Kurihara/Kim
+input that upgrades finiteness to vanishing.
 
 ## New explicit arithmetic: the strict MW generator at p=5,7,11
 
@@ -170,9 +195,9 @@ No order of Sha[16231-infty] or Sha-triviality is derived.
 
 ## What is next, without circularity
 
-For p=11 the primary source already gives actual rational
-Selmer dimension two: a nonzero Fitt_1 exists without a
-new GMA construction. For p=16231 a **single exact global
+For p=11 the archived full two-prime Kurihara witness plus
+Kim already proves Sha[11-infty]=0 and hence Fitt_1=Z_11;
+the published theta argument independently gives finiteness. For p=16231 a **single exact global
 identification with the published theta** is the last
 source-specific gate to the same rational finiteness
 conclusion. Neither helps by itself for infinitely many p.
