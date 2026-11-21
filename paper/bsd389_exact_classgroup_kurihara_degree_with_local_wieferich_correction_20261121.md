@@ -195,3 +195,54 @@ analysis is needed.
 
 The exact complex BSD leading-term equality
 is a separate obligation.
+
+
+## A finer necessary divisibility, including the local correction
+
+The G-equivariant surjection
+  Cl(K)/p -> E[p]^{(+d_p)}
+proved by the elementary irreducible-quotient argument
+in the companion full-division-field note shows
+  p^(2d_p) | h(K).
+
+The tame subfield F=K^{diag(1,a)} receives an injective
+covector descent of d_p independent class homomorphisms,
+so
+  p^(d_p) | h(F).
+
+By d_p=2+s_p-epsilon_p:
+
+- if Sha[p]!=0, then s_p>=2, so d_p>=3;
+  hence p^6|h(K) and p^3|h(F) (the earlier bounds);
+- if additionally epsilon_p=0, then d_p>=4, so
+  p^8|h(K) and p^4|h(F);
+- if Sha[p]=0, then d_p is 1 or 2 depending
+  on the *local MW primitivity*. Even though Sha=0,
+  p|h(F) always, and if BOTH saturated global
+  MW generators vanish in E(Q_p)/p then
+  d_p=2 and already p^2|h(F), p^4|h(K).
+
+The last bullet explains why the 2024 Ray--Weston
+quoted universal upper d<=1 for rank-two,
+Sha-trivial curves must NOT be used without verifying
+its actual published hypotheses/version. The
+local elliptic-Wieferich phenomenon is an independent
+possible source of a second class-group copy.
+
+## The exact requirement to obtain finite global prime support
+
+For every sufficiently large NONANOMALOUS p, proving
+  d_p<=2
+is equivalent to proving Sha[p]=0 by the theorem.
+But non-CM elliptic curves can have anomalous primes,
+and their finiteness for a fixed curve is not known.
+Consequently an all-nonanomal tail result, even if
+obtained, is NOT by itself a global finite-prime-support
+theorem; a separate argument must cover anomalous
+p, for example the earlier sufficient class-group
+rank bound for F_p at anomalous primes or a
+different p-uniform Selmer/Euler-system bound.
+
+No known unconditional bound in the cited
+Prasad--Shekhar, Ray--Weston, Kim or Castella--Sano
+results implies the required eventual d_p<=2.
