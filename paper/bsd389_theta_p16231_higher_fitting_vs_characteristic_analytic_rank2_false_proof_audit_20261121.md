@@ -252,3 +252,72 @@ nonzero rational/integral bound. No such
 uniform arithmetic element is currently
 constructed. The complex exact BSD
 leading-term comparison is also separate.
+
+
+## 6. Stronger one-bit sufficient criterion: prove a nontrivial algebraic Bockstein/Jordan block
+
+Assume for THIS PARAGRAPH ONLY:
+(A) an actual anticyclotomic Selmer dual M of E/K is a
+    finitely generated torsion Lambda-module with
+    char_Lambda(M)=(T^4) (as would follow from the
+    correctly normalized theta and an appropriate full
+    main conjecture);
+(B) a TRUE rational control theorem gives
+    M/(T)M tensor Q_p ~= X_p(E/K) tensor Q_p;
+(C) E(K) has MW rank 2 and the p-Selmer corank
+    over K is even (for p odd this follows here
+    from decomposing E over K into E and its
+    quadratic twist, with their individually
+    proven Q-parity properties).
+
+Then set W=M tensor_{Z_p} Q_p. The absence of p-power
+char factors and the characteristic polynomial
+T^4 imply W is 4-dimensional over Q_p, with
+T acting nilpotently (Jordan blocks all at zero).
+Write b for the number of T-Jordan blocks and
+j for rank_{Q_p}(T:W->W). Rank-nullity gives
+    b=dim_{Q_p}(W/TW)=4-j.
+
+By the rational control theorem, b is the p-Selmer
+corank of E/K, hence b>=2 (MW rank) and b is even.
+Since b<=4, we have **b in {2,4}**.
+
+Therefore the following remarkable equivalence holds
+under the stated genuine arithmetic inputs:
+
+   **T acts NONTRIVIALLY on W  <=> b=2
+       <=> Sha(E/K)[p^infty] is finite.**
+
+More quantitatively:
+- T=0 on W => b=4; the Selmer has excess
+  corank 2 and Sha(E/K)[p^infty] infinite.
+- T!=0 on W => j>=1, b<=3; parity forces
+  b=2 (hence j=2), and Sha finite.
+
+This is an EXACT ONE-BIT arithmetical certificate
+rather than a full determinant calculation:
+one need only exhibit ONE actual Selmer Iwasawa
+cohomology class x, not killed by multiplication
+by gamma-1 after inverting p.
+
+But the word "actual" is indispensable: the
+nontrivial T-variation of the ANALYTIC theta
+does NOT prove nontrivial T-variation of the
+ALGEBRAIC Selmer module without a derived
+comparison or some extension-class calculation.
+Indeed modules A and B have the same theta-based
+characteristic ideal, but T acts nontrivially
+on A and zero on B.
+
+This one-bit criterion is CONDITIONAL on (A)-(C);
+the present work does NOT establish the
+underlying arithmetic comparison. It is a
+genuinely weaker *target* than computing the
+entire Fitt2 determinant once char=(T^4)
+and p-Selmer parity are supplied.
+
+For rank 2 and p=16231, E^(-3)(Q) has rank 0
+by the project’s archived twist L-value/rank-zero
+certificate, so rank E(K)=2. The exceptional
+Gross source-normalization cut remains to be
+independently closed before asserting (A).
