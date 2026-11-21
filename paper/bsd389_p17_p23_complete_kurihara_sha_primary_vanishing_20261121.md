@@ -90,11 +90,26 @@ at primes for which the MW localization is primitive,
 
   Fitt_1(X_p^str) = Z_p.
 
-The local primitivity of P at p=17,23 is not implied by auxiliary
-q1,q2 local matrices. It must be checked separately before
-using this exact *p-local strict* Fitting identity at p=17,23.
-However, ordinary full Selmer Fitt_2 is already the unit ideal
-from Sha[p^infty]=0 even without that additional p-local check.
+The separate exact rational local formal-group test is now also
+completed for BOTH new p:
+  p=17: #E(F17)=24, t([24]P)/17 = 2 mod17,
+        t([24]P)/17=19 mod17^2,
+        t([24]Q)/17=206 mod17^2,
+        log_17(Q)/log_17(P)=239 mod17^2.
+  p=23: #E(F23)=28, t([28]P)/23 = 7 mod23,
+        t([28]P)/23=398 mod23^2,
+        t([28]Q)/23=209 mod23^2,
+        log_23(Q)/log_23(P)=273 mod23^2.
+Thus P is a p-adic local primitive MW generator for BOTH p,
+at every p^n; the strict Selmer exact theorem applies. As
+Sha[p^infty]=0 by the Kurihara/Kim witness, this proves:
+   Fitt_{1,Z_17}(X_17^str)=Z_17;
+   Fitt_{1,Z_23}(X_23^str)=Z_23.
+Verification: updated
+  verification/bsd389_local_strict_line_p2_rational_20261121.py
+which computes formal parameters by exact rational group law and
+reduces modulo p^3. This is wholly independent of the modular-symbol
+Kurihara calculation.
 
 ## 5. Computational provenance and limits
 
