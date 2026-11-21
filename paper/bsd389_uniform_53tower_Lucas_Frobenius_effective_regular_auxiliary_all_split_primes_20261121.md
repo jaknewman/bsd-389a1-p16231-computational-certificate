@@ -228,3 +228,92 @@ the exact complex BSD leading term therefore
 remain mathematically separate, although this
 paper makes the AUXILIARY choice uniform on
 the infinite split/ordinary subfamily.
+
+
+## 7. Stronger theorem exploiting the global cubic CM units: exponent 18, NOT 54
+
+The elementary conductor estimate in Theorem 3 can be
+**improved by a factor of THREE in its logarithmic exponent**
+by working modulo the global cubic units from the start.
+
+**Theorem 5 (improved exact Frobenius valuation and effective bound).**
+For every split rational prime q as above, compute the **18th**
+power (only 18 ring multiplications/power operations):
+  pi^18=A+B omega, with A,B in Z.
+Exactly ONE of the three integers
+  A, B, A-B
+is divisible by 53. None is zero. Then
+
+  **m_q=v_53(A*B*(A-B))**, and
+  **53^(m_q) <= 2 q^9**.
+
+Therefore every primitive 53-primary ringclass
+character of conductor 53^r is regular at q
+as soon as
+  **53^r > 2 q^9**.
+
+**Proof (including the subtle cubic-unit normalization).**
+The residual unit ratio u=pi/pi_bar lies in the
+norm-one subgroup of F_(53²)^×, of order 54.
+Thus u^18 reduces to one of the three cubic
+roots of unity: zeta in {1,omega,omega²}.
+Their reductions remain distinct because 53!=3.
+
+Write pi^18=A+B omega and
+pi_bar^18=(A-B)-B omega.
+One obtains the THREE EXACT integral identities:
+ if zeta=1:
+  pi^18-zeta*pi_bar^18=B*(1+2omega);
+ if zeta=omega:
+  pi^18-zeta*pi_bar^18=(A-B)*(1-omega);
+ if zeta=omega²:
+  pi^18-zeta*pi_bar^18=A*(2+omega).
+The three parenthetical factors all have
+absolute norm 3, so are units at 53.
+Exactly one identity has a difference divisible
+by 53; the other two do not. Since pi is a 53-unit,
+A,B,A-B cannot vanish simultaneously modulo53,
+so exactly one among them is divisible by53.
+
+Set x=u^18/zeta; it satisfies x=1 mod53.
+Since 3 is a 53-unit:
+ v_53(u^54-1)=v_53(x³-1)=v_53(x-1)
+             =v_53(pi^18-zeta*pi_bar^18).
+The last valuation is exactly v_53(A B (A-B))
+because exactly one factor is 53-divisible.
+This equals the earlier Lucas invariant
+v_53(b U_54), and is independent of pi and
+reciprocity orientation.
+
+The nonzero algebraic integer
+D=pi^18-zeta*pi_bar^18 has complex absolute
+value |D|<=2q^9. As D/53^(m_q) is a
+nonzero algebraic integer in the imaginary
+quadratic ring O_K, its complex absolute value
+is at least 1. Thus
+  53^(m_q)<=|D|<=2q^9. QED.
+
+This bound is a **genuine gain** from the
+global CM cubic-unit quotient, rather than a
+numerical improvement from increasing precision.
+
+Selected exact arithmetic:
+  q=7:    m=1, first regular r=2, safe r=5;
+  q=1297: m=2, first regular r=3, safe r=17;
+  q=2383: m=3, first regular r=4, safe r=18;
+  q=4423: m=2, first regular r=3, safe r=20.
+
+For comparison, the old 54-power bound gives
+safe r=14,49,54,58 respectively. Exact m+1
+is the best conductor level for LOCAL regularity;
+the safe formula bounds it without finding pi.
+There is no claim of an effective conductor bound
+for the simultaneous analytic Rankin nonvanishing,
+whose finite exceptional-character set is not
+effectively bounded by Theorem D.
+
+The companion test script now also computes
+A,B via O_K arithmetic at exponent 18,
+independently cross-checks the U_54 recurrence
+and the 53-adic local ring-power criterion,
+and verifies the improved bound for all examples.
