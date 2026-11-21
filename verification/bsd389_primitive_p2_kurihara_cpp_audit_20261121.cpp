@@ -48,12 +48,19 @@ void run(int p,int q1,int q2,int g1,int g2){
         if(x==0||y==0)continue;
         int v=manin(a,n,p),u=L1[x],w=L2[y];
         assert(u>=0&&w>=0);
+        if(a<128 || a%1000033==0){
+            assert(manin(n-a,n,p)==v);
+            assert(L1[q1-x]==u && L2[q2-y]==w);
+        }
         M[0]=(M[0]+v)%p;M[1]=(M[1]+u*v)%p;
         M[2]=(M[2]+w*v)%p;M[3]=(M[3]+u*w*v)%p;
         count++;
     }
     assert(2*count==(long long)(q1-1)*(q2-1));
     for(auto &m:M)m=2*m%p;
+    if(p==5&&q1==41&&q2==61)assert(M[0]==0&&M[1]==0&&M[2]==0&&M[3]==4);
+    if(p==5&&q1==61&&q2==991)assert(M[0]==0&&M[1]==0&&M[2]==0&&M[3]==3);
+    if(p==7&&q1==2423&&q2==8597)assert(M[0]==0&&M[1]==0&&M[2]==0&&M[3]==5);
     cout << "BSD389_P2_PRIMITIVE_KURIHARA_COMPLETE p="<<p<<" q="<<q1<<","<<q2<<" checked="<<count
     <<" total="<<2*count<<" moments="<<M[0]<<","<<M[1]<<","<<M[2]<<","<<M[3]<<"\n";
 }
