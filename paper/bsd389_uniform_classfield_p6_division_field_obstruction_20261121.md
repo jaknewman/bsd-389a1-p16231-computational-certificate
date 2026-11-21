@@ -95,3 +95,47 @@ The right-hand side is an actual integer arithmetic upper bound, derived without
 Mathematical predecessors: Dipendra Prasad and Sudhanshu Shekhar, *Relating Tate-Shafarevich group of an elliptic curve with class group*, and follow-up papers on class groups of torsion fields. Their Selmer/class-group inequality provides the key idea; the above p^4/p^6 specialization and explicit 389-adic torus condition are its application to E389a1.
 
 Primary reference: https://mathweb.tifr.res.in/conferences/mpnts2020/nts2020/Dipendra_Prasad.pdf , main theorem/slides 2020 (semistability, residual irreducibility, Selmer and class-group comparison). Additional background: https://www.sciencedirect.com/science/article/pii/S0022314X24001434 .
+
+
+## Precise sufficient uniform statement (conditional, and currently unproved)
+
+Let S be a finite set of primes containing {2,3,97,389}. Assume
+there is a number B such that, for all good p>B with p not in S,
+
+* if p does not divide #E(F_p), then p^6 does NOT divide h(Q(E[p]));
+* if p divides #E(F_p), then p^4 does NOT divide h(Q(E[p])).
+
+Then Sha(E/Q)[p]=0 for every such p. By p-primary torsion,
+Sha(E/Q)[p^infty]=0. It follows that Sha has FINITE PRIME
+SUPPORT. If the finitely many residual p-primary groups are
+separately known finite, then the ENTIRE Sha is finite.
+
+The displayed hypotheses are entirely ordinary number-field
+class-number assertions and do not themselves mention Sha.
+They are not known and are genuinely stronger than the
+statement we wish to prove, since the V-isotypic class group
+may contain classes unrelated to elliptic Selmer.
+
+A basic size warning: when the mod-p image is GL2(F_p),
+  [Q(E[p]):Q]=(p^2-1)(p^2-p).
+For p=5,17,23,16231 these degrees are respectively
+  480, 78336, 267168, 69399181987336800.
+Therefore this criterion is principally a target for
+a NEW structural class-number theorem; computing
+the whole class number separately for large p is not a
+viable uniform algorithm.
+
+The field K contains Q(mu_p), so the root discriminant
+of K is already at least
+  p^((p-2)/(p-1)).
+This grows with p. Classical discriminant/root-discriminant
+lower bounds for high-degree unramified extensions therefore
+do not by themselves force the absence of unramified
+p-extensions as p grows. In particular do NOT infer the
+desired p^6 nondivisibility merely from Hermite--Minkowski
+or Brauer--Siegel.
+
+**VERDICT:** We have proved a genuinely uniform arithmetic
+necessary condition on a different family of finite groups,
+not an unconditional tail theorem. Claiming global Sha
+finiteness here would be circular.
