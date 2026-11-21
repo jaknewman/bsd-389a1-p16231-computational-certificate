@@ -1,3 +1,21 @@
+> **IMPORTANT AUDIT CORRECTION — 2026-11-21, later:**
+> The unqualified Theorems 1--3 below **must not be cited as proved
+> uniformly for all good nonanomalous primes**. The Prasad--Shekhar
+> arXiv Theorem 4.1 invokes a further wild-ramification assumption
+> at ordinary nonanomalous p; the published stronger inequality cited
+> by Ray--Weston has distinct hypotheses and cannot be conflated with
+> that older arXiv bound.
+> The rigorously unconditional conclusion currently retained is
+> the injection from p-strict Selmer into the unramified class-group
+> quotient, and the *two-defect* identity
+> \(d_p=\mu_p-\varepsilon_p+\eta_p\), \(\eta_p\ge0\).
+> Consequently the formula \(\mu_p=2\lceil d_p/2\rceil\) below
+> is **conditional**, not an established all-good-prime theorem.
+> The full audited scope and conditional strengthening appear in
+> [the revised wild-inertia note](bsd389_classgroup_wild_inertia_precise_hypotheses_and_two_defects_20261121.md).
+> The remainder is retained as a historical argument for audit, not
+> as an unconditional input to a BSD proof.
+
 # E389a1: exact class-group/Kurihara degree identity with a local Wieferich correction
 
 Date: 21 November 2026. This note **corrects** a too-strong assertion
