@@ -298,3 +298,84 @@ augmentation-ideal Galois module with diagonal
 action; one must keep the integral Galois action
 of the induced representation, not treat I_H as
 a trivial module.
+
+
+## 9. Conditional ALL-LEVEL norm-coherent construction, and why it still cannot be primitive
+
+The Section 3 argument extends beyond one auxiliary prime,
+and this sharpens the distinction between EULER NORM RELATIONS
+and PRIMITIVITY of the resulting Kolyvagin system.
+
+Fix p>=5 and a finite set S of distinct p-admissible
+auxiliary primes q with p||M_q=#E(F_q) and p|(q-1).
+Let L_q/Q be the cyclic degree-p subfield of Q(mu_q),
+and let F_S be their compositum. Since the conductors
+q are distinct, G_S=Gal(F_S/Q)=(C_p)^S, with
+R_S=Z_p[G_S] and N_S=sum_{g in G_S}g.
+Put b_q=M_q/p in Z_p^×.
+
+ASSUME the existence of a collection of integral classes
+  y_{i,S} in H^1(O_{F_S,S(F_S)},T_p(E)), i=P,Q,
+with y_{P,empty}=kappa(P), y_{Q,empty}=kappa(Q),
+and every transition satisfying
+  Cor_{F_S/F_{S\{q\}}}(y_{i,S})=y_{i,S\{q\}}.
+This is a STRONG arithmetic universal-norm hypothesis
+and is NOT proved by the present project.
+
+Define in the R_S exterior square
+  c_S=(prod_{q in S}b_q)*N_S*
+                  (y_{P,S} wedge_{R_S} y_{Q,S}).
+
+**Algebraic theorem.** For every q in S,
+  Cor^{(2)}_{F_S/F_{S\{q\}}}(c_S)
+    =M_q*c_{S\{q\}}
+    =P_q(Frob_q^{-1})*c_{S\{q\}}.
+Hence these elements satisfy ALL the required higher-rank
+Euler norm equations under the stated universal-norm
+hypothesis, and are integral at every level.
+
+Proof. Let S'=S\{q\}. The natural map R_S->R_{S'}
+augments the new C_p-factor, and sends N_S to p N_{S'}.
+Each y_i descends by assumption. Therefore
+  Cor^{(2)} c_S
+    =p*(prod_{r in S}b_r)*N_{S'}*
+                      (y_{P,S'} wedge y_{Q,S'})
+    =M_q*c_{S'}.
+For general S', Frobenius of q in G_{S'} need NOT be
+the identity. However c_{S'} is fixed by G_{S'}
+because N_{S'} is a global norm element; hence
+  P_q(Frob_q^{-1}) c_{S'}=P_q(1)c_{S'}=M_q*c_{S'}.
+This point avoids an incorrect scalarization of Euler
+polynomials on arbitrary non-invariant Euler classes.
+QED.
+
+**Two-prime numerical example** p=5:
+M_41=45, M_61=70, b_41=9, b_61=14.
+At the level F_{41}F_{61} the integral coefficient is
+  b_41*b_61=126, i.e. c_{41,61}=126*N_41*N_61*wedge(yP,yQ).
+Corestricting from the two-prime level to F_41
+multiplies this coefficient by 5:
+  5*126=630=70*9 = M_61*b_41,
+as required. Corestricting down to Q gives
+  25*126=3150=45*70.
+The program also checks the same identities at p=7,11,17,
+23,107 using archived true q,a_q input.
+
+**Nonprimitivity nevertheless survives at ALL levels.**
+Modulo p:
+  N_S=prod_{q in S}(sigma_q-1)^(p-1).
+Every q-derivative D_q with augmentation divisible by p
+annihilates this pure-norm element modulo p. Its mixed
+two-variable degree-two coefficient is zero.
+
+Thus even a hypothetically norm-coherent integral rank-two
+Euler system constructed ONLY in the invariant norm-image
+is insufficient to yield a unit rank-two Kurihara witness
+or a nonzero uniform Fitt_2. Its existence and its
+p-primitivity are genuinely different arithmetic tasks.
+
+The only credible next mechanism must add classes with
+NONTRIVIAL group-ring augmentation/character components;
+these cannot be manufactured by scalar rescaling of
+MW wedges. The source-to-Selmer Fitting comparison and
+p-uniform integrality then remain to be proved.
