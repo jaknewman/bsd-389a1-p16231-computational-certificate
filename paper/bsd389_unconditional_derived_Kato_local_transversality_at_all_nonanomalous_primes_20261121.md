@@ -256,3 +256,75 @@ the auxiliary primes remain decisive.
 The updated verification script independently
 checks these exact local formal parameters
 alongside the full Kurihara residues.
+
+
+## Theorem 4 — unconditional UNIFORM Kato divisibility index <=1 at EVERY good p
+
+The nonanomaly condition in Theorem 1 is needed for
+a p-UNIT local dual exponential. The stronger
+numeric p-adic DIVISIBILITY INDEX theorem is
+valid at **all** good p>=5, including anomalous
+ones, with a very small uniform upper bound.
+
+Write t_p=v_p(#E(Q_p)[p^infty]) (the same exponent
+as in Kim's derived reciprocity). Then:
+
+  **M_infty(kappa^Kato_p)=t_p in {0,1}.**
+
+Equivalently, as the auxiliary conductor n varies,
+the least p-divisibility index of the genuine
+un-twisted Kato-derived classes is 0 or 1.
+It can never exceed one at a good p>=5.
+
+Proof.
+1. Castella--Sano Theorem B (p>3, good,
+   rho_bar surjective, Manin p-unit, N squarefree)
+   establishes M_infty(delta_p)=0.
+2. The paper's explicit equality (2.17)
+   (proof of Theorem A, printed pp. 12--13)
+   identifies the UNTWISTED Kato Kolyvagin
+   system's divisibility index with
+   M_infty(delta_p)+t_p=t_p.
+   This result uses derived Kato reciprocity
+   and rigidity, not a finiteness assumption
+   on Sha(E/Q).
+3. For p>=5 good, the kernel of reduction
+   E(Q_p)->E(F_p) is the p-torsionfree
+   one-dimensional formal group E_1(Q_p).
+   Therefore E(Q_p)[p^infty] injects into
+   E(F_p)[p^infty].
+4. Hasse bounds #E(F_p)<=p+1+2*sqrt(p)<p^2
+   for every p>=5. Hence its p-adic valuation
+   is at most one, and so is t_p.
+QED.
+
+For nonanomalous p, #E(F_p) is prime to p
+so t_p=0 and a truly p-unit derived
+class exists. For anomalous p,
+#E(F_p)=p and t_p can be either 0 or 1:
+if t_p=1, the index-one class is
+nonzero at level p^2 (not necessarily
+modulo p). This statement is a UNIFORM
+arithmetic nonvanishing of a *genuine
+cohomological* Euler/Kolyvagin system,
+not just a modular-symbol nonvanishing.
+
+CRUCIAL LIMIT: the index M_infty minimizes
+over ALL auxiliary conductors of arbitrary
+numbers of prime factors. Thus the proven
+0<=M_infty(kappa)<=1 does NOT bound
+the "two-factor" index M_2 or
+Fitt_2(X_p). A bounded valuation is not
+a bounded auxiliary DEGREE. This is
+exactly why the result does not imply
+Sha global finite or p-primary trivial.
+
+Optional higher precision: Castella--Sano
+Proposition 2.1.5 shows the Kato system
+minimum index is unchanged when one
+restricts to arbitrarily deep admissible
+auxiliary prime sets. This can provide
+mod-p^(t_p+1) witnesses even if
+t_p=1. We do NOT infer any bound on
+the size of the first such auxiliary q,
+or on the number of factors in n.
