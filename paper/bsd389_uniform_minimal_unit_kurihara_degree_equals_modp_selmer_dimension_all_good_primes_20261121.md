@@ -205,3 +205,61 @@ their sizes, on mu_p independent of p, or on
 the existence of a fixed integer D annihilating
 the p-primary Sha groups. In particular it does
 not supply a global BSD proof.
+
+
+## 6. New computational precision floor at the exceptional ordinary p=16231
+
+The strict rank-two Fitting/Kurihara identity,
+proved in the other 2026-11-21 note, says
+  Fitt_2(X_p) = p^{m_2(p)} Z_p,
+where m_2(p) is the least p-adic divisibility index
+among **all** two-factor coefficients; m_2=+infinity
+when every such coefficient vanishes in its finite
+coefficient ring.
+
+If Sha[p^infty] is finite nonzero then
+  m_2(p) = v_p(#Sha[p^infty]) in {2,4,6,...}.
+In particular, **if no two-factor p-unit exists**,
+one can only certify finite but NONTRIVIAL Sha
+using an authentic two-factor coefficient with
+nonzero residue modulo p^3 or higher. A purported
+p-adic valuation exactly one as the *minimum*
+would contradict the square-order Cassels--Tate pairing.
+
+The local coefficient of a pair n=q1*q2 lives in Z_p/I_n
+with
+  I_n = I_{q1}+I_{q2},
+  I_q=(q-1, a_q-q-1) Z_p.
+To even have a coefficient ring of length >=3, both
+q_i must satisfy, for i=1,2,
+  q_i == 1 mod p^3,
+  a_{q_i} == q_i+1 mod p^3.
+
+Therefore q_i >= p^3+1; the complete naive direct
+two-prime modulus n=q1*q2 has the **rigorous**
+size lower bound
+  n >= (p^3+1)^2.
+
+At p=16231, p^3=4,275,981,654,391 and
+  n >= 18,284,019,108,696,945,332,889,664.
+
+This bound concerns this **specific full auxiliary
+coefficient modulo p^3 strategy**, NOT the complexity
+of all Euler systems, optimized modular-symbol methods,
+or the anticyclotomic Gross theta computation.
+In particular, if one suspects a finite but nontrivial
+Sha[16231^infty], direct exhaustive two-prime
+mod-p^3 Kurihara enumeration is a poor method.
+
+This arithmetic observation reinforces the choice of
+the already-existing 87,809,710-point p16231
+anticyclotomic Gross theta and the integral
+Castella--Hsieh leading-order comparison as the
+more plausible **prime-specific finiteness route**.
+That proof route still needs a precise certification
+of the actual global reciprocity/source normalization;
+it is NOT settled by this complexity bound.
+
+When a two-prime MOD-p UNIT exists, of course the
+cheaper p-level computation already proves Sha[p^infty]=0,
+and none of the p^3 lower bound is relevant.
