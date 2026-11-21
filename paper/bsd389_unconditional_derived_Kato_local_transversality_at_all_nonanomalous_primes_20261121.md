@@ -213,3 +213,46 @@ Neither the uniform local complement nor
 the Iwasawa main conjecture supplies this
 degree-two estimate. The complex BSD leading
 term remains independent and unproved.
+
+
+## Corollary 3 — an ACTUAL two-class global-to-local basis at p5, p7 and p11
+
+For p=5,7,11, independent exact rational point addition
+with t=-x/y at the identity gives
+  p  #E(Fp)  t([#E(Fp)]P)/p mod p
+  5      9            3
+  7     13            2
+ 11     16            8.
+All three coefficients are p-units. Therefore
+the actual global Kummer class kappa_p(P)
+spans the one-dimensional local Bloch--Kato
+finite condition H_f^1(Q_p,E[p]).
+
+The two-prime Kato derived classes from Theorem 1,
+with n=41*61 (p5), n=113*673 (p7), n=397*991 (p11),
+have NONZERO reduced dual exponentials by Kim's
+derived reciprocity. Hence for each of these p:
+
+ **H^1(Q_p,E[p])
+     = F_p loc_p(kappa_p(P))
+       (+) F_p loc_p(kappa_n^Kato).**
+
+These are TWO ACTUAL GLOBAL classes (P Kummer
+and Kato's derived class), giving a basis of the
+entire 2D local cohomology group after localization.
+The second class is NOT a global MW class nor
+a Bloch--Kato Selmer class: it must be allowed
+nonstandard local conditions at p and/or auxiliary
+primes, precisely as the genuine Kato/Kolyvagin
+construction provides.
+
+This is a positive cohomological result that
+the earlier pure-norm MW-wedge construction could
+not attain. It is still LOCAL and therefore
+does not bound the Sha quotient of the GLOBAL
+Bloch--Kato Selmer. Poitou--Tate conditions at
+the auxiliary primes remain decisive.
+
+The updated verification script independently
+checks these exact local formal parameters
+alongside the full Kurihara residues.
