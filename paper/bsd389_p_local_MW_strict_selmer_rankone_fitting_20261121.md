@@ -154,15 +154,17 @@ arithmetically exact at all finite levels for this **chosen
 strict local condition**. In particular the quotient by
 the strict global MW subgroup is exactly Sha[p^n].
 
-WHAT IS NOT PROVED: (i) that these chosen conditions are the
-natural integral automorphic/Bloch--Kato local conditions of
-a global regular algebraic realization, (ii) an integral
+At p the natural *propagated torsion Bloch--Kato* finite
+condition is in fact exactly zero (proof below). This is
+stronger than merely defining zero by transport.
+
+WHAT IS NOT PROVED: (i) that an actual global regular algebraic
+automorphic realization of the 2+1 coefficient representation
+exists with its own integral local conditions, (ii) an integral
 automorphic complex whose p-adic Fitt_1 ideal is nonzero, or
 (iii) a uniform fixed integer bounding it across all p.
-The rational twisted upper-right block has H_f^1(Q_p, V_p(E)(-k_n))
-of dimension zero, which makes strictness plausible as a
-comparison target but does NOT establish intrinsic finite-level
-identification.
+The intrinsic local Bloch--Kato equality just proved at p is
+not itself an automorphic realization or a global bound.
 
 ## 6. Next decisive theorem
 
@@ -178,3 +180,57 @@ direction of Fitting comparison.
 This note does not construct d_p, does not deduce the result
 from the mere existence of P, and does not close the exact
 complex BSD leading-term equality.
+
+
+## 5 bis. Exact intrinsic p-local Bloch--Kato condition, not merely dimension
+
+We can improve the previous caveat at the single place p.
+Fix p in the certified set and n>=1, and keep the weight
+k=k_n=(p-1)p^(n-1). Write
+
+  T'=T_p(E)(-k),  V'=T' tensor Q_p,  A'=V'/T',
+  M=T'/p^n T'=A'[p^n].
+
+Use the **standard propagated torsion Bloch--Kato condition**
+  H_f^1(Q_p,M)
+    = preimage in H^1(Q_p,M) of H_f^1(Q_p,A'),
+where H_f^1(Q_p,A') is the image of H_f^1(Q_p,V')
+in H^1(Q_p,A').
+
+(1) V' has Hodge--Tate weights {k,k-1}, strictly positive,
+and H^0(Q_p,V')=0, so Bloch--Kato's de Rham dimension
+formula gives H_f^1(Q_p,V')=0. Consequently H_f^1(Q_p,A')=0.
+
+(2) Since k is divisible by p-1, chi_p^{-k}=1 modulo p.
+Thus T'/p T' is locally isomorphic to E[p]. Since E has
+good reduction at p and p does not divide #E(F_p), one has
+E(Q_p)[p]=0. Therefore H^0(Q_p,T'/p T')=0. This also implies
+H^0(Q_p,A')=0: any nonzero invariant of the p-primary
+torsion module A' would yield an invariant element of order p.
+
+(3) The exact sequence
+  0 --> M --> A' --p^n--> A' --> 0
+now gives an injection
+  H^1(Q_p,M) --> H^1(Q_p,A')
+because H^0(Q_p,A')=0. Its preimage of
+H_f^1(Q_p,A')=0 is therefore zero.
+
+**Conclusion (proved, with precise definition):**
+
+  H_f^1(Q_p, T_p(E)(-k_n)/p^n) = 0.
+
+In particular, the *intrinsic propagated torsion* Bloch--Kato
+condition of this explicitly chosen high-weight block agrees
+with the strict condition at p, for each n. This does NOT
+establish the existence of a global automorphic representation
+whose off-diagonal block has these coefficients; nor does it
+settle the comparison at every l != p at the integral level.
+
+The precise torsion propagation convention matters: arbitrary
+other finite-flat, syntomic or derived local conditions are not
+silently identified with this one.
+
+Reference on local conditions and propagation: Bloch--Kato,
+*L-functions and Tamagawa numbers of motives*, 1990;
+see also https://math.stanford.edu/~conrad/BSDseminar/Notes/L14.pdf
+and https://www.math.keio.ac.jp/~kurihara/20.ASPMstyle.pdf .
