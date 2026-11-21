@@ -195,3 +195,106 @@ Sections 2--5 prove useful necessary conditions and a
 ONE-LEVEL CONDITIONAL POSITIVE SOLUTION to integrality,
 but they do not prove (i)--(iv). No global Sha finiteness
 or exact complex BSD equality is concluded.
+
+
+## 7. Fundamental second obstruction: norm-corrected classes are Kolyvagin-imprimitive
+
+The integral correction from Section 3 solves one Euler norm
+equation, but is *too invariant* to yield a p-unit derived
+Kolyvagin/Kurihara class. This is a new unconditional
+group-ring obstruction with no assumptions about Sha.
+
+Let R=Z_p[C_p], H=<sigma>, N=sum_{i=0}^{p-1}sigma^i,
+and write the standard first Kolyvagin differential operator
+  D=sum_{i=0}^{p-1} i*sigma^i.
+For any a=sum_i a_i sigma^i in R:
+  **a*N=aug(a)*N**,
+since sigma^j N=N for each j.
+
+In particular,
+  **D*N=[p(p-1)/2]*N**.
+This lies in p R for every odd p, so
+  **D*(N*x)=0 mod p** for every R-module element x.
+If c_L=b_q*N*(yP wedge_R yQ), then
+  **D*c_L=0 mod p**
+regardless of whether the actual corestriction lifts exist.
+
+Over F_p[C_p] with T=sigma-1,
+  N = T^(p-1).
+Thus a group-ring class in N R is in the very high
+augmentation degree p-1; since p>=5 this is at
+least 4, and in particular its degree-1 and
+degree-2 Taylor/augmentation coefficients vanish.
+For s independent auxiliary C_p factors,
+  N_{G_S}=prod_j N_j=prod_j T_j^(p-1) (mod p).
+The mixed degree-two coefficient [T_1 T_2]
+is zero, and so are all degree-two Kolyvagin
+derivatives extracted directly from this pure-norm
+group-ring class.
+
+At nontrivial characteristic-zero p-power
+characters chi of H, chi(N)=0. So the same
+construction has zero nontrivial-character
+specializations. It cannot encode the
+nontrivial arithmetic variation detected by
+a unit rank-two Kurihara coefficient.
+
+**Consequent refined verdict:**
+- Naive scalar-Z_p restrictions fail a one-level norm equation.
+- The norm-projector correction can solve that norm equation
+  INTEGRALLY if suitable cohomological lifts exist.
+- But the resulting *pure norm-image* class is necessarily
+  mod-p Kolyvagin-imprimitive.
+- Therefore actual rank-two primitivity requires
+  NON-invariant augmentation components, which must arise
+  from genuinely arithmetic ramified Euler/Kato cohomology,
+  not just the invariant span of two restricted MW points.
+
+The algebraic identities are fully general for odd p, not
+just for the sample auxiliary primes. The actual derivative
+map from an Euler system to Selmer Fitting ideals still
+requires all the Mazur--Rubin/Burns--Sakamoto--Sano
+hypotheses; no assertion that every such non-invariant
+component necessarily survives a regulator map is made.
+
+## 8. Exact *global* corestriction-lift obstruction
+
+The conditional yP,yQ from Section 3 must NOT be
+postulated. They can instead be characterized by an
+actual Galois cohomological boundary map.
+
+For L/Q cyclic of degree p and a finite set of primes S
+containing p, 389, q, and infinity, let
+  I_H = ker(aug:Z_p[H]->Z_p).
+Tensor the augmented induced representation sequence
+by T=T_p(E):
+  0 -> T tensor I_H
+    -> T tensor Z_p[H]
+    -> T -> 0,
+where G_Q acts diagonally, using its quotient to H.
+By Shapiro, the middle-term H^1 is H^1(O_{L,S_L},T),
+and the map induced by augmentation is corestriction.
+
+The connecting homomorphism in the long exact sequence
+  partial_{L/Q}: H^1(O_{Q,S},T)
+          -> H^2(O_{Q,S},T tensor I_H)
+therefore has
+  ker(partial_{L/Q}) = image(Cor_{L/Q}:H^1(L,T)->H^1(Q,T))
+in the same ramification-relaxed S-cohomology.
+
+Thus the proposed two lifts exist **if and only if**
+  partial_{L/Q}(kP)=partial_{L/Q}(kQ)=0.
+
+This gives a precise, finite-level, non-circular
+ARITHMETIC TEST for the first missing input. A
+certificate of these two H^2 vanishings at a few
+auxiliary primes would not yet construct the
+coherent Euler system or prove a uniform Fitting
+bound, but it would settle the exact first gate
+without assuming Sha finiteness.
+
+Warning: the notation T tensor I_H means the
+augmentation-ideal Galois module with diagonal
+action; one must keep the integral Galois action
+of the induced representation, not treat I_H as
+a trivial module.
