@@ -90,3 +90,30 @@ This is a **prime-specific** reduction and not an all-prime Sha-support or exact
 - C.-H. Kim, *On the Fitting ideals of anticyclotomic Selmer groups of elliptic curves with good ordinary reduction*, Canadian Mathematical Bulletin 69 (2026), https://www.cambridge.org/core/journals/canadian-mathematical-bulletin/article/on-the-fitting-ideals-of-anticyclotomic-selmer-groups-of-elliptic-curves-with-good-ordinary-reduction/D7D2EA9FA52A23B92319F3D44F5E9884 , Theorem 4.1, Proposition 4.3, Corollary 4.2, Theorem 1.1.
 - D. Burns, M. Kurihara, T. Sano, *On derivatives of Kato's Euler system for elliptic curves*, https://kurihara.math.keio.ac.jp/bks4.pdf , Theorem 1.14 (7.6). **Warning:** it explicitly assumes Sha(E/Q) finite and a generalized Perrin-Riou conjecture, so cannot be used to derive Sha finiteness or an exact complex BSD formula unconditionally.
 - The exact rational twist L-value interval and p=11 arithmetic gate are in the prior documents of PR #36.
+
+## 6. Stronger finite-layer reformulation: no infinite-level matrix is necessary
+
+Even *without* assuming a theta quadratic unit, Kim's Theorem 4.1, Corollary 4.2 and Proposition 4.3 imply unconditionally for our p=11,K=-43 conditions that X_infty is a **finite-rank free Z_11-module**, say of rank lambda, and that its augmentation is X_0. Consequently:
+
+    dim_F11 Sha(E/K)[11]
+      = lambda - rank_F11((gamma-1) | (X_infty/11X_infty)) - 2.
+
+This is an exact finite-dimensional test, but lambda and the genuine action remain unknown. It does not assume Sha finite.
+
+Under the additional genuine-theta-unit hypothesis, lambda=4. Reduce the first-layer relation `omega_1=(1+T)^11-1` modulo 11: it becomes `T^11`. Since the action A is nilpotent with A^4=0, this relation is automatically zero on X_infty/11. Thus Kim's **exact** control theorem gives
+
+    (Sel(K_1,E[11^infinity])^vee)/11
+          ~= (X_infty/11) / T^11(X_infty/11)
+          ~= X_infty/11 ~= F_11^4.
+
+The Galois group Gamma_1=Gal(K_1/K) acts in a way compatible with gamma, so **it suffices to determine the F_11[Gamma_1]-module Sel(K_1,E[11])** (or its dual). Its dimension must be 4, and
+
+    rank_F11(gamma-1 | Sel(K_1,E[11]))=2
+       <=> Sha(E/K)[11^infinity]=0
+       ==> Sha(E/Q)[11^infinity]=0.
+
+There is no hidden assumption that E(K_1)[11] is nonzero: indeed GL_2(F_11) surjectivity over Q implies any nonzero 11-torsion point has orbit of size 11^2−1=120; since `[K_1:Q]=22`, such a point cannot be defined over K_1. Thus the standard finite and p-infinity Selmer comparison at 11 applies.
+
+**Caveat:** the first-layer Gross class-group representation, despite also being a Gal(K_1/K)-module, is not automatically the finite-layer Selmer module. The identification of their Fitting *ideals* is not an isomorphism of these modules.
+
+This replaces an inaccessible infinite-action computation by a **finite 11-Selmer computation over a degree-22 number field**, conditional on the genuine K=-43 theta quadratic unit. Such a computation is nontrivial and has **not been performed**.
