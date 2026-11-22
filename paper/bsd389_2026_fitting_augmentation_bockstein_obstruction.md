@@ -33,6 +33,7 @@ and the 4x4 matrix `A_e(T)=diag(B_e(T),B_e(T))`. Let `M_e=coker_Lambda(A_e)`.
 
 1. `det A_e(T)=T^4`, so `Fitt_0,Lambda(M_e)=(T^4)=(theta(T)^2)` with the **same theta `theta=T^2`**, whose quadratic coefficient is the unit 1.
 2. For each n>=0, put `omega_n=(1+T)^(p^n)-1`, `Lambda_n=Lambda/(omega_n)`, `M_(e,n)=M_e/omega_n M_e`, `theta_n=T^2 mod omega_n`. Base change of Fitting ideals gives `Fitt_0,Lambda_n(M_(e,n))=(theta_n^2)` **at every finite layer**. The theta are compatibly projected from the same series.
+   Moreover, the published **two-generator** ideal also matches exactly: if `N_n=sum_(j=0)^(p-1) gamma^(j*p^(n-1))` is the transfer norm, then `nu_(n-1,n)(theta_(n-1)) = theta_n*N_n`. Therefore `(theta_n,nu(theta_(n-1)))=(theta_n)` and its square equals `(T^4)` in every `Lambda_n`.
 3. At the augmentation `T=0`,
 
        M_e/T M_e  ≅  Z_p^2 ⊕ (Z_p/p^e Z_p)^2.
@@ -80,3 +81,11 @@ To prove `Sha[p^infinity]=0` for large p using a theta/Fitting argument, one wou
 - Chan-Ho Kim, *On the Fitting ideals of anticyclotomic Selmer groups of elliptic curves with good ordinary reduction*, Canad. Math. Bull. 69 (2026), pp. 21–31, Theorem 1.1: https://www.cambridge.org/core/journals/canadian-mathematical-bulletin/article/on-the-fitting-ideals-of-anticyclotomic-selmer-groups-of-elliptic-curves-with-good-ordinary-reduction/D7D2EA9FA52A23B92319F3D44F5E9884 .
 - Chan-Ho Kim, Aprameyo Pal, Jishnu Ray, *Refined conjectures on Fitting ideals of BDP Selmer groups*, arXiv:2609.17003 (2026-09-15): https://arxiv.org/abs/2609.17003 .
 - Kummer split rank-two Fitting identity, existing project note `paper/bsd389_unconditional_rank2_kummer_fitt2_identity_2026-10-30.md`.
+
+## 5. Source-level derived comparison to investigate next
+
+Takamichi Sano, *Derived Bockstein regulators and anticyclotomic p-adic Birch and Swinnerton-Dyer conjectures* (arXiv:2308.08875), establishes a descent formalism with derived Bockstein regulators and **up-to-p-adic-unit** implications from anticyclotomic main conjectures. Daniel Macias Castillo and Takamichi Sano, *On Selmer complexes, Stark systems and derived p-adic heights* (arXiv:2603.23978, March 2026), prove canonical identifications between suitable Selmer and Poitou–Tate complexes, between determinant lines and Stark-system modules, and between Bertolini–Darmon and Nekovář derived-height pairings. These are real comparison results, but **neither citation, by itself, supplies** a canonically normalized rank-two, p-uniform integral Bockstein determinant over `Q` for `389a1`, nor the exact complex leading term.
+
+**Specific next source check:** find in those comparison theorems an element-level, p-integral morphism from the actual theta/Gross or Kato system to the derived Selmer Bockstein lattice with all local Euler/Tamagawa factors and p-adic orientations included. A theorem proving that map carries a primitive generator would control the augmentation `Fitt_2`; a statement about `Fitt_0` alone cannot do so by §2. The `K`-to-`Q` descent and all-prime uniform integrality remain separate obligations.
+
+References: https://arxiv.org/abs/2308.08875 and https://arxiv.org/abs/2603.23978 .
