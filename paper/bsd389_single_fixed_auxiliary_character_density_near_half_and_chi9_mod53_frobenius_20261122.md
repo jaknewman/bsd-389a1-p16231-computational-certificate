@@ -235,3 +235,69 @@ allowing a character to vary with p (as in the
 prior effective 53-adic-depth theorem) addresses
 regularity at every split p, but does not produce
 the missing order-two theta nonvanishing.
+
+
+## 6. CRITICAL GLOBAL STRATEGY: even theta order TWO at EVERY p is not enough for full BSD
+
+For rank-two E/Q, proving the nonvanishing of
+the anticyclotomic quadratic theta coefficient
+at all good ordinary split primes p, together with
+the derived-height theorem, would prove only the
+FINITENESS of each of those p-primary Sha groups.
+It would NOT rule out a nonzero finite Sha[p]
+for infinitely many p and does not reach inert
+or supersingular primes. This is NOT a technical
+quibble: the algebraic obstruction is explicit.
+
+For each p>=5, put Lambda_p=Z_p[[T]] and
+  A_p=(Lambda_p/(T²))^2,
+  C_p=A_p (+) (Lambda_p/(p,T))^2.
+Both have
+  char_Lambda(A_p)=char_Lambda(C_p)=(T^4),
+with Iwasawa mu=0, lambda=4 and the same
+T-primary rational Jordan type (2,2).
+So both are compatible with a theta quadratic
+UNIT and the rational derived-height constraints.
+However, after augmentation,
+  A_p/TA_p = Z_p²,
+  C_p/TC_p = Z_p² (+) (Z/p)^2,
+and, by 2x2 minors,
+  Fitt_2(A_p)|_(T=0)=(1),
+  Fitt_2(C_p)|_(T=0)=(p²).
+The finite p-torsion is invisible to the
+characteristic ideal, theta T-adic order,
+and rational Jordan type.
+
+Thus a UNIFORM theta order-two theorem alone
+could NOT prove that Sha(E/Q)[p]=0 for all
+sufficiently large p, even if it held at
+all p. One needs an INTEGRAL comparison
+excluding finite specialization errors.
+
+An effective, genuinely conclusion-directed
+sufficient target is a FIXED NONZERO integer
+D and an EXACT integral Selmer presentation
+X_p=Sel_(p-infty)(E/Q)^vee over Z_p such that
+  **D ∈ Fitt_(2,Z_p)(X_p) for EVERY p**.
+By the full MW rank-two Kummer inclusion,
+rank_Zp(X_p)>=2. For p not dividing D,
+D is a unit, so Fitt_2(X_p)=Z_p, forcing
+X_p to be FREE of rank exactly two, hence
+Sha(E/Q)[p-infty]=0.
+For p dividing D, the nonzero Fitting ideal
+still forces Z_p-rank exactly two and FINITE
+p-primary Sha. Since only finitely many p
+divide D, this proves global finiteness.
+The proof uses the standard elementary
+structure theorem over the discrete
+valuation ring Z_p, and must be applied
+to the ACTUAL integral Selmer dual, not an
+uncontrolled characteristic module.
+
+No such D has yet been constructed. This
+is the target needed for the user's full
+BSD finiteness goal; the fixed-character
+density theorem removes one auxiliary
+input but supplies no candidate D.
+The exact complex leading-term identity
+remains an independent problem.
