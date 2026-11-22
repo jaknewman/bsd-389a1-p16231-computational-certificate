@@ -56,3 +56,14 @@ The theta order-two criterion, together with all Castella–Hsieh A/B hypotheses
 **Next source-dependent proof obligation:** supply actual Gross \(W_i\) with authenticated normalization, then prove a prime-uniform integral relation between a fixed arithmetic object and the rank-two Selmer/Fitting defect (or independently establish the all-prime BSD leading term).
 
 **Reference:** F. Castella and M.-L. Hsieh, *On the nonvanishing of generalised Kato classes for elliptic curves of rank 2*, Theorems A/B and Appendix §6, https://web.math.ucsb.edu/~castella/Kato.pdf .
+
+
+## Published genuine example on this exact curve
+
+**Castella–Hsieh, Appendix §6, Table 1 (printed p. 27)** reports for **E=389a1, p=11, K=Q(sqrt(-2))** the actual Gross theta series
+\[
+\Theta_{E/K,11}(T)\equiv10T^2+69T^3+T^4+103T^5+106T^6+66T^7+11T^8+55T^9+110T^{10}\pmod{(11^2,T^{11})}.
+\]
+In particular, \(c_1=0\bmod 11^2\) and \(c_2=10\bmod 11^2\) is nonzero. This is **a published numerical computation for 389a1**, not a newly executed verification of the source Gross orbit here. Subject to the Theorem A/B hypotheses, it establishes the **prime-specific** theta-order-two and generalized Kato nonvanishing result. It does **not** generalize to all p and does not yield the full BSD leading coefficient.
+
+The same Table 2 records a useful contrasting example **E=571b1, p=5** with \(c_2=100\bmod125\): nonzero at depth three but zero at depths one and two. This directly motivates the finite-depth criterion above.
