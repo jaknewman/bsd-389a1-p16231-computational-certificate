@@ -98,6 +98,21 @@ This is a genuine rank-two base field for Kim's 2026 anticyclotomic Fitting theo
 
 **NOT CLAIMED:** triviality or finiteness of Sha(E/Q); the exact complex equality `L''(E,1)/2=Ω_E Reg(E)#Sha`; an actual Gross theta coefficient at the new field K; p-uniform arithmetic across all primes. All of those require additional theorems.
 
+## 5. Integral odd-primary descent from K to Q: an exact additional consequence
+
+For any odd prime `p`, the isogeny over Q
+
+    Res_(K/Q) E   ~   E × E^(−43)
+
+may be chosen of degree a power of 2. Since 2 is invertible on p-primary torsion, its induced maps identify the p-primary Selmer and Tate–Shafarevich groups, giving
+
+    Sha(E/K)[p^infinity]
+      ≅ Sha(E/Q)[p^infinity] ⊕ Sha(E^(−43)/Q)[p^infinity]
+
+at the level of p-primary groups (the two summands correspond to ± eigenspaces of Gal(K/Q)). In particular the **minus component is finite** by §4; at p=11, all remaining p-divisible obstruction in the base-changed group comes from the original curve E over Q.
+
+Thus an independently proved integral `Fitt_2`/augmentation-Bockstein comparison for the **actual** rank-two Selmer module over K would, after this exact odd-primary descent, give a concrete bound on the original `Sha(E/Q)[11^infinity]`. The Kim 2026 theorem **only gives `Fitt_0` at the finite layers**, so the missing `Fitt_2` conclusion is not assumed.
+
 ## Verifier and sources
 
 - `verification/bsd389_twist_minus43_Lvalue_exact_rational_certificate.py` (standard library only; M=1500; run status PASS in assistant container on 2026-11-22).
