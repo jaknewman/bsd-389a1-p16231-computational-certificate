@@ -204,3 +204,34 @@ it isolates the TRUE variable-p obstruction:
 the auxiliary choice can be fixed for density
 as close as wanted to 1/2, rather than
 continually varying the auxiliary data.
+
+
+## 5. An exact quantifier barrier for any FINITE list of fixed characters
+
+Let chi_1,...,chi_s be ANY finite-order anticyclotomic
+ring-class characters of K, of any fixed conductors.
+Let F be the compositum of their finite Galois
+fields over Q, including K. Since F/Q has finite
+degree d, Chebotarev gives a density EXACTLY 1/d
+of rational primes splitting completely in F.
+Every such prime splits in K and has
+  chi_j(mathfrak p)=1 for ALL j=1,...,s.
+
+Thus **NO FINITE LIST of fixed auxiliary weight-one
+CM characters can be p-regular at EVERY sufficiently
+large split p**, even after excluding finitely
+many bad primes, because the simultaneous failure
+set has positive density >=1/d.
+
+For a SINGLE primitive character of order m,
+the failure density is precisely 1/(2m),
+while the success density is (m-1)/(2m).
+This makes Section 1's approach "arbitrarily
+close to all split primes" asymptotically optimal
+in the class of fixed finite auxiliary data.
+
+This is only a NO-GO for fixed auxiliary data:
+allowing a character to vary with p (as in the
+prior effective 53-adic-depth theorem) addresses
+regularity at every split p, but does not produce
+the missing order-two theta nonvanishing.
