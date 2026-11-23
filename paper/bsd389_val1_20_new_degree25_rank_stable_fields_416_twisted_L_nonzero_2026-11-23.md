@@ -54,6 +54,21 @@ The order5 characters have valuations v_(zeta5−1) A(E,chi_r^t)=4 or6 for 5|t (
 By the genuine Birch–Stevens twisted modular-symbol identity, all those modular-symbol values being nonzero implies the 416 distinct complex critical twisted values
     **L(E,chi,1) != 0**.
 
+### Extra full integral Smith-matrix classification (20 more genuine tests)
+
+Recenter every TRUE 25-entry theta F_r by its actual Frobenius-inversion shift s_r, obtaining a symmetric G_r(X). Let A_r be multiplication by G_r on the 12-dimensional integral symmetric augmentation lattice, with entries g_(i-j)+g_(i+j)-2g_i.
+
+Independent exact SymPy computations on ALL TWENTY original matrices give:
+
+| r mod5 | number | p=5 Smith elementary exponents of A_r | nonunit invariant factors |
+|---|---:|---|---|
+|1 or 2|10|[0 repeated 10, 2, 2]|25,25|
+|3 or 4|10|[0 repeated 9, 1, 2, 3]|5,25,125|
+
+In EVERY case, \`det(A_r)^2=Res(F_r,Phi5)*Res(F_r,Phi25)\` exactly over the integers, not merely modulo5. These patterns match the true resultant valuations 8 or12, respectively. The companion Python verification program now recomputes all 20 Smith matrices and these exact determinant-square identities in addition to the 40 cyclotomic resultants.
+
+**This analytic Smith classification MUST NOT be misinterpreted as the Smith form of a Selmer presentation** or as the structure of Sha(E/K_r)[5∞]. It is evidence about the genuine integral theta multiplication operators.
+
 ## 3. NEW arithmetic consequence: 20 extra fields with exact MW non-growth
 
 Kato's proved theorem for weight2 modular elliptic curves and nontrivial abelian Dirichlet characters states: L(E/Q,chi,1)≠0 implies that the chi-isotypic multiplicity of E(K)⊗C is ZERO. (Reference: R. Greenberg, *Iwasawa Theory for Elliptic Curves*, Theorem1.20 explicitly attributing the assertion to Kato, https://www.math.union.edu/~hatleyj/Park.pdf; or Kato, Astérisque295.)
