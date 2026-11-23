@@ -97,7 +97,7 @@ def check(hist,m,q1,q2,count):
     assert B==B_expected and B%m**2==0
     R=B//m**2
     assert R==R_expected
-    p=next(j for j in range(2,isqrt(m)+2) if m%j==0)
+    p=next(iter(sp.factorint(m)))
     assert R%p==1
     print("AUTHENTIC_FULL_MAZUR_TATE_INTEGER_RESULTANT_PASS",
           "p",p,"depth",m,"conductor",q1*q2,"representatives",count,
