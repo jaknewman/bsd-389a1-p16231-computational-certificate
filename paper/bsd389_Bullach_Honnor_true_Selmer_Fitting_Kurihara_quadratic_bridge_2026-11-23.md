@@ -120,3 +120,15 @@ No such map is proved by Bullach–Honnor, and their Fitt0 inclusion is one-side
 The whole proof remains contingent on a **prime-specific** quadratic theta coefficient that is nonzero modp. For all sufficiently large p, Serre/Chebotarev give deep good auxiliaries q1,q2, but neither their existence nor Bullach–Honnor's Fitt inclusion forces this coefficient to be nonzero. A uniform rank-two Kato/Kurihara nonvanishing theorem, or a fixed p-INDEPENDENT Fitt2 integer bound, is still necessary for global Sha finiteness and exact complex BSD.
 
 **Verdict:** A genuine published 2025 Selmer comparison directly applies to the varying double-ramified diagonal extensions in this project and proves, for each valid p, the bound dim Sha(E/Q)[p] ≤ ord_T(theta_K modp)−2. At a two-factor unit it forces the genuine p-primary Sha to vanish. This is noncircular and resolves the previously missing *kind of comparison* at a fixed p, while leaving the uniform ALL-p nonvanishing requirement untouched.
+
+
+## POSTCRIPT 2026-11-23 — the p-UNIT test above is NOT sharp at p² depth
+
+A subsequently proved strictly stronger theorem (and genuine 34,775,000-term numerical example) appears in
+\`paper/bsd389_p2_valuation_one_Kurihara_true_Selmer_Fitting_parity_improvement_2026-11-23.md\`.
+
+For ANY genuinely p^k-deep admissible pair (k≥2), if the true two-prime Kurihara coefficient has valuation **exactly one** (i.e. p divides δ but p² does not), then a new application of the SAME published Bullach–Honnor Fitt0 containment plus the Dokchitser–Dokchitser p-parity theorem proves **Sha(E/Q)[p∞]=0**. This DOES NOT generally prove Sha(E/K)[p∞]=0 in the auxiliary field K.
+
+The essential algebra is that the true theta maps to \`p*unit*T² !=0\` in the genuine quotient \`(Z/p²)[T]/T³\`, which kills the fourth power of the local maximal ideal. So a true Selmer dual over K needs at most **three**, not four, local group-ring generators. Its base-field p-Selmer dimension is at most three; for E389a1 the p-torsion Sha dimension must be even, hence zero. The quantitative version gives \`dim_Fp Sha(E/Q)[p] ≤ v_p(δ)\` whenever the truncated valuation is below k.
+
+The genuinely computed test \`q1=5351,q2=13001,p=5,k=2\` has \`δ≡15 mod25\` (ZERO mod5), and therefore would FAIL the old unit gate but PASS this new one. The new uniform p-tail research goal is *some p²-admissible pair with δ not 0 modp² at every sufficiently large p*, still not proved. Do NOT confuse this improvement with the strong Sha(E/K)=0 results at 34 p-unit fields.
