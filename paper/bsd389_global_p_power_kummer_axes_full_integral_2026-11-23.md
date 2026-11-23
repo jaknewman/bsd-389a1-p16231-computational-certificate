@@ -111,7 +111,31 @@ The present stronger theorem works for the **two rational MW generators** and gi
 
 The ordinary rank2 MW image is free over R because the basis is saturated globally; this is the exact hypothesis used in §2.
 
-## 5. Boundary and implication for the global BSD program
+## 5. New exact p^k strict-Selmer description of Sha at TWO deep auxiliary primes
+
+The two prime sets just proved give an integral identification at the WHOLE p^k torsion level, not only mod p.
+
+Let S_k=Sel(Q,E[p^k]) and L_k=E(Q_{q_P})/p^k ⊕ E(Q_{q_Q})/p^k ≅ R², with q_P,q_Q chosen from the P/Q axis sets.
+
+The Kummer exact sequence at p^k reads
+
+    0 → E(Q)/p^kE(Q)≈R² → S_k → Sha(E/Q)[p^k] → 0.
+
+Let λ:S_k→L_k be the pair of localizations. The previous theorem proves λ restricts to an **isomorphism** on the embedded MW quotient. Hence λ has an R-linear section arising from the MW basis, and
+
+    S_k ≅ R² ⊕ ker(λ).
+
+For any class x∈Sha[p^k], choose a lift \tilde x∈S_k, then subtract the UNIQUE rational MW class y∈R² whose localization equals λ(\tilde x). The difference \tilde x−y lies in ker λ and depends ONLY on x (different choices of lift differ by MW and cancel identically). This constructs a canonical isomorphism relative to the chosen q_P,q_Q:
+
+    **Sha(E/Q)[p^k] ≅
+       ker( Sel(Q,E[p^k]) →
+            E(Q_{q_P})/p^k ⊕ E(Q_{q_Q})/p^k ).**
+
+No finite-primary-Sha assumption is used.
+
+This is a concrete uniform **two-deep-prime strict Selmer model**, at arbitrary integral precision. Its kernel need NOT vanish: an arbitrary hypothetical Sha[p^k] is faithfully retained. In particular, Poitou–Tate and the existence of these q's alone cannot force it to be zero. An additional authentic rank-two Euler-system/Kurihara reciprocity identity must annihilate this strict kernel.
+
+## 6. Boundary and implication for the global BSD program
 
 This proves that for every sufficiently large p, the putative high-depth Kurihara auxiliary primes can be chosen to have an **integral determinant-one type MW localization** modulo p^k for arbitrary k. Thus no hidden local \(p^k\)-denominator or failure of MW local saturation is an obstacle to constructing TWO good auxiliary primes.
 
