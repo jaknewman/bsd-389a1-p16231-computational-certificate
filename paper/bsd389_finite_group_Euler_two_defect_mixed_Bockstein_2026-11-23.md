@@ -73,7 +73,86 @@ So a procedure that first projects an Euler norm relation to mixed first derivat
 
 This is an explicit, checkable explanation of the missing bridge. It is not a no-go theorem for all motivic/regulator methods, merely for the naïve order-of-operations.
 
-## 5. New precise target suggested by the two-dimensional defect
+## 5. POSITIVE: the quadratic Euler multiplier CAN be inverted on every low-degree jet
+
+The two-dimensional kernel in §2 consists **only of the very last** monomials T^(m−2),T^(m−1). Therefore it causes no ambiguity in the low augmentation coefficients.
+
+**Theorem 2 (canonical low-jet quadratic quotient).** For every integer d with 0≤d≤m−3, multiplication by T² induces an exact Fp-linear isomorphism
+
+    Fp[T]/(T^(d+1))  --×T²-->  (T²)/(T^(d+3)).
+
+Its inverse D², defined by the explicit coefficient shift
+
+    D²(Σ_(j=2)^(d+2) c_j T^j)
+        = Σ_(r=0)^d c_(r+2) T^r,
+
+is a canonical quadratic divided-difference map on the IMAGE ideal. In particular at every p≥5 the choice d=2 works even at first depth m=p.
+
+The proof is immediate from the two monomial bases {1,...,T^d} and {T²,...,T^(d+2)}; their multiplication matrix is the IDENTITY. Thus **the finite-ring zero divisor is not an obstacle to recovering the low 2-jet of a truly Euler-multiplied series**. This significantly narrows the task: the blocker is identifying an actual normed arithmetic theta/Kato object with this formal Euler product, not the low-order algebraic division itself.
+
+For two genuinely independent variables and a true factorization
+
+    F(T1,T2)=T1² T2² G(T1,T2),
+
+the mixed-jet identity
+
+    **[T1*T2] G = [T1³*T2³] F**
+
+holds modulo p whenever the finite conductor exponents are at least 5. This again is a formal theorem valid ONLY if the stated factorization is genuine.
+
+### A REAL arithmetic test disproves applying this identity to the RAW Mazur–Tate theta
+
+We independently summed all authentic Néron-normalized modular symbols for the two conductors already used in the project, using the historically authenticated 390-entry integer Manin vector. For q1,q2, let
+
+    M_(i,j) = Σ_(a∈(Z/q1q2)^×) m_E^+(a/(q1q2))
+              * binom(log_(gq1)(a),i) * binom(log_(gq2)(a),j) mod p,
+
+where each log is represented by its integer residue 0,...,p−1. This is exactly [T1^i T2^j] of the RAW finite Mazur–Tate two-variable element after projecting to the p-Sylow group (no Euler norm applied).
+
+Complete calculations (no samples):
+
+| p | (q1,q2) | M_(1,1)=genuine Kurihara delta | M_(3,3)=RAW degree-six mixed jet |
+|---|---|---|---|
+|5 |(41,61) | **4** | **3** |
+|11|(397,991)| **1** | **2** |
+
+Thus in BOTH independent authentic examples,
+
+    **M_(3,3) != M_(1,1) mod p**.
+
+The full 5×5 p11 binomial coefficient matrix is
+
+    [ [0,0,0,0,8],
+      [0,1,1,3,10],
+      [0,9,2,7,0],
+      [0,4,5,2,9],
+      [6,2,8,0,1] ]  (mod 11).
+
+The p5 5×5 matrix is
+
+    [ [0,0,0,0,0],
+      [0,4,4,2,0],
+      [0,0,4,2,1],
+      [0,4,2,3,2],
+      [0,1,3,2,4] ].
+
+**CORRIGENDUM:** The final p5 matrix as printed in the previous paragraph has a duplicated row in this explanatory note; the AUTHENTIC 5×5 p5 matrix has exactly five rows, with rows
+    [0,0,0,0,0],
+    [0,4,4,2,0],
+    [0,0,4,2,1],
+    [0,4,2,3,2],
+    [0,1,3,2,4].
+Use precisely this five-row vector (and the asserted values in the script); the six-row display is not a 5×5 matrix.
+
+These data disprove treating the raw theta as though it had already been multiplied by T1²T2² in the norm-compatible comparison. They DO NOT disprove the correct quadratic divided-difference operator, because that operator acts on an **authentic Euler-normed** object, not arbitrary unnormalized moments.
+
+Independent reproducible source:
+    verification/bsd389_real_MazurTate_mixed_degree1_vs3_jet_countertest.py
+
+**New precise mathematical target:** Construct an actual conductor-changing cohomological/analytic norm map whose image is divisible by the appropriate Euler factors in the CORRECT variables, and prove that its canonical low-jet divided differences commute with the true Kato–Kurihara mixed Bockstein map. Only then could the unit quadratic coefficient yield a two-prime nonvanishing criterion at every p.
+
+
+## 6. New precise target suggested by the two-dimensional defect
 
 The existing deep Chebotarev–Kummer theorem provides for all large p and all a≥1 two good auxiliary primes q_P,q_Q whose actual rational MW localization matrix has unit determinant modulo p^a. The algebraic exact sequence above shows a formally separate **two-dimensional** defect in one cyclic group-ring Euler multiplication.
 
