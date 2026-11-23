@@ -128,3 +128,14 @@ BUT the INTEGER R_r depends on p, q1, q2 and r. Nothing in the proof bounds the 
 **New proof target:** Build an actual integral arithmetic morphism comparing the normalized character norm R_r with the TRUE rank-two second-Fitting characteristic of the global Selmer complex, uniformly over p. The mere equality of valuation with the MW trace determinant does not construct this morphism.
 
 **VERDICT:** A real all-p,k cyclotomic-resultant Boolean theorem, a sharpened valuation gap, and an EXACT integer candidate with value 1 modp at our 34 certified fields. No all-prime Sha theorem is claimed.
+
+
+## POSTCRIPT 2026-11-23 — the Boolean resultant test is sufficient but NOT necessary for p-Sha(Q)=0
+
+The criterion \`R_r≡1 modp\` proved above is equivalent to a two-factor **UNIT** δ and yields particularly strong conclusions over the auxiliary K. A later and strictly weaker arithmetic criterion, proved in
+\`paper/bsd389_p2_valuation_one_Kurihara_true_Selmer_Fitting_parity_improvement_2026-11-23.md\`,
+proves \`Sha(E/Q)[p∞]=0\` already when a p²-deep pair has **δ≡p*u modp²**, even though the Boolean resultant is then necessarily \`R_r≡0 modp\`.
+
+There is a TRUE E389a1 counterexample to the idea that R_r≡1 is necessary for Sha(Q)[p] vanishing: \`p5,q=(5351,13001),m25\` has genuine \`δ≡15 mod25\`, \`R_r≡0 mod5\`, but the actual Selmer/Fitting maximal-ideal + p-parity theorem still forces \`Sha(E/Q)[5∞]=0\`. The authentic normalized resultant has \`v5(R_r)=4\`. Therefore \`R_r≡0 modp\` should NOT be interpreted as a positive indication that Sha(Q)[p] is nontrivial.
+
+**Current strictly weaker uniform research target:** for every sufficiently large p find q1,q2 deeply admissible mod p² with δ not zero mod p². Even this target is still an UNPROVED global modular-symbol nonvanishing assertion.
