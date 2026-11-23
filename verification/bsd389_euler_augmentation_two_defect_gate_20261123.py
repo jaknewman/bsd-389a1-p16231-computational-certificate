@@ -20,6 +20,21 @@ for p,a in ((5,1),(7,1),(11,1),(5,2),(11,2)):
           'group_ring_dimension',m,'rank',len(image_indices),
           'kernel',sorted(kernel_indices),'cokernel',sorted(cokernel_indices))
 
+# Although T^2 is a zero divisor in the full group ring, it is an
+# isomorphism between EVERY pair of shifted low-jet truncations.
+for p,a in ((5,1),(7,1),(11,1),(5,2),(11,2)):
+    m=p**a
+    for d in range(m-2):
+        left=list(range(d+1))
+        right=[i+2 for i in left]
+        assert right==list(range(2,d+3))
+        assert right[-1]<m
+        # In these monomial bases the multiplication matrix is I_(d+1).
+        assert all(((i+2)==j)==(i==j-2)
+                   for i in left for j in right)
+    print('LOW_JET_EULER_DIVIDED_DIFFERENCE_ISOMORPHISM_PASS',
+          p,a,'through_degree',m-3)
+
 for p,a,b in ((5,1,1),(11,1,1),(5,2,1)):
     m=p**a;n=p**b
     # multiplication by (T1*T2)^2 on Fp[T1,T2]/(T1^m,T2^n)
