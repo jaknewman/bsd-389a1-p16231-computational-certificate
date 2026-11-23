@@ -82,6 +82,19 @@ assert U is not None and add(U,V,5351) is None
 A=mul(P(13001),523,13001)
 B=mul(Q(13001),523,13001)
 assert A is not None and add(mul(A,2,13001),neg(B,13001),13001) is None
+# Exhibit both independent local five-torsion directions explicitly.
+# [523] projects onto the 5-primary subgroup of order 25.
+D=mul((2,1880),523,13001)
+assert A==(1365,7777) and D==(11168,5591)
+assert mul(D,5,13001) is None
+assert all(D!=mul(A,k,13001) for k in range(5))
+assert (1880*1880+1880-2**3-2**2+2*2)%13001==0
+basis={add(mul(A,i,13001),mul(D,j,13001),13001)
+       for i in range(5) for j in range(5)}
+assert len(basis)==25
+print("EXPLICIT_Q13001_F5_TORSION_BASIS_PASS",
+      "rational_direction_A",A,"extra_local_direction_D",D,
+      "full_basis_size",len(basis),flush=True)
 print("LOCAL_MW_13001_CODIM_ONE_PASS","E_Fq_mod5_dimension",2,
       "rational_MW_local_image_dimension",1,"Q_equals_2P",True)
 print("LOCAL_MW_BOTH_PRIMES_RANK2_PASS","q5351_Q_equals_minus_P",True,
