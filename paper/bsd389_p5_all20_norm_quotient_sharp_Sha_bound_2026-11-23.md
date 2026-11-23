@@ -76,3 +76,10 @@ This gives neither Sha(E/K_r)[5-infinity]=0 nor an all-prime control of Sha(E/Q)
 - The actual all-20 local script and histogram were not found on GitHub main on 2026-11-23. A pasted PASS line does not replace code/provenance review.
 
 **Reference:** D. Bullach and M. H. L. Honnor, *On the refined Birch–Swinnerton-Dyer type conjectures of Mazur and Tate*, Theorem 1.4(b), Hypothesis 1.2, Remark 1.5(a). https://dominikbullach.github.io/MazurTate.pdf
+
+
+## Update 2026-11-23 — genuine arithmetic NONVANISHING, superseding the earlier zero target
+
+A subsequent *arithmetic*, rather than formal group-ring, argument proves that the **twenty real degree-25 fields carry nonzero true Sha[5]**, conditional on the already established rank-stability, full residual image and base Sha5 certificates. At the totally ramified prime q=13001, \(E(\mathbf F_q)[5]\simeq\mathbf F_5^2\) while the rational MW image modulo 5 is only one-dimensional (Q=2P). Poitou–Tate produces a 3-dimensional Q-relaxed Selmer group, and tame inertia kills its new local ramification after restriction to K. Since E(K)=E(Q) has mod-5 dimension 2, the third genuine Selmer class has a nonzero Sha image. The true Fitting bound also forces the invariant Selmer dimension to equal 3. This is proved in [the new theorem](bsd389_p5_all20_relaxed_Selmer_nonzero_Sha_theorem_2026-11-23.md), with the independently executable finite-field local audit in ../verification/bsd389_p5_all20_local_13001_relaxed_selmer_sha_nonzero_gate.py.
+
+**Important correction of research direction:** the equality \(\#(X_r/N_GX_r)=5^4\) is still a correct iff-criterion for *zero* Sha, but the new theorem shows it is **false for each of these twenty fields**. Indeed the genuine arithmetic coinvariant index is at least \(5^6\), and the true Sha5 has order at least \(5^2\) by the finite alternating Cassels–Tate pairing. Combining with the earlier upper bounds yields \(5^2\le\#\Sha[5^\infty]\le5^{20}\) for r mod 5 in {1,2}, and \(5^2\le\#\Sha[5^\infty]\le5^{32}\) for r mod 5 in {3,4}. This is **not a claim about Sha(E/Q) at all primes**.
