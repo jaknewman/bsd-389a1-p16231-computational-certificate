@@ -129,3 +129,36 @@ One needs a **two-sided arithmetic comparison** (or actual full Selmer presentat
 equivalently (by the existing proved norm-quotient exact sequence), proving \(\#\Sha(E/K_r)[5^\infty]=5^{a_r-4}\). The one-sided Fitting containment alone does not imply this: explicit countermodels with smaller nonzero Sha groups have already been constructed and verified.
 
 This note advances a **precise numerical target and explicit algebraic comparison model**, but does not prove exact Sha orders, the all-large-p uniform Sha support bound over Q, or the complex exact BSD identity for 389a1 over Q.
+
+
+## 6. An explicit order-25 symplectic Galois representation in the r=1 candidate
+
+The authentic r=1 25-integer theta histogram is
+\[
+(-424,9536,-424,3388,5172,-8022,-2658,-1240,-9294,-1588,
+-1580,-1512,9782,3208,3208,9782,-1512,-1580,-1588,-9294,
+-1240,-2658,-8022,5172,3388).
+\]
+The exact divided theta H_1 has Taylor coefficients modulo 25
+\[
+(H_0,H_1,H_2,H_3)\equiv(15,0,11,14)\pmod{25}.
+\]
+The previously independently computed Smith form of \(R/(N,H_1)\) is \((25,25)\). Since \(H_1\bmod5\) begins at \(T^2\), the classes \(1,T\) generate this 25-torsion module. The exact quotient relation obtained from H and the group relation is
+\[
+\boxed{T^2=10+10T\quad\text{on }Y_1^{\rm model}.}
+\]
+Consequently the Galois generator \(\sigma=1+T\), in basis (1,T), acts as
+\[
+\boxed{
+S=\begin{pmatrix}1&10\\1&11\end{pmatrix}\in SL_2(\mathbf Z/25).
+}
+\]
+Direct arithmetic yields \(S^5=\begin{pmatrix}1&0\\5&1\end{pmatrix}\ne I\), but \(S^{25}=I\). Therefore this action has **exact order 25** and its restriction to 5-torsion is the nontrivial unipotent matrix
+\[
+S\bmod5=\begin{pmatrix}1&0\\1&1\end{pmatrix},
+\]
+with precisely one dimension of G-invariants. Because \(\det S=1\), it preserves the perfect alternating form \(((x,y),(u,v))\mapsto(xv-yu)/25\bmod\mathbf Z\).
+
+This is an exact **Cassels–Tate-compatible algebraic candidate**, satisfying the earlier genuine Poitou–Tate invariant-dimension obstruction as well as the relative BSD predicted 5-order \(5^4\). It is **not a calculation of actual Sha**, nor a reason to assert the true Sha is isomorphic to the candidate.
+
+Executable independent check: verification/bsd389_p5_val1_r1_divided_theta_symplectic_candidate_gate.py .
