@@ -136,14 +136,6 @@ The p5 5×5 matrix is
       [0,4,2,3,2],
       [0,1,3,2,4] ].
 
-**CORRIGENDUM:** The final p5 matrix as printed in the previous paragraph has a duplicated row in this explanatory note; the AUTHENTIC 5×5 p5 matrix has exactly five rows, with rows
-    [0,0,0,0,0],
-    [0,4,4,2,0],
-    [0,0,4,2,1],
-    [0,4,2,3,2],
-    [0,1,3,2,4].
-Use precisely this five-row vector (and the asserted values in the script); the six-row display is not a 5×5 matrix.
-
 These data disprove treating the raw theta as though it had already been multiplied by T1²T2² in the norm-compatible comparison. They DO NOT disprove the correct quadratic divided-difference operator, because that operator acts on an **authentic Euler-normed** object, not arbitrary unnormalized moments.
 
 Independent reproducible source:
