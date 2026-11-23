@@ -99,6 +99,20 @@ def check(hist,m,q1,q2,count):
     assert R==R_expected
     p=next(iter(sp.factorint(m)))
     assert R%p==1
+    # Actual Mazur--Tate functional equation (root number +1):
+    # theta(X) = X^{-lambda_1(389)-lambda_2(389)} theta(X^{-1})
+    # in Z[X]/(X^m-1), so hist[j]=hist[(s-j) mod m].
+    _,L1=logs(q1,m)
+    _,L2=logs(q2,m)
+    shift=(-L1[389%q1]-L2[389%q2])%m
+    assert all(hist[j]==hist[(shift-j)%m] for j in range(m))
+    h=isqrt(abs(B))
+    assert B>=0 and h*h==B and h%m==0
+    reduced=h//m
+    assert reduced*reduced==R
+    print("AUTHENTIC_MAZUR_TATE_FUNCTIONAL_EQUATION_AND_SQUARE_RESULTANT_PASS",
+          "m",m,"shift",shift,"sqrt_B",h,"sqrt_R",reduced,
+          "sqrt_R_modp",reduced%p,flush=True)
     print("AUTHENTIC_FULL_MAZUR_TATE_INTEGER_RESULTANT_PASS",
           "p",p,"depth",m,"conductor",q1*q2,"representatives",count,
           "c0",c0,"c1",c1,"c2",c2,"c2_mod_pk",delta,
