@@ -133,3 +133,40 @@ The exact next arithmetic obligation has become narrower and more concrete:
 **Warning:** Abstract existence of the rank-one Euler-system-to-Kolyvagin map and its Fitting inclusion is already a theorem; **nonvanishing/primitivity of the specific Kato-derived index-two ideal for all large p is NOT**. Nor is an inclusion for a strict Selmer structure an inclusion for the ordinary full Selmer module.
 
 Sources: BSS II §6.2, Theorem 5.25(iii), Corollaries 6.18(ii), 6.21(ii), https://nms.kcl.ac.uk/david.burns/web_page/bss.pdf .
+
+
+## 7. Exact elementary local-comparison sequence and a false-shortcut counterexample
+
+To isolate the local problem independently of BSS notation, let \(A=E[p^\infty]\), let \(S_f\) be its **usual finite-local-condition Selmer group**, and set
+\[
+S_0:=\ker\big(S_f\xrightarrow{\mathrm{loc}_p}H_f^1(\mathbf Q_p,A)\big),\qquad
+L_p:=\operatorname{im}(\mathrm{loc}_p).
+\]
+This gives, without any Sha-finiteness hypothesis, the exact sequence
+\[
+0\to S_0\to S_f\to L_p\to0.
+\]
+After Pontryagin duality,
+\[
+\boxed{0\to L_p^\vee\to X_f\to X_0\to0,\quad
+X_f=S_f^\vee,\ X_0=S_0^\vee.}
+\]
+
+Even if \(L_p^\vee\cong\mathbf Z_p\), a formula \(\operatorname{Fitt}_2(X_f)=\operatorname{Fitt}_1(X_0)\) **does not follow**: the extension need not split.
+
+**Explicit counterexample over \(\mathbf Z_p\)**:
+\[
+X_f=\mathbf Z_p^2,\quad
+L_p^\vee=\mathbf Z_p\xrightarrow{t\mapsto(0,pt)} X_f,\quad
+X_0\simeq\mathbf Z_p\oplus\mathbf Z/p.
+\]
+The sequence is exact, but
+\[
+\boxed{\operatorname{Fitt}_2(X_f)=\mathbf Z_p,\qquad
+\operatorname{Fitt}_1(X_0)=p\mathbf Z_p.}
+\]
+Hence the relevant correction depends on the **integral saturation of the localisation lattice**, not only on the rational dimensions or on formal duality. This is a concrete explanation of why one cannot immediately promote BSS's strict-Selmer \(\operatorname{Fitt}_2\) inclusion to our full-Selmer \(\operatorname{Fitt}_2\).
+
+The actual BSS module \(H^1_{\mathcal F_{\rm can}^*}(K,T^\vee(1))^\vee\) must first be matched to the appropriate strict Kummer group at the correct Tate module or torsion coefficient level, including finite local terms. That comparison has not yet been established in the project.
+
+**Acceptance test for useful new work:** produce a canonical exact Selmer-complex triangle representing this local change, explicitly control the index of its integral \(p\)-local morphism (using the already saturated MW basis and actual p-adic logarithms), and prove that the corrected \(I_2(\kappa_{\rm Kato,p})\) lies inside \(\operatorname{Fitt}_2(X_f)\). Only *then* does an all-large-p primitivity theorem for that ideal have any chance to finish global Sha finiteness.
