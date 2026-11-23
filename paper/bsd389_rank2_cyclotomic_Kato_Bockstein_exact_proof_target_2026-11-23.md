@@ -102,3 +102,34 @@ The two published frameworks must not be conflated: BSS's Euler-system rank-one 
 
 - Burns–Sakamoto–Sano, *On the theory of higher rank Euler, Kolyvagin and Stark systems, II*, Theorem 1.2, Corollary 6.20(a). https://nms.kcl.ac.uk/david.burns/web_page/bss.pdf
 - Burns–Kurihara–Sano, *On derivatives of Kato's Euler system for elliptic curves*, Journal of the Mathematical Society of Japan **76** (2024), Proposition 4.4, Definition 4.5, Conjecture 1.6, Proposition 4.14, Theorem 1.14. https://kurihara.math.keio.ac.jp/bks4.pdf
+
+
+## 6. IMPORTANT refinement: rank-one Kato *does* control higher Fitting indices — but of a DIFFERENT Selmer structure
+
+The rank-one archimedean constraint in §1 **does not** prohibit a rank-one Euler system from furnishing an ideal with index **two**. Burns–Sakamoto–Sano II, **Corollary 6.18(ii)** and **Corollary 6.21(ii)**, explicitly state that for the Kolyvagin system \(\kappa(c)\) derived from an Euler system of its valid rank \(r\), **for every** integer \(i\ge0\)
+\[
+\boxed{I_i(\kappa(c))\subseteq
+\operatorname{Fitt}_i
+\big(H^1_{\mathcal F_{\mathrm{can}}^*}
+(K,T^\vee(1))^\vee\big)}
+\]
+under the paper's hypotheses, including those on local cohomology. In particular, for **our r=1**, the case **i=2** is a legitimate specialization! No rank-two Euler system is necessary to define this ideal.
+
+**But the target is NOT automatically**
+\(X_p=\operatorname{Sel}_{p^\infty}(E/\mathbf Q)^\vee\).
+BSS §6.2 defines the canonical Selmer structure \(\mathcal F_{\mathrm{can}}\) by imposing the **full** local H¹ at p; its dual \(\mathcal F_{\mathrm{can}}^*\) has the **zero (strict)** local condition at p, whereas the ordinary Bloch–Kato/p-power Selmer structure uses the local Kummer **finite** condition. The two resulting global Selmer modules are different. A unit in the published Fitting ideal of the strict module **cannot simply be transported to** \(\operatorname{Fitt}_2(X_p)\) without a proved local-condition comparison (and the associated index shift/correction terms).
+
+This is **the precise existing published morphism we were looking for**:
+\[
+\boxed{\text{Kato rank-one Euler system}\ \xrightarrow{\mathrm{Kolyvagin\ derivative}}\ 
+\kappa_p\ \longmapsto\ I_2(\kappa_p)\
+\subseteq\operatorname{Fitt}_2(X_p^{\mathrm{strict}}).}
+\]
+The exact next arithmetic obligation has become narrower and more concrete:
+- construct the **Poitou–Tate local-condition morphism** from the strict dual Selmer module in BSS to the **actual** finite-local-condition dual \(X_p\), including the \(p\)-local defect;
+- prove a criterion under which the genuine \(I_2(\kappa_p)\) after this local correction contains a fixed **p-independent nonzero integer D**; the existence of one such noncircular D whose support lies among already certified p-primary Sha-zero primes suffices for full Sha(E/Q)=0;
+- separately prove the **complex** leading coefficient equality; p-adic Fitting control alone does not imply it.
+
+**Warning:** Abstract existence of the rank-one Euler-system-to-Kolyvagin map and its Fitting inclusion is already a theorem; **nonvanishing/primitivity of the specific Kato-derived index-two ideal for all large p is NOT**. Nor is an inclusion for a strict Selmer structure an inclusion for the ordinary full Selmer module.
+
+Sources: BSS II §6.2, Theorem 5.25(iii), Corollaries 6.18(ii), 6.21(ii), https://nms.kcl.ac.uk/david.burns/web_page/bss.pdf .
