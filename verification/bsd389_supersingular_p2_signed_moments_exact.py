@@ -97,7 +97,7 @@ def coefficients(p, limit=0):
     if complete:
         assert count==p*(p-1)//2
         assert moments[0]==moments[1]==0
-        c2=motions= moments[2]
+        c2=moments[2]
         signed=-(c2*pow(2,-1,p))%p
         assert (p not in EXPECTED) or EXPECTED[p]==(c2,signed)
         return dict(p=p,ap=0,count=count,complete=True,
