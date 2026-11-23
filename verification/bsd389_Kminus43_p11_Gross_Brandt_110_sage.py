@@ -106,11 +106,13 @@ def main():
     cp=args.checkpoint
     if cp.exists():
         payload=json.loads(cp.read_text(encoding="utf-8"))
-        assert payload["status"]=="PARTIAL_110_GENUINE_BRANDT"
+        assert payload["status"] in ("PARTIAL_110_GENUINE_BRANDT",
+                                     "ALL_110_GENUINE_BRANDT_WEIGHTS_COMPUTED")
         assert payload["base_index"]==base_index
         assert payload["gamma"]==str(gamma)
         done={int(k):v for k,v in payload["records"].items()}
-        print("RESTART_FROM_CHECKPOINT",len(done),flush=True)
+        print("RESTART_FROM_CHECKPOINT",len(done),
+              "status",payload["status"],flush=True)
     else:
         done={}
 
@@ -120,7 +122,9 @@ def main():
                 "gamma":str(gamma),
                 "records":{str(k):v for k,v in sorted(done.items())},
                 "boundary":"No theta certificate until all 110 authentic ideal classes are checked"}
-        cp.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
+        tmp=cp.with_suffix(cp.suffix+".tmp")
+        tmp.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
+        tmp.replace(cp)
 
     count=0
     for k in range(110):
@@ -180,7 +184,9 @@ def main():
     report["theta2_mod11_up_to_JL_unit"]=c2
     report["theta2_unit"]=bool(c2)
     report["boundary"]="Theta2 does not supply the integral Selmer gamma-action or full BSD"
-    cp.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
+    tmp=cp.with_suffix(cp.suffix+".tmp")
+    tmp.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
+    tmp.replace(cp)
     print("ALL_110_GENUINE_GROSS_BRANDT_CLASSES_CERTIFIED",flush=True)
     print("RAW_THETA_MOMENTS_MOD11",moments,flush=True)
     print("AUTHENTIC_THETA2_MOD11",c2,"UNIT",bool(c2),flush=True)
