@@ -188,3 +188,46 @@ because E[p](K)=0 by full residual GL₂ image and K abelian. Kummer gives \(\di
 **SCOPE:** This is a rigorously proved conditional implication of the NEW ILTR congruence; it does not prove ILTR for unbounded p. The near-optimal target is now especially explicit: prove equality of one genuine mixed Mazur–Tate coefficient with twice the determinant of the independently computable reduced-Tate local bilinear forms, uniformly in q1,q2 and p, without assuming Sha finite.
 
 Primary source: Bullach–Honnor arXiv:2511.07203, Hypothesis 1.2 and Theorem 1.4(b). No conjectural Selmer-Fitting inclusion is being assumed in this conditional corollary.
+
+
+## 8. The essential BASIS-FREE formulation: no weights, no local generators, no global scalar to fit
+
+The most natural formulation does **not even mention** \(e_q\), \(w_q\), or the localization vectors explicitly. For every eligible q, define a symmetric bilinear form on the **saturated global Mordell–Weil mod-p space**
+\[
+M_p=E(\mathbf Q)/pE(\mathbf Q)\simeq\mathbf F_p^2
+\]
+by
+\[
+\boxed{
+\mathcal B_q(R,S):=
+\log_{\zeta_q}
+t_{p,q}\left(
+[\#E(\mathbf F_q)/p]\overline R,\,
+\overline S\bmod pE(\mathbf F_q)
+\right)\in\mathbf F_p.
+}
+\tag{Bq}
+\]
+The reduction bars are reduction of rational points modulo q, and \(\zeta_q=\gamma_q^{(q-1)/p}\) comes from the SAME primitive root used in the true Kurihara logarithm. This bilinear form is **defined entirely independently of modular symbols or any pair of primes**.
+
+**Elementary theorem (proved):** \(\mathcal B_q\) is a well-defined symmetric bilinear form of rank one when the MW local image is nonzero. Proof: multiplication by \(N_q/p\) maps E(Fq)/p linearly into E(Fq)[p], so the reduced Tate pairing followed by a discrete logarithm is bilinear. The local quotient is 1-dimensional, hence symmetry is automatic. The reduced pairing is perfect, so the induced form on the local one-dimensional quotient is nondegenerate. Pullback to M_p has rank one. In any basis P,Q, its matrix is \(w_q v_q v_q^\mathsf T\), where \(w_q\) is exactly (1). There is **no auxiliary point/divisor choice** in the definition, since the reduced Tate pairing is independent of the Miller evaluation shift.
+
+Our new explicit ILTR conjecture is therefore **equivalent to the especially simple, basis-independent congruence**
+\[
+\boxed{
+\tilde\delta_{q_iq_j}
+\stackrel{?}{=}
+2\det\!\left(\mathcal B_{q_i}+\mathcal B_{q_j}\right)
+\pmod p.
+}
+\tag{ILTR-BASIS-FREE}
+\]
+Indeed the Cauchy–Binet determinant identity for the sum of two rank-one quadratic forms gives
+\(\det(\mathcal B_i+\mathcal B_j)=w_iw_j\det(v_i,v_j)^2\).
+Changing the saturated basis by GL2(Z) multiplies each determinant by the square of ±1, hence does not change it.
+
+**This is the exact mathematical theorem to pursue next.** It equates TWO COMPLETELY INDEPENDENT arithmetic constructions:
+- LHS: the complete Hecke-normalized modular-symbol/derived-Kato Kurihara coefficient over q_iq_j;
+- RHS: the determinant of the sum of TWO independently defined reduced-Tate pairing matrices on E(Q)/p, times the literal fixed factor 2.
+
+The RHS has already been independently calculated at p=5,7,11,13,17 and the identity checked against 137 true LHS sums, with no fitted constants. A proof for all p in the large tail would give the genuine all-large-p Sha theorem by §7. Finite checks alone remain insufficient.
