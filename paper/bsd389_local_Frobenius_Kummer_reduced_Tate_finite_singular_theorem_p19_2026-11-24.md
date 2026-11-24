@@ -141,3 +141,48 @@ Let \(C_{\mathrm{Sel}}\) denote the genuinely integral rank-two Selmer complex a
 **Required new global theorem:** construct the arithmetic determinant-line comparison, without assuming finiteness of Sha or the BSD leading-term formula, that sends the *actual integral* Kato/Mazur–Tate mixed derivative to \(2D_{q_1q_2}\). The comparison must detect the possible torsion/corank of Sha rather than deleting it. If it can be proved with a nonzero global leading scalar (in the Néron integral normalization), the established Bullach–Honnor finite-level jet criterion gives uniform Sha[p∞]=0 for all sufficiently large p. Without this comparison, the 138 matched pairs remain finite evidence.
 
 **Scope:** local comparison PROVED; new p19 finite arithmetic test PASS; uniform global comparison/strong BSD OPEN. No new brute-force families needed.
+
+
+## 5. NEW DERIVED EULER-FACTOR / ADJUGATE THEOREM: the missing rank-one operator survives a scalar DOUBLE ZERO
+
+Let \(P_q(X)=1-a_qX+qX^2=\det(1-X\pi\mid T_pE)\) be the actual Euler polynomial. At every q with q≡1 modp and p|#E(Fq), \(a_q\equiv2\mod p\) and hence
+\[
+\boxed{P_q(X)\equiv(1-X)^2\pmod p.}
+\]
+Consequently \(P_q(1)=P_q'(1)=0\bmod p\). **Both scalar zeroth and first Taylor data vanish** at the distinguished Kolyvagin Frobenius value 1.
+
+However, under our sharper one-dimensional local condition \(p\parallel\#E(\mathbf F_q)\), \(\pi|_{E[p]}=1+N\) with \(N\neq0,\ N^2=0\). Therefore
+\[
+A_q:=1-\pi=-N\pmod p,\qquad
+\boxed{\operatorname{adj}(A_q)=N\neq0\pmod p.}
+\tag{7}
+\]
+Proof: for any 2×2 matrix A, \(\operatorname{adj}(A)=(\operatorname{tr}A)I-A\). Here \(\operatorname{tr}A_q\equiv0\), so \(\operatorname{adj}(A_q)=-A_q=N\).
+
+Together with the exact Kummer formula (2), this yields
+\[
+\boxed{
+[\#E(\mathbf F_q)/p]e
+=-\operatorname{adj}(1-\pi)\,c_e\pmod p.
+}
+\tag{8}
+\]
+In particular the independently constructed reduced-Tate local weight is the Weil pairing of the Kummer cocycle against the **nonzero adjugate of the Frobenius Euler operator**, not a derivative of the SCALAR Euler polynomial.
+
+### Symplectic 2×2 model (independently checked)
+
+In a symplectic basis with \(N=\bigl(\begin{smallmatrix}0&1\\0&0\end{smallmatrix}\bigr)\) and Weil form \(J=\bigl(\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\bigr)\), one has
+\[
+\det(1-X\pi)=(1-X)^2,\quad
+\operatorname{adj}(1-\pi)=N,\quad
+J(-N)=\begin{pmatrix}0&0\\0&1\end{pmatrix}.
+\]
+Thus the local Tate quadratic form has rank one and is symmetric, although the associated scalar Euler polynomial has a double root at X=1. This is a **proved** local derived-Euler-factor phenomenon, not a numerically guessed analogy.
+
+### Precise candidate for the GLOBAL step
+
+A genuinely new rank-two derived Kato reciprocity proof would have to keep the local **matrix** \((1-\pi)\) and its first nonzero **adjugate** (or equivalently the finite–singular comparison map), rather than replacing the local factor by the scalar \(\det(1-\pi)\) and discarding its null space. After transporting the resulting rank-one forms at two auxiliary primes into the two-dimensional MW lattice, Cauchy–Binet determines their squared determinant. The genuinely missing content is an INTEGRAL determinant-line identity identifying that local derived Euler product with the authentic Kato/Mazur–Tate mixed coefficient, including the base Selmer/Sha normalization.
+
+This pinpoints why a naive argument from p-adic Euler-factor nonvanishing, the central zero, or simple Chebotarev cannot establish the global equality: the scalar Euler polynomial loses exactly the rank-one information that our Tate form retains. Conversely, the nonzero adjugate does NOT force the global Kato determinant section to be a unit. Proving that remaining global assertion is as hard as the new proposed ILTR.
+
+**Additional references:** characteristic polynomial of Frobenius, Cayley–Hamilton, finite-field Kummer/Tate duality. The matrix theorem is elementary and self-contained.
