@@ -170,3 +170,29 @@ Hence the relevant correction depends on the **integral saturation of the locali
 The actual BSS module \(H^1_{\mathcal F_{\rm can}^*}(K,T^\vee(1))^\vee\) must first be matched to the appropriate strict Kummer group at the correct Tate module or torsion coefficient level, including finite local terms. That comparison has not yet been established in the project.
 
 **Acceptance test for useful new work:** produce a canonical exact Selmer-complex triangle representing this local change, explicitly control the index of its integral \(p\)-local morphism (using the already saturated MW basis and actual p-adic logarithms), and prove that the corrected \(I_2(\kappa_{\rm Kato,p})\) lies inside \(\operatorname{Fitt}_2(X_f)\). Only *then* does an all-large-p primitivity theorem for that ideal have any chance to finish global Sha finiteness.
+
+
+## UPDATE 2026-11-24 — completed the algebraic local-Fitting comparison; the earlier saturation obstacle was overstated
+
+**Decisive correction:** Section 7 was right that arbitrary *unadjusted equality* of Fitting ideals does not follow from a short exact sequence with nonsaturated injection. However it missed the fact that for the **actual rank-two Selmer sequence over the DVR Z_p**, we have a precise, unconditional and *useful* inclusion in the direction needed for the global proof.
+
+The exact theorem with proof is in [bsd389_exact_local_Fitting_rank_shift_and_Kato_I1_route_2026-11-24.md](bsd389_exact_local_Fitting_rank_shift_and_Kato_I1_route_2026-11-24.md).
+
+Let \(X_f=\mathrm{Sel}_{p^\infty}(E/\mathbf Q)^\vee\), let \(X_0\) denote the dual of the strict-at-p Selmer, and \(t_p\) the integral gcd valuation of the two global MW localization coordinates. Then **without assuming Sha finite**:
+\[
+\boxed{\mathrm{Fitt}_1(X_0)=p^{t_p}\mathrm{Fitt}_2(X_f)\subseteq\mathrm{Fitt}_2(X_f).}
+\]
+The old nonsaturated counterexample simply corresponds to \(t_p=1\), and does **not** obstruct the inclusion; in fact it illustrates it.
+
+BSS II, Corollary 6.21(ii), controls \(\mathrm{Fitt}_1\) of its **canonical-dual strict Selmer** using \(I_1(\kappa_{\rm Kato,p})\), subject to the explicit published hypotheses. Once the local Selmer structures have been matched, the correct chain is
+\[
+\boxed{
+I_1(\kappa_{\rm Kato,p})\subseteq\mathrm{Fitt}_1(X_0)
+\subseteq\mathrm{Fitt}_2(X_f)=\mathrm{Fitt}_0(\Sha[p^\infty]^\vee).
+}
+\]
+An **I1 p-unit** would immediately prove the p-primary Sha vanishes. The old emphasis on \(I_2\) of the *strict* module was an incorrect index shift, and attempting to prove local saturation was an unnecessary prerequisite for a one-way Sha bound.
+
+**Still unsolved:** the required BSS hypotheses and the exact identification of the canonical-dual structure for every relevant p; most importantly the **uniform nonvanishing/primitivity of Kato's own I1**. BSS does not promise that primitivity, and the universal existence of *some* rank-one Kolyvagin system is not enough to prove Kato's specific system primitive.
+
+This update **supersedes** the prior research priority in Section 7 and must be read when using this note.
