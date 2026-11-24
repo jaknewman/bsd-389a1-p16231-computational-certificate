@@ -231,3 +231,17 @@ Therefore the genuinely arithmetic result follows:
 **Necessary normalization boundary:** The source 390-Manin integer vector must remain identified with the actual Néron-integral theta used by Bullach–Honnor, up to a 19-adic unit. A 19-adic UNIT change is harmless to the nonmembership in \(\mathfrak m^3\); a nonunit change would invalidate this arithmetic inference and must never be silently introduced.
 
 This result is one additional genuine primewise Sha gate; **it is not uniform** and does not establish the separate complex rank-two BSD leading coefficient.
+
+
+## 7. Normalization audit: the correct minimal discriminant is POSITIVE 389
+
+For E=[0,1,1,-2,0], the Weierstrass invariants are
+\[
+b_2=4,\quad b_4=-4,\quad b_6=1,\quad b_8=-3,\qquad
+\Delta=-b_2^2b_8-8b_4^3-27b_6^2+9b_2b_4b_6=+389.
+\]
+This is independently confirmed by LMFDB https://www.lmfdb.org/EllipticCurve/Q/389a1/ . **Earlier project notes sometimes wrote -389; that SIGN is incorrect.** The positive discriminant means E(R) has two connected components, hence its *full* BSD real period is twice the primitive positive real period in the period lattice:
+\[
+\Omega_E=2\Omega^+_{\rm primitive}\simeq4.9804251217101101506.
+\]
+The observed fixed scalar 2 in ILTR is *compatible* with a normalization involving the number of real components or with plus-modular-symbol doubling, but **no rigorous identification of its origin has yet been made**. The next proof must keep all Néron/Manin, real-component, and two-factor mixed-moment factors explicit. In particular the numerical 2 CANNOT be declared explained solely by \(\Delta>0\): it might arise from a different normalization. This audit prevents a dangerous sign/factor-of-two confusion in any global determinant comparison.
