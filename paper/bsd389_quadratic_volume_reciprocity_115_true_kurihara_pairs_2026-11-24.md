@@ -104,3 +104,26 @@ The rank-two derived Kato leading-term/Bockstein comparison that would support t
 - Burns–Kurihara–Sano (2024), *On derivatives of Kato's Euler system for elliptic curves*, Conjecture 1.1(iii): https://kurihara.math.keio.ac.jp/bks4.pdf
 
 **Verdict:** 115 genuine finite congruences and the quadratic rank-two linear algebra theorem VERIFIED. Universal QLVR and the global arithmetic identification OPEN. No global Sha finiteness or exact complex BSD claimed.
+
+
+## 6. Conditional new *single-scalar* theorem: why the QLVR program would reduce the infinite search
+
+**Proposition (proved implication).** Fix a good prime p satisfying the hypotheses of Kim's Theorems 1.8 and 1.10, with E(Q) of rank2, two-prime MW-independent Kolyvagin primes available by the independently proved Kummer–Chebotarev theorem, and Castella–Sano's minimum Kurihara valuation zero. Assume the following two additional ARITHMETIC hypotheses:
+
+(H1) an infinite local-volume factorization valid for **all suitable** pairs of nonidentity-unipotent Frobenius primes q,r:
+\[
+\delta_{qr}=\mathcal C_p\,w_qw_r\,\det(v_q,v_r)^2\pmod p
+\]
+with a scalar \(\mathcal C_p\in\mathbf F_p\) and local weights \(w_q\in\mathbf F_p^\times\) **constructed independently of the two-prime values**;
+
+(H2) Kim's p-unit two-prime witness can be taken among the suitable pairs above (for this, the published semi-local isomorphism forces both local dimensions one, and the remaining v_p(#E(F_q))=1 condition should be omitted from the theorem unless separately justified; the factorization may instead be formulated for all one-dimensional local quotients, including p^m-order groups).
+
+Then
+\[
+\boxed{\mathcal C_p\ne0\iff\Sha(E/\mathbf Q)[p^\infty]=0.}
+\]
+*Proof*: If C_p≠0, choose a Chebotarev MW-independent suitable pair q,r, so δ_qr≠0. Kim+Castella–Sano imply Sha[p∞]=0. Conversely if Sha[p∞]=0, the full Kurihara system and Kim imply the existence of a nonzero two-prime δ; by (H2) this pair lies in the factorization domain and has nonzero determinant and nonzero local weights, forcing C_p≠0. QED.
+
+The forward implication alone needs H1 and the pair-existence theorem, not H2. The backward implication needs H2 or a suitably strengthened all-one-dimensional-primes factorization.
+
+**WARNING:** This proposition is conditional on a genuinely new, still unproved ARITHMETIC H1. Even after H1 is proved, nonvanishing of C_p at every sufficiently large p remains **equivalent in difficulty** to Sha's p-tail vanishing. The program becomes useful for BSD only if the independently defined C_p can be bounded by a **single prime-independent nonzero integral object**, or if a new global theorem proves C_p unit uniformly. Constructing C_p by fitting two-prime residues is circular for that purpose.
