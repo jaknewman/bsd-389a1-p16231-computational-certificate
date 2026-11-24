@@ -194,3 +194,35 @@ I_1(\kappa_{\rm Kato,p})\subseteq
 \]
 
 **Remaining real obstruction:** produce a nonzero p-adic I1(Kato) at each sufficiently large p, or prove a global integral D simultaneously belonging to the corresponding Fitting ideals; the abstract BSS theorem alone does not provide this nonvanishing.
+
+
+## 7. The large-p BSS Galois hypotheses 4.7 and 6.14 are satisfied by full image, not conjectural
+
+This section addresses ONLY the Galois-theoretic conditions from the actual printed paper; the **core-vertex existence hypothesis 4.2** of Corollary 6.21 remains a separate condition and MUST NOT be silently omitted.
+
+E=389a1 is non-CM since its \(j=112^3/389\) is non-integral. Serre's open image theorem therefore implies \(\rho_{E,p}(G_{\mathbf Q})=\mathrm{GL}_2(\mathbf Z_p)\) for all sufficiently large p (no explicit cutoff asserted here).
+
+For any such odd p, BSS II Hypothesis 4.7 holds for T=T_pE and K=Q:
+
+(i) \(T/pT=E[p]\) is irreducible because \(\mathrm{GL}_2(\mathbf F_p)\) acts naturally.
+
+(ii) In their notation, \(K_{p^\infty}=\mathbf Q(\mu_{p^\infty},(\mathcal O_{\mathbf Q}^\times)^{1/p^\infty})K(1)=\mathbf Q(\mu_{p^\infty})\), as \(\mathcal O_{\mathbf Q}^\times=\{\pm1\}\), p is odd, and the p-Hilbert class field of Q is trivial. The Weil pairing gives \(\det\rho_{E,p}=\chi_{\rm cyc}\), so the image of \(G_{K_{p^\infty}}\) is all \(\mathrm{SL}_2(\mathbf Z_p)\). Choose \(\tau\) whose image is \(\begin{pmatrix}1&1\\0&1\end{pmatrix}\); then \(T/(\tau-1)T\simeq\mathbf Z_p\).
+
+(iii) Their field \(K(T)_{p^\infty}=\mathbf Q(E[p^\infty])K_{p^\infty}\) equals \(\mathbf Q(E[p^\infty])\) because the division field already contains all p-power roots of unity. Its Galois group is \(\mathrm{GL}_2(\mathbf Z_p)\), with central \(-I\). On both \(T\) and \(T^\vee(1)\simeq T\), the operator \((-I)-1=-2I\) is a Z_p-unit. Sah's lemma then forces
+\[
+H^1(\mathrm{Gal}(K(T)_{p^\infty}/\mathbf Q),T)
+=H^1(\mathrm{Gal}(K(T)_{p^\infty}/\mathbf Q),T^\vee(1))=0.
+\]
+(iv) The condition is only imposed for p=3, so it is irrelevant to the sufficiently-large p tail.
+
+Hence **Hypothesis 4.7 is proved for all sufficiently large p**, relying only on established non-CM/open-image theorems.
+
+BSS II Hypothesis 6.14 says \(\mathrm{Frob}_q^{p^k}-1\) is injective on T for all selected good auxiliary primes q and k≥0. Any Frobenius eigenvalue on T is an algebraic number of complex absolute value \(\sqrt q>1\) by the Weil bound, so no positive power equals 1. This proves Hypothesis 6.14 automatically.
+
+The cyclotomic \(\mathbf Z_p\)-extension of Q has no finite rational prime that splits completely (a rational integer q>1 cannot be congruent to 1 modulo arbitrarily high p-powers). Choosing a sufficiently large abelian pro-p extension containing it and all the auxiliary ray-class p-extensions accommodates the structure required in Hypothesis 6.4.
+
+**Remaining published-application obligation:** BSS Corollary 6.21 assumes Hypothesis 4.2 for each finite T/p^m T, i.e. existence of a suitable **core vertex** at that level with free primal Selmer of rank \(1+\nu(n)\) and vanishing dual Selmer. The paper's statements treating 4.2 as a distinct hypothesis mean it still needs a self-contained verification in this application, not just an appeal to full image.
+
+**Final arithmetic obstruction after that:** uniform p-tail nonvanishing/primitivity of the specific Kato-derived \(I_1(\kappa_{\rm Kato,p})\). It is NOT provided by the generic BSS formalism, which allows zero or nonprimitive individual Euler systems.
+
+References: BSS II §4.3 Hypothesis 4.7 and §6 Corollary 6.21, https://nms.kcl.ac.uk/david.burns/web_page/bss.pdf ; Serre's open image theorem; Sah's cohomological lemma; Weil Hasse bound.
