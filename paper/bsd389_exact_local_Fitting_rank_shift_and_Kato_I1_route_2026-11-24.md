@@ -141,3 +141,56 @@ The separate original **exact complex BSD leading-term equality** still demands 
 **References**
 - BSS II, §6.2 and Corollary 6.21(ii): https://nms.kcl.ac.uk/david.burns/web_page/bss.pdf
 - Kummer exact sequence and local conditions: standard arithmetic duality and Bloch–Kato Selmer theory.
+
+
+## 6. The canonical-dual *local conditions* actually coincide with strict Kummer for E/Q (p odd)
+
+The outstanding "match the local Selmer structures" in §3 can be settled directly for the **p-infinity** modules, without assuming Sha finite. Distinguish this local identification from verification of BSS's global hypotheses, which remains an obligation.
+
+Let \(\ell\neq p\). Because \(E(\mathbf Q_\ell)\) is a compact \(\ell\)-adic Lie group with an open pro-\(\ell\) subgroup and finite quotient, its p-primary torsion is finite and
+\[
+E(\mathbf Q_\ell)\otimes\mathbf Q_p/\mathbf Z_p=0.
+\]
+Thus the standard **p-infinity** local Kummer condition is zero at \(\ell\). This assertion is NOT valid unchanged for the finite \(p^m\)-torsion local conditions, where local p-torsion can give nonzero Kummer images.
+
+Write \(T=T_pE\) and \(V=T\otimes\mathbf Q_p\). The local group \(E(\mathbf Q_\ell)\) has finite p-power torsion, so
+\[
+H^0(\mathbf Q_\ell,V)=0.
+\]
+The Weil pairing gives \(V^\vee(1)\simeq V\), hence local Tate duality and the \(\ell\neq p\) local Euler characteristic formula imply
+\[
+\dim_{\mathbf Q_p}H^1(\mathbf Q_\ell,V)
+=\dim H^0(\mathbf Q_\ell,V)+\dim H^0(\mathbf Q_\ell,V^\vee(1))
+=0.
+\]
+Consequently \(H^1(\mathbf Q_\ell,T)\) is a finite p-primary torsion group. The BSS canonical local condition at \(\ell\) (BSS II §6.2) is
+\[
+H^1_{\mathcal F_{\mathrm{can}}}(\mathbf Q_\ell,T)
+=\ker(H^1(\mathbf Q_\ell,T)\longrightarrow H^1(\mathbf Q_\ell^{ur},V)).
+\]
+Since the target is a Q_p-vector space and the source is torsion, the arrow is zero and **the canonical T-condition is the entire local H¹**. By perfect local Tate orthogonality its dual local condition on \(A=T^\vee(1)\simeq E[p^\infty]\) is therefore **zero**. This agrees with the standard p-infinity local Kummer condition, and does not require any special Tamagawa computation for the p-infinity comparison.
+
+At \(\ell=p\), BSS *defines* the canonical T-condition to be full local H¹, so its dual local condition on A is again **zero**, which is exactly the strict-at-p modification of the ordinary Selmer condition. At \(\infty\) the p-primary \(H^1(\mathbf R,A)\) vanishes for odd p.
+
+Thus for every **odd** p,
+\[
+\boxed{
+H^1_{\mathcal F_{\mathrm{can}}^*}(\mathbf Q,E[p^\infty])
+=\ker\big(\operatorname{Sel}_{p^\infty}(E/\mathbf Q)
+ \xrightarrow{\mathrm{loc}_p} H_f^1(\mathbf Q_p,E[p^\infty])\big)
+=S_0.
+}
+\]
+**Local target identification is now proved**, at the infinite p-power level of BSS II Corollary 6.21; its applicability to T_pE for a specified p still requires separately checking *all the global and finite-level hypotheses* in the paper. Do NOT transfer this argument blindly to a finite-level E[p^m] Selmer structure.
+
+Subject to those BSS hypotheses, the chain in §3 is an honest direct arithmetic implication:
+\[
+\boxed{
+I_1(\kappa_{\rm Kato,p})\subseteq
+\mathrm{Fitt}_1(X_0)
+=p^{t_p}\mathrm{Fitt}_2(X_f)
+\subseteq\mathrm{Fitt}_2(X_f).
+}
+\]
+
+**Remaining real obstruction:** produce a nonzero p-adic I1(Kato) at each sufficiently large p, or prove a global integral D simultaneously belonging to the corresponding Fitting ideals; the abstract BSS theorem alone does not provide this nonvanishing.
