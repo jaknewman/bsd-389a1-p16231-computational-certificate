@@ -111,3 +111,20 @@ The first route could deliver Sha=0 immediately if D is squarefree. The second r
 The near-one Archimedean ratio from the project provides no Fitt2 containment, because the exact rank-two BSD leading-term equality used to turn the ratio into #Sha is itself unproved.
 
 **Scope:** this document sharpens and audits the one-shot global proof obligation, demonstrates two exact no-go deductions, and does not pretend that the sought global comparison has been built.
+
+
+## Update 24 November 2026 — existing theorems identify the exact p-tail Fitting2 numerically, but do not make it a unit
+
+**Important literature upgrade:** Castella–Sano, 2026 (arXiv:2601.14504, Theorem B), and Chan-Ho Kim, 2025/2026 (Theorem 1.8), give a better framework than a speculative universal primitive two-factor Euler system. The full proof with exact hypotheses is in [bsd389_2026_Castella_Sano_Kim_uniform_Kato_index_and_exact_two_prime_Sha_criterion.md](bsd389_2026_Castella_Sano_Kim_uniform_Kato_index_and_exact_two_prime_Sha_criterion.md).
+
+For E389a1 and all sufficiently large p: \(\partial_p^{(\infty)}=0\) and \(\rho_p=\mathrm{corank}\mathrm{Sel}_{p^\infty}(E/\mathbf Q)\in\{2,4,6,\dots\}\). If \(\rho_p=2\), Kim's theorem gives
+\[
+\mathrm{Fitt}_2(X_p)=p^{\partial_p^{(2)}}\mathbf Z_p.
+\]
+If \(\rho_p\ge4\), it gives \(\mathrm{Fitt}_2(X_p)=0\). In BOTH cases the exact necessary-and-sufficient all-large-p zero-Sha criterion is
+\[
+\boxed{\Sha(E/\mathbf Q)[p^\infty]=0\iff\exists\,q_1q_2\text{ admissible with genuine }\delta_{q_1q_2}\not\equiv0\bmod p.}
+\]
+Castella–Sano prove **some** finite-factor mod-p unit exists, not that one exists at exactly TWO primes. They also explicitly compute the divisibility index of Kato's *full* Kolyvagin system up to the local torsion \(E(\mathbf Q_p)[p^\infty]\), so merely proving global Kato nonzero/primitive will not force \(\rho_p=2\).
+
+This does not supply the independent global integer D of §2; it proves an exact cohomological reexpression of the real obstruction and rules out the former overly optimistic shortcut. The separate complex rank-two BSD exact identity remains unproved.
