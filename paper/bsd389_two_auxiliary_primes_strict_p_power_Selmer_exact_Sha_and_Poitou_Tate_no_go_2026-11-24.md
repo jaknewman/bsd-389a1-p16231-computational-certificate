@@ -125,3 +125,60 @@ for the Chebotarev-selected pair uniformly in large p (parity then gives zero). 
 This is an exact *Selmer formulation* and a proof of the strict/relaxed dichotomy, not a full BSD result. It rules out further useless searches for more MW-independent pairs: their existence has been settled universally.
 
 **Sources:** Kim, *The structure of Selmer groups and the Iwasawa main conjecture for elliptic curves*, Theorem 1.8, Corollary 1.12, https://preprint.press.jhu.edu/ajm/sites/default/files/AJM-kim.pdf ; Castella–Sano, *On refined nonvanishing conjectures by Kurihara and Kolyvagin*, Theorem B, https://web.math.ucsb.edu/~castella/Kurihara.pdf ; Poonen–Stoll, *The Cassels–Tate pairing on polarized abelian varieties*, https://arxiv.org/abs/math/9911267; Poitou–Tate comparison and exact Kummer sequence.
+
+
+## 6. NEW sharp Chebotarev detection number for the ENTIRE genuine finite p-Selmer group
+
+The Kummer argument can be upgraded from the known two-dimensional MW space to **any** genuine finite mod-p Selmer space. This uses the unknown Sha only in the *definition of the subspace*, not in a finiteness assumption or conjectural theorem.
+
+Let p≥5 be a good prime with \(\bar\rho_{E,p}(G_{\mathbf Q})=\mathrm{GL}_2(\mathbf F_p)\). Let
+\[
+S=\mathrm{Sel}_p(E/\mathbf Q),\qquad
+d=\dim_{\mathbf F_p}S
+=2+\dim_{\mathbf F_p}\Sha(E/\mathbf Q)[p].
+\]
+The finite-level Selmer S is finite dimensional even without assuming global Sha finiteness. Fix any basis \(c_1,\dots,c_d\) of its Galois H¹ classes.
+
+**THEOREM (sharp local detection number).** There exist infinitely many ordered d-tuples of distinct good Kurihara-admissible primes \(q_1,\ldots,q_d\) such that each local quotient \(H_f^1(\mathbf Q_{q_i},E[p])\simeq\mathbf F_p\) is one-dimensional and the localization map
+\[
+\boxed{\mathrm{loc}_{q_1,\ldots,q_d}:S\xrightarrow{\sim}
+\bigoplus_{i=1}^d H_f^1(\mathbf Q_{q_i},E[p])}
+\]
+is an isomorphism. One may prescribe its matrix as the identity after choosing the local generators.
+
+Moreover **no collection of fewer than d such one-dimensional local quotients** can make localization on S injective, by dimension. Consequently the exact minimum number of admissible one-dimensional local tests required to detect the *entire* true Selmer group equals
+\[
+\boxed{m_{\min}(p)=2+\dim_{\mathbf F_p}\Sha(E/\mathbf Q)[p].}
+\]
+
+### Proof
+
+Let \(F=\mathbf Q(E[p])\), \(V=E[p]\). Full residual image gives \(\operatorname{Gal}(F/\mathbf Q)=\mathrm{GL}_2(\mathbf F_p)\). The central element \(-I\) acts as \(-1\) on V; Sah's lemma implies \(H^1(\mathrm{GL}_2(\mathbf F_p),V)=0\) for odd p. Inflation–restriction makes \(H^1(\mathbf Q,V)\to H^1(F,V)\) injective.
+
+Since V is trivial under \(G_F\), the restrictions of \(c_1,\ldots,c_d\) are honest continuous group homomorphisms \(G_F\to V\). Their joint image W⊂V^d defines a finite Galois extension M/F. Conjugation by the quotient GL₂ makes W a GL₂-stable submodule of V^d.
+
+The natural GL₂(Fp)-module V is absolutely irreducible with scalar endomorphism ring. Since V^d is semisimple (it is already a direct sum of simple modules), every stable submodule has the form V⊗U for some subspace U⊂Fp^d. If W≠V^d, U is proper, hence there is a nonzero linear functional \(a\in(\mathbf F_p^d)^\vee\) annihilating U. The associated nontrivial linear combination \(\sum a_i c_i\) restricts to zero on G_F, contradicting the injectivity above. Therefore
+\[
+\boxed{\mathrm{Gal}(M/F)=W=E[p]^d.}
+\]
+
+Choose \(U=\begin{pmatrix}1&1\\0&1\end{pmatrix}\) as the linear Frobenius part. The projection \(V\to V/(U-1)V\) is onto a one-dimensional Fp vector space. Full translation kernel V^d lets us choose d lifts \(g_i\in\mathrm{Gal}(M/\mathbf Q)\) of U such that their projected translation coordinates are the i-th standard basis vectors of Fp^d.
+
+Chebotarev yields infinitely many unramified good rational primes q_i with Frobenius conjugate to the selected g_i. The determinant and trace of U give q_i≡1 modp and a_{q_i}(E)≡2 modp; its nontrivial unipotent Jordan block gives \(\dim H_f^1(\mathbf Q_{q_i},V)=1\). The local unramified cohomology of each c_j is the projected Frobenius translation coordinate, so \(\mathrm{loc}_{q_i}(c_j)=\delta_{ij}\) in the chosen local trivialization. Thus the localization matrix is identity and the theorem follows. QED.
+
+### Parity consequence and real obstruction
+
+For E389a1, the proven p-parity statement in Kim gives even \(\mathrm{corank}\mathrm{Sel}_{p^\infty}\); the finite quotient Sha/div has perfect alternating Cassels–Tate pairing. Hence \(\dim_{\mathbf F_p}\Sha[p]\) is even for all sufficiently large p. Therefore:
+\[
+\boxed{m_{\min}(p)=2,4,6,\ldots}
+\]
+and **if genuine Sha[p] is nonzero, every pair of one-dimensional local tests misses at least two linearly independent Selmer classes**.
+
+This sharply distinguishes:
+- Two-prime MW *independence*: ALWAYS achievable for all large p (previous theorem);
+- Two-prime FULL Selmer *injectivity*: achievable if and only if genuine Sha[p]=0;
+- Kurihara two-prime p-unit: equivalent to the latter via the distinct published Kim/CS reciprocity/Fitting theorem, not via the local MW determinant alone.
+
+Although this theorem prescribes d independent auxiliary Frobenius tests, its d itself depends on the unknown Sha[p]. It therefore does not produce a new upper bound for d or prove global BSD. It is a **logical and cohomological no-shortcut theorem**, not a computational test to run across unbounded p.
+
+The exact p^k theorem of §§1–3 remains a separate integral strengthening of the two-dimensional MW summand; the d-dimensional theorem here is asserted only modulo p, where S is a vector space and the GL₂ representation decomposition is simplest.
