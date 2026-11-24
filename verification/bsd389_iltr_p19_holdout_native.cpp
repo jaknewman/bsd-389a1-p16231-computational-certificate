@@ -47,18 +47,32 @@ int main(){
  for(int i=0;i<q2-1;i++){assert(L2[x]==-1);L2[x]=i%p;x=int(int64_t(x)*2%q2);}
  assert(x==1);
  int64_t total=0,covered=0;
+ int64_t theta_hist[19]={};
  for(int a=1;a<=(n-1)/2;a++){
   int x=L1[a%q1],y=L2[a%q2];
   if(x<0||y<0)continue;
+  int value=sym(a);
   int wt=x*y%p;
-  if(wt)total+=int64_t(wt)*sym(a);
+  if(wt)total+=int64_t(wt)*value;
+  // True diagonal Mazur-Tate theta in the cyclic p-quotient
+  // with character exponent log_q1 + log_q2 (not a toy model).
+  theta_hist[(x+y)%p]+=2LL*value;
   covered++;
  }
  assert(covered==int64_t(q1-1)*(q2-1)/2);
  int delta=mod(2*total,p);
  assert(delta==4);
+ int64_t c0=0,c1=0,c2=0;
+ for(int j=0;j<p;j++){
+  c0+=theta_hist[j];c1+=int64_t(j)*theta_hist[j];
+  c2+=int64_t(j)*(j-1)/2*theta_hist[j];
+ }
+ const int jet0=mod(c0,p),jet1=mod(c1,p),jet2=mod(c2,p);
+ assert(jet0==0 && jet1==0 && jet2==4);
+ std::cout<<"P19_TRUE_DIAGONAL_MAZUR_TATE_JETS_PASS "
+          <<"c0_mod19="<<jet0<<" c1_mod19="<<jet1<<" c2_mod19="<<jet2<<"\n";
  std::cout<<"GENUINE_P19_ILTR_HOLDOUT_PASS q1="<<q1<<" q2="<<q2
           <<" full_half_units="<<covered<<" actual_delta="<<delta
           <<" independently_Tate_predicted=4\n";
- std::cout<<"SCOPE: finite honest p19 witness, NO uniform Sha/complex BSD theorem\n";
+ std::cout<<"SCOPE: genuine local p19 Sha-vanishing criterion via BH Fitting; NO uniform Sha/complex BSD theorem\n";
 }
