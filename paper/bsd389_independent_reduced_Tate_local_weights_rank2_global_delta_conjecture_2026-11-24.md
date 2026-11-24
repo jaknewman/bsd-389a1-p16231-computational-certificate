@@ -158,3 +158,33 @@ Even proving ILTR (and hence globally finite Sha with finitely many remaining sm
 - Archived independent C++17 authentic Kurihara enumerator in verification/bsd389_quadratic_volume_small_pairs.cpp, now covering p5,p7,p11; standalone complete enumerations at p13 and p17 were executed with the same authenticated 390 symbol vector and confirmed p13 (6/6) and p17 (1/1).
 - Source benchmark p5 (41,61) δ4; p7 (113,673) δ2; p11 (397,991) δ1 are independently reproduced in the genuine C++ Manin arithmetic.
 - Exact B-H theorem: https://arxiv.org/pdf/2511.07203 ; Kim theorem: https://preprint.press.jhu.edu/ajm/sites/default/files/AJM-kim.pdf ; Castella–Sano 2026: https://web.math.ucsb.edu/~castella/Kurihara.pdf .
+
+
+## 7. COROLLARY STRENGTHENING — the implication ILTR ⇒ Sha[p]=0 does NOT need local p-torsion exclusion or Kim
+
+The most efficient proof of §4 uses the already established rank-two jet-to-Sha lemma and **Bullach–Honnor Theorem 1.4(b)**, not Kim's semi-local theorem. This removes any need to assume \(E(\mathbf Q_p)[p]=0\), which can be awkward at anomalous primes.
+
+Under ILTR and the large-p full-image Chebotarev construction, choose q1,q2 with p exactly once dividing each \(\#E(\mathbf F_q)\), local MW determinant a unit, and hence \(\tilde\delta_{q_1q_2}\in\mathbf F_p^\times\) by perfect local reduced Tate pairings and ILTR.
+
+Choose any diagonal real cyclic degree-p quotient K of the ray-class field of conductor q1q2, via \(\lambda_1+r\lambda_2\) with r∈Fp×. The genuine Hecke–Mazur–Tate norm relations, \(L(E,1)=0\), and q_i≡1, a_qi≡2 modp give the **genuine** diagonal theta jet
+\[
+c_0=0,\qquad c_1\equiv0\bmod p,\qquad
+c_2\equiv r\,\tilde\delta_{q_1q_2}\in\mathbf F_p^\times.
+\]
+The nontrivial c2 survives in \(B_0=\mathbf F_p[T]/(T^3)\), while \((p,T)^3\) vanishes there; so \(\theta\notin\mathfrak m^3\).
+
+E=389a1 is semistable; for sufficiently large p its p-adic Galois image contains SL₂; K has degree p odd and contains no primitive pth root of unity; thus Bullach–Honnor Theorem 1.4(b) applies:
+\[
+\theta_K^\#\in\operatorname{Fitt}_{0,\mathbf Z_p[C_p]}
+\bigl(\operatorname{Sel}_{p^\infty}(E/K)^\vee\bigr).
+\]
+The minimal number d of local-ring generators of this Selmer dual satisfies \(\operatorname{Fitt}_0\subseteq\mathfrak m^d\), so d≤2. Restriction and G-invariants inject
+\[
+\operatorname{Sel}_p(E/\mathbf Q)\hookrightarrow
+\operatorname{Sel}_p(E/K)^{\mathrm{Gal}(K/\mathbf Q)}
+\]
+because E[p](K)=0 by full residual GL₂ image and K abelian. Kummer gives \(\dim\operatorname{Sel}_p(E/\mathbf Q)=2+\dim\Sha(E/\mathbf Q)[p]\). Hence \(2+\dim\Sha[p]\le d\le2\), so **Sha(E/Q)[p]=0** and consequently the whole p-primary part vanishes. No \(E(\mathbf Q_p)[p]\) hypothesis or use of Kim's Theorem 1.10 is needed.
+
+**SCOPE:** This is a rigorously proved conditional implication of the NEW ILTR congruence; it does not prove ILTR for unbounded p. The near-optimal target is now especially explicit: prove equality of one genuine mixed Mazur–Tate coefficient with twice the determinant of the independently computable reduced-Tate local bilinear forms, uniformly in q1,q2 and p, without assuming Sha finite.
+
+Primary source: Bullach–Honnor arXiv:2511.07203, Hypothesis 1.2 and Theorem 1.4(b). No conjectural Selmer-Fitting inclusion is being assumed in this conditional corollary.
