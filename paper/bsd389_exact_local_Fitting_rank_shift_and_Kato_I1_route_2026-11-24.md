@@ -226,3 +226,15 @@ The cyclotomic \(\mathbf Z_p\)-extension of Q has no finite rational prime that 
 **Final arithmetic obstruction after that:** uniform p-tail nonvanishing/primitivity of the specific Kato-derived \(I_1(\kappa_{\rm Kato,p})\). It is NOT provided by the generic BSS formalism, which allows zero or nonprimitive individual Euler systems.
 
 References: BSS II §4.3 Hypothesis 4.7 and §6 Corollary 6.21, https://nms.kcl.ac.uk/david.burns/web_page/bss.pdf ; Serre's open image theorem; Sah's cohomological lemma; Weil Hasse bound.
+
+
+## UPDATE 24 November 2026 — core-vertex hypothesis closed in the large-p tail and I1 primitivity target CORRECTED
+
+The prior last section treated BSS Hypothesis 4.2 core-vertex existence as an open application problem and suggested that a p-adic **unit in I1 itself** should be shown for every large p. This is **superseded** by [the core-vertex and corrected-I1 theorem](bsd389_BSS_core_vertices_closed_local_corrected_I1_uniform_criterion_2026-11-24.md).
+
+- Mazur–Rubin, *Kolyvagin Systems*, Corollary 4.1.9, Theorem 4.1.10, Proposition 6.2.2, and Lemma 6.2.3 imply BSS finite-level core vertices at **every p^m level** for sufficiently large full-image p. Here the canonical Euler-system *core rank* is 1, not the MW rank 2, and **no prior Sha finiteness is assumed**.
+- The exact local rank-shift \(\mathrm{Fitt}_1(X_p^0)=\mathfrak l_p\mathrm{Fitt}_2(X_p)\), with \(\mathfrak l_p=p^{t_p}\mathbf Z_p\), means that an **uncorrected I1 p-unit** may be mathematically impossible even if Sha[p∞]=0, when \(t_p>0\).
+- Define \(J_p=(I_1(\kappa_{\mathrm{Kato},p}):\mathfrak l_p)\). Then under the published BSS containment, **\(\boxed{J_p\subseteq\mathrm{Fitt}_2(X_p)}\)**. It is sufficient, and substantially better targeted, to prove **\(p^{t_p}\in I_1(\kappa_{\mathrm{Kato},p})\)**, i.e. \(J_p=\mathbf Z_p\), at all large p. Or show \(p^{t_p}D\in I_1\) for one nonzero D supported on separately certified Sha-zero primes.
+- **This remains an open, genuine arithmetic statement about the particular Kato-derived system.** No formal core-vertex theorem makes Kato automatically primitive, and no all-p Sha theorem or complex rank-two BSD equality is claimed.
+
+Printed numbering: arXiv:1805.08448v1, Corollary **6.15(ii)** (not 6.21(ii) in this edition).
