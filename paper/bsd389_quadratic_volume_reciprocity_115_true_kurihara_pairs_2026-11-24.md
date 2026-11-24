@@ -127,3 +127,75 @@ Then
 The forward implication alone needs H1 and the pair-existence theorem, not H2. The backward implication needs H2 or a suitably strengthened all-one-dimensional-primes factorization.
 
 **WARNING:** This proposition is conditional on a genuinely new, still unproved ARITHMETIC H1. Even after H1 is proved, nonvanishing of C_p at every sufficiently large p remains **equivalent in difficulty** to Sha's p-tail vanishing. The program becomes useful for BSD only if the independently defined C_p can be bounded by a **single prime-independent nonzero integral object**, or if a new global theorem proves C_p unit uniformly. Constructing C_p by fitting two-prime residues is circular for that purpose.
+
+
+## 7. ADDENDUM 2026-11-24 — third prime p=11, 15 new authentic pairs, and OUT-OF-SAMPLE predictions
+
+A completely independent C++17 computation using the same historically authenticated 390-entry integral Manin vector (not any solved QLVR weights) evaluated the COMPLETE half-unit ranges at all **15 pairs** from the six primes
+\[
+q=(397,991,1321,3389,3433,4643).
+\]
+All six satisfy the p=11 admissibility criteria and have exactly one factor 11 in \(\#E(\mathbf F_q)\); independent finite-field arithmetic of the genuine P,Q reductions gives local slopes
+\[
+s=(10,7,2,8,9,4)\in\mathbf F_{11}^6.
+\]
+The genuine two-prime residues, ordered lexicographically by pairs, are
+\[
+\begin{array}{c|rrrrr}
+q_i\backslash q_j&991&1321&3389&3433&4643\\\hline
+397&1&9&4&7&5\\
+991&&10&7&9&6\\
+1321&&&2&5&2\\
+3389&&&&1&8\\
+3433&&&&&5
+\end{array}
+\]
+The historically independently archived **(397,991) gives 1 mod 11**, recovered exactly by this independent direct enumerator.
+
+For all 15 pairs:
+\[
+\boxed{\delta_{ij}=7\,u_i u_j(s_j-s_i)^2\bmod 11,\quad
+u=(1,7,8,8,1,6).}
+\]
+All **15 independent four-prime triples of cross-product equalities** pass (the 15 choices of four among six, all local slopes pairwise distinct), with no exceptions. Explicit normalized cross-products for the first quadruple 397,991,1321,3389 are (7,7,7) mod11.
+
+**OUT-OF-SAMPLE TEST:** Only the five star edges \((397,q)\), q in the remaining five primes, plus the single edge (991,1321) were used to determine **C=7 and six u_i**. These are SIX calibrating Kurihara values; the remaining **NINE** pair residues were predicted BEFORE comparison and the nine independent full Manin sums match *exactly*:
+\[
+\begin{array}{c|rrrrrrrrr}
+(q_i,q_j)&(991,3389)&(991,3433)&(991,4643)&(1321,3389)&(1321,3433)&(1321,4643)&(3389,3433)&(3389,4643)&(3433,4643)\\\hline
+\text{predicted=actual}&7&9&6&2&5&2&1&8&5
+\end{array}
+\]
+This is a genuinely predictive **finite sample** test, though it still uses two-prime values to calibrate the local units; it is NOT an independent q-only arithmetic construction.
+
+The totals across three distinct primes are now **130 genuine completed two-factor sums: 105 at p5, 10 at p7, and 15 at p11**. The arithmetic p11 six-prime run took approximately **3.7 seconds** in optimized C++17 in the assistant runtime. The existing repo verifier verification/bsd389_quadratic_volume_small_pairs.cpp was extended to include the p11 six-prime test and a mandatory known benchmark. It recalculates local point counts and slopes, whereas the independent compact p11 C++ used the separately computed slope array. This adds implementation diversity; the newly updated repo verifier itself has not yet been user-executed.
+
+### 7.1. The first genuinely q-only weight proposal FAILS — exact arithmetic counterexample
+
+A natural attempt to build the q-local units **without using any pairwise δ** is to extract the quadratic coefficient of the single-prime Mazur–Tate polynomial
+\[
+\Theta_q(X)=\sum_{a\bmod q}^{*}m_E^+(a/q)\,X^{\log_g(a)\bmod p}.
+\]
+This is an independently calculable scalar from the SAME authentic 390-entry Manin vector, involving no two-prime conductor.
+
+However the direct exact finite computations show
+\[
+\boxed{\Theta_{41}(X)=0,\qquad \Theta_{61}(X)=0\ \text{in }\mathbf Z[X]/(X^5-1)}
+\]
+for p=5 and the smallest primitive roots g41=6, g61=2 (the entire five-coefficient histograms vanish, not only their quadratic coefficients). Yet
+\[
+\boxed{\delta_{41\cdot61}\equiv4\bmod5\ne0.}
+\]
+The full two-prime benchmark was independently recomputed with the same Manin path algorithm and agrees with the historically audited value 4.
+
+Thus one cannot define the **necessary unit** local factor u_q solely as a multiple of \([T^2]\Theta_q(1+T)\) or any other coefficient of the *single-prime* theta polynomial: the one-prime theta vanishes even though the mixed two-prime derivative is a unit. The proposed independent local weights must use a richer object, e.g. finite-singular comparison of actual Kato cohomology classes or a q-indexed local height, not the scalar one-prime Mazur–Tate group-ring element.
+
+This falsification is a substantive research outcome: a tempting low-cost independent weight construction is mathematically unavailable on these true q values.
+
+### 7.2. What is PROVEN and what remains OPEN
+
+Proven algebraically: Cauchy–Binet local-volume determinant formula; rank-one four-product factorization criterion; exact 130 finite-sample modular-symbol congruences; independently benchmarked p11 out-of-sample predictions; the explicit single-prime theta-zero counterexample to a scalar weight construction.
+
+Open: universal QLVR; existence of independently constructed canonical local Kato/Bockstein weights w_q and one global regulator scalar C_p; nonvanishing of C_p at every sufficiently large p; uniform finiteness and triviality of Sha(E/Q) and the exact complex rank-two BSD identity.
+
+This specifically **rules out** replacing all the missing arithmetic Kato–Bockstein comparison by a one-prime theta Hessian.
