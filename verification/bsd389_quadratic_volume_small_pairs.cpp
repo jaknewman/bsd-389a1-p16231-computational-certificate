@@ -1,5 +1,5 @@
 // E389a1: independent genuine Mazur-Tate two-prime Kurihara arithmetic at p=5 and p=7.
-// Finite empirical discovery: quadratic local-volume factorization on 105 + 10 pairs.
+// Finite empirical discovery: quadratic local-volume factorization on 105 + 10 + 15 pairs.
 // This does NOT establish a theorem for all q or all p, or prove BSD globally.
 #include <cassert>
 #include <cstdint>
@@ -83,9 +83,10 @@ int main(){
  assert(V[389]==0);
  for(int a=1;a<N;++a)Inv389[a]=pw(a,N-2,N);
  const vector<vector<int>> tests={{41,61,131,211,251,271,571,641,751,991,1031,1181,1321,1381,1811},
-                                   {113,673,1429,2423,3389}};
- for(int p:{5,7}){
-  const auto& qs=tests[p==5?0:1];const int sz=int(qs.size());vector<Local> ls;
+                                   {113,673,1429,2423,3389},
+                                   {397,991,1321,3389,3433,4643}};
+ for(int p:{5,7,11}){
+  const auto& qs=tests[p==5?0:(p==7?1:2)];const int sz=int(qs.size());vector<Local> ls;
   for(int q:qs)ls.push_back(local(q,p));
   vector<vector<int>> delta(sz,vector<int>(sz)),det(sz,vector<int>(sz));
   int count=0,nz=0,zero=0;
@@ -95,6 +96,7 @@ int main(){
    assert((d!=0)==(m!=0));count++;if(d)nz++;else zero++;
    if(p==5 && ls[i].q==41 && ls[j].q==61)assert(d==4);
    if(p==7 && ls[i].q==113 && ls[j].q==673)assert(d==2);
+   if(p==11 && ls[i].q==397 && ls[j].q==991)assert(d==1);
    if(p==5 && ls[i].q==131 && ls[j].q==211)assert(d==0);
    if(p==7 && ls[i].q==1429 && ls[j].q==3389)assert(d==0);
   }
