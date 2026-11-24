@@ -106,3 +106,21 @@ The source-theoretic core-vertex obstacle is now settled for the sufficiently-la
 **Only serious remaining uniform arithmetic task** for the global Sha-part: show \(J_p=\mathbf Z_p\) for every large p, or construct a fixed D with \(D\in J_p\) for each p, **for the genuinely normalized Kato-derived system**, with complete hypotheses and genuine local-condition transfer. Even doing this would **not** prove the separate exact complex rank-two BSD leading term.
 
 The actual uniform corrected primitivity result is NOT present in BSS, Mazur–Rubin, Kato, or our repository. Do not label it PASS.
+
+
+## CORRECTION DATED 2026-11-24 — Castella–Sano and Kim close the primitive-index step, not rank-two Sha
+
+The earlier research suggestion to prove nonvanishing of the *entire Kato Kolyvagin system* or to construct a brand-new explicit reciprocity bridge is outdated. See the independent full statement and source audit in [bsd389_2026_Castella_Sano_Kim_uniform_Kato_index_and_exact_two_prime_Sha_criterion.md](bsd389_2026_Castella_Sano_Kim_uniform_Kato_index_and_exact_two_prime_Sha_criterion.md).
+
+**What is now THEOREM for all sufficiently large p of E=389a1:**
+- Castella–Sano 2026 Theorem B: the actual global Kurihara family has minimum p-valuation zero, \(\partial_p^{(\infty)}=v_p(\mathrm{Tam}_E)=0\), as N=389 squarefree and p has good ordinary or supersingular reduction. This supplies a Kurihara unit at **some** even number of prime factors.
+- Their Theorem 2.1.3 is the **existing genuine explicit reciprocity bridge** between Kato's actual derived Galois classes and the numerical Kurihara coefficients (with the local torsion factor). The earlier statement that such a bridge needed to be invented is too strong and must not be used.
+- Their equations (2.16),(2.17) give \(\mathcal M_\infty(\kappa^{\rm Kato})=v_p(\#E(\mathbf Q_p)[p^\infty])\), at most 1 for good p≥7. Conversion from their classical Kolyvagin-system divisibility to the BSS generator scalar \(a_p\) needs normalization comparison, so **do not assert \(v_p(a_p)\) from the source without that check**.
+- Chan-Ho Kim Theorem 1.8 gives Selmer corank exactly \(\rho_p=\min\{\nu(n):\delta_n\neq0\}\) and the Fitting ideals from the minimum valuations at each number of prime factors. For E(Q) rank2 and Tamagawa product1, this proves the exact equivalence
+\[
+\boxed{\Sha(E/\mathbf Q)[p^\infty]=0
+\iff\exists\,n=q_1q_2\text{ with }\delta_n\ne0\bmod p.}
+\]
+This is a theorem **equivalence**, not a proof the right-hand side holds for all p.
+
+**Scope correction:** the full-Kato index and global some-factor nonvanishing are settled (for p in the large good tail); the **first nonzero factor count \(\rho_p=2\)** is the genuine remaining Sha obstruction. An arbitrary-factor Kato primitive system does not force I1(strict) to have the specific index required to kill Sha, and the two-factor problem is as hard as the rank-two Sha assertion itself. These theorems say nothing about the separate exact complex BSD leading-term equality.
