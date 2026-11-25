@@ -180,7 +180,7 @@ The actual derived Mazur–Tate height matrices satisfy the corrected comparison
 \in\mathbf F_p^\times}
 \qquad(r\in\mathbf F_p^\times).
 \]
-This proves that **the actual divided Mazur–Tate regulator can be made nondegenerate for every sufficiently large p** by a suitable *deep* auxiliary conductor, independently of the unknown Sha group. Tan's Lemma 4.11 assumes "good" (including BSD), but that lemma is NOT used: this restricted rank-two conclusion follows from the explicit good-reduction finite-field monodromy formula plus Chebotarev/MW full image.
+This proves that **the actual divided Mazur–Tate regulator can be made nondegenerate for every sufficiently large p** by a suitable **order-p auxiliary conductor**, independently of the unknown Sha group. Tan's Lemma 4.11 assumes "good" (including BSD), but that lemma is NOT used: this restricted rank-two conclusion follows from the explicit good-reduction finite-field monodromy formula plus Chebotarev/MW full image.
 
 **No false implication:** This uniform *HEIGHT* nondegeneracy does NOT force any genuine Mazur–Tate theta coefficient to be a p-unit. If Sha(E/Q)[p] is nonzero, the previously proved Fitting/jet-depth theorem forces every *true* deep rank-two theta coefficient to vanish modulo p² even though a suitable MT regulator determinant is a unit. Exactly the missing Kato-to-regulator comparison, including the possible Selmer/Sha determinant factor, separates these statements.
 
@@ -196,3 +196,8 @@ Finite-field orders can be independently counted from the equation E, and the w_
 | 19 | 2243,3877 | 5,9 | 17,18 | 1 | 3 | 4 |
 
 For each row, \(2M_1M_2\det\mathscr H_{\chi_1,p}\equiv\delta_{q_1q_2}\bmod p\) holds, as a finite consistency check. This uses already certified δ-values and is NOT a proof of the **universal Kato leading-term identity**. The height determinant is independent of the common \(\varepsilon\) sign, and our computational matrix values are normalized accordingly.
+
+
+## 9. Critical admissibility distinction
+
+The hypothesis \(p\parallel\#E(\mathbf F_q)\) **cannot** hold simultaneously with the **p²-deep** Kurihara conditions \(q\equiv1\bmod p^2\) and \(a_q(E)\equiv2\bmod p^2\), since these imply \(\#E(\mathbf F_q)=q+1-a_q\equiv0\bmod p^2\). Thus the geometric comparison of this note is a theorem at **p-level anomalous tame primes with p-Sylow of exact order p**, and does not automatically extend to p²-deep auxiliary primes. The uniform p-level Kato-to-theta leading coefficient would suffice to show Sha[p]=0 if proved (via the p-level Fitting gate), but the earlier p² valuation-one gate is a separate situation. Extension of local monodromy to p^k and groups with p²-torsion requires a new integral filtration / higher pairing and is not covered by the present mod-p proof.
