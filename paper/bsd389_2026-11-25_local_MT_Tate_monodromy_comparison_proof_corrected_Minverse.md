@@ -167,3 +167,32 @@ What has NOT been proved: any equality between the true global Kato/Mazur–Tate
 - Earlier project note: paper/bsd389_one_prime_mazur_tate_biextension_height_factorization_and_scalar_reciprocity_cut_2026-11-25.md
 
 **Integrity rule:** The choice of \(\varepsilon\) must be frozen by matching the local Artin reciprocity normalization to the project’s Kurihara primitive-root logarithm, before any statement of exact equality in the unqualified original Tan conventions. No p19 value is alleged to have been computed using an independent full original global biextension implementation; the values (11,2) are THEOREM consequences of the standard monodromy identification and fixed finite-field Tate computations, with the stated sign ambiguity.
+
+
+## 7. NEW UNIFORM NONDEGENERACY COROLLARY for the TRUE derived MT height — no BSD/Sha hypothesis
+
+For every sufficiently large p, full Kummer Galois image and Chebotarev provide q1,q2 where: (a) q_i≡1 mod p, (b) the Frobenius modp has nonidentity unipotent Jordan block, (c) a mod-p² lift forces \(p\parallel\#E(\mathbf F_{q_i})\), and (d) the MW local rows v_i form a basis of Fp². These choices require NO hypothesis about Sha or Kato.
+
+The actual derived Mazur–Tate height matrices satisfy the corrected comparison theorem, so each w_i is nonzero by perfection of the reduced Tate pairing, each M_i inverse is a unit, and
+\[
+\boxed{\det\mathscr H_{\chi_r,p}
+=r(M_1M_2)^{-1} w_1w_2\det(v_1,v_2)^2
+\in\mathbf F_p^\times}
+\qquad(r\in\mathbf F_p^\times).
+\]
+This proves that **the actual divided Mazur–Tate regulator can be made nondegenerate for every sufficiently large p** by a suitable *deep* auxiliary conductor, independently of the unknown Sha group. Tan's Lemma 4.11 assumes "good" (including BSD), but that lemma is NOT used: this restricted rank-two conclusion follows from the explicit good-reduction finite-field monodromy formula plus Chebotarev/MW full image.
+
+**No false implication:** This uniform *HEIGHT* nondegeneracy does NOT force any genuine Mazur–Tate theta coefficient to be a p-unit. If Sha(E/Q)[p] is nonzero, the previously proved Fitting/jet-depth theorem forces every *true* deep rank-two theta coefficient to vanish modulo p² even though a suitable MT regulator determinant is a unit. Exactly the missing Kato-to-regulator comparison, including the possible Selmer/Sha determinant factor, separates these statements.
+
+## 8. Independent arithmetic normalization consistency checks at four primes
+
+Finite-field orders can be independently counted from the equation E, and the w_i come from the original independent Miller implementation. The complete genuine Kurihara coefficients are archived separately.
+
+| p | q1,q2 | M1 modp, M2 modp | w1,w2 | det(v1,v2)^2 | derived true-height determinant modp | earlier independently verified delta |
+|---|---|---|---|---|---|---|
+| 5 | 41,61 | 4,4 | 3,1 | 4 | 2 | 4 |
+| 7 | 113,673 | 1,5 | 1,4 | 2 | 3 | 2 |
+| 11 | 397,991 | 1,7 | 8,1 | 9 | 4 | 1 |
+| 19 | 2243,3877 | 5,9 | 17,18 | 1 | 3 | 4 |
+
+For each row, \(2M_1M_2\det\mathscr H_{\chi_1,p}\equiv\delta_{q_1q_2}\bmod p\) holds, as a finite consistency check. This uses already certified δ-values and is NOT a proof of the **universal Kato leading-term identity**. The height determinant is independent of the common \(\varepsilon\) sign, and our computational matrix values are normalized accordingly.
