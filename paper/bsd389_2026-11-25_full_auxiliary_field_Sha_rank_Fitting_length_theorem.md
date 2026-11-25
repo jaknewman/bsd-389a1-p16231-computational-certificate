@@ -140,3 +140,31 @@ For **any** intermediate Q⊂F⊂K we have
 **Proof.** Rank is trapped between rank E(Q)=r and rank E(K)=r. Put H=Gal(K/F), a p-group. The Galois action on the rational vector space E(K)⊗Q is trivial because this dimension-r space is already spanned by E(Q), which is fixed. Hence its action on the torsion-free group E(K)/E(K)_tor is trivial. The finite torsion E(K)_tor has order prime to p (because E(K)[p]=0), so H^1(H,E(K)_tor)=0; also H^1(H,Z^r)=Hom(H,Z^r)=0. The long exact cohomology sequence gives H^1(H,E(K))=0. Inflation–restriction therefore injects H^1(F,E) into H^1(K,E)^H and in particular its subgroup Sha(E/F)[p∞] into Sha(E/K)[p∞]=0. QED.
 
 This gives extra genuine number-field applications: for the p5 **degree-25 unit-jet field** K cut out by q5351*q10651, the unique intermediate degree-5 field F also satisfies rank E(F)=2 and Sha(E/F)[5∞]=0, with no additional modular-symbol evaluation. It does **not** apply to the separate valuation-one p5 degree-25 field, for which Sha over K has only been bounded, not proved to vanish.
+
+
+## 7. EXTRA exact control: the global points P,Q generate the full p-adic MW lattice over K
+
+In each **unit quadratic jet** case (not the valuation-one case), assume E[p](K)=0, valid for our p-power abelian K with surjective residual GL2(Fp) image. Then restriction in Galois cohomology injects
+\[
+H^1(\mathbf Q,E[p])\longrightarrow H^1(K,E[p])
+\]
+by inflation–restriction, since E[p](K)=0. Kummer consequently injects
+\[
+E(\mathbf Q)/pE(\mathbf Q)\hookrightarrow E(K)/pE(K).
+\]
+The theorem proves both Q and K MW rank 2 and \(\Sha(E/K)[p∞]=0\); there is no K-rational p-torsion. Both mod-p MW spaces therefore have dimension precisely 2 and the restriction map is an ISOMORPHISM. Nakayama over Zp now shows
+\[
+\boxed{E(\mathbf Q)\otimes\mathbf Z_p
+\xrightarrow{\sim} E(K)\otimes\mathbf Z_p.}
+\]
+Thus P,Q are a p-adically SATURATED MW BASIS **already over K**, not merely two independent inherited points.
+
+The entire true p-infinity Selmer group is consequently
+\[
+\boxed{\operatorname{Sel}_{p^\infty}(E/K)\simeq
+(E(K)\otimes\mathbf Q_p/\mathbf Z_p)
+\simeq(\mathbf Q_p/\mathbf Z_p)^2,}
+\]
+with the G action trivial under the inherited P,Q basis. This excludes hidden p-adic divisibility of P,Q after the degree-p^k base change. The statement is fully unconditional under the actual authentic theta/Fitting hypotheses; it is NOT inferred from the conjectural local Tate/MT comparison.
+
+This strengthening applies to both certified p≥11 fields (degree11 and degree19) and the archived p5 unit-jet fields (degree5 and degree25) with their surjective p-adic representation certificates; it does not apply to the valuation-one degree25 field without further Selmer input.
