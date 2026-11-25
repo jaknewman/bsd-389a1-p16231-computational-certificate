@@ -57,4 +57,17 @@ def finite_kurihara_histogram():
 if __name__=="__main__":
     for p in (5,7,11):density_check(p)
     finite_kurihara_histogram()
+    # CRT counts: exact number of residues whose BOTH discrete-log factors
+    # are nonzero. After plus symmetry, exactly HALF these survive.
+    for p,q,r in ((5,41,61),(7,113,673),(11,397,991),(19,2243,3877)):
+        phi=(q-1)*(r-1)
+        assert phi%(p*p)==0
+        count_plus=phi*(p-1)*(p-1)//(2*p*p)
+        assert count_plus*2*p*p==phi*(p-1)*(p-1)
+        if p==5:assert count_plus==768
+        elif p==7:assert count_plus==27648
+        elif p==11:assert count_plus==162000
+        elif p==19:assert count_plus==3899664
+        print("EXACT_TWO_PRIME_CRT_NONZERO_LOG_WEIGHT_SUPPORT_PASS",
+              "p",p,"q1",q,"q2",r,"plus_representatives",count_plus)
     print("BOUNDARY_NO_NEW_TWO_FACTOR_UNIT_EXISTENCE_NO_GLOBAL_SHA_FIN")
