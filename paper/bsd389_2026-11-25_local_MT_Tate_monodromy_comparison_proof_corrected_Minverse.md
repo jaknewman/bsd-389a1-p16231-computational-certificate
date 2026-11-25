@@ -201,3 +201,14 @@ For each row, \(2M_1M_2\det\mathscr H_{\chi_1,p}\equiv\delta_{q_1q_2}\bmod p\) h
 ## 9. Critical admissibility distinction
 
 The hypothesis \(p\parallel\#E(\mathbf F_q)\) **cannot** hold simultaneously with the **p²-deep** Kurihara conditions \(q\equiv1\bmod p^2\) and \(a_q(E)\equiv2\bmod p^2\), since these imply \(\#E(\mathbf F_q)=q+1-a_q\equiv0\bmod p^2\). Thus the geometric comparison of this note is a theorem at **p-level anomalous tame primes with p-Sylow of exact order p**, and does not automatically extend to p²-deep auxiliary primes. The uniform p-level Kato-to-theta leading coefficient would suffice to show Sha[p]=0 if proved (via the p-level Fitting gate), but the earlier p² valuation-one gate is a separate situation. Extension of local monodromy to p^k and groups with p²-torsion requires a new integral filtration / higher pairing and is not covered by the present mod-p proof.
+
+
+## 10. INDEPENDENT AUDIT NOTE (2026-11-25): monodromy proof vs. directly computed original Mazur–Tate height
+
+The later index-cancellation audit, paper/bsd389_2026-11-25_exact_global_MT_index_cancellation_p19_J1_and_real_period_factor2.md, confirms that the previous p19 numerical regulator claim rests on the local Poincaré/Néron comparison IN THIS NOTE. Its value has **not** been independently obtained by evaluating the original \(\mathbf Q_q\)-valued tame Mazur–Tate biextension height from disjoint rational divisors.
+
+Robert Corollary 3.12 establishes finite-field monodromy = Tate. Tan §2.1(L4) establishes canonical uniqueness of the tame \(\mathbf Q_q^\times/(1+q\mathcal O_q)\) splitting. A proof equating these must verify that the specific reduction-and-rigidification map actually satisfies the required biextension homomorphism properties, is compatible with scalar pullback under multiplication by p, and matches the Artin/primitive-root generator. Those source-level links have been ARGUED in §§2–3, but neither is independently supplied as a single theorem by the cited papers. The remaining sign ε is explicitly un-fixed.
+
+For responsible publication, regard the numerical value \(\det\mathscr H\equiv3\bmod19\) as a **consequence of this proposed/argued comparison**, not as an independently observed original-MT-height certificate. The exact group-theoretic \(J_S=1\), honest integral restricted lattice, and period factor of two are independent of this bridge and fully certified in the later note.
+
+This qualification does not weaken the finite-field Tate-pairing computations or the historically authenticated modular-symbol coefficients; it prevents accidental circular validation of a global Kato regulator identity through an unverified local normalization.
