@@ -215,3 +215,29 @@ This is a further useful arithmetic simplification: the factor \(J_S\) will NEVE
 **Critical source-scope note:** BKS §2.1 begins its discussion of the **algebraic BSD constant** under an explicit hypothesis that Sha is finite. The *geometric Mazur–Tate biextension height* \(h_S\) itself is defined independently of that hypothesis, so our lattice and definition (2) do not assume it. The conjectural global leading term involving \(\#\Sha\) does, and can NOT be invoked as a theorem in the unknown-finite case. Likewise BKS Hypothesis 2.2(iii) fails for our auxiliary q_i, so their normalizing comparison cannot be imported verbatim.
 
 **Important two-stage theorem target:** first establish the genuine height identity (4), with all local reciprocity normalizations. This is a theorem about EXISTING arithmetic pairings and does not involve Sha. Only then attempt the independent Kato/Mazur–Tate leading term, retaining \(J_S\), the real components, and the potential Selmer/Sha factor. In particular observing the scalar 2 at finitely many p does NOT determine the p-independent value of \(J_S\), the algebraic BSD constant, or the universal global map.
+
+
+## VII. Source-audit correction: Burns–Macías Castillo Theorem 10.3 is the closest EXISTING comparison, but anomalous tame primes violate TWO explicit hypotheses
+
+Burns and Macías Castillo, *On refined conjectures of Birch and Swinnerton-Dyer type for Hasse–Weil–Artin L-series*, original author arXiv manuscript https://nms.kcl.ac.uk/david.burns/web_page/rbsd-arXiv.pdf , **Theorem 10.3**, proves coincidence of the Mazur–Tate biextension height and Nekovář Bockstein height **under hypotheses (H1)–(H6) from §6**, plus absence of p-torsion over F and Hypothesis 10.1.
+
+Two conditions prohibit its immediate application to the auxiliary fields constructed here:
+
+- **(H4)**: for every finite place v away from p lying over a place ramified in the extension, the reduction \(E(\kappa_v)[p^\infty]\) must vanish. Our q1,q2 are **ramified** and satisfy \(p\parallel\#E(\mathbf F_{q_i})\); in particular \(E(\mathbf F_{q_i})[p]\ne0\). Thus H4 **fails at each chosen q_i**. The exact local one-dimensional defect is the Frobenius finite–singular module already studied and proved nonzero in paper/bsd389_local_Frobenius_Kummer_reduced_Tate_finite_singular_theorem_p19_2026-11-24.md. This is a genuine missing local complex, not an ignorable scalar factor.
+- **(H6)**: the relevant \(\Sha(E/F)\) is assumed FINITE, for F the top extension in the theorem. Finiteness over these ramified auxiliary fields is NOT a prerequisite we may silently invoke. Even a separate numerical norm or theta model is not an automatic verification of H6; one would need an independent theorem at each F.
+
+The published proof explicitly uses H4 in §6 to deduce vanishing of the local p-completed points at ramified non-p places (around original lines 2925–2936). Thus *quoting Theorem 10.3 as an unconditional proof of our equation (4) would be mathematically wrong*. Its canonical Bockstein construction is nonetheless the proper existing framework from which to attempt a NEW anomalous tame comparison.
+
+### Concrete new theorem target, without hiding the obstruction
+
+Prove a *corrected* Nekovář/Bockstein–Mazur–Tate identity over cyclic p-extensions with precisely two anomalous tame ramified primes, using the **modified** Selmer complex that retains the two rank-one finite–singular local modules rather than requiring H4. The target must:
+
+1. identify the local boundary form in the determinant triangle with the independently proved local \(-N_q\)-Tate quadratic form, with primitive-root orientation;
+2. prove, by functoriality of the actual biextension height, that the genuine divided lattice pairing \(\mathscr H_{\chi_r,p}\) equals \(\mathcal B_{q_1,p}+r\mathcal B_{q_2,p}\) on \(E(\mathbf Q)/p\), including any nontrivial explicit local unit corrections;
+3. avoid assuming H6 or \(\Sha(E/F)\) finite by working with suitable perfect Selmer complexes and determinant lines; **do not claim the resulting determinant is automatically a p-unit**. The natural torsion/Sha determinant component must remain visible and is exactly the independent obstruction to completing BSD.
+
+The local comparison (1) is proved as a piece of finite-field Kummer/Tate arithmetic in previous notes. The two GLOBAL comparisons (2), (3) **are not proved**; these statements are a concrete proposed extension of published theorem 10.3, not a citation of an existing implication.
+
+**Mathematical boundary:** the fact that a canonical local correction is one-dimensional does NOT prove its Bockstein lift equals the authentic global Mazur–Tate biextension derivative. That equality still requires constructing a morphism of arithmetic complexes, checking all signs and unit normalizations, and proving the relevant determinant section does not acquire an uncontrolled Selmer factor.
+
+Primary source exact scope: Burns–Macías Castillo, Theorem 10.3 (around original lines 6393–6399), hypotheses (H4) and (H6) in §6 (around lines 2772–2779), and their proof of local vanishing (around lines 2925–2936), https://nms.kcl.ac.uk/david.burns/web_page/rbsd-arXiv.pdf .
