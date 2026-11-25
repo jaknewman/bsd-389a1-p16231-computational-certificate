@@ -121,7 +121,15 @@ Proof: additive character orthogonality says
 \]
 Subtract from N. QED.
 
-**New research HYPOTHESIS (nontrivial beyond existence):** For E389a1, every sufficiently large p admits some s≠t with \(\sup_{h\ne0}|C_{p,s,t,h}(X)|/N\to0\) as X→∞. This would prove **positive density of true two-factor p-unit Kurihara witnesses** and hence Sha(E/Q)[p∞]=0 in the p-tail. It is substantially stronger than just one witness and is falsifiable by computing finite conditional histograms or by finding a p with nonzero Sha[p] (which by Theorem A would force EVERY δ_{qr}=0). Its proof would require a NEW arithmetic transfer-operator/large-sieve estimate capable of handling the thin Chebotarev and discrete-log conditions; Lee–Sun alone does not supply it.
+**Corrected NEW research HYPOTHESIS (UNIT-residue equidistribution, nontrivial beyond existence):** For E389a1, each sufficiently large p admits some s≠t such that, for each h≠0,
+\[
+\boxed{\frac{C_{p,s,t,h}(X)}{N_{p,s,t}(X)}
+\longrightarrow-\frac1{p-1}\qquad(X\to\infty).}
+\tag{C3}
+\]
+Fourier inversion shows that (C3) is EQUIVALENT to asymptotic **uniform distribution on the NONZERO residues \(\mathbf F_p^\times\)**, with **ZERO density at residue 0**. This formulation is compatible with the project's 138 independently tested Tate–Kurihara congruences, which predict δ≠0 for every eligible MW-independent pair. It is stronger than the mere existence of one unit witness, gives positive density, and would imply \(\Sha(E/\mathbf Q)[p^\infty]=0\) for all sufficiently large p via Theorem A. It has not been proved.
+
+**Critical self-correction:** An earlier draft proposed \(\sup_{h\ne0}|C_h|/N\to0\), implying equidistribution on ALL \(\mathbf F_p\), hence a proportion 1/p of ZERO derivatives. This is INCOMPATIBLE with the older ILTR conjecture, which predicts NO zero when local MW directions differ. That draft hypothesis is WITHDRAWN, rather than silently retained beside an incompatible conjecture. The correct Fourier target is (C3), or simply a quantitatively nontrivial bound \(\max_{h\ne0}|C_h|<N\) as in Theorem C. Its proof requires a NEW arithmetic transfer-operator/large-sieve estimate for thin Chebotarev prime products with both primitive-root logarithms; Lee–Sun alone does not supply it.
 
 **Archived independent finite observations, not proof of hypothesis:** At p=5, the 105 genuine two-factor Kurihara residues from 15 auxiliary primes have values 0:12,1:19,2:25,3:23,4:26. Thus conditional on the 93 nonzero-determinant pairs, the four nonzero residues occur 19,25,23,26 times, nearly evenly. The chosen 15 primes are NOT random prime samples at X→∞, so this has no asymptotic force.
 
@@ -280,3 +288,38 @@ The exact positive mass of weighted terms does NOT force their sum in Fp to be n
 **Research warning:** Lee–Sun prove residual equidistribution of UNWEIGHTED modular-symbol values when averaging over all denominators. Equidistribution of the marginal \(m_{q,r}\) alone does **NOT** imply nonvanishing of (H1), because a perfectly equidistributed modular-symbol array can be independent of the mixed weight and thus have zero mixed correlation. A successful new spectral method must control the JOINT distribution of the modular symbol with the two primitive-root logs on the prime-product Chebotarev family. The correct transfer-operator target is a nonzero MIXED FOURIER COVARIANCE, not merely the one-point residue distribution.
 
 No additional full Kurihara scans are needed to certify these combinatorial identities.
+
+
+## I. ADDED ARITHMETIC CONSISTENCY TEST: Fp×-uniformity rather than Fp-uniformity
+
+On the 15 authentic p=5 auxiliary primes, the completed two-factor histogram is δ=0:12, 1:19, 2:25, 3:23, 4:26. **All 12 zeros come from pairs of equal local projective directions**. Restricting to the 93 MW-independent pairs leaves the true nonzero distribution
+\[
+\boxed{\{1:19,\ 2:25,\ 3:23,\ 4:26\},\qquad N=93.}
+\]
+The expected F5×-uniform frequency is \(93/4=23.25\) per unit. Computing the exact finite additive Fourier sums of this HISTORICAL genuine sample yields
+\[
+\frac{C_1}{N}\simeq-0.268033-0.058944i,\quad
+\frac{C_2}{N}\simeq-0.231967-0.064695i,
+\]
+and the h=3,4 values are their complex conjugates. The distance from the F5×-uniform target \(-1/4=-0.25\) is approximately 0.06164 and 0.06716, respectively.
+
+These are **finite empirical checks, NOT asymptotic theorems**. They falsify any claim that this small sample has exactly uniform F5× frequencies, while showing that its observed pattern is qualitatively close to the UNIT-uniform rather than all-residue-uniform model.
+
+### Strengthened Fourier unit sieve (proved elementary inequality)
+
+If a finite collection of N genuine p-residue values has additive Fourier correlations satisfying
+\[
+\boxed{\left|\frac{C_h}{N}+\frac1{p-1}\right|\le\epsilon
+\quad\text{for ALL }h\in\mathbf F_p^\times,}
+\tag{I1}
+\]
+then by Fourier inversion
+\[
+\boxed{\frac{\#\{\delta=0\}}{N}\le
+\frac{p-1}{p}\epsilon,\qquad
+\frac{\#\{\delta\ne0\}}{N}\ge1-\frac{p-1}{p}\epsilon.}
+\tag{I2}
+\]
+For \(\epsilon\to0\) this yields zero proportion of vanishing δ and full density of nonzero witnesses. Moreover the empirical ILTR formula (if later proved) would give the stronger pointwise statement \(\#\{\delta=0\}=0\) for every eligible pair, so the unit-distribution conjecture should be treated as an INDEPENDENT ANALYTIC route, not as a replacement for the precise algebraic ILTR target.
+
+This corrected target keeps every previously proved Chebotarev, CRT, semiprime mass, and finite ring/Fitting theorem intact; it changes only the proposed unproved spectral equidistribution hypothesis to remove a genuine logical inconsistency.
