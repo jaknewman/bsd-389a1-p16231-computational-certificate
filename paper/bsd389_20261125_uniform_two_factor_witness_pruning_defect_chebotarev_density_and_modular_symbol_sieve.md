@@ -139,3 +139,30 @@ No artificial operator toy, local MW determinant, randomly fitted Tate weight, o
 - Existing project full independent local Kummer proof: paper/bsd389_uniform_deep_Kummer_Chebotarev_MW_local_basis_theorem_2026-11-24.md
 
 **FINAL VERDICT 25 Nov 2026:** New quantified Chebotarev theorem and exact pruning/Selmer equality rigorous; finite matrix tests PASS. Global two-prime analytic Fourier cancellation remains UNPROVED, therefore no uniform Sha finiteness or exact complex BSD claimed.
+
+
+## E. Exact self-dual group-ring countermodel: functional equation alone CANNOT force a quadratic jet
+
+This is an **abstract finite group-ring model**, not a genuine elliptic-curve theta nor a counterexample to BSD.
+
+Let p≥5 and \(\bar R=\mathbf F_p[C_p]\cong\mathbf F_p[T]/T^p\), \(\sigma=1+T\). Define
+\[
+\boxed{\Theta_{\mathrm{toy}}=(\sigma+\sigma^{-1}-2)^2.}
+\]
+The involution # sends σ to σ⁻¹, so \(\Theta_{\mathrm{toy}}^\#=\Theta_{\mathrm{toy}}\) exactly. Yet
+\[
+\sigma+\sigma^{-1}-2=\frac{T^2}{1+T}
+\quad\Longrightarrow\quad
+\boxed{\Theta_{\mathrm{toy}}=\frac{T^4}{(1+T)^2}\ne0
+\ \text{with first nonzero term }T^4.}
+\]
+Thus the **exact same inversion/self-dual functional-equation symmetry**, nonzero augmentation element and even parity allow order 4 rather than 2. The p5 genuine valuation-one K25 theta had first unit term T⁴ (with extra p-adic depth), demonstrating that such higher-order behavior is not mathematically artificial.
+
+**Scope:** This elementary countermodel shows that inversion symmetry, even parity, and abstract nonvanishing do not logically force a rank-two first jet. It DOES NOT implement the actual Kato Euler-system norm relations or claim the existence of a rank-two E with such a theta. Theorem A explains the genuine arithmetic obstruction: extra Selmer mod-p generators.
+
+## F. Quantifier and frozen-generator precautions
+
+- The exact Chebotarev density B3 is for **each fixed p** as X→∞. No error term uniform in growing p is proved; the explicit rational density formula holds for all p in the full-image tail.
+- A projective local MW slope [a:b] is intrinsic under change of the local generator. In contrast, an individual Kurihara residue \(\tilde\delta_{qr}\) changes by a p-UNIT when primitive roots change; the Fourier-distribution hypothesis must freeze a deterministic primitive-root convention (the minimal positive primitive root is one possible choice).
+- The unit/nonunit condition on \(\tilde\delta_{qr}\) is independent of primitive-root choices. A proof of a density theorem conditional on the smallest-primitive-root convention must avoid averaging over artificially randomized primitive roots, which would create a **spurious uniform distribution of nonzero residue values** without producing any new arithmetic witness.
+- The existing Lee–Sun transfer operator averages rational fractions with **all** eligible denominators up to a bound. The prime-product and discrete-log restriction is genuinely new; there is no shortcut by citing its already published spectral gap.
