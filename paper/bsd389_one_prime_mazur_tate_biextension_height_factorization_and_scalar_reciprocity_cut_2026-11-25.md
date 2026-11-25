@@ -309,3 +309,79 @@ t_{p,q}\!\left([\#E(\mathbf F_q)/p]\bar e,\bar e\right).
 The LHS depends on the CANONICAL TAME POINCARÉ splitting at q; the RHS depends on the independently defined reduced Tate pairing, calculable via Miller. A proof must identify the connecting homomorphism in the p-multiplication sequence of the local Poincaré biextension with the explicit finite-field Frobenius-Kummer operator \(-N_q\), including the root-of-unity/Artin-sign conventions. We have NOT proved that specific identification.
 
 If LOCAL-MT-TATE is proved, Sections 2–4 and 7–8 yield the global HEIGHT equality \(\mathscr H_{\chi_r,p}=\mathcal B_{q_1,p}+r\mathcal B_{q_2,p}\) as a theorem. This would *not*, without a separate Kato leading-coefficient theorem, establish the global Kurihara ILTR conjecture or BSD.
+
+
+## 9. IMPORTANT NEW NORMALIZATION DISCOVERY: a p-UNIT M_q^(-1) can intervene between biextension monodromy and the OLD reduced-Tate weight
+
+The previous §7–8 candidate \(\alpha_q=w_q\) MUST NOT be treated as established. An exact finite-field algebraic comparison reveals a **potential prime-dependent missing unit**.
+
+Let
+\[
+N_q=\#E(\mathbf F_q)=pM_q,\quad p\nmid M_q,\quad
+e\in E(\mathbf Q),\ \ell_q(e)=1,
+\]
+and choose u as in §7.1, i.e. \(M_q\mid u\) and \(u\equiv1\bmod p\). Reduction of \(e\) gives \(\bar e\in E(\mathbf F_q)\). Define TWO points of order p:
+\[
+g_q=[M_q]\bar e,\qquad
+b_q=[u]\bar e=[u/M_q]g_q.
+\]
+Because \(u/M_q\equiv M_q^{-1}\bmod p\), we have the **EXACT algebraic identity**
+\[
+\boxed{b_q=[M_q^{-1}\bmod p]\,g_q.}
+\tag{NORM}
+\]
+The reduced Tate pairing is bilinear. Hence with the SAME second argument \(\bar e\),
+\[
+\boxed{
+\log_\zeta t_{p,q}(b_q,\bar e)
+=M_q^{-1}\log_\zeta t_{p,q}(g_q,\bar e)
+=M_q^{-1}\,w_q\quad(\bmod p).
+}
+\tag{SCALE}
+\]
+This is PROVED from the finite group law, the true p-adic rational representative condition and Tate bilinearity alone.
+
+**Why it changes the next proof:** The biextension lift \(\eta\) in the local-support formula (LS) lies over \((e,u e)\). Its q-reduction has SECOND coordinate \(b_q=[u]\bar e\in E(\mathbf F_q)[p]\). Multiplication by p in the SECOND biextension direction leads to the p-monodromy of this **b_q**, not of \(g_q=[M_q]\bar e\). Damien Robert, *Fast pairings via biextensions and cubical arithmetic*, Corollary 2.5 and Corollary 3.12, identifies finite-field p-monodromy in the Poincaré biextension with the Tate pairing, up to the declared principal-polarization sign convention.
+
+**Consequently, IF** the canonical tame local Néron–Mazur–Tate splitting \(\psi_q\) in (LS) reduces to precisely that finite-field Poincaré p-monodromy with no further local scalar correction, the resulting normalized height must be
+\[
+\boxed{\alpha_q=\varepsilon_q M_q^{-1}w_q,\qquad
+\varepsilon_q\in\{+1,-1\}\quad\text{(orientation-dependent)}.}
+\tag{CORRECTED-CANDIDATE}
+\]
+A proof of the **IF** clause, matching the reduction of Tan's canonical tame splitting with Robert/Stange's finite-field Poincaré monodromy, is required. It is NOT provided by the elementary identity (SCALE). One should **not** simply assert that \(\alpha_q=w_q\), nor assert that the corrected candidate is already a theorem, before performing this normalization comparison.
+
+For the concrete p19 examples,
+\[
+M_{2243}=119\equiv5\bmod19,\quad M_{2243}^{-1}\equiv4,\quad w_{2243}=17,
+\]
+\[
+M_{3877}=199\equiv9\bmod19,\quad M_{3877}^{-1}\equiv17,\quad w_{3877}=18.
+\]
+Thus the *suggested* corrected p19 height scalars are
+\[
+\boxed{\alpha_{2243}\stackrel?=\varepsilon_1\cdot11,\qquad
+\alpha_{3877}\stackrel?=\varepsilon_2\cdot2\quad(\bmod19),}
+\]
+rather than the old **unqualified** (17,18). This is a serious p-unit distinction. The old values are still the UNAMBIGUOUS independently computed reduced-Tate weights; the genuine biextension height values have NEVER BEEN evaluated directly, and the data do NOT decide which scalar normalization is correct.
+
+With compatible self-duality orientations \(\varepsilon_1=\varepsilon_2=\varepsilon\), the corrected two-prime form would be
+\[
+\mathscr H_{\chi_r,p}
+\stackrel?=\varepsilon\left(
+M_{q_1}^{-1}\mathcal B_{q_1}
++r M_{q_2}^{-1}\mathcal B_{q_2}\right).
+\tag{CORRECTED-HEIGHT}
+\]
+Its determinant is independent of the common sign, and
+\[
+\boxed{
+\det(\mathscr H_{\chi_r,p})
+\stackrel?=r(M_{q_1}M_{q_2})^{-1}
+\det(\mathcal B_{q_1}+\mathcal B_{q_2}).}
+\]
+The empirical Kurihara law \(\tilde\delta_{q_1q_2}=2\det(\mathcal B_{q_1}+\mathcal B_{q_2})\) would then be consistent with a future **Kato-to-Mazur–Tate** comparison containing the explicit unit factor \(2M_{q_1}M_{q_2}\). But that latter global identity is STILL conjectural and needs a correct conductor/cokernel/period normalization; do not assume those factors are exactly \(2M_1M_2\) from finite matches alone.
+
+**This is an actual useful falsification pressure on our ORIGINAL proposed height equality.** In particular it is WRONG to report the old predicted scalars 17,18 as computed genuine Mazur–Tate heights at p19. They are only local Tate weights.
+
+Reference for monodromy interpretation: Damien Robert, *Fast pairings via biextensions and cubical arithmetic*, Corollary 2.5 and Corollary 3.12, https://www.math.u-bordeaux.fr/~damienrobert/pro/publications/articles/biextensions.pdf . The paper carefully warns about divisor and sign conventions. Reference for tame canonical splittings: Tan (1995) §2.1 (L4), §4.4 eq. (60).
