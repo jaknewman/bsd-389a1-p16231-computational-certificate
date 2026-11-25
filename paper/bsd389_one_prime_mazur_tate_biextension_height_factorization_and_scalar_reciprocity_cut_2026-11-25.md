@@ -176,3 +176,76 @@ Primary sources:
 - Henri Darmon (1991), *Euler systems and refined conjectures of Birch–Swinnerton-Dyer type*, §2.2: https://www.math.mcgill.ca/darmon/pub/Articles/Research/06.Euler-systems/paper.pdf
 - Burns–Kurihara–Sano (2021), §2.2, definition of the mixed-domain tame height: https://arxiv.org/abs/2103.11535
 - Prior proven one-prime reduced Tate forms and independent Miller weights: paper/bsd389_independent_reduced_Tate_local_weights_rank2_global_delta_conjecture_2026-11-24.md
+
+
+## 7. SOURCE-VERIFIED UPGRADE: (SYM_q) IS A THEOREM of the original Mazur–Tate biextension
+
+After direct examination of Ki-Seng Tan, *Refined theorems of the Birch and Swinnerton-Dyer type*, Ann. Inst. Fourier **45** (1995), §2.1 Remark (3), p.331, and §4.4 equation (60), p.360, **the auxiliary assumption (SYM_q) made in §3 is now DISCHARGED** for the genuine canonical Mazur–Tate pairing.
+
+Tan §2.1 Remark (3) proves that the canonical local splitting on the original biextension equals its mirror image on the intersection of their domains. This includes the *tamely ramified* local trivialization (L4), where the first coordinate lies in \(A_v=E(K_v)\) and the second in \(B_v=E_1(K_v)\); both coordinates in \(B_v\) lie in the intersection. Thus the global **actual** biextension pairing obeys equation (60):
+\[
+\boxed{
+\langle x,y\rangle_G=\langle y,x\rangle_G
+\quad\text{for every }x,y\in B_S.}
+\tag{TAN-60}
+\]
+This property is stated **BEFORE** Tan introduces any hypothesis \((\ell,G)\) is good in §4.4; it follows solely from principal self-duality and the canonical mirror splitting. It is therefore available without assuming either BSD or Sha finiteness.
+
+**THEOREM (unconditional two-sided radical and scalar factorization).** For every good anomalous q with p||#E(Fq), and for the genuine single-prime p-order ray-class Mazur–Tate height, the divided form \(H_q(x,y)=h_q(x,p y)\) on the p-adically completed saturated MW lattice satisfies
+\[
+\boxed{H_q(x,y)=\alpha_q\,\ell_q(x)\ell_q(y),\qquad\alpha_q\in\mathbf F_p.}
+\tag{S}
+\]
+The proof in §3, previously conditional on (SYM_q), is now unconditional by (TAN-60): if x∈kerℓ_q=B_{q,p}, then both x and py are in B_{q,p}, and
+\(h_q(x,py)=h_q(py,x)=p h_q(y,x)=0\).
+Combine with the right radical already proved in §2 to obtain (S).
+
+**No hidden nonvanishing:** the theorem DOES NOT say \(\alpha_q\ne0\); at this stage \(\alpha_q\) may vanish.
+
+**WARNING ABOUT TAN LEMMA 4.11:** Tan's Lemma 4.11(a) would imply that the first local height block is nondegenerate, BUT explicitly assumes the pair \((\ell,G)\) is *good*. Tan **Definition 3.13** defines "good" by demanding the **BSD conjecture true for (E,G)** plus the condition
+\[
+6w|\Sha_K|\prod_v m_v\not\equiv0\bmod\ell.
+\]
+This is a circular assumption for our all-prime BSD research, even if the local reduction cokernel has no p-part. **We therefore DO NOT invoke Tan's Lemma 4.11** to claim \(\alpha_q\) is a p-unit. Equation (60) itself is independent of this "good" hypothesis, as can be seen from its derivation from §2.1 Remark (3).
+
+**References:** https://www.numdam.org/article/AIF_1995__45_2_317_0.pdf ; §2.1 pp.330–331, §3.13 p.350, §4.4 p.360 equations (60)–(61), Lemma 4.11 p.360. This upgrade supersedes the conditional status labels attached to (SYM_q) in §3, §4 and §6 of the earlier note.
+
+### 7.1. Correct HONEST RATIONAL REPRESENTATIVES for the p-adic second point
+
+The symbol \(h_q(e,p e)\) in §3 is shorthand for the unique p-adically extended height \(h_q:M_p\times M_{q,p}\to\mathbf F_p\). **The literal rational point p e need not reduce to zero modulo q**, because the prime-to-p component of E(Fq) may survive multiplication by p. It is WRONG to present it as an unqualified value of the original rational restricted pairing.
+
+For an actual rational computation, choose a positive integer u with
+\(u\equiv1\bmod p\) and \(\#E(\mathbf F_q)/p\mid u\). Then \(up e\in E_{\{q\}}(\mathbf Q)\) and \(\alpha_q=h_q(e,up e)\) in Fp.
+
+For our p19 target:
+- q=2243, \(\#E(\mathbf F_q)/19=119\), choose \(u=476=4\cdot119\equiv1\bmod19\); then the honest rational height is
+\[
+\boxed{\alpha_{2243}=h_{2243}(P,19\cdot476\,P)\ \stackrel?=17.}
+\]
+- q=3877, \(\#E(\mathbf F_q)/19=199\), choose \(u=3383=17\cdot199\equiv1\bmod19\); then
+\[
+\boxed{\alpha_{3877}=h_{3877}(Q,19\cdot3383\,Q)\ \stackrel?=18.}
+\]
+These are bona fide values of the **original** Mazur–Tate height on actual rational points, with the actual domain condition satisfied. The RHS are the **independently computed reduced Tate pairing weights**, not results of calculating the LHS. No equality of these scalar values has yet been proved or executed.
+
+### 7.2. The exact rank-two matrix follows from TWO scalar identities, with no symmetry uncertainty
+
+For the p19 basis (P,Q), the actual global ray-class projection to \(\chi_r=\chi_{2243}+r\chi_{3877}\) satisfies **as a proved identity**
+\[
+\boxed{\mathscr H_{\chi_r,19}
+=\alpha_{2243}\begin{pmatrix}1&1\\1&1\end{pmatrix}
++r\alpha_{3877}\begin{pmatrix}0&0\\0&1\end{pmatrix}.}
+\]
+This is a TRUE biextension consequence of Tan-60 and modulus functoriality; it is NOT the predicted Tate pairing equality yet. The remaining exact single-prime scalar comparisons would yield the matrix
+\(\bigl(\begin{smallmatrix}17&17\\17&17+18r\end{smallmatrix}\bigr)\bmod19\).
+
+### 7.3. Absolute arithmetic stop sign
+
+The nonvanishing claim \(\alpha_q\ne0\) is NOT available from Tan Lemma 4.11 in our present proof, because the lemma's "good" hypothesis **includes BSD over Q**. Any apparent all-prime Sha result deduced by invoking it would be circular. The genuinely independent next theorem is the exact local reciprocity formula
+\[
+h_q(e,up e)=
+\log_{\zeta_q}t_{p,q}([N_q/p]\bar e,\bar e)
+\]
+at ONE q, with a proof from the canonical tame biextension splitting and local Kummer/Tate cohomology, respecting the precise q-root generator and sign. This statement is not established by (TAN-60) alone.
+
+**Source audit date: 25 November 2026.** No new numerical pairwise Kurihara computation required.
