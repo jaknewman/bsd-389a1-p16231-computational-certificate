@@ -127,3 +127,16 @@ An executed dependency-free Python verifier recalculates all genuine archived in
 Primary arithmetic theorem: Bullach–Honnor, *On the refined Birch–Swinnerton-Dyer type conjectures of Mazur and Tate*, arXiv:2511.07203, Hypothesis 1.2, Theorem 1.4(b) and Equation (1): https://arxiv.org/pdf/2511.07203 .
 
 **FINAL STATUS:** algebraic theorem PROVED; degree-11 and degree-19 fieldwise Sha and rank specializations under the source-normalization and historical code certificates; degree-5 and degree-25 applications additionally require the archived p5-image gate; val1 K25 rank stability and Sha5-rank≤2; NO all-large-p Sha or exact complex BSD result.
+
+
+## 6. Descent COROLLARY: every intermediate field also has p-primary Sha zero
+
+Assume the theorem above gives rank E(K)=rank E(Q)=r and Sha(E/K)[p∞]=0, with K/Q cyclic p-power and E(K)[p]=0 (the latter holds for the full GL2(Fp) residual-image certificates, since a p-power abelian subfield of Q(E[p]) cannot contain a nonzero p-torsion point).
+
+For **any** intermediate Q⊂F⊂K we have
+\[
+\boxed{\operatorname{rk}E(F)=r,\qquad \Sha(E/F)[p^\infty]=0.}
+\]
+**Proof.** Rank is trapped between rank E(Q)=r and rank E(K)=r. Put H=Gal(K/F), a p-group. The Galois action on the rational vector space E(K)⊗Q is trivial because this dimension-r space is already spanned by E(Q), which is fixed. Hence its action on the torsion-free group E(K)/E(K)_tor is trivial. The finite torsion E(K)_tor has order prime to p (because E(K)[p]=0), so H^1(H,E(K)_tor)=0; also H^1(H,Z^r)=Hom(H,Z^r)=0. The long exact cohomology sequence gives H^1(H,E(K))=0. Inflation–restriction therefore injects H^1(F,E) into H^1(K,E)^H and in particular its subgroup Sha(E/F)[p∞] into Sha(E/K)[p∞]=0. QED.
+
+This gives extra genuine number-field applications: for the p5 **degree-25 unit-jet field** K cut out by q5351*q10651, the unique intermediate degree-5 field F also satisfies rank E(F)=2 and Sha(E/F)[5∞]=0, with no additional modular-symbol evaluation. It does **not** apply to the separate valuation-one p5 degree-25 field, for which Sha over K has only been bounded, not proved to vanish.
