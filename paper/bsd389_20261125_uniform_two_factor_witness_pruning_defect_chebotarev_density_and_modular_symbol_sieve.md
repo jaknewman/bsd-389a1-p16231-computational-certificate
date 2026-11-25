@@ -166,3 +166,117 @@ Thus the **exact same inversion/self-dual functional-equation symmetry**, nonzer
 - A projective local MW slope [a:b] is intrinsic under change of the local generator. In contrast, an individual Kurihara residue \(\tilde\delta_{qr}\) changes by a p-UNIT when primitive roots change; the Fourier-distribution hypothesis must freeze a deterministic primitive-root convention (the minimal positive primitive root is one possible choice).
 - The unit/nonunit condition on \(\tilde\delta_{qr}\) is independent of primitive-root choices. A proof of a density theorem conditional on the smallest-primitive-root convention must avoid averaging over artificially randomized primitive roots, which would create a **spurious uniform distribution of nonzero residue values** without producing any new arithmetic witness.
 - The existing Lee–Sun transfer operator averages rational fractions with **all** eligible denominators up to a bound. The prime-product and discrete-log restriction is genuinely new; there is no shortcut by citing its already published spectral gap.
+
+
+## G. NEW WEIGHTED SEMIPRIME-MASS THEOREM — the analytic family loses only TWO LOGS, not a power of X
+
+Fix p in the full-image tail and let \(\mathcal P_p(X)\) be the UNORDERED pairs \(\{q,r\}\) of distinct primes ≤X counted by Theorem B (each q,r has p||#E(Fq), nonzero MW local row, and their local directions differ). Let \(\varphi(qr)=(q-1)(r-1)\), the exact number of rational cusps a/(qr) with a coprime to qr contributing to the genuine Kurihara sum.
+
+**THEOREM G.1 (unconditional for each FIXED p).**
+\[
+\boxed{
+\sum_{\{q,r\}\in\mathcal P_p(X)}\varphi(qr)
+\sim
+\frac{D_p}{8}\,\frac{X^4}{(\log X)^2},
+\qquad D_p=\frac{(p+1)(p-1)^2}{p^7}.
+}
+\tag{G1}
+\]
+
+**Proof.** Each of the p+1 intrinsic projective slopes s has Chebotarev prime density \(\alpha_p=(p-1)/p^4\). The prime number theorem in the fixed finite Chebotarev extension plus summation by parts gives
+\[
+\sum_{\substack{q\le X\\q\in\mathcal Q_{p,s}}}(q-1)
+\sim\alpha_p\frac{X^2}{2\log X}.
+\]
+An unordered independent pair corresponds to an unordered pair of DISTINCT slope labels s<t. Its cusp weight is the product \((q-1)(r-1)\). Hence summing over the \(\binom{p+1}{2}\) ordered-by-slope pairs of label classes yields
+\[
+\binom{p+1}{2}\alpha_p^2
+   \frac{X^4}{4(\log X)^2}
+=\frac{D_p}{8}\frac{X^4}{(\log X)^2}.
+\]
+This requires no equidistribution of modular symbols or special L-values. QED.
+
+As a comparison, the classical summatory totient asymptotic is
+\[
+\sum_{n\le X^2}\varphi(n)\sim \frac3{\pi^2}X^4.
+\]
+Thus the fractions with q,r in the required independently located prime families occupy, BY NUMBER of genuine modular-symbol summands, a relative mass
+\[
+\boxed{\frac{\pi^2 D_p}{24(\log X)^2}(1+o(1)).}
+\tag{G2}
+\]
+This is **logarithmic thinning**, not a loss of a power of X. It makes a *prime-weighted* extension of Lee–Sun's transfer-operator machinery a plausible target, while not proving any such analytic extension.
+
+## H. NEW EXACT CRT MIXED-CORRELATION LEMMA: why ordinary modular-symbol equidistribution is NOT enough
+
+Let q,r be good primes ≡1 modp, n=qr, and fix primitive roots \(\gamma_q,\gamma_r\). Via Chinese remainder, the genuine plus modular symbol at denominator n becomes a function
+\[
+m_{q,r}(x,y):=
+\left[\frac{a(x,y)}{qr}\right]^+\bmod p,
+\quad (x,y)\in\mathbf F_q^\times\times\mathbf F_r^\times,
+\]
+where \(a(x,y)\) is the unique reduced residue mod qr with CRT components x,y. Let \(\ell_q(x),\ell_r(y)\in\mathbf F_p\) be primitive-root discrete logarithms modp. Then the true two-prime Kurihara derivative is EXACTLY the mixed correlation
+\[
+\boxed{\widetilde\delta_{qr}
+=\sum_{x\in\mathbf F_q^\times}
+ \sum_{y\in\mathbf F_r^\times}
+ m_{q,r}(x,y)\ell_q(x)\ell_r(y)\in\mathbf F_p.}
+\tag{H1}
+\]
+
+**THEOREM H.1 (exact mean-zero and mixed-only structure).** For odd p,
+\[
+\sum_x\ell_q(x)=\sum_y\ell_r(y)=0\bmod p,
+\]
+because every residue j∈Fp occurs exactly (q−1)/p or (r−1)/p times and \(\sum_{j=0}^{p-1}j=0\) in Fp. Consequently for arbitrary functions \(F(x)\), \(G(y)\), or any constant C,
+\[
+\boxed{
+\sum_{x,y}\bigl(C+F(x)+G(y)\bigr)
+\ell_q(x)\ell_r(y)=0\bmod p.
+}
+\tag{H2}
+\]
+The Kurihara derivative detects ONLY a genuine mixed interaction of the modular-symbol array; it is blind to every separable/additive one-variable component. Fix any x0,y0 and define the cross-difference
+\[
+D_{x_0,y_0}m(x,y)
+=m(x,y)-m(x,y_0)-m(x_0,y)+m(x_0,y_0).
+\]
+Then
+\[
+\boxed{
+\widetilde\delta_{qr}
+=\sum_{x,y}D_{x_0,y_0}m_{q,r}(x,y)\ell_q(x)\ell_r(y).
+}
+\tag{H3}
+\]
+This is an exact identity over Fp, no Sha assumption.
+
+**Theorem H.2 (exact nonzero-weight support).** CRT gives
+\[
+\boxed{
+\#\{a\bmod qr:(a,qr)=1,\ 
+    \ell_q(a)\ell_r(a)\ne0\bmod p\}
+=\left(1-\frac1p\right)^2\varphi(qr).
+}
+\tag{H4}
+\]
+Because \(\ell_q(-1)=\ell_r(-1)=0\) modp (p odd and p divides q−1,r−1), a↦−a preserves the weights and has no fixed points among units. Thus the number of nonzero-weight plus-symmetry REPRESENTATIVES is exactly
+\[
+\boxed{\frac12\left(1-\frac1p\right)^2\varphi(qr).}
+\tag{H5}
+\]
+The p5 benchmark q41*r61 gives 768 nonzero-weight representatives, exactly matching the independently authenticated Manin390 complete census. For p7 q113*r673 this predicts 27,648; for p11 q397*r991 it predicts 162,000; for p19 q2243*r3877 it predicts 3,899,664. These are mathematical CRT counts, not new measured modular-symbol cancellation results.
+
+Summing (H5) over the eligible independent pairs and using (G1), the TOTAL number of potentially nonzero weighted plus-cusp terms is
+\[
+\boxed{
+\sim\frac{D_p}{16}\left(1-\frac1p\right)^2
+\frac{X^4}{(\log X)^2}.
+}
+\tag{H6}
+\]
+The exact positive mass of weighted terms does NOT force their sum in Fp to be nonzero; cancellation is still the genuinely missing global arithmetic obstacle.
+
+**Research warning:** Lee–Sun prove residual equidistribution of UNWEIGHTED modular-symbol values when averaging over all denominators. Equidistribution of the marginal \(m_{q,r}\) alone does **NOT** imply nonvanishing of (H1), because a perfectly equidistributed modular-symbol array can be independent of the mixed weight and thus have zero mixed correlation. A successful new spectral method must control the JOINT distribution of the modular symbol with the two primitive-root logs on the prime-product Chebotarev family. The correct transfer-operator target is a nonzero MIXED FOURIER COVARIANCE, not merely the one-point residue distribution.
+
+No additional full Kurihara scans are needed to certify these combinatorial identities.
