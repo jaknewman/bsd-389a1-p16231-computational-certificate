@@ -385,3 +385,25 @@ The empirical Kurihara law \(\tilde\delta_{q_1q_2}=2\det(\mathcal B_{q_1}+\mathc
 **This is an actual useful falsification pressure on our ORIGINAL proposed height equality.** In particular it is WRONG to report the old predicted scalars 17,18 as computed genuine Mazur–Tate heights at p19. They are only local Tate weights.
 
 Reference for monodromy interpretation: Damien Robert, *Fast pairings via biextensions and cubical arithmetic*, Corollary 2.5 and Corollary 3.12, https://www.math.u-bordeaux.fr/~damienrobert/pro/publications/articles/biextensions.pdf . The paper carefully warns about divisor and sign conventions. Reference for tame canonical splittings: Tan (1995) §2.1 (L4), §4.4 eq. (60).
+
+
+## 10. UPGRADE 2026-11-25 — LOCAL MONODROMY COMPARISON PROVED, WITH CORRECTED SCALAR
+
+The normalization issue raised in §9 has now been resolved through a geometric proof, using the **canonical tame reduction splitting on the Néron/Poincaré biextension** (Tan §2.1 L4 and uniqueness) and the standard p-monodromy = finite-field Tate pairing theorem (Robert 2024, Corollaries 2.5 and 3.12). Full proof and assumptions:
+[bsd389_2026-11-25_local_MT_Tate_monodromy_comparison_proof_corrected_Minverse.md](bsd389_2026-11-25_local_MT_Tate_monodromy_comparison_proof_corrected_Minverse.md).
+
+**CORRECTED theorem, up to ONE global Artin/self-duality orientation sign \(\varepsilon\):**
+\[
+\boxed{
+H_q(x,y)=\varepsilon M_q^{-1}\mathcal B_q(x,y),\quad
+\mathscr H_{\chi_r,p}
+=\varepsilon(M_{q_1}^{-1}\mathcal B_{q_1}+rM_{q_2}^{-1}\mathcal B_{q_2}),
+\quad
+M_q=\#E(\mathbf F_q)/p\bmod p.
+}
+\]
+The geometric proof is independent of Sha finiteness, Kato zeta or modular-symbol numerics. In particular the (E) equalities \(\alpha_q=w_q\) previously labelled an open target are, with these weight conventions, **INCORRECT IN GENERAL**; the correct scalar is \(\varepsilon M_q^{-1}w_q\). Its remaining orientation sign must be frozen by the exact convention of local reciprocity.
+
+At p19, this predicts actual divided Mazur–Tate height scalars \(\varepsilon\cdot11\) at q2243 and \(\varepsilon\cdot2\) at q3877, rather than the uncorrected 17,18; the determinant is 3 modulo19 and independent of \(\varepsilon\).
+
+**Scope:** This completes the geometric *HEIGHT* bridge, with the declared sign convention. It does NOT give the global leading-coefficient/Kato regulator identity or prove any additional global primewise Sha vanishing. The empirical Kurihara congruence \(\delta_{q_1q_2}=2\det(\mathcal B_{q_1}+\mathcal B_{q_2})\) needs an independent **Kato/Mazur–Tate leading-term comparison** with local factors \(2M_{q_1}M_{q_2}\) and the genuine Selmer/Sha determinant.
