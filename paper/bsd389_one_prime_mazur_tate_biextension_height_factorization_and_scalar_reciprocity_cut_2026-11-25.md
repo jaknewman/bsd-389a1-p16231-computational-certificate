@@ -249,3 +249,63 @@ h_q(e,up e)=
 at ONE q, with a proof from the canonical tame biextension splitting and local Kummer/Tate cohomology, respecting the precise q-root generator and sign. This statement is not established by (TAN-60) alone.
 
 **Source audit date: 25 November 2026.** No new numerical pairwise Kurihara computation required.
+
+
+## 8. NEW EXACT LOCAL-SUPPORT LEMMA: the actual one-prime global height scalar is ONE tame Poincaré splitting value
+
+Here is a further reduction, independent of any BSD theorem and derived from Tan §2.1 and Definition 2.6. **It does NOT yet identify the tame Poincaré value with the reduced finite-field Tate pairing.**
+
+Let q be a good auxiliary prime as in §1, \(p\parallel\#E(\mathbf F_q)\), \(p\ne q\), and let the only bad rational prime of E be 389, with Tamagawa number one. Let \(e\in E(\mathbf Q)\) be a MW generator of the one-dimensional local quotient E(Fq)/p; choose a positive integer \(u\equiv1\bmod p\), divisible by \(\#E(\mathbf F_q)/p\). Then \(b=up e\) reduces to O at q and is therefore in the honest global group \(B_{\{q\}}=E_{\{q\}}(\mathbf Q)\).
+
+Denote by \(\mathscr P\) the actual Poincaré biextension of E×E by \(\mathbf G_m\). Choose a rational biextension lift \(\eta\in\mathscr P(\mathbf Q)\) of the rational pair \((e,u e)\); it exists since every \(\mathbf G_m\)-torsor over the field Q has a Q-point (Hilbert 90). Let
+\[
+\eta^{[p]}:=p_{\mathrm{second}}\cdot\eta
+\]
+be p-fold addition in the SECOND biextension direction: it lies over \((e,p u e)=(e,b)\) and hence belongs to the restricted Mazur–Tate biextension. Write \(\psi_v\) for Tan's canonical local splitting at each v, and \(\psi'_v\) for its mirror splitting.
+
+**THEOREM (one-ramified-place support).** Let \(\chi_q\) be the order-p global ray-class quotient attached to q. Then
+\[
+\boxed{
+h_q(e,up e)=
+\chi_q\left(\,[\psi_q(\eta_q^{[p]})]\,\right)\in\mathbf F_p,
+}
+\tag{LS}
+\]
+where the bracket denotes the q-local tame idele class, with the understanding that the identity is in the genuine global class-field quotient (and therefore insensitive to global Q× and local pth powers). The RHS is independent of the chosen rational biextension lift \(\eta\).
+
+**Proof.** By Tan Definition 2.6, the global value is the image of the idele of local splitting values \((\psi_v(\eta_v^{[p]}))_v\) under global ray-class reciprocity. For each finite v≠q, because E has good reduction there or has Tamagawa component group of order one at 389, the local point e lies in the self-dual intersection \(B_v=E_0(\mathbf Q_v)\subset A_v\). Tan §2.1 Remark (3) identifies \(\psi_v\) and its mirror \(\psi'_v\) on that intersection. Since the original \(\eta_v\) lies over \((e,u e)\) with BOTH coordinates in that intersection, its p-fold second-direction image has
+\[
+\psi_v(\eta_v^{[p]})=p\,\psi'_v(\eta_v).
+\]
+The ray-class character \(\chi_q\) has order p and therefore kills these local pth-power contributions. At the real place the order-p character is necessarily trivial (p odd). Only the q-local component can survive, proving (LS). If the rational lift \(\eta\) is replaced by \(c\eta\), \(c\in\mathbf Q^\times\), its p-fold second-direction lift differs by \(c^p\), which has trivial order-p ray-class image. QED.
+
+**WARNING on notation:** A local splitting \(\psi_q\) takes values in \(\mathbf Q_q^\times/(1+q\mathbf Z_q)\), and the order-p ray-class quotient is mapped to \(\mathbf F_p\) using the prescribed primitive root/discrete logarithm orientation. One must keep this normalization explicit when comparing to the Miller reduced Tate pairing. The formula is NOT an assertion that an arbitrary q-local splitting is equal, as an element of Fq×, to a Miller function: the latter exact identification remains the research gap.
+
+**IN PARTICULAR:** The single-prime scalar in the *proved* rank-one factorization is an honest **local tame-biextension obstruction**, not a generic global Kato L-value:
+\[
+\boxed{
+\alpha_q
+=h_q(e,up e)=\operatorname{logrec}_{q,p}
+\big(\psi_q(\eta_q^{[p]})\big).
+}
+\tag{LOC}
+\]
+The reduced Tate weight \(w_q\) is another independent local construction. The remaining one-prime equality is exactly (LOC) \(=w_q\), with its primitive-root and sign convention. This isolates the comparison of two LOCAL pairings at a single finite field point, and DOES NOT require any finite-pair Kurihara sums or a rank-two Euler system.
+
+**Source:** Ki-Seng Tan (1995), §2.1 Remark (3), pp.330–331; §2.2 Definition 2.6, pp.333–334; §4.4 proof of Lemma 4.11, especially pp.361–363, where all v≠v0 contributions disappear modulo ℓ by the same mirror-splitting principle. His Lemma 4.11 itself assumes BSD through "good" and is NOT being invoked for nondegeneracy; only the unconditional *local splitting property and definition of h* are used here.
+
+### Remaining exact unproved compatibility
+
+The desired **new local reciprocity theorem** is now a fully specified identity of two local constructions:
+\[
+\boxed{
+\operatorname{logrec}_{q,p}\psi_q(\eta_q^{[p]})
+\stackrel{?}{=}
+\log_{\gamma_q^{(q-1)/p}}
+t_{p,q}\!\left([\#E(\mathbf F_q)/p]\bar e,\bar e\right).
+}
+\tag{LOCAL-MT-TATE}
+\]
+The LHS depends on the CANONICAL TAME POINCARÉ splitting at q; the RHS depends on the independently defined reduced Tate pairing, calculable via Miller. A proof must identify the connecting homomorphism in the p-multiplication sequence of the local Poincaré biextension with the explicit finite-field Frobenius-Kummer operator \(-N_q\), including the root-of-unity/Artin-sign conventions. We have NOT proved that specific identification.
+
+If LOCAL-MT-TATE is proved, Sections 2–4 and 7–8 yield the global HEIGHT equality \(\mathscr H_{\chi_r,p}=\mathcal B_{q_1,p}+r\mathcal B_{q_2,p}\) as a theorem. This would *not*, without a separate Kato leading-coefficient theorem, establish the global Kurihara ILTR conjecture or BSD.
