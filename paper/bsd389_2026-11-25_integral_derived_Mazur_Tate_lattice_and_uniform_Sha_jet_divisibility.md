@@ -192,3 +192,26 @@ The correct immediate research target is (4), a comparison of TWO genuine height
 - Independently constructed reduced Tate forms: paper/bsd389_independent_reduced_Tate_local_weights_rank2_global_delta_conjecture_2026-11-24.md
 
 **Verdict:** the p-adic local-conductor lattice and its canonical divided Mazur–Tate regulator are now INTEGRALLY DEFINED AND PROVED; the general arithmetic Sha-depth obstruction is PROVED; the derived biextension-to-reduced-Tate identity (4) and global leading coefficient equality (6) remain OPEN. No new computation was needed.
+
+
+## VI. The auxiliary cokernel factor is a p-UNIT, but its precise residue must still be retained
+
+BKS §2.2, Remark 2.7, formula (8), uses **both** the height discriminant \(R_S\) and
+\[
+J_S:=\#\operatorname{coker}\left(
+E(\mathbf Q)\longrightarrow
+ E(\mathbf F_{q_1})\oplus E(\mathbf F_{q_2})\oplus
+ \bigoplus_{\ell\mid 389}E(\mathbf Q_\ell)/E^0(\mathbf Q_\ell)
+\right).
+\]
+For 389a1 the bad-prime component group at 389 is trivial. The assumed local reduction isomorphism \(M/pM\to\bigoplus E(\mathbf F_{q_i})/p\) means that **the cokernel has no p-primary part**:
+\[
+\boxed{v_p(J_S)=0.}
+\]
+Proof: at both q_i, the local Sylow-p subgroup has order exactly p, and the reductions of P,Q generate their product; all other local group factors have order prime to p. Thus any cokernel of the full reduction map has order prime to p. QED.
+
+This is a further useful arithmetic simplification: the factor \(J_S\) will NEVER cause an additional p-divisibility in our MW-independent-pair setting. Nevertheless \(J_S\) may reduce to an arbitrary **nonzero** residue mod p and must be kept in the **EXACT scalar normalization** of any true coefficient-to-regulator formula; it is not automatically congruent to 1 mod p.
+
+**Critical source-scope note:** BKS §2.1 begins its discussion of the **algebraic BSD constant** under an explicit hypothesis that Sha is finite. The *geometric Mazur–Tate biextension height* \(h_S\) itself is defined independently of that hypothesis, so our lattice and definition (2) do not assume it. The conjectural global leading term involving \(\#\Sha\) does, and can NOT be invoked as a theorem in the unknown-finite case. Likewise BKS Hypothesis 2.2(iii) fails for our auxiliary q_i, so their normalizing comparison cannot be imported verbatim.
+
+**Important two-stage theorem target:** first establish the genuine height identity (4), with all local reciprocity normalizations. This is a theorem about EXISTING arithmetic pairings and does not involve Sha. Only then attempt the independent Kato/Mazur–Tate leading term, retaining \(J_S\), the real components, and the potential Selmer/Sha factor. In particular observing the scalar 2 at finitely many p does NOT determine the p-independent value of \(J_S\), the algebraic BSD constant, or the universal global map.
