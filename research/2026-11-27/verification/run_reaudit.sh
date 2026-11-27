@@ -12,4 +12,10 @@ c++ -O2 -std=c++17 "$HERE/bsd389_p389_native.cpp" -o "$TMP/cyclo389"
 "$TMP/cyclo389" "$HERE/manin_390.txt"
 python3 "$HERE/bsd389_p389_cyclotomic.py"
 python3 "$HERE/bsd389_measure_projection_audit.py" --primes 5 7 11 13 17 89 389
+# The independent Fourier/AGM audit requires NumPy; core finite checks do not.
+if python3 -c 'import numpy' >/dev/null 2>&1; then
+  python3 "$HERE/bsd389_independent_analytic_manin_audit.py"
+else
+  echo 'NUMPY_ABSENT_SKIPPING_INDEPENDENT_FOURIER_AGM_AUDIT'
+fi
 echo 'BSD389_REAUDIT_FINITE_MOMENTS_PASS: mathematical Selmer comparisons still require review'
