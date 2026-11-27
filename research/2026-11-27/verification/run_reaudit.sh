@@ -36,4 +36,8 @@ if [ "${BSD389_EXTENSION_12:-0}" = "1" ]; then
   diff -u "$HERE/../results/ordinary_2003_2099.log" "$TMP/extension.log"
   echo 'ORDINARY_12_PRIMES_BEYOND_1999_EXACT_MATCH_PASS'
 fi
+# Optional secondary Bockstein / Kurihara four-support audit (two full scans).
+if [ "${BSD389_QUARTIC:-0}" = "1" ]; then
+  bash "$HERE/run_bockstein_quartic_reaudit.sh"
+fi
 echo 'BSD389_REAUDIT_FINITE_MOMENTS_PASS: mathematical Selmer comparisons still require review'
