@@ -6,6 +6,7 @@ HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TABLE="${BSD389_TABLE:-$HERE/manin_390.txt}"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
+python3 "$HERE/bsd389_mixed_augmentation_kernel_gate.py"
 python3 "$HERE/bsd389_double_augmentation_gate.py"
 python3 "$HERE/bsd389_quartic_cumulant_gate.py"
 c++ -O3 -std=c++17 "$HERE/bsd389_kurihara_four_support.cpp" -o "$TMP/kuri4"
