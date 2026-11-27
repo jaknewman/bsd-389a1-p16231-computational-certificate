@@ -42,4 +42,5 @@ if [ "${BSD389_QUARTIC:-0}" = "1" ]; then
 fi
 python3 "$HERE/bsd389_second_bockstein_fitting_gate.py"
 python3 "$HERE/bsd389_rank2_filtration_countermodel.py"
+python3 "$HERE/bsd389_kato_determinant_lattice_audit.py"
 echo 'BSD389_REAUDIT_FINITE_MOMENTS_PASS: mathematical Selmer comparisons still require review'
