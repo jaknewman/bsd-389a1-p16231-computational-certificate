@@ -85,6 +85,41 @@ Similarly, in light of Castella–Sano's \(\partial^{(\infty)}=0\), **\(\Sha[p^\
 
 **This gives a cheaper intermediate goal:** produce a degree-two coefficient which is merely nonzero at any \(p\)-power precision to prove finiteness first, then identify its minimal valuation to determine the finite \(\Sha\) exactly. This does not supply a uniform proof of nonzero degree-two witnesses.
 
+## 2bis. A completely different, finite-precision p-adic L-function route to FINITENESS
+
+For good ordinary \(p\ge5\), the already proven rank-forced vanishing above gives
+\[
+L_p(E,T)=T^2A_p(T),\qquad A_p(T)\in\mathbf Z_p[[T]].
+\]
+Suppose that the single coefficient
+\[
+c_{p,2}=[T^2]L_p(E,T)=A_p(0)
+\]
+is **nonzero in \(\mathbf Z_p\)**; it need *not* be a unit.
+
+Then \(\operatorname{ord}_T L_p=2\), and Wuthrich's divisibility plus the rank lower bound imply
+\[
+2\le \operatorname{ord}_T\operatorname{char}_\Lambda(X_p)\le2.
+\]
+The elementary-divisor structure at the DVR \(\Lambda_{(T)}\) therefore bounds
+\(\operatorname{rank}_{\mathbf Z_p}X_p/TX_p\le2\). Since the two MW Kummer classes already give the opposite inequality, the coinvariant rank is exactly two. Restriction injects the global Selmer into the cyclotomic invariants, hence
+\[
+\operatorname{corank}_{\mathbf Z_p}\operatorname{Sel}_{p^\infty}(E/\mathbf Q)=2.
+\]
+The quotient of this cofinitely generated Selmer group by the rank-two MW divisible group is finite, so **\(\Sha(E/\mathbf Q)[p^\infty]\) is finite**.
+
+Thus we have the *strictly weaker than a unit criterion*
+\[
+\boxed{[T^2]L_p(E,T)\ne0\text{ in }\mathbf Z_p
+\quad\Longrightarrow\quad
+\Sha(E/\mathbf Q)[p^\infty]\text{ is finite}.}
+\]
+At the split multiplicative prime, the same argument uses \([T^3]L_{389}\ne0\).
+
+**Practical import.** If a future prime has raw quadratic coefficient \(C_p\equiv0\bmod p\), this does *not* force a nonzero Sha. Compute the quadratic coefficient modulo \(p^2,p^3,\ldots\): finding it nonzero at even one precision establishes finiteness immediately, without any two-auxiliary-prime Kurihara search. Establishing **vanishing of Sha** in that case still requires additional control of the finite quotient (e.g. the minimal Kurihara valuation), because \(c_{p,2}\) may be divisible by \(p\) even when Sha vanishes.
+
+This theorem proves neither \([T^2]L_p\ne0\) for all ordinary \(p\) nor the p-adic BSD leading-coefficient formula.
+
 ## 3. Why an Euler second jet cannot be inverted integrally
 
 For an admissible auxiliary prime \(\ell\),
