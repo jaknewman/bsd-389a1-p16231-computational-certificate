@@ -24,4 +24,9 @@ if python3 -c 'import mpmath' >/dev/null 2>&1; then
 else
   echo 'MPMATH_ABSENT_SKIPPING_CERTIFIED_NERON_INTERVAL_AUDIT'
 fi
+python3 "$HERE/bsd389_period_convention_audit.py"
+# Optional longer complete sweep (~30s on the audit host).
+if [ "${BSD389_FULL_297:-0}" = "1" ]; then
+  python3 "$HERE/bsd389_replay_all_297.py"
+fi
 echo 'BSD389_REAUDIT_FINITE_MOMENTS_PASS: mathematical Selmer comparisons still require review'
