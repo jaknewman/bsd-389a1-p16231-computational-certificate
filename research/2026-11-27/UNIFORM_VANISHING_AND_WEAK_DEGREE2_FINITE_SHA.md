@@ -72,6 +72,17 @@ The finite Tate–Shafarevich group carries a perfect alternating Cassels–Tate
 
 In particular, a degree-two Kurihara witness nonzero modulo \(p^2\) but divisible by \(p\) must be accompanied by **another unit witness modulo \(p\)**; indeed its valuation is at most 1 while the minimum must be even, hence it is 0.
 
+**Converse (equivalence).** If \(\Sha(E/\mathbf Q)[p^\infty]\) is finite, then the global Kummer sequence gives \(\operatorname{corank}_{\mathbf Z_p}\operatorname{Sel}_{p^\infty}=2\). By Kim, this corank equals \(\rho_p\). Consequently \(\rho_p=2\), and by the definition of \(\rho_p\) there exists an admissible two-factor coefficient which is nonzero in its coefficient ring. Thus, under these hypotheses, we have the complete characterization
+
+\[
+\boxed{\Sha(E/\mathbf Q)[p^\infty]\text{ finite}
+\quad\Longleftrightarrow\quad
+\exists n=\ell_1\ell_2:\widetilde\delta_n\ne0
+\text{ in }\mathbf Z_p/I_n.}
+\]
+
+Similarly, in light of Castella–Sano's \(\partial^{(\infty)}=0\), **\(\Sha[p^\infty]=0\)** is equivalent to existence of a degree-two **unit** coefficient. These equivalences are exact reformulations of Kim and Kummer, and *not* independent proofs of either desired property.
+
 **This gives a cheaper intermediate goal:** produce a degree-two coefficient which is merely nonzero at any \(p\)-power precision to prove finiteness first, then identify its minimal valuation to determine the finite \(\Sha\) exactly. This does not supply a uniform proof of nonzero degree-two witnesses.
 
 ## 3. Why an Euler second jet cannot be inverted integrally
