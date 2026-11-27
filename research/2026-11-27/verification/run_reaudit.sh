@@ -18,4 +18,10 @@ if python3 -c 'import numpy' >/dev/null 2>&1; then
 else
   echo 'NUMPY_ABSENT_SKIPPING_INDEPENDENT_FOURIER_AGM_AUDIT'
 fi
+python3 "$HERE/universal_manin_exact_certificate.py" --table "$HERE/manin_390.txt"
+if python3 -c 'import mpmath' >/dev/null 2>&1; then
+  python3 "$HERE/bsd389_certified_interval_388.py"
+else
+  echo 'MPMATH_ABSENT_SKIPPING_CERTIFIED_NERON_INTERVAL_AUDIT'
+fi
 echo 'BSD389_REAUDIT_FINITE_MOMENTS_PASS: mathematical Selmer comparisons still require review'
