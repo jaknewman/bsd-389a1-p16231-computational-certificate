@@ -11,4 +11,5 @@ grep -F 'P 89 AP -8 N 7921 COUNT 7832 RAW_C0_C1_C2_C3 0 0 8 33 ORDINARY 1' "$TMP
 c++ -O2 -std=c++17 "$HERE/bsd389_p389_native.cpp" -o "$TMP/cyclo389"
 "$TMP/cyclo389" "$HERE/manin_390.txt"
 python3 "$HERE/bsd389_p389_cyclotomic.py"
+python3 "$HERE/bsd389_measure_projection_audit.py" --primes 5 7 11 13 17 89 389
 echo 'BSD389_REAUDIT_FINITE_MOMENTS_PASS: mathematical Selmer comparisons still require review'
