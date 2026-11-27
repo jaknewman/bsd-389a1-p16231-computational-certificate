@@ -29,4 +29,11 @@ python3 "$HERE/bsd389_period_convention_audit.py"
 if [ "${BSD389_FULL_297:-0}" = "1" ]; then
   python3 "$HERE/bsd389_replay_all_297.py"
 fi
+# Beyond the original 297-prime sweep: optional 12 good ordinary primes >2000.
+if [ "${BSD389_EXTENSION_12:-0}" = "1" ]; then
+  c++ -O3 -std=c++17 "$HERE/bsd389_ordinary_p2_audit_half.cpp" -o "$TMP/ordinary_extension"
+  "$TMP/ordinary_extension" "$HERE/manin_390.txt" 2003 2011 2017 2027 2029 2053 2063 2081 2083 2087 2089 2099 > "$TMP/extension.log"
+  diff -u "$HERE/../results/ordinary_2003_2099.log" "$TMP/extension.log"
+  echo 'ORDINARY_12_PRIMES_BEYOND_1999_EXACT_MATCH_PASS'
+fi
 echo 'BSD389_REAUDIT_FINITE_MOMENTS_PASS: mathematical Selmer comparisons still require review'
